@@ -9,4 +9,4 @@ This is a hands-on, practical course that applies the ideas learned in lectures 
 In this repo you can find related materials that we make available to the public. More will follow over time.
 
 - [Midterm exam](exams/midterm/README.md) along with solutions
-- [Final exam](exams/final/) along with solutions
+- [Final exams](exams/final/) along with solutions
