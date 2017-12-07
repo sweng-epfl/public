@@ -1,5 +1,6 @@
 # Software Engineering
-## Final Exam (Fall 2016)
+## Sample Final Exam
+#### `8-Dec-2017`
 
 This exam comes from the `final-GASPAR` repo in the `sweng-epfl` GitHub organization. Please push your answers to this repo on the `master` branch. 
 
