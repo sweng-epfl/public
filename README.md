@@ -4,9 +4,11 @@ Software engineering is taught at [EPFL](http://ic.epfl.ch) by [Prof. George Can
 
 Software engineering is a long-established field of computer science, with a wide range of techniques that have been proposed, a subset of which are actually in use, and of those a subset are of demonstrated value. In teaching software engineering we focus on three aspects: Which are the tools and practices of modern software? How do we produce high-quality software? How do we develop software in a team? The tools include version control systems, automated testing, and continuous integration. The practices include design patterns, defensive programming, modularity, abstraction, and agile development. Learning to work collaboratively with a team of people to write, test, and debug a single piece of software can be at times challenging and frustrating, but it is impossible for one person to produce software of the scale required by modern applications and systems. For this reason, we also hone the skills needed to develop software together with other people. 
 
-The course tandem consists of _Software Engineering (SwEng)_ and _Software Development Project (SDP)_. The former teaches the principles and concepts of successful software engineering through lectures and exercises, while the latter applies all this to an extensive project (e.g., developing a serious split app for Android). The project requires a large amount of programming and project management, and is done in teams of students. The two courses are meant to be taken together − if a student already masters the SwEng material, taking SwEng is an easy refresher, and if she/he does not already master the SwEng material, then succeeding in SDP is highly improbable.
+Being a good software engineer entails a continuous learning process. Unlike mathematics or physics, this field changes fast, thus making continuous and independent learning essential. This course prepares students to become lifelong auto-didacts who build upon the foundation of imutable principles that govern good software engineering.
 
-This repo contains related materials that we make available to the public. More will follow over time.
+Our course tandem consists of one part that teaches the principles and concepts of successful software engineering through lectures and exercises, while the other part applies the concepts to an extensive project whose outcome is a substantial Android app. The project requires a large amount of programming and project management, and is done in teams of students.
 
-- SwEng [midterm exam](exams/midterm/README.md) along with solutions
-- SwEng [final exams](exams/final/) along with solutions
+This repo contains related materials that we make available to the public. For EPFL-specific information, please see [the course webpage](http://dslab.epfl.ch/teaching/sweng/).
+
+- [Midterm exam](exams/midterm/README.md) along with solutions
+- [Final exams](exams/final/) along with solutions
