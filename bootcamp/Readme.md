@@ -66,6 +66,8 @@ git add .  # Add all the files to the repository
 git commit # Create a first commit
 ```
 
+When trying to commit, you will probably open `Vi`. To be able to write content, press `i`. This will enable the editing mode. You can write your commit message. Once your are done with it, save your changes and quit. To to it, first press `ESCAPE`, write `:x` and then `ENTER`.
+
 > As EPFL students, you can claim the [GitHub Student Developer Pack](https://education.github.com/pack). This pack give students free access to a few interesting developer tools. Amongst them, there is GitHub's feature for creating private repositories.
 
 #### Publish your repository on GitHub
