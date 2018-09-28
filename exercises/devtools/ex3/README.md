@@ -162,7 +162,7 @@ public void printList(){
     Node n = head; 
     while (n != null){ 
         System.out.print(n.data+" "); 
-        n = n.next; }
+        n = n.next;
     }
 }  
 ```  
@@ -171,7 +171,7 @@ Commit the changes.
 ```sh  
 git add LinkedList.java 
 git status  
-git commit -m "Adding printing"  
+git commit -m "Add printing"  
 ```  
 
 Your new feature is in.  But wait, somebody else might have committed to the master branch.  Let's simulate this by going back to master and committing into it directly. *Beware you need to modify the LinkedList class*.
