@@ -19,7 +19,7 @@ If Bob directly worked on the main yellow branch and if he was careless with his
 Here we have to pay attention to the *merge* keyword. *Merging* is basically porting the code differences from one branch to another so that code features that are available in one branch are also available in the other one. In Bob's case, merging allows the yellow branch to have the button that makes the cat sound. The problem here is that merging is not completely automatic and might require manual intervention. We will see this case shortly.
 
 There is one problem remaining. Bob wants to work with other developers, such as Alice, David and Clair. For that, he pushes his code to a remote repository which is denoted as origin. In the scope of SwEng, origin can be thought as the repository in Github. For cooperation, the developers push to the origin repository. When they want to see the changes, they pull from origin, then continue to do their own modifications. In the figure above, each rectangle signifies a git directory where a version of the application lives, where history of the application can be available. In other words, each user has its own local repository where they make their changes and there is one origin remote repository. This is particular for git as git a *distributed* version control system.  
-
+  
 ## Branches and Merging in-depth  
 Before delving into exercises, let's go over the workflow model based on branches and merging in-depth. For simplicity, think in terms of two branches where you migrate differences from one branch to the other. Then, when one branch has progressed enough, carry the changes to the other branch. The figure below summarizes this approach.  
 
@@ -35,8 +35,14 @@ There is one more concept that is worth mentioning before starting the exercises
 
 #### Setting up  
 1. In Github, create a new repository, any name is ok. For this exercise let's use **swengweek1**.
+
+![solution](1.png)
+
+![solution](2.png)
+
 2. Open a terminal or a git shell and cd into a directory that you want to store the git directory.  
-3. Enter the commands below.
+3. Enter the commands below                              
+
 ```sh  
 echo "# swengweek1" >> README.md  
 git init  
@@ -45,8 +51,18 @@ git commit -m "first commit"
 git remote add origin https://github.com/<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example https://github.com/daksunt/swengweek1.git  
 git push -u origin master  
 ```  
-4. Go to [exercises](./ex3).
-5. Download all java files into the git repository. One possible way, click to the file, go to raw, and right-click and save as to the git directory. Make sure the ending is *.java* .
+
+![solution](3.png)
+
+4. Go to [exercises](./ex3). 
+
+![solution](4.png)
+
+5. Download all java files into the git repository. One possible way, click to the file, go to raw, and right-click and save as to the git directory. Make sure the ending is *.java* . 
+
+![solution](5.png)
+![solution](6.png)
+
 6. Open a terminal or a git shell and cd into the git repository.  
 7. Add, commit and push the files.
 ```sh  
@@ -54,6 +70,9 @@ git add *.java
 git commit -m "adding java files"  
 git push  
 ```  
+
+![solution](7.png)
+
 `git add` adds the java files to the git tracker. `git commit` is used for committing files.
 
 #### Branch and Merge  
@@ -63,6 +82,8 @@ For this exercise we will use the [QuickSort](./QuickSort.java) file. Make sure 
 ```sh  
 git branch 
 ```  
+
+![solution](8.png)
 
 To see all the branches including the remote ones use the `-a` flag.  
 ```sh  
@@ -89,6 +110,8 @@ git branch fix-sort-bug
 git branch
 ```  
 
+![solution](9.png)
+
 To make sure that you are working on the new branch, you need to checkout that branch.  
 ```sh  
 git checkout fix-sort-bug 
@@ -103,19 +126,25 @@ git checkout -b fix-sort-bug
 ```  
 Pay attention to the asterisk.  
   
-Now, we created a branch for development.   We want to fix the code.  Open `QuickSort` file in a text editor of your own choice.  Go to line 24 and replace the $>$ operator with $<$ operator.
+Now, we created a branch for development.   We want to fix the code.  Open `QuickSort` file in a text editor of your own choice.  Go to line 24 and replace the $>$ operator with $<$ operator. 
+
+![solution](10.png)  
   
-If you want, you can test the results with the commands below. 
+If you want, you can test the results with the commands below:
 ```sh  
 javac QuickSort.java  
 java QuickSort  
 ```    
 
-Now we need to add this file to the commit. 
+![solution](11.png)
+
+Now we need to add this file to the commit.
 ```sh  
 git add QuickSort.java 
 git status  
 ```  
+
+![solution](12.png)
 
 * Note: If you want to add everything, just do `git add .` and all the files within the directory will be added.
 
@@ -133,6 +162,8 @@ We can also see the commits for the current branch
 ```sh  
 git log  
 ```   
+
+![solution](13.png)
  
 Now we want to merge the fix into the main branch and delete the bug fix branch since we are done.
 ```sh  
@@ -141,7 +172,11 @@ git merge fix-sort-bug
 git branch -d fix-sort-bug  
 git push
 ```  
-  
+
+![solution](14.png)
+
+* [Final QuickSort File](QuickSortFinal.java)
+
 Since there are no conflicts, it should work automatically.  
    
 #### Branch and Merge with conflicts  
@@ -154,8 +189,12 @@ For this exercise we will use the [LinkedList](./LinkedList.java) file. Make sur
 git checkout -b dev1  
 ```  
 
-Add the code below into the LinkedList class. 
+![solution](16.png)
+
+Add the code below into the LinkedList class.
 * Note: The code to add are available in [add_to_linkedlist.txt](add_to_linkedlist.txt) 
+
+![solution](15.png)
 
 ```java  
 public void printList(){  
@@ -178,6 +217,8 @@ Your new feature is in.  But wait, somebody else might have committed to the mas
 ```sh  
 git checkout master  
 ```  
+
+![solution](18.png)
 
 Add this code into the LinkedList class.
 ```java  
@@ -202,6 +243,8 @@ public static void main(String args[]) {
     llist.printList();
 }  
 ```  
+
+![solution](17.png)
   
 Then commit into the master branch directly to simulate a merge by someone else.  
 ```sh  
@@ -224,6 +267,8 @@ git log master..dev1
 git diff master..dev1  
 ```  
 
+![solution](19.png)
+
 Observe what is different between two branches and make sure it makes sense.
   
 You can also view other version differences. The commands are given below:  
@@ -238,7 +283,9 @@ Now when you want to do a merge, since the LinkedList.java file was modified con
 git merge dev1  
 ```  
 
-Open the *LinkedList.java* file in your git repository and there will be lines with "<<<<<<< HEAD" and ">>>>>>> dev1". These arrows show the code part that came from which branch. Modify the code to look like how you want it to be correct. 
+![solution](20.png)
+
+Open the *LinkedList.java* file in your git repository and there will be lines with "<<<<<<< HEAD" and ">>>>>>> dev1". These arrows show the code part that came from which branch. Modify the code to look like how you want it to be correct. change [from](21.png) to [to](22.png)
 
 Check the changes.
 ```sh  
@@ -246,12 +293,18 @@ javac LinkedList.java
 java LinkedList
 ```  
 
+![solution](24.png)
+
 Commit.
 ```sh  
 git add LinkedList.java
 git status  
 git commit -m "merging with main branch, adding printList feature"  
 ```  
+
+![solution](23.png)
+
+* [Final LinkedList File](LinkedListFinal.java)
 
 In the end, the best idea is to avoid conflicts as much as possible by working on separate tasks.  Let's finish the exercise by checking the master branch and pushing the differences to the remote repository.  
 ```sh  
@@ -262,12 +315,14 @@ git push
 #### Tracking remote branches  
 If you push a different branch to a remote repository, that branch will be created in the remote.  Use *git fetch* to get those remote repositories if it does not exist.  
   
-Do!
+Do:
 ```sh  
 git checkout dev1  
 git push --set-upstream origin dev1  
 git checkout master  
 ```  
+
+![solution](25.png)
   
 Then delete dev1:  
 ```sh  
@@ -281,6 +336,8 @@ git checkout dev1
 ```  
 
 You can see the *dev1* branch in github too.
+
+![solution](26.png)
 
 ### Useful resources  
 1. [https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)

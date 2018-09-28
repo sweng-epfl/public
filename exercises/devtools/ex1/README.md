@@ -1,4 +1,4 @@
-# Commit Messages
+# Exercise 1: Commit Messages
 
 ## Good Commit Messages
 
@@ -13,7 +13,7 @@ Writing a good commit message can save time and energy, and help with the mainte
 Avoid lumping too many changes together in one commit.
 A commit should generally fix one bug, or implement one feature (although, depending on the size and complexity of the feature, this may be better accomplished with multiple commits, see exercises on branching for how to develop complex features over multiple commits). 
 
-As mentioned in the bootcamp, [Chris Beam](https://chris.beams.io/posts/git-commit/) has some great guidelines for writing commits. 
+As mentioned in the bootcamp, Chris Beam has some great [guidelines](https://chris.beams.io/posts/git-commit/) for writing commits. 
 
 * Separate subject from body with a blank line
 * Limit the subject line to 50 characters
@@ -46,16 +46,16 @@ Write your commit message, save, and exit the editor.
 
 You can find more info about first time `git` setup [here](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
-### Commit Message Exercises
+### Exercise 1.1: Writing Commit Messages
 
 Write commit messages for each of the following `commit` situations. 
 
 1. You rewrite the entire project README because it is out of date, too concise and didn't show how to build and use the code.
 2. You notice that some request data in your system is often already sorted, so you replace the entire `quicksort` implementation with `heapsort` to get more predictable latency.
-3. You use the `google-java-format` tool to format a single file to comply with the projects chosen source code style.
+3. You use the `google-java-format` tool to format a single file to comply with the project's chosen source code style.
 4. You fix typos in comments in several files.
 
-## Fixing and Viewing Commits
+## Exercise 1.2: Fixing and Viewing Commits
 
 If you have messed up your commit message, or want to change it, simply do
 
@@ -72,7 +72,7 @@ To view a specific commit, copy its hash ID and run
 
 `$ git show <commit>`
 
-### Fixing and Viewing Commits Exercises
+### Exercise 1.3: Fixing and Viewing Commits Exercises
 
 Try the following exercise (you can just clone this repo and navigate to it in a terminal, or one of your own repos):
 

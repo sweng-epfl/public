@@ -1,11 +1,11 @@
 
-# Java Basics
+# Exercise 2: Java Basics
 
 Java is the language we will use for development in both SwEng and SDP.
 These exercises will help get you started with Java, or provide a review if you have used it before.
 More specifically, you will learn how to compile Java code, run and debug it from the command line.
 
-## Requirements
+## Prerequisites
 
 First, you should complete at least Part 1 of the SwEng [bootcamp](https://github.com/sweng-epfl/Bootcamp).
 Ensure that Java has been successfully installed on your machine.
@@ -27,9 +27,9 @@ Initializing jdb ...
 
 ```
 
-## Exercise 1 -- Compiling Java
+## Exercise 2.1: Compiling Java
 
-Copy the follow code into a file `TestProgram.java`.
+Copy the following code into a file `TestProgram.java`.
 You can use whatever working directory you like. 
 
 ```java
@@ -66,9 +66,9 @@ java TestProgram
 Sum value of array elements is : 15
 ```
 
-## Exercise 2 -- The Debugger is Your Best Friend
+## Exercise 2.2: The Debugger is Your Best Friend
 
-Imagine -- You run your freshly compiled program. 
+Imagine you run your freshly compiled program. 
 It doesn't output the correct result, or the program crashes.
 
 How do you figure out what's going wrong? You need to _debug_ your program. 
@@ -78,7 +78,7 @@ Typically there are two ways to do so.
 1. Put print statements all over your program to track progress and understand "where" in the code the bug is. This is called "printf" debugging, and can be effective.
 2. Use a _debugger_, a tool that allows you to stop execution at predetermined code locations and examine the state of your program (and much more).
 
-### Exercise 2.1 Printf debugging
+### Exercise 2.2.1: Printf debugging
 
 Modify the above array summation program with println statements to track the values of `sum` and `numbers[i]` throughout the loop iterations. Recompile and run the program, and you should see something like this:
 
@@ -91,7 +91,7 @@ current sum value is : 15, current numbers[i] is 5
 Sum value of array elements is : 15
 ```
 
-### Exercise 2.2 Use the Debugger
+### Exercise 2.2.2: Use the Debugger
 
 Now you will use the debugger to examine these values live, while the program runs.
 
@@ -184,4 +184,4 @@ The `cont` command will continue execution, either until another breakpoint is h
 
 At any time you can use the `help` command to see all available commands in jdb.
 
-This exercise has covered just a few basics that should enable you to effectively debug your Java programs. You can find more advanced tutorials online.
+This exercise has covered just a few basics that should enable you to effectively debug your Java programs. You can find another basic tutorial [here](https://docs.oracle.com/javase/9/tools/jdb.htm#JSWOR-GUID-B801F121-35B5-4FE2-A307-950412CE4E99) and a more comprehensive one [here](https://www.tutorialspoint.com/jdb/).
