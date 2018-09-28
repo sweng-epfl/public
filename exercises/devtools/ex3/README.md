@@ -45,7 +45,7 @@ git commit -m "first commit"
 git remote add origin https://github.com/<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example https://github.com/daksunt/swengweek1.git  
 git push -u origin master  
 ```  
-4. Go to [exercises](./ex3).
+4. Go to the folder this README file is in.
 5. Download all java files into the git repository. One possible way, click to the file, go to raw, and right-click and save as to the git directory. Make sure the ending is *.java* .
 6. Open a terminal or a git shell and cd into the git repository.  
 7. Add, commit and push the files.
