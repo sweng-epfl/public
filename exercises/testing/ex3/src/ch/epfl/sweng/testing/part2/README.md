@@ -1,4 +1,4 @@
-# TDD Part 3
+# TDD Part 2
 
 
 Unfortunately, your shop went bankrupt. But you got noticed for your developer skills and were hired in a big company. As your first first task, you are required to help one of your colleagues on her project. As a developer who didn't follow the SwEng class, she didn't write any tests, as she considers them a waste of time.

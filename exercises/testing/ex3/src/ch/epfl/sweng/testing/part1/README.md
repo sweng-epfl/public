@@ -1,4 +1,4 @@
-# TDD Part 2
+# TDD Part 1
 
 You are a new developer and want to make your own online concert ticket shop. Follow these steps:
 

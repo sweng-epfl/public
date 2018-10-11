@@ -1,4 +1,4 @@
-# TDD Part 4
+# TDD Part 3
 
 Seeing your testing capabilities, a colleague comes by and asks for your assistance. He is required to achieve 100% line coverage on a project, but no matter how many tests he adds, he can't manage to reach that level of coverage.
 
