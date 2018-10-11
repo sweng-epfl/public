@@ -1,15 +1,8 @@
-# TDD Part 2
-
-Now that you handled the problem of fake money, you can finally start working on your shop. Follow these steps:
-
-- Create a class representing the tickets. The tickets should have a category (Normal, VIP, ...), a location, and a music group associated with it. For simplicity, you can assume that the groups can be uniquely identified by their name.
-
-- Create a class representing the actual shop. The shop should hold all currently available tickets and should allow the following operations:
-	- You should be able to add new tickets to your shop.
-	- You should be able to buy a ticket, given different requirements (the location/the group/the category or all of them).
-	- You should be able to improve the category of any ticket (i.e., change its category to VIP)  given a special promotion campaign.
-	- You should be able to change their ticket with an equivalent one (i.e., same group and category) in another given location, if available.
-	- You should have a way to print nicely the currently available tickets.
+# TDD Part 3
 
 
-Implement the shop using TDD. You are free to add any methods/classes that you like.   
+Unfortunately, your shop went bankrupt. But you got noticed for your developer skills and were hired in a big company. As your first first task, you are required to help one of your colleagues on her project. As a developer who didn't follow the SwEng class, she didn't write any tests, as she considers them a waste of time.
+
+You are given multiple classes. Write tests to improve the coverage of the project to at least 90%. 
+
+To check the coverage of your test suite, we recommend that you use Intellij/Android Studio and follow [these instructions](https://www.jetbrains.com/help/idea/generating-code-coverage-report.html). 

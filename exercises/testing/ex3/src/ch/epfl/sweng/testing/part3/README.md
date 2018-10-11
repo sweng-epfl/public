@@ -1,8 +1,7 @@
-# TDD Part 3
+# TDD Part 4
 
+Seeing your testing capabilities, a colleague comes by and asks for your assistance. He is required to achieve 100% line coverage on a project, but no matter how many tests he adds, he can't manage to reach that level of coverage.
 
-Unfortunately, your shop went bankrupt. But you got noticed for your developer skills and were hired in a big company. As your first first task, you are required to help one of your colleagues on her project. As a developer who didn't follow the SwEng class, she didn't write any tests, as she considers them a waste of time.
+His project involves simulating entities in an environment, which consists (among others) of [pandas](Panda.java) and [bamboos](Bamboo.java).
 
-You are given multiple classes. Write tests to improve the coverage of the project to at least 90%. 
-
-To check the coverage of your test suite, we recommend that you use Intellij/Android Studio and follow [these instructions](https://www.jetbrains.com/help/idea/generating-code-coverage-report.html). 
+You are given the relevant classes. Write tests based on the comments describing what the methods do. **Do not modify** the code. Can you reach 100% line coverage? If not, can you fix the code to reach it ?

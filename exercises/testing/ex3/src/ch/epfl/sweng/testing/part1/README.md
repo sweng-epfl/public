@@ -1,15 +1,15 @@
-# TDD Part 1
+# TDD Part 2
 
-You are a new developer and want to make your own online concert ticket shop. Being mistrustful, you first decide to work on a counterfeit bills detector (see [CounterfeitDetector.java](CounterfeitDetector.java)). You want to accept the following currencies : Swiss Francs, Euros, and US Dollars. Each of them are represented by a class and already available to you (see also the superclass [Currency.java](Currency.java)). You take on the following steps :
+You are a new developer and want to make your own online concert ticket shop. Follow these steps:
 
-1. You first decide to create a method to check that the bill is valid. For simplicity, you can assume that any currency with a positive value constitutes a valid bill.
+- Create a class representing the tickets. The tickets should have a category (Normal, VIP, ...), a location, and a music group associated with it. For simplicity, you can assume that the groups can be uniquely identified by their name.
 
-2. You then want to create a second method to ensure that the bill is not expired, i.e., its expiration date is not due. (Normally currency bills do not expire, but for the sake of this exercise assume that they do have an expiration date.)
+- Create a class representing the actual shop. The shop should hold all currently available tickets and should allow the following operations:
+	- You should be able to add new tickets to your shop.
+	- You should be able to buy a ticket, given different requirements (the location/the group/the category or all of them).
+	- You should be able to improve the category of any ticket (i.e., change its category to VIP)  given a special promotion campaign.
+	- You should be able to change their ticket with an equivalent one (i.e., same group and category) in another given location, if available.
+	- You should have a way to print nicely the currently available tickets.
 
-3. After gaining some experience, you realize that you can refactor the two previous methods into a single one that checks for both conditions. 
 
-4. You then realize that some additional information must be checked for some of the currencies you accept: Swiss Franc bills are valid only if the issuing authority is "CH" or "SNB", and (say) Euros are valid only if their issue year is older than 2004. You therefore create two new methods that handle those special cases.
-
-Each of these steps should be implemented following the TDD flow, i.e., first writing the (failing) tests, then fixing the compilation errors by writing the code, then modifying your code to make your test pass, and refactor if needed.
-
-
+Implement the shop using TDD. You are free to add any methods/classes that you like.   

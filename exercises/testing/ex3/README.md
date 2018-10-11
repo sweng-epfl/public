@@ -28,4 +28,3 @@ You can open this exercise set and start working on it using Android Studio/Inte
 - [`Part 1`](src/ch/epfl/sweng/testing/part1/README.md)
 - [`Part 2`](src/ch/epfl/sweng/testing/part2/README.md)
 - [`Part 3`](src/ch/epfl/sweng/testing/part3/README.md)
-- [`Part 4`](src/ch/epfl/sweng/testing/part4/README.md)
