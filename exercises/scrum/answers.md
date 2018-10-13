@@ -19,12 +19,11 @@ but does not manage the team.
 3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner 
 unless they contribute to the delivery of the Increment) ?
 - [ ] 2 to 4
-- [x] 3 to 9
-- [ ] 5 to 10
 - [ ] 5 to 6
+- [x] 3 to 9
+- [ ] 6 to 12
 
-// 3 to 9. Less than 3 means there won't be much work done during a Sprint. More than 9 increases the communication
-and coordination cost a lot.
+// 3 to 9. Less than 3 means there won't be much work done during a Sprint. More than 9 increases the communication and coordination cost a lot. See the [Scrum guide](https://www.scrumguides.org/scrum-guide.html#team-dev) for more details.
 
 4. What is the main responsibility of the Product Owner?
 - [x] Manage the Product Backlog
@@ -65,13 +64,13 @@ with the user experience
 // The Development Team is the only one who has the right to move items to the Sprint Backlog. However, they have a time 
 budget for the Sprint and can take a task only if a task is also defined well and estimated to fit into that time budget.
 
-9. What are acceptable durations of a Sprint?
-- [x] 5 days
-- [x] 7 days
-- [x] 20 days
-- [x] 15 days
+9. Which of the below are acceptable durations of a Sprint?
+- [x] 1 week
+- [x] 2 weeks
+- [x] 4 weeks
+- [ ] 5 weeks
 
-// The Sprint should be less than 1 month. More than 1 month means less certainty about what to be build because there is no Increment.
+// The Sprint should be less than 1 month. More than 1 month means less certainty about what to be build because there is no Increment. See the [Scrum guide](https://www.scrumguides.org/scrum-guide.html#events-sprint) for more details.
 
 10. What is the role of the Scrum Master?
 - [x] To serve the Product Owner by helping them communicate with the Development Team
@@ -82,13 +81,13 @@ budget for the Sprint and can take a task only if a task is also defined well an
 // The Scrum Master doesn't deliver high-value products themselves. Their role is to help everyone involved 
 in the Scrum process understand the Scrum theory and practices.
 
-11. What is the duration of the Daily Scrum?
-- [x] 15min
+11. How long should the Daily Scrum ("standup meeting") last?
+- [x] <=15min
 - [ ] 1h
 - [ ] The Daily Scrum can take as much time as required to explain all the work the Development Team has done but less than 30min.
 - [ ] The Daily Scrum is not time-boxed.
 
-// The Daily Scrum is a meeting of not more than 15min.
+// The Daily Scrum is a meeting of not more than 15 min. See the [Scrum guide](https://www.scrumguides.org/scrum-guide.html#events-daily) for more details.
 
 12. What kind of statements should every member of the Development Team make during the Daily Scrum?
 - [x] Yesterday, I was blocked because of <<this>> or Yesterday I didn't have any blockers.
@@ -156,7 +155,7 @@ they will do next. Any blockers should be reported as well but all implementatio
 
 ## Other software development processes 
 
-20. Which steps characterize are a part of the waterfall development?
+20. Which steps characterize the Waterfall development process?
 - [ ] Planning, Implementation, Testing, Retrospective
 - [ ] System Requirements, Software Requirements, Analysis, Prototype
 - [x] Analysis, Program Design, Coding, Testing
@@ -164,35 +163,34 @@ they will do next. Any blockers should be reported as well but all implementatio
 
 // All the steps are: System Requirements, Software Requirements, Analysis, Program Design, Coding, Testing, Operations
 
-
-21. What would be a case of using waterfall development?
+21. What would be a good use case for Waterfall development?
 - [x] The product is mission-critical and requires a high level of specification before any coding.
 - [ ] The team doesn't know what to implement, so they work on requirements until they understand what the product they want to build.
 - [ ] An app for a class
 - [ ] Your hobby project
 
-// in the case of a critical system, for example, a car’s anti-lock braking system (ABS), you might consider a waterfall 
+// in the case of a critical system, for example, a car’s anti-lock braking system (ABS), you might consider a Waterfall 
 process to analyze the requirements and define the behavior of the system before starting to code and release potentially
 faulty software
 
-22. Which software development process can be described as the exact opposite of waterfall?
-- [x] Prototyping
-- [ ] Scrum
-- [ ] Spiral
-- [ ] Incremental
-
-// Prototyping is the most extreme case of unstructured process. Its main points are to prototype and show to the customers 
-what the system would look like without any of the steps preceding "Coding"
-
-23. Which software development process is a sequence of "mini-waterfalls"?
+22. Which software development process is a sequence of "mini-Waterfalls"?
 - [ ] Prototyping
 - [ ] Scrum
 - [ ] Spiral
-- [x] Incremental
+- [x] Incremental Waterfall
 
-24. What are the weaknesses of the incremental software development process?
+## Supplemental questions
+
+These were not directly covered in the lecture, but try to use web search to answer them.
+
+23. What are the weaknesses of the incremental software development process?
 - [x] The design of the interfaces between components is tricky
 - [x] Customers might receive the most important functionality only at the end of the development
 - [x] There is no global overview of the project
 - [x] Planning and design of only a part of the system are hard without planning the entire system
 
+24. Which software development process can be described as the exact opposite of Waterfall?
+- [x] Prototyping
+- [ ] Scrum
+- [ ] Spiral
+- [ ] Incremental

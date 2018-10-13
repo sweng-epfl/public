@@ -18,9 +18,9 @@ All questions have one or more correct answers.
 3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner 
 unless they contribute to the delivery of the Increment) ?
 - [ ] 2 to 4
-- [ ] 3 to 9
-- [ ] 5 to 10
 - [ ] 5 to 6
+- [ ] 3 to 9
+- [ ] 6 to 12
 
 4. What is the main responsibility of the Product Owner?
 - [ ] Manage the Product Backlog
@@ -51,11 +51,11 @@ unless they contribute to the delivery of the Increment) ?
 - [ ] When the Scrum Master authorizes the Development Team to move an item.
 - [ ] When the Product Owner asks for an item to be done during the Sprint.
 
-9. What are acceptable durations of a Sprint?
-- [ ] 5 days
-- [ ] 7 days
-- [ ] 20 days
-- [ ] 15 days
+9. Which of the below are acceptable durations of a Sprint?
+- [ ] 1 week
+- [ ] 2 weeks
+- [ ] 4 weeks
+- [ ] 5 weeks
 
 10. What is the role of the Scrum Master?
 - [ ] To serve the Product Owner by helping them communicate with the Development Team
@@ -63,7 +63,7 @@ unless they contribute to the delivery of the Increment) ?
 - [ ] To serve the Development Team by removing impediments.
 - [ ] To serve the Organization by delivering high-value products.
 
-11. What is the duration of the Daily Scrum ("standup meeting")?
+11. How long should the Daily Scrum ("standup meeting") last?
 - [ ] <=15min
 - [ ] 1h
 - [ ] The Daily Scrum can take as much time as required to explain all the work the Development Team has done but less than 30min.
