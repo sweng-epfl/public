@@ -15,6 +15,6 @@ This is where _regression testing_ comes in: adding tests that show the existenc
 
 You may be thinking, _can't I just fix the bug first and then write a test that passes?_ The issue with doing that is that if you write the test afterwards, you can't be sure that it really catches the bug. You know that the test passes, but maybe it would have passed before too, on the buggy code before you fixed it!
 
-**Exercise**: We provide a `Person` class, with various methods and some tests. `Person` has a method `isMinor()` that is supposed to return whether the person is under 18. However, the method has a bug. Write a test to demonstrate the bug, then go ahead and fix the bug, and then check that your test passes.
+**Exercise**: We provide a [`Person`](./Person.java) class, with various methods and some tests. `Person` has a method `isMinor()` that is supposed to return whether the person is under 18. However, the method has a bug. Write a test to demonstrate the bug, then go ahead and fix the bug, and then check that your test passes.
 
-**Exercise**: The `Person` class has another bug. Find it, write a test to demonstrate its existence, fix it, and make sure the test passes.
+**Exercise**: The [`Person`](./Person.java) class has another bug. Find it, write a test to demonstrate its existence, fix it, and make sure the test passes.
