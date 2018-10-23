@@ -119,7 +119,7 @@ class GoogleService {
 }
 ```
 
-Not only does `GoogleService` not implement an interface, but its `signIn` method is static! To avoid this issue, create the interface yourself, then use the [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to create the "real" implementation. The Adapter pattern is a simple concept: create adapter code so that a type can be used as if it implemented an interface. This is just like real-life adapters, where a Swiss laptop charger can be used in Japan with an adapter that "implements" the Japanese electrical "interface". For instance, in the Google sign-in example, the code could look like this:
+Not only does `GoogleService` not implement an interface, but its `signIn` method is static! To avoid this issue, create the interface yourself, then use the [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to create the "real" implementation. The Adapter pattern is a simple concept: create adapter code so that a type can be used as if it implemented an interface. This is just like real-life adapters, where a Swiss laptop charger can be used in Japan with an adapter that "implements" the Swiss electrical "interface" on top of the Japanese one. For instance, in the Google sign-in example, the code could look like this:
 
 ```java
 class MyUser {
