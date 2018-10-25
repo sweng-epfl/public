@@ -77,13 +77,13 @@ WeatherService service = new WeatherService(fakeClient);
 
 Thus it becomes easy to test any scenario you need: returning real data, returning malformed data, throwing exceptions, and so on.
 
-**Exercise**: We provide `HttpClient.java`, `RealHttpClient.java`, and `WeatherService.java` files that contain implementations of the example above. Write tests for the `WeatherService`, exploring all cases you  think are interesting to test.
+**Exercise**: We provide [`HttpClient.java`](./weather/HttpClient.java), [`RealHttpClient.java`](./weather/RealHttpClient.java), and [`WeatherService.java`](./weather/WeatherService.java) files that contain implementations of the example above. Write tests for the `WeatherService`, exploring all cases you  think are interesting to test.
 
 
 Optional dependency injection
 -----------------------------
 
-Sometimes you need to test a class, but you cannot change its constructor parameters. For instance, in Android, the system instantiates your activities for you, and cannot deal with constructors that request dependencies. In this case, you can add _another_ constructor to the class for dependency injection. For instance, if for some reason you could not modify the `WeatherService` constructor above, you could modify the class as follows:
+Sometimes you need to test a class, but you cannot change its constructor parameters, for instance existing code depends on the current constructor signature. In this case, you can add _another_ constructor to the class for dependency injection. For instance, if for some reason you could not modify the `WeatherService` constructor above, you could modify the class as follows:
 
 ```java
 class WeatherService {
@@ -119,7 +119,7 @@ class GoogleService {
 }
 ```
 
-Not only does `GoogleService` not implement an interface, but its `signIn` method is static! To avoid this issue, create the interface yourself, then use the [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to create the "real" implementation. The Adapter pattern is a simple concept: create adapter code so that a type can be used as if it implemented an interface. This is just like real-life adapters, where a Swiss laptop charger can be used in Japan with an adapter that "implements" the Japanese electrical "interface". For instance, in the Google sign-in example, the code could look like this:
+Not only does `GoogleService` not implement an interface, but its `signIn` method is static! To avoid this issue, create the interface yourself, then use the [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to create the "real" implementation. The Adapter pattern is a simple concept: create adapter code so that a type can be used as if it implemented an interface. This is just like real-life adapters, where a Swiss laptop charger can be used in Japan with an adapter that "implements" the Swiss electrical "interface" on top of the Japanese one. For instance, in the Google sign-in example, the code could look like this:
 
 ```java
 class MyUser {
@@ -142,7 +142,7 @@ class GoogleSignInAdapter : SignInService {
 
 Now any class that used to directly call `GoogleService` can instead have a `SignInService` as a dependency, so that you can write proper tests, and you can use `GoogleSignInAdapter` for the actual implementation in your app.
 
-**Exercise**: We provide `TreasureFinder.java` and `Geolocator.java`. The `TreasureFinder` determines how close the user is to a treasure. However, it currently cannot be tested properly because `Geolocator` does not implement any interfaces and uses the real location of the user. Furthermore, `TreasureFinder` must have a parameterless constructor, because of external requirements. Refactor `TreasureFinder` so that it can be tested with a fake location service, and write tests for it.
+**Exercise**: We provide [`TreasureFinder.java`](./treasure/TreasureFinder.java) and [`Geolocator.java`](./treasure/Geolocator.java). The `TreasureFinder` determines how close the user is to a treasure. However, it currently cannot be tested properly because `Geolocator` does not implement any interfaces and uses the real location of the user. Furthermore, `TreasureFinder` must have a parameterless constructor, because of external requirements. Refactor `TreasureFinder` so that it can be tested with a fake location service, and write tests for it.
 
 
 Mocks
@@ -155,3 +155,54 @@ Mocking libraries help you write fake dependencies, also called _mocks_, by maki
 We recommend using the _Mockito_ library; take a look at the [Mockito website](https://site.mockito.org/#how) for a quick tutorial.
 
 **Exercise**: Rewrite the tests from the previous exercises to use Mockito instead of ad-hoc interface implementations.
+
+
+Dependency Injection on Android
+-------------------------------
+
+Because the Android OS takes care of creating your activities, you cannot use constructor parameters for dependencies. One way to work around this is to use a static factory for dependencies, for instance:
+
+```java
+public class MyFactory {
+    private static MyDependency dependency = new MyRealDependency();
+
+    public static MyDependency getDependency() {
+        return dependency;
+    }
+    
+    public static void setDependency(MyDependency dependency) {
+        MyFactory.dependency = dependency;
+    }
+}
+```
+
+You can then use this in your activities:
+
+```java
+public class MyActivity extends Activity  {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MyDependency dependency = MyFactory.getDependency();
+        // ... do something with dependency ...
+    }
+}
+```
+
+In your tests, you can then configure the dependency before the activity is created, for instance.
+
+```java
+@RunWith(AndroidJUnit4.class)
+public class MainActivityTest {
+    @Rule
+    public final ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<MainActivity>(MainActivity.class){
+                @Override
+                protected void beforeActivityLaunched() {
+                    MyFactory.setDependency(new MyFakeDependency());
+                }
+            };
+ 
+    // ... your tests here ...
+}
+```

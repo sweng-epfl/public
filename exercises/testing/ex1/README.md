@@ -14,7 +14,7 @@ Unit testing
 
 Unit testing is the simplest kind of automated testing: tests for small pieces of code with clear boundaries and a clear specification.
 
-**Exercise**: We provide a `Calculator` class with methods `add` and `divide`, which do what you expect them to. Write tests for this class, including interesting cases (negative/positive numbers) and the divide-by-zero edge case.
+**Exercise**: We provide a [`Calculator`](./Calculator.java) class with methods `add` and `divide`, which do what you expect them to. Write tests for this class, including interesting cases (negative/positive numbers) and the divide-by-zero edge case.
 
 _Hint 1_: `Calculator.add` returns a `long` to avoid overflows; in your tests, you need to use long literals for the return value, e.g. `3L` instead of just `3`.
 
@@ -28,7 +28,7 @@ End-to-end testing
 
 End-to-end testing is a different kind of tests: instead of writing a test for a specific self-contained feature, you test an entire component as a "black box", and make sure that the component does what it says.
 
-**Exercise**: We provide a `CalculatorProgram` class with a `main` method, intended to be run from the command-line. It internally calls `Calculator`. The `main` method takes three arguments: a number, an operator that can be `+` or `/`, and another number. It prints the result, or `Error!` in case of a division by zero. Test the `main` method.
+**Exercise**: We provide a [`CalculatorProgram`](./CalculatorProgram.java) class with a `main` method, intended to be run from the command-line. It internally calls `Calculator`. The `main` method takes three arguments: a number, an operator that can be `+` or `/`, and another number. It prints the result, or `Error!` in case of a division by zero. Test the `main` method.
 
 _Hint_: In order to test what is printed on `System.out`, use the `System.setOut` method to replace standard output with your own stream. You can then use, e.g., a `ByteArrayOutputStream` to store all printed data. See [this](https://stackoverflow.com/a/1119559/3311770) for more details.
 
