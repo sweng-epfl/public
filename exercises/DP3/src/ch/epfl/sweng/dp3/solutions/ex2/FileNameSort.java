@@ -7,15 +7,17 @@ import java.util.List;
 
 public class FileNameSort implements DirectorySort {
 
-    @Override
-    public List<File> sort(List<File> files) {
-        List<File> listToBeSorted = new ArrayList(files);
-        Collections.sort(listToBeSorted, new Comparator<File>() {
-            @Override
-            public int compare(File o1, File o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
+  @Override
+  public List<File> sort(List<File> files) {
+    List<File> listToBeSorted = new ArrayList(files);
+    Collections.sort(
+        listToBeSorted,
+        new Comparator<File>() {
+          @Override
+          public int compare(File o1, File o2) {
+            return o1.getName().compareTo(o2.getName());
+          }
         });
-        return listToBeSorted;
-    }
+    return listToBeSorted;
+  }
 }
