@@ -1,0 +1,1 @@
+This exercise was taken from [sourcemaking](https://sourcemaking.com/design_patterns/iterator/java/1).
