@@ -19,6 +19,7 @@ public class IntegerBox {
       newBox[i] = box[i];
     }
     newBox[box.length] = number;
+    box = newBox;
   }
 
   public int[] getIntegers() {
