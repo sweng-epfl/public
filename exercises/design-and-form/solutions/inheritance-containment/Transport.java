@@ -9,7 +9,7 @@ public class Transport extends CivilianShip implements DeliveryMissionProfile, F
     
     @Override
     public void orderDelivery(int sourceSector, int destSector) {
-      System.out.println("Freighter on delivery mission");
+      System.out.println("Transport on delivery mission");
     }
     @Override
     public void orderFerry(int sourceSector, int destSector) {
