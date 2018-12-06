@@ -35,16 +35,15 @@ public class QueenTests extends PieceTests<Queen> {
 
                     /* if colDirection == rowDirection == 0 we would make no move and that's a
                        corner case illegal move. Skip it. */
-                    if (destination.equals(position))
-                        continue;
+                    if (!destination.equals(position)) {
+                        // can we move forward?
+                        q.moveTo(col, row);
+                        assertEquals(q.getPosition(), destination);
 
-                    // can we move forward?
-                    q.moveTo(col, row);
-                    assertEquals(q.getPosition(), destination);
-
-                    // can we move back?
-                    q.moveTo('d', 4);
-                    assertEquals(q.getPosition(), position);
+                        // can we move back?
+                        q.moveTo('d', 4);
+                        assertEquals(q.getPosition(), position);
+                    }
                 }
             }
         }

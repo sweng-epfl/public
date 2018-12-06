@@ -21,16 +21,15 @@ public class KingTests extends PieceTests<King> {
                 Position destination = Position.positionIfLegal(col, row);
                 King k = new King(position, Color.WHITE);
 
-                if (destination.equals(position))
-                    continue;
+                if (!destination.equals(position)) {
+                    // can we move forward?
+                    k.moveTo(col, row);
+                    assertEquals(k.getPosition(), destination);
 
-                // can we move forward?
-                k.moveTo(col, row);
-                assertEquals(k.getPosition(), destination);
-
-                // can we move back?
-                k.moveTo('d', 4);
-                assertEquals(k.getPosition(), position);
+                    // can we move back?
+                    k.moveTo('d', 4);
+                    assertEquals(k.getPosition(), position);
+                }
             }
         }
     }

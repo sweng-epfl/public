@@ -5,13 +5,13 @@ package ch.epfl.sweng;
  */
 
 public class Superpiece extends Piece {
-    private Piece underlyingPiece;
+    private Piece underlying;
 
     public Superpiece(Superpiece p) {
         super(p.getPosition(), p.getColor());
-        /* care taken to deep copy underlyingPiece. Otherwise we could create several superpieces
+        /* care taken to deep copy underlying. Otherwise we could create several superpieces
            which alias the same decorated piece */
-        underlyingPiece = p.underlyingPiece.copy();
+        underlying = p.underlying.copy();
     }
 
     /* we didn't say anything about the constructors you were supposed to implement. This is just a
@@ -21,25 +21,26 @@ public class Superpiece extends Piece {
 
         switch (promotedTo) {
             case KNIGHT:
-                underlyingPiece = new Knight(position, color);
+                underlying = new Knight(position, color);
                 break;
             case ROOK:
-                underlyingPiece = new Rook(position, color);
+                underlying = new Rook(position, color);
                 break;
             case BISHOP:
-                underlyingPiece = new Bishop(position, color);
+                underlying = new Bishop(position, color);
                 break;
             case QUEEN:
-                underlyingPiece = new Queen(position, color);
+                underlying = new Queen(position, color);
                 break;
             default:
-                throw new IllegalArgumentException("wrong promotion specification");
+                throw new IllegalArgumentException("wrong promotion specification (" +
+                                                   promotedTo.toString() + ")");
         }
     }
 
     @Override
     protected boolean isPieceMovementValid(Position.Offset offset) {
-        return underlyingPiece.isPieceMovementValid(offset);
+        return underlying.isPieceMovementValid(offset);
     }
 
     @Override
@@ -51,14 +52,14 @@ public class Superpiece extends Piece {
          throws InvalidMoveException, InvalidPositionException
     {
         // create a guinea pig to check if the moves are legal
-        Piece underlyingPieceCopy = underlyingPiece.copy();
+        Piece underlyingCopy = underlying.copy();
 
-        underlyingPieceCopy.moveTo(firstMove);
-        underlyingPieceCopy.moveTo(secondMove);
+        underlyingCopy.moveTo(firstMove);
+        underlyingCopy.moveTo(secondMove);
 
         // no exceptions thrown: we can update our state
         this.setPosition(secondMove);
-        underlyingPiece = underlyingPieceCopy;
+        underlying = underlyingCopy;
     }
 
     public void moveTo(char firstColumn, int firstRow, char secondColumn, int secondRow)
@@ -70,7 +71,7 @@ public class Superpiece extends Piece {
         moveTo(firstMove, secondMove);
     }
 
-    /* since we add a new field (underlyingPiece) to the base class, we also have to reflect that in
+    /* since we add a new field (underlying) to the base class, we also have to reflect that in
        the equals() method. Otherwise we would get that a super-knight equals a super-rook, given
        they are at the same position */
     @Override
@@ -81,7 +82,7 @@ public class Superpiece extends Piece {
 
         Superpiece that = (Superpiece) o;
 
-        return underlyingPiece.equals(that.underlyingPiece);
+        return underlying.equals(that.underlying);
 
     }
 }

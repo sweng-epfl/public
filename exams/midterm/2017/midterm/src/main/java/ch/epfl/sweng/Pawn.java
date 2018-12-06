@@ -37,7 +37,8 @@ public class Pawn extends Piece {
         /* if we're black */ getPosition().getVertical() == Position.BOARD_START_VERTICAL;
 
         if (!canPromote)
-            throw new InvalidMoveException("Cannot promote at this position");
+            throw new InvalidMoveException("Cannot promote at this position: " +
+                                           getPosition().toString());
 
         // I check whether promotedTo is not KING or PAWN in the constructor
         return new Superpiece(getPosition(), getColor(), promotedTo);

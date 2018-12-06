@@ -18,21 +18,20 @@ public class KnightTests extends PieceTests<Knight> {
     public void testLegal() throws InvalidMoveException, InvalidPositionException {
         for (int distHori : new int[]{-2, -1, 1, 2}) {
             for (int distVert : new int[]{-2, -1, 1, 2}) {
-                if (Math.abs(distHori) == Math.abs(distVert))
-                    continue;
+                if (Math.abs(distHori) != Math.abs(distVert)) {
+                    Knight k = new Knight(position, Color.WHITE);
+                    int row  = position.getVertical() + distHori;
+                    char col = (char) (position.getHorizontal() + distVert);
 
-                Knight k = new Knight(position, Color.WHITE);
-                int row  = position.getVertical() + distHori;
-                char col = (char) (position.getHorizontal() + distVert);
+                    Position destination = Position.positionIfLegal(col, row);
+                    // can we move forward?
+                    k.moveTo(col, row);
+                    assertEquals(k.getPosition(), destination);
 
-                Position destination = Position.positionIfLegal(col, row);
-                // can we move forward?
-                k.moveTo(col, row);
-                assertEquals(k.getPosition(), destination);
-
-                // can we move back?
-                k.moveTo('d', 4);
-                assertEquals(k.getPosition(), position);
+                    // can we move back?
+                    k.moveTo('d', 4);
+                    assertEquals(k.getPosition(), position);
+                }
             }
         }
     }
