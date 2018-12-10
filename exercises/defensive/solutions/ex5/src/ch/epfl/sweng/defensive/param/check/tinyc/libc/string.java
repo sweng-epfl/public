@@ -90,7 +90,7 @@ public class string {
       throw new IllegalArgumentException("null str2");
     }
     int index = 0;
-    while (str1.get(index) == str2.get(index)) {
+    while (str1.get(index) != '\0' && str1.get(index) == str2.get(index)) {
       index++;
     }
     return str1.get(index) - str2.get(index);
@@ -104,7 +104,7 @@ public class string {
       throw new IllegalArgumentException("null str2");
     }
     int index = 0;
-    while (str1.get(index) == str2.get(index) && index < num) {
+    while (str1.get(index) != '\0' && str1.get(index) == str2.get(index) && index < num) {
       index++;
     }
     return str1.get(index) - str2.get(index);
