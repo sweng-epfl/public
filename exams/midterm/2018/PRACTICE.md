@@ -106,7 +106,7 @@ Remove the corresponding `@Ignore` annotation in the `MinistryOfInformationTests
 
 Due to the success of the Address Catalogue System, the Ministry of Information has decided to use it for more and more purposes.
 In particular, they want to use it to send letters to all houses within a given address prefix. 
-To enable this new request, you decide to add functionality to print the full address of all houses in a given address prefix.
+To enable this new request, you decide to add functionality to print the full addresses of all houses in a given address prefix.
 
 For example:
 
@@ -114,7 +114,7 @@ For example:
 - `["Seychelles", "Mahe"]` -> Print the address of all houses on the island of Mahe
 - `["Seychelles"]` -> Print the address of all houses in the country of Seychelles
 
-Each address should be printed in full and on a new line with a comma and space between different divisions. For example:
+Each address should be printed in full (ordered from bigger to smaller address unit, e.g.: first country, then island, then district, then house) and on a new line with a comma and space between different divisions. For example:
 
 ```
 Seychelles, Mahe, Port Glaud, 234

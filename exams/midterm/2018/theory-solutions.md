@@ -127,14 +127,14 @@ Which of the following are true about Scrum:
 - [n] Scrum should be used when all the requirements are known before development
 - [y] Scrum enables the dev team to interact frequently and receive feedback often from the customer
 - [n] The Scrum master is a manager that decides which tasks are assigned to the developers
-- [y] The product owner is not allowed to change the backlog items during a sprint
+- [y] The product owner is not allowed to change the sprint backlog
 
 **Explanation:** Scrum should be used when frequent feedback with the customer is required: the iterative nature of the Scrum development cycle allows for adjustments of the requirements over time, which would waste a lot of time for projects with objectives that are already set in advance. The Sprint Reviews allow the Development Team to demo the current prototype to the customer often and get immediate feedback on it. The Scrum Master is not a manager: their role consists of facilitating the work of the Development Team and helping the organization work with Scrum, i.e.,  protect the Development Team from outside interferences (such as the customer or upper-management). Once the Backlog Items for a Sprint are set, the Product Owner cannot change them, he must wait for the end of the current Sprint.
 
 ### Question 6 [5 points]
 The following code snippet describes a typed temperature state which is stored and constructed from Celsius degrees.
 Modify the class so that it can also be instantiated from Fahrenheit and Kelvin degrees.
-You are not allowed to duplicate state (i.e., you cannot create more attributes to store the value) and the internal representation must stay in Celsius degrees (i.e., a call to `get()` will always return the temperature in Celsius degrees). You cannot modify the existing constructor and method either.
+You are not allowed to duplicate state (i.e., you cannot create more attributes to store the value) and the internal representation must stay in Celsius degrees (i.e., a call to `get()` will always return the temperature in Celsius degrees). You cannot modify the existing constructor and method; you cannot add more classes.
 
 The conversion from Fahrenheit to Celsius is `C = (F-32) * 5/9` and the conversion from Kelvin to Celsius is `C = K - 273.15`
 
@@ -259,13 +259,13 @@ Once the test is in place, the developer can implement funcitonality only to the
 Once the test succeeds, the developer repeats the cycle.
 
 ### Question 10 [3 pts]
-Which of the following meetings require that a customer be present?
+Which of the following meetings require that a Product Owner be present?
 - [n] Daily scrum meeting
 - [y] Sprint review
 - [y] Sprint retrospective
 - [y] Sprint planning
 
-**Explanation:** The customer is representated by the Product Owner in the meetings. 
+**Explanation:** According to the [Scrum Guide](https://www.scrumguides.org/scrum-guide.html), the customer is representated by the Product Owner in the meetings. 
 The purpose of the Sprint Review is to synchronize the development progress with the desires of the customers, so the presence of the customer is indispensable.
 The Product Owner is a key participant in the Sprint Planning because they own the Product Backlog and they need to communicate with the Development Team what is to be done during the next Sprint.
 During the Sprint Retrospective, the Scrum Team (which includes the Product Owner, the Development Team, and the Scrum Master) all inspect how they work together and how to work better in the future Sprints.

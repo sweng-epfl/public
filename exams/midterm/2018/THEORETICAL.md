@@ -111,12 +111,12 @@ Which of the following are true about Scrum:
 - [ ] Scrum should be used when all the requirements are known before development
 - [ ] Scrum enables the dev team to interact frequently and receive feedback often from the customer
 - [ ] The Scrum master is a manager who decides which tasks are assigned to the developers
-- [ ] The product owner is not allowed to change the backlog items during a sprint
+- [ ] The product owner is not allowed to change the sprint backlog
 
 ### Question 6 [5 points]
 The following code snippet describes a typed temperature state which is stored and constructed from Celsius degrees.
 Modify the class so that it can also be instantiated from Fahrenheit and Kelvin degrees.
-You are not allowed to duplicate state (i.e., you cannot create more attributes to store the value) and the internal representation must stay in Celsius degrees (i.e., a call to `get()` will always return the temperature in Celsius degrees). You cannot modify the existing constructor and method either.
+You are not allowed to duplicate state (i.e., you cannot create more attributes to store the value) and the internal representation must stay in Celsius degrees (i.e., a call to `get()` will always return the temperature in Celsius degrees). You cannot modify the existing constructor and method; you cannot add more classes.
 
 The conversion from Fahrenheit to Celsius is `C = (F-32) * 5/9` and the conversion from Kelvin to Celsius is `C = K - 273.15`
 
@@ -198,7 +198,7 @@ Which workflow represents the TDD approach:
 
 
 ### Question 10 [3 points]
-Which of the following meetings require that a customer be present?
+Which of the following meetings require that a product owner be present?
 
 - [ ] Daily scrum meeting
 - [ ] Sprint review
