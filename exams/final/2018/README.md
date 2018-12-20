@@ -1,8 +1,8 @@
 Software Engineering Final Exam, Fall 2018
 
 * [Exam statement](Statement.md)
-* [Practice questions](PRACTICE.md)
-* [Theory questions, with solutions](THEORY.md)
+* [Solutions to Practice questions](PRACTICE-Solutions.md)
+* [Solutions to Theory questions](THEORY-Solutions.md)
 
 The scores on this exam were distributed as follows:
 
