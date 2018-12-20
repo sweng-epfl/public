@@ -1,4 +1,18 @@
-# Software Engineering
+Software Engineering Final Exam, Fall 2018
+
+* [Practice questions](PRACTICE.md)
+* [Theory questions, with solutions](THEORY.md)
+
+The scores on this exam were distributed as follows:
+
+![Practice](Results-Practice.png)
+
+![Theory](Results-Theory.png)
+
+![Total](Results-Total.png)
+
+---
+
 ## Final Exam
 
 This final exam comes from the `exams-GASPAR` repo of your `student-GASPAR` team in the `sweng-epfl` GitHub organization.
