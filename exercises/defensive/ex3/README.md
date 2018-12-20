@@ -33,7 +33,7 @@ You are given a Java project that you need to modify:
     1. Pass a **Callback** argument
     1. Return a random joke with the callback
     1. Handle the **JokeException** locally to the method
-1. Modifiy the [infinite loop](ch/epfl/sweng/defensive/error/processing/routine/Main.java#L13) of [Main.java](src/ch/epfl/sweng/defensive/error/processing/routine/Main.java):
+1. Modify the [infinite loop](ch/epfl/sweng/defensive/error/processing/routine/Main.java#L13) of [Main.java](src/ch/epfl/sweng/defensive/error/processing/routine/Main.java):
     1. Remove the `try-catch` construct
     1. Retrieve a random joke with an anonymous callback
 1. Test the program to validate your changes.

@@ -3,6 +3,8 @@ In this exercise set, you will learn about defensive programming techniques to d
 
 ### Exercises
 
+- [The quiz](quiz/) introduces the key topics of defensive programming.
+
 - [Exercise 1](ex1/) will teach you about **garbage-in ⇏ garbage out**. You will use techniques to protect against invalid inputs from external sources. To this end, you will be given a CSV file. This file is malformed, i.e. lines do not enforce a homogenous format for their fields. Therefore, you will need to parse the CSV file, ignore invalid lines, and produce a valid version of the file.
 
 - [Exercise 2](ex2/) will teach you about **the interaction between defensive programming and code coverage**. This exercise will take the form of a case study. You will be given some bad, fragile code, i.e., code that breaks easily. This code will be subject to several refinements. It will evolve from being *brittle* to being *robust* while achieving *no decrease in code coverage*. This exercise will take you from the imperative to the functional paradigm while introducing Java 8's [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) container object.
