@@ -7,7 +7,7 @@
 # Part 2: Practice [70 points]
 
 ## Question 1: Basics [30 points]
-Your friends have written code in the [`Forum`](src/main/java/ch/epfl/sweng/Forum.java) class to let users post questions and answers, as well as edit questions.
+Your friends have written code in the [`Forum`](src/main/java/ch/epfl/sweng/Forum.java) class to let users post questions and answers, as well as edit posts.
 Questions and answers are modeled with the [`Question`](src/main/java/ch/epfl/sweng/Question.java) and [`Answer`](src/main/java/ch/epfl/sweng/Answer.java) classes respectively, both of which are a kind of [`Post`](src/main/java/ch/epfl/sweng/Post.java).
 Users are modeled with the [`User`](src/main/java/ch/epfl/sweng/User.java) class, which includes permission control: not all users can do everything.  
 
@@ -52,8 +52,10 @@ forum.postQuestion(user, "Who wants to go to Sat after the exam?");
 String result = board.toString();
 ```
 
+You may assume that the `Forum` is empty when the `Leaderboard` is created.
+
 **Your task**:
-Implement the [`Leaderboard`](src/main/java/ch/epfl/sweng/Leaderboard.java) as per its class/methods documentation..
+Implement the [`Leaderboard`](src/main/java/ch/epfl/sweng/Leaderboard.java) as per its class/methods documentation.
 This will require you to use the _Observer_ design pattern; thankfully, your colleagues have already written [`Observable`](src/main/java/ch/epfl/sweng/Observable.java) and [`Observer`](src/main/java/ch/epfl/sweng/Observer.java) interfaces. To keep it clean, you **are not allowed to** use the `Leaderboard` class from the `Forum` class.
 Write tests that achieve 100% coverage on the [`Leaderboard`](src/main/java/ch/epfl/sweng/Leaderboard.java) class.
 
