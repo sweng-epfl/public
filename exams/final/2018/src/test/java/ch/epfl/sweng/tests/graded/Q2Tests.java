@@ -42,7 +42,7 @@ public final class Q2Tests {
     @Test
     @GradedTest("An empty leaderboard correctly returns the empty string")
     public void t01_emptyBoardIsCorrect() {
-        assertThat(board.toString(), is(""));
+        assertThat(board.toString().trim(), is(""));
     }
 
     @Test
@@ -50,7 +50,7 @@ public final class Q2Tests {
     public void t02_singleUserBoardIsCorrect() {
         forum.postQuestion(alice, "Question text");
 
-        assertThat(board.toString(), is("#1 Alice 5"));
+        assertThat(board.toString().trim(), is("#1 Alice 5"));
     }
 
     @Test
@@ -61,7 +61,7 @@ public final class Q2Tests {
         Question question = forum.getQuestions().get(0);
         forum.postAnswer(bob, question, "Answer text");
 
-        assertThat(board.toString(), is(
+        assertThat(board.toString().trim(), is(
                 "#1 Alice 5" +
                         System.lineSeparator() +
                         "#2 Bob 1"
@@ -75,7 +75,7 @@ public final class Q2Tests {
         forum.postQuestion(bob, "Question text 1");
         forum.postQuestion(alice, "Question text 2");
 
-        assertThat(board.toString(), is(
+        assertThat(board.toString().trim(), is(
                 "#1 Alice 5" +
                         System.lineSeparator() +
                         "#1 Bob 5"
@@ -92,12 +92,22 @@ public final class Q2Tests {
         Question question = forum.getQuestions().get(0);
         forum.postAnswer(carol, question, "Answer text");
 
-        assertThat(board.toString(), is(
+        assertThat(board.toString().trim(), is(
                 "#1 Alice 5" +
                         System.lineSeparator() +
                         "#1 Bob 5" +
                         System.lineSeparator() +
                         "#3 Carol 1"
+        ));
+    }
+
+    @Test
+    @GradedTest("There should not be a line separator at the end of a leaderboard")
+    public void t06_twoUserBoardWithDifferentPointsIsCorrect() {
+        forum.postQuestion(alice, "Question text");
+
+        assertThat(board.toString(), is(
+                "#1 Alice 5"
         ));
     }
 }
