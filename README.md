@@ -13,5 +13,5 @@ This repo contains related materials that we make available to the public. For E
 - [Bootcamp](bootcamp)
 - [Exercises](exercises)
 - [Lectures](lectures)
-- [Midterm exam](exams/midterm/README.md) along with solutions
-- [Final exams](exams/final/) along with solutions
+- [Past midterm exams](exams/midterm/) along with solutions
+- [Past final exams](exams/final/) along with solutions
