@@ -37,6 +37,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
 
 Do not worry if the minor version number or build number are not exactly the same, but **the major version number must be 12, not older or newer**.
 
+> :information_source: If you already had another version of Java installed, you may need to uninstall it to make sure you are using Java 12.
+
 A command line, a text editor, and a working Java environment should be sufficient enough for this part of the bootcamp.
 We do not ask you to install an integrated development environment (IDE).
 You may do so if you wish; Android Studio is a good pick, as you will use it in SDP next semester, and it can be used for any kind of Java development.
