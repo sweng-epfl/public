@@ -37,7 +37,7 @@ To validate your installation, run `java -version` from the command line.
 You are ready to go if the command outputs something like this:
 
 ```sh
-$  java -version
+$ java -version
 java version "12.0.2"
 Java(TM) SE Runtime Environment (build 12)
 Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
@@ -422,7 +422,7 @@ If you want to do something a bit tricky, like identify which commit introduced 
 > All of the information Git stores is in a folder named `.git` in your repository, thus your folder copy will behave exactly as the original one, and you can switch to it if you accidentally break the original one.
 
 
-## The Gradle Build Tool
+## The Gradle build tool
 
 When working in big projects with lots of modules and dependencies, we often use **build tools**.
 They handle, among other things, managing dependencies, compiling, packaging and running our tests for us.
@@ -470,7 +470,8 @@ To generate a basic Gradle configuration, go to your project directory and run
 $ gradle init --type java-application
 ```
 
-Gradle will ask you to choose some parameters. Pick the `Groovy` build script (default), the `JUnit Jupiter` testing framework (not default!), and whichever project name and source package you'd like.
+Gradle will ask you to choose some parameters.
+Pick the `Groovy` build script (default), the `JUnit Jupiter` testing framework (not default!), and whichever project name and source package you'd like.
 
 After a few seconds, a few files should have been added to your project, namely:
 
@@ -517,9 +518,20 @@ $ gradle build
 ```
 
 After some time, the directory `build` will appear.
-You can go inside the `build/classes/java/main/` folder, in which you will find your `App.class` file that you can run using `java App`.
+You can go inside the `build/classes/java/main/` folder.
+In this folder, there is a folder for the package name you chose when creating the project, which itself contains your `App.class` file.
 
 > :information_source: Conveniently, `gradle build` also ran your tests; we will talk about testing in a further lecture.
+
+You can run the `App.class` file by running `java packagename.App`, where `packagename` is your package name, **while in the `build/classes/java/main/` folder and not the package folder**.
+
+However, running class files by hand is not very efficient. Instead, you can run
+
+```sh
+$ gradle run
+```
+
+This command will compile and run your app for you.
 
 That's all you need to know for now about Gradle.
 You can either remove your `HelloWorld.java` or move it to the `src/main/java` folder to have it compiled on the next `gradle build`.
