@@ -560,6 +560,8 @@ At the root of your project, create a file named `.travis.yml`, containing the f
 ```yaml
 language: java
 jdk: openjdk12 # by default, travis runs on Java 8. This forces Java 12.
+before_install:
+  - chmod +x gradlew # make sure the Gradle wrapper can be executed
 ```
 
 Add the file to git, commit it, and push it.
