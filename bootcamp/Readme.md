@@ -80,7 +80,7 @@ It is primarily used for source code management in software development, but it 
 
 First, you need an account on [GitHub](https://github.com), the site that will host our code during this course.
 If you don't already have a GitHub account, [here](https://github.com/join) are instructions on how to create one.
-**Please make sure that your profile shows your real name**.
+Using your real name in your GitHub profile will make debugging easier for the staff in case you run into issues with the class, but this is not required.
 
 **Before going further, please [fill out this form](https://forms.gle/EesHVbRTMrRzA4yt7).**
 We need this information to associate your GitHub account with your EPFL identity.
