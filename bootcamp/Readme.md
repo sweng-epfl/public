@@ -201,6 +201,7 @@ Ignored files are usually build artifacts and machine generated files that can b
 In the particular case of this part of the bootcamp, these generated files are the **.class** files.
 
 Git uses a special file named **.gitignore** to list all the ignored files.
+Note that this is not a file extension; the name must be exactly **.gitignore** and nothing else.
 It should be at the root of your repository.
 There is no explicit ignore command: you must edit the **.gitignore** file by hand when you have new files that you wish to ignore.
 
