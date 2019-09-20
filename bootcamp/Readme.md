@@ -17,12 +17,15 @@ You should use Java 12.
 Download and install Java SE 12 from [the Oracle website](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html).
 For detailed installation look at [the Oracle documentation](https://docs.oracle.com/en/java/javase/12/install/overview-jdk-installation.html).
 
+> :information_source: **On Ubuntu, Debian or RHEL**, it may be easier to use Azul's OpenJDK via your package manager, see instructions [here](https://www.linuxuprising.com/2019/04/install-latest-openjdk-12-11-or-8-in.html).
+
 > :warning: **On Windows**, you need to set the `JAVA_HOME` system variable and update the `PATH` variable.
 > Find the advanced system settings.
 > You can use the search box for that and type **View advanced system settings**.
 > Select the **Advanced** tab, click **Environment Variables**.
 > In System variables, add a new `JAVA_HOME` variable and point it to the JDK installation folder, which should look something like `C:\Program Files\Java\jdk-12.0.1`.
 > In System variables again, find PATH, click edit and append `%JAVA_HOME%\bin` at the end.
+> Make sure both variables are in "System" variables and not "User" variables.
 > Then close any open command line windows, to make sure the changes are taken into account.
 
 To validate your installation, run `java -version` from the command line.
