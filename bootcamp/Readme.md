@@ -122,11 +122,14 @@ The commit you just created contains all of the changes you made; since this is 
 
 You will now publish your code.
 Create a **public** repository on GitHub.
-You can name it as you please. If GitHub offers you to initialize the repository with a README, don't do it.
+You can name it as you please.
+If GitHub offers you to initialize the repository with a README, don't do it.
 
 Publishing code on GitHub requires two steps:
 1. Add GitHub as a "remote" to your repository, using the following command: `git remote add origin https://github.com/your-github-username/your-repository-name.git`
 2. Push your commits to GitHub: `git push -u origin master`
+
+> :information_source: If you make a mistake in the URL when adding the remote, you can change it with `git remote set-url origin <the correct URL>`
 
 The `git push` command is used to upload local repository content to a remote repository.
 Pushing is how you transfer commits from your local repository to a remote repository.
