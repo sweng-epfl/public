@@ -367,6 +367,7 @@ Let's just see how we can create and switch between branches.
 For this part, we won't need to use two copies, so you can remove one of them if you want.
 
 ![The git flow model](flow.png)
+
 _The git flow model - [nvie](https://twitter.com/nvie)_
 
 Let's begin with the creation of the branch.
@@ -397,6 +398,7 @@ The main advantage of this technique is that opening a pull request (or **PR** f
 ## Git Wrap-Up
 
 ![In case of fire](fire.png)
+
 _In case of fire - [Louis Michel Couture](https://twitter.com/louim)_
 
 Git is the most widely used version control system, so there is plenty of documentation on the internet.
