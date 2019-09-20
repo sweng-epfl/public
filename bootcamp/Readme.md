@@ -17,6 +17,8 @@ You should use Java 12.
 Download and install Java SE 12 from [the Oracle website](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html).
 For detailed installation look at [the Oracle documentation](https://docs.oracle.com/en/java/javase/12/install/overview-jdk-installation.html).
 
+> :information_source: **On Ubuntu 19.04 or newer** (check your version with `lsb_release -a`), you can `sudo apt install openjdk-12-jdk`; this package is unfortunately not available for older Ubuntus.
+
 > :information_source: **On Ubuntu, Debian or RHEL**, it may be easier to use Azul's OpenJDK via your package manager, see instructions [here](https://www.linuxuprising.com/2019/04/install-latest-openjdk-12-11-or-8-in.html).
 
 > :warning: **On Windows**, you need to set the `JAVA_HOME` system variable and update the `PATH` variable.
@@ -27,6 +29,9 @@ For detailed installation look at [the Oracle documentation](https://docs.oracle
 > In System variables again, find PATH, click edit and append `%JAVA_HOME%\bin` at the end.
 > Make sure both variables are in "System" variables and not "User" variables.
 > Then close any open command line windows, to make sure the changes are taken into account.
+
+> :information_source: If you already had another version of Java installed, you may need to uninstall it to make sure you are using Java 12.
+> **On Windows**, you may need to remove `C:\ProgramData\Oracle\Java\javapath` from your PATH environment variable.
 
 To validate your installation, run `java -version` from the command line.
 You are ready to go if the command outputs something like this:
@@ -39,8 +44,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
 ```
 
 Do not worry if the minor version number or build number are not exactly the same, but **the major version number must be 12, not older or newer**.
-
-> :information_source: If you already had another version of Java installed, you may need to uninstall it to make sure you are using Java 12.
 
 A command line, a text editor, and a working Java environment should be sufficient enough for this part of the bootcamp.
 We do not ask you to install an integrated development environment (IDE).
@@ -119,7 +122,7 @@ The commit you just created contains all of the changes you made; since this is 
 
 You will now publish your code.
 Create a **public** repository on GitHub.
-You can name it as you please.
+You can name it as you please. If GitHub offers you to initialize the repository with a README, don't do it.
 
 Publishing code on GitHub requires two steps:
 1. Add GitHub as a "remote" to your repository, using the following command: `git remote add origin https://github.com/your-github-username/your-repository-name.git`
