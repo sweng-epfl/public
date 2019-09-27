@@ -594,12 +594,7 @@ If it fails, you can check the logs to see what went wrong and fix it.
 
 > :information_source: If the build fails because 'ant' is currently not installed, your project is not at the root of your repository, but in some folder.
 > As a consequence, Travis does not find your Gradle script.
-> You can either move your whole project at the root of your repository or edit your `.travis.yml` file as follows:
->
-> ```yml
-> before_script:
->   - cd <your project folder>
-> ```
+> You can either move your whole project at the root of your repository or add `- cd <your project folder>` as a new line just after `before_install:` in your `.travis.yml`
 
 > :information_source: If the build fails with `failed to read class` at phase `:test`, make sure you run an up to date version of Gradle!
 > If that is not the case, go to your project directory and run `gradle wrapper --gradle-version=5.6.2` to install the latest version of the wrapper to your repository.
