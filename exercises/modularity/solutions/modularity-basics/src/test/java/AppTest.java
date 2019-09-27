@@ -1,9 +1,3 @@
-/*
- * Software Engineering
- * Exercise : modularity introduction
- */
-package intro;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
