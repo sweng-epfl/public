@@ -15,3 +15,5 @@ This set contains three categories:
   - [Basics](interfaces-basics.md)
   - [Intermediate](interfaces-intermediate.md)
   - [Advanced](interfaces-advanced.md)
+
+The [solutions](solutions) are available.
