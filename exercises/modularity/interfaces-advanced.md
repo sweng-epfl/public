@@ -2,7 +2,8 @@
 
 Now that you have seen examples of interfaces, understood how to group objects by interface, and learned that interfaces change based on one's point of view, here is a practical exercise.
 
-Define an interface representing a weather service that can tell the weather. You will most likely need to also define classes or enums for the inputs and outputs of this interface.
+Define an interface representing a weather service that can report past and current weather, as well as forecast future weather.
+You will most likely need to also define classes or enums for the inputs and outputs of this interface.
 
 Write a trivial fake implementation of this interface, e.g. one that pretends it's always sunny.
 
