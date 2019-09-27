@@ -1,5 +1,5 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -31,9 +31,9 @@ public class AppTest {
         assertEquals(expected, loaded);
     }
 
-    @Test(expected = FileNotFoundException.class)
+    @Test
     public void loadWrongFileThrows() throws FileNotFoundException {
-        App.loadFromFile("loremipsum");
+        assertThrows(FileNotFoundException.class, () -> { App.loadFromFile("loremipsum"); });
     }
 
     @Test

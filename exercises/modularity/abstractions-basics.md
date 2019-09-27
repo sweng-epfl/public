@@ -12,12 +12,12 @@ There are two main metrics to judge an abstraction:
 
 For instance, a high-level abstraction for the printing press should not require users to know what [antimony](https://en.wikipedia.org/wiki/Antimony) is, even though it is a critical component of traditional letter-printing. It should also not allow its users to "break" the abstraction by changing the ink without the press knowing about it.
 
-It is sometimes necessary to "leak" internal details for practical performance reasons, if the underlying system cannot provide good performance without exposing those details. For instance, a video capture device can theoretically be though of as a camera that takes pictures very often. But in practice, because of the various overheads involved in communicating with camera hardware, it is not actually feasible to implement video-capturing software by taking a lot of pictures. Thus, the abstraction will not only include a "take photo" function, but also a "take video" function, even though the latter is not theoretically needed.
+It is sometimes necessary to "leak" internal details for practical performance reasons, if the underlying system cannot provide good performance without exposing those details. For instance, a video capture device can theoretically be thought of as a camera that takes pictures very often. But in practice, because of the various overheads involved in communicating with camera hardware, it is not actually feasible to implement video-capturing software by taking a lot of pictures. Thus, the abstraction will not only include a "take photo" function, but also a "take video" function, even though the latter is not theoretically needed.
 
 In this series of exercises, you will learn how to design good abstractions, as well as how to identify poor abstractions and improve them.
 
 
-## java.util.Stack
+## `java.util.Stack`
 
 A good source of poor abstractions comes from legacy code, because the first few attempts at abstracting specific concepts often do not work very well; learning how to design abstractions is a skill that comes with experience.
 
@@ -38,7 +38,7 @@ Surprisingly, the issues we just saw are not actually the biggest problem with t
 In modern Java code, you should use `Deque`, which does not have these issues.
 
 
-## java.util.Date
+## `java.util.Date`
 
 Let's look at another infamous example of a bad abstraction, the venerable [`java.util.Date`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Date.html). This is the earliest class in the Java standard library to manipulate dates; as explained earlier, the first attempts at an abstraction do not always end well.
 
