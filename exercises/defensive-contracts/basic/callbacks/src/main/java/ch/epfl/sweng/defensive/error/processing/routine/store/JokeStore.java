@@ -3,6 +3,7 @@ package ch.epfl.sweng.defensive.error.processing.routine.store;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,8 +17,7 @@ public class JokeStore {
   private Random random = new Random();
 
   private JokeStore() {
-    try {
-      BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/jokes.txt"));
+    try(BufferedReader reader=new BufferedReader(new InputStreamReader(ClassLoader.getSystemClassLoader().getResource("jokes.txt").openStream()))) {
       String line, statement = "";
       while ((line = reader.readLine()) != null) {
         if (!line.isEmpty()) {
@@ -29,7 +29,6 @@ public class JokeStore {
           }
         }
       }
-      reader.close();
     } catch (Exception e) {
       System.out.println(e);
     }
