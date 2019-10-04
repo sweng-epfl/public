@@ -17,7 +17,7 @@ After that, in the **SDK Tools** tab, first select **Show Package Details** (at 
 
 ## Create a new project
 
-Launch the Start a new *Android Studio project* wizard. Name your project **Bootcamp** and choose **sweng.epfl.ch** as the domain. Make sure to set the **project path** to your **repository path**. You also need to check the **Use AndroidX artifacts** checkbox. Leave the other settings at their default (i.e. choose API 15: Android 4.0.3 (Ice Cream Sandwich) as minimum SDK and add an Empty Activity). After a bit of time, you should see Android Studio open up with a number of files created for this project.
+Launch the Start a new *Android Studio project* wizard. Name your project **Bootcamp** and choose **ch.epfl.sweng** as the package name. Make sure to set the **project path** to your **repository path**. You also need to check the **Use AndroidX artifacts** checkbox. Leave the other settings at their default (i.e. choose API 15: Android 4.0.3 (Ice Cream Sandwich) as minimum SDK and add an Empty Activity). After a bit of time, you should see Android Studio open up with a number of files created for this project.
 
 This is a good time to open a file explorer and look at all the files that have been created. The Android developer documentation on [managing projects](https://developer.android.com/studio/projects/index.html) provides a good overview of what all these files do.
 
