@@ -28,11 +28,6 @@ dependencies {
     implementation configurations.cofoja.dependencies
 }
 
-application {
-    // Define the main class for the application
-    mainClassName = 'App'
-}
-
 test {
     // Use junit platform for unit tests
     useJUnitPlatform()

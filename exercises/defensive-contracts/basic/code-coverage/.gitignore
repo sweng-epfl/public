@@ -3,16 +3,3 @@
 
 # Ignore Gradle build output directory
 build
-
-# Compiled files
-*.class
-
-# VSCode
-.project
-.settings/
-
-# Output
-output
-
-# Eclipse
-.classpath

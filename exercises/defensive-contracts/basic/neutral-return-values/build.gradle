@@ -22,7 +22,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = 'App'
+    mainClassName = 'ch.epfl.sweng.defensive.neutral.returned.value.Main'
 }
 
 test {
