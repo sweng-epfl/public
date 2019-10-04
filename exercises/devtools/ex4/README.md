@@ -13,7 +13,7 @@ Figure below shows debugging in Android Studio, which is almost exactly the same
 ![interface](7.png)
 
 ## Prerequisites
-* Make sure you have gotten familiar with command line compilation and debugging ()[ex2](../ex2/README.md)).
+* Make sure you have gotten familiar with command line compilation and debugging ([ex2](../ex2/README.md)).
 * Download and install [IntelliJ](https://www.jetbrains.com/idea/), the Java IDE from JetBrains.
 
 ## Exercise 4.1: Compiling and Running

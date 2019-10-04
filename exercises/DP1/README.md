@@ -15,6 +15,7 @@ You can open this exercise and start working on it using Android Studio/IntelliJ
 
 ## Exercises
 
+* [`Quiz`](quiz.md)
 * [`Exercise 1`](src/ch/epfl/sweng/dp1/ex1/README.md)
 * [`Exercise 2`](src/ch/epfl/sweng/dp1/ex2/README.md)
 * [`Exercise 3`](src/ch/epfl/sweng/dp1/ex3/README.md)

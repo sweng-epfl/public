@@ -1,17 +1,17 @@
 
 package ch.epfl.sweng.contracts;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import com.google.java.contract.PreconditionError;
 
 
 public class RecursiveFibonacciTest {
 
-    @Test(expected = PreconditionError.class)
+    @Test
     public void fibOnNegativeFails() {
         RecursiveFibonacci fib = new RecursiveFibonacci();
-        fib.apply(-1);
+        assertThrows(PreconditionError.class, () -> fib.apply(-1));
     }
 
     @Test
