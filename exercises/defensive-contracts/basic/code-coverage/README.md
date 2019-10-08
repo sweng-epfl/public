@@ -71,7 +71,7 @@ Get familiar with the code base. Also, have a look at the test suite.
 
 #### Warmup
 
-Consider the [demonstrate](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java#L8) method of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java):
+Consider the [demonstrate](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java#L8) method of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java):
 
 ```java
 String code = "The code";
@@ -85,7 +85,7 @@ Run the test suite.
 
 ![Step 0](images/step0.png)
 
-The test passes. The code coverage of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) reaches **100%**. The overall code coverage also reaches **100%**.
+The test passes. The code coverage of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) reaches **100%**. The overall code coverage also reaches **100%**.
 
 #### Breaking the code
 
@@ -99,11 +99,11 @@ String name = lecturer.getName();
 System.out.println(name);
 ```
 
-Replace `String code = "The code";` by `String code = "A code";` in [CaseStudy](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java#L9). Run the test suite.
+Replace `String code = "The code";` by `String code = "A code";` in [CaseStudy](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java#L9). Run the test suite.
 
 ![Step 1](images/step1.png)
 
-The test fails. A **NullPointerException** is thrown. The code coverage of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops to **50%**. Some lines are actually never reached during the test run. For the same reason, the overall code coverage drops to **79%**.
+The test fails. A **NullPointerException** is thrown. The code coverage of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops to **50%**. Some lines are actually never reached during the test run. For the same reason, the overall code coverage drops to **79%**.
 
 #### Checking for null
 
@@ -124,11 +124,11 @@ if (course != null) {
 
 This is ugly and brittle, and it's easy to miss some null checks. You can also expect the code coverage to decrease.
 
-Add checks for null in [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). Run the test suite.
+Add checks for null in [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). Run the test suite.
 
 ![Step 2](images/step2.png)
 
-The test still fails because of a **NullPointerException**. The code coverage of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops again, but this time to **44%**. The overall code coverage drops to **74%**.
+The test still fails because of a **NullPointerException**. The code coverage of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops again, but this time to **44%**. The overall code coverage drops to **74%**.
 
 An `if` statement actually adds a node in the decision tree of your program. In other words, it introduces two branches: one branch for when the condition is true, and one branch for when the condition is false.
 
@@ -156,11 +156,11 @@ if (optionalCourse.isPresent()) {
 
 This isn't a lot better than null checks. Some might argue that it makes your intent clearer, but in the end there isn't much of a difference, because null checks are pretty obvious in these kinds of situations.
 
-Use Java 8's Optional to make the code above compile. For that, you will need to change a few things in [Course.java](src/ch/epfl/sweng/defensive/code/coverage/model/Course.java#L16) , [Lecturer.java](src/ch/epfl/sweng/defensive/code/coverage/model/Lecturer.java#L10) , and [Courses.java](src/ch/epfl/sweng/defensive/code/coverage/store/Courses.java#L18) . You can use `Optional.ofNullable` to return Optional objects. Run the test suite.
+Use Java 8's Optional to make the code above compile. For that, you will need to change a few things in [Course.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/model/Course.java#L16) , [Lecturer.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/model/Lecturer.java#L10) , and [Courses.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/store/Courses.java#L18) . You can use `Optional.ofNullable` to return Optional objects. Run the test suite.
 
 ![Step 3](images/step3.png)
 
-The test obviously fails again. However, the code coverage of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops to **33%** this time. This is due to the additional lines of code added in [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). The overall code coverage also drops to **66%**.
+The test obviously fails again. However, the code coverage of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) drops to **33%** this time. This is due to the additional lines of code added in [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). The overall code coverage also drops to **66%**.
 
 The problem lies in the code logic itself—it's typical imperative programming: you call a function, get the returned value, and take a decision based on the latter.
 
@@ -177,15 +177,15 @@ Courses.findByCode(code)
   .ifPresent(System.out::println);
 ```
 
-Transform the code of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) in the "functional way". Run the test suite.
+Transform the code of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) in the "functional way". Run the test suite.
 
 ![Step 4](images/step4.png)
 
-Again, the test fails. Nevertheless, the code coverage of [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) now reaches **100%**. The reason is that you got rid of the `if` statements, i.e. the branches of the decision tree of the program. However, the overall code coverage is only of **91%** as the test run does not go through all the project's code.
+Again, the test fails. Nevertheless, the code coverage of [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java) now reaches **100%**. The reason is that you got rid of the `if` statements, i.e. the branches of the decision tree of the program. However, the overall code coverage is only of **91%** as the test run does not go through all the project's code.
 
 #### Reaching an overall code coverage of 100%
 
-Put back `String code = "The code";` in [CaseStudy.java](src/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). Run the test suite.
+Put back `String code = "The code";` in [CaseStudy.java](src/main/java/ch/epfl/sweng/defensive/code/coverage/CaseStudy.java). Run the test suite.
 
 ![Step 5](images/step5.png)
 

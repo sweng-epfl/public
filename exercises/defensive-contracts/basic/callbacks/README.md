@@ -29,11 +29,11 @@ Callbacks are used for _delivering an error asynchronously_. The programmer pass
 You are given a Java project that you need to modify:
 
 1. Define a **Callback** interface in a **callback** package.
-1. Modify the [random](src/ch/epfl/sweng/defensive/error/processing/routine/repository/JokeRepository.java#L12) method of [JokeRepository.java](src/ch/epfl/sweng/defensive/error/processing/routine/repository/JokeRepository.java):
+1. Modify the [random](src/main/java/ch/epfl/sweng/defensive/error/processing/routine/repository/JokeRepository.java#L12) method of [JokeRepository.java](src/main/java/ch/epfl/sweng/defensive/error/processing/routine/repository/JokeRepository.java):
     1. Pass a **Callback** argument
     1. Return a random joke with the callback
     1. Handle the **JokeException** locally to the method
-1. Modify the [infinite loop](src/ch/epfl/sweng/defensive/error/processing/routine/Main.java#L13) of [Main.java](src/ch/epfl/sweng/defensive/error/processing/routine/Main.java):
+1. Modify the [infinite loop](src/main/java/ch/epfl/sweng/defensive/error/processing/routine/Main.java#L13) of [Main.java](src/main/java/ch/epfl/sweng/defensive/error/processing/routine/Main.java):
     1. Remove the `try-catch` construct
     1. Retrieve a random joke with an anonymous callback
 1. Test the program to validate your changes.

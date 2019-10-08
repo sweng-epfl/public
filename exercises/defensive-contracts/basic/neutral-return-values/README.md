@@ -12,6 +12,6 @@ In this exercise, you will modify a program that makes use of `null` values as n
 ### Tasks
 You are given a Java project you need to modify:
 
-1. Make both the [search](src/ch/epfl/sweng/defensive/neutral/returned/value/goolge/Goolge.java#L10) and [next](src/ch/epfl/sweng/defensive/neutral/returned/value/model/Result.java#L21) methods return optional results, i.e. `Optional<Result>`.
-1. Adapt the [main](src/ch/epfl/sweng/defensive/neutral/returned/value/Main.java#L9) function of [Main.java](src/ch/epfl/sweng/defensive/neutral/returned/value/Main.java) in accordance with your changes.
+1. Make both the [search](src/main/java/ch/epfl/sweng/defensive/neutral/returned/value/goolge/Goolge.java#L10) and [next](src/main/java/ch/epfl/sweng/defensive/neutral/returned/value/model/Result.java#L21) methods return optional results, i.e. `Optional<Result>`.
+1. Adapt the [main](src/main/java/ch/epfl/sweng/defensive/neutral/returned/value/Main.java#L9) function of [Main.java](src/main/java/ch/epfl/sweng/defensive/neutral/returned/value/Main.java) in accordance with your changes.
 1. Test the program to validate your implementation.

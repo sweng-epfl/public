@@ -35,7 +35,7 @@ Here is the the proof of correctness of the algorithm:
 ### Tasks
 You are given a Java project you need to complete:
 
-1. Implement the [sort](src/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java#L6) method of [InsertionSort.java](src/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java).
-1. Implement the [hold](src/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java#L6) method of [LoopInvariant.java](src/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java).
-1. Prove the correctness of the InsertionSort's [sort](src/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java#L6) method with the LoopInvariant's [hold](src/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java#L6) method of `LoopInvariant.java`. Make use of assertions.
-1. Write a test program [Main.java](src/ch/epfl/sweng/defensive/loop/invariant/Main.java) that checks your implementation.
+1. Implement the [sort](src/main/java/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java#L6) method of [InsertionSort.java](src/main/java/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java).
+1. Implement the [hold](src/main/java/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java#L6) method of [LoopInvariant.java](src/main/java/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java).
+1. Prove the correctness of the InsertionSort's [sort](src/main/java/ch/epfl/sweng/defensive/loop/invariant/InsertionSort.java#L6) method with the LoopInvariant's [hold](src/main/java/ch/epfl/sweng/defensive/loop/invariant/LoopInvariant.java#L6) method of `LoopInvariant.java`. Make use of assertions.
+1. Write a test program [Main.java](src/main/java/ch/epfl/sweng/defensive/loop/invariant/Main.java) that checks your implementation.
