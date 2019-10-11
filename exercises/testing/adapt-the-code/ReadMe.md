@@ -72,7 +72,7 @@ interface SignInService {
   MyUser signIn();
 }
 
-class GoogleSignInAdapter : SignInService {
+class GoogleSignInAdapter implements SignInService {
   public MyUser signIn() {
     GoogleUser user = GoogleService.signIn();
     // ... convert 'user' to an object of class MyUser, and return it ...
