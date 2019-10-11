@@ -1,12 +1,12 @@
 package ch.epfl.sweng.defensive.code.coverage;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import ch.epfl.sweng.defensive.code.coverage.CaseStudy;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -15,13 +15,13 @@ public class CaseStudyTest {
   private ByteArrayOutputStream out = new ByteArrayOutputStream();
   private PrintStream stdout;
 
-  @Before
+  @BeforeEach
   public void before() {
     stdout = System.out;
     System.setOut(new PrintStream(out));
   }
 
-  @After
+  @AfterEach
   public void after() {
     System.setOut(stdout);
   }
