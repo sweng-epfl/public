@@ -31,22 +31,18 @@ TDD is mostly useful for (check all that apply):
 - [ ] testing individual classes and methods
 - [ ] testing large code bases of legacy code
 
+<!---
 ### Question 2
-
 What are the problems of TDD raised in the discussion between Jim Coplien and Uncle Bob?
-
 - [ ] It increases the total number of bugs in the code
 - [ ] It is not accepted by management
 - [ ] It causes developers to not think enough about the architecture of their system
 - [ ] TDD is called "unprofessional"
 - [ ] TDD leads to bad GUI design
-
 ### Question 4
-
 Which of the following is (are) true regarding the debate between Jim Coplien and Uncle Bob? (Select all that apply)
-
 - [ ] They both think that a modern software engineer must adopt TDD
 - [ ] Coplien favors CDD over TDD
 - [ ] Uncle Bob thinks that TDD's "write tests and then write code" cycles need to be short
 - [ ] They both believe that a software system's architecture emerges naturally from TDD
-
+--->
