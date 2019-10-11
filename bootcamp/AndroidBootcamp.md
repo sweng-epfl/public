@@ -96,7 +96,6 @@ If you want to know more about this test, have a look at the [Android testing gu
     ```Gradle
         androidTestImplementation 'androidx.test:rules:1.2.0'
     ```
-* Set your test runner to **androidx.test.runner.AndroidJUnitRunner** (File > Project Structure, select 'app' in the module list, Flavors > Test Instrumentation Runner).
 * Disable animations in your emulator (Inside the emulator, click the round **Apps** button, then choose **Settings**. If you do not see an entry named Developer options, then go to Settings > About emulated device and click on the Build number entry 5 times. A message should normally tell you that you are x steps away from becoming a developer. Then set Settings > Developer options > Window animation scale to Animation off; same for Transition animation scale and Animator duration scale).
 
 Now, you have all the prerequisites to make your test compile. You still need to complete the test file by adding import statements. Android Studio can do this for you: select the places with compile errors, press Alt+Enter, and choose **import ...**.
@@ -120,7 +119,7 @@ For now, you will configure your Android project so that it reports your code co
 First, you need to add JaCoCo plugin. Add this line to the *dependencies* section of your top-level **build.gradle**:
 
 ```gradle
-classpath 'org.jacoco:org.jacoco.core:0.8.0'
+classpath 'org.jacoco:org.jacoco.core:0.8.4'
 ```
 
 You need then to add a few things in your **app/build.gradle**. We provide you a partial version of the file. Comments emphasize that there is some content. Do not change anything; add only JaCoCo-related lines:
@@ -130,7 +129,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'jacoco'
 
 jacoco {
-    toolVersion = "0.8.0"
+    toolVersion = "0.8.4"
 }
 
 android {
@@ -149,6 +148,7 @@ dependencies {
 
 tasks.withType(Test) {
     jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
