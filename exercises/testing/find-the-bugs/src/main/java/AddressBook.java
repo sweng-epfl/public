@@ -1,6 +1,15 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ A book that keeps track of people's addresses.
+
+ Users can add or remove people and their addresses.
+ An address is allowed to be null (the person isn't living anywhere!).
+ For simplicity, people are considered equal if they have the same first name, same last name, and same age.
+
+ The book can be printed to a string, which has each person and their address on a separate line.
+ */
 public final class AddressBook {
     private final Map<Person, String> addresses;
 
