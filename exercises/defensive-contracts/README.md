@@ -12,7 +12,6 @@ In this exercise set, you will learn about defensive programming techniques to d
   - [Neutral Return Values](basic/neutral-return-values/README.md)
   - [Bad Input Parameter Checks and Exceptions](basic/string-input-parameter-checks/README.md)
   - [Callback-based error-processing routines](basic/callbacks/README.md)
-  - [Interface Contracts](basic/interface-contracts/README.md)
   - [How Defensive Programming affects Code Coverage](basic/code-coverage/README.md)
 
 - Intermediate
