@@ -10,9 +10,9 @@ While 100% code coverage is not always worth the effort, you should pay attentio
 
 In [`App.java`](src/main/java/App.java), we provide a `getEngineSpeed` method that tells a self-driving car how fast it should go given the current state of the car and its environment.
 
-We also provide an existing test that achieves some line coverage.
+We also provide an existing test that achieves some statement coverage.
 
-Add tests to achieve 100% line coverage for the function.
+Add tests to achieve 100% statement coverage for the function.
 
 Then add more tests to achieve 100% path coverage for the function.
 

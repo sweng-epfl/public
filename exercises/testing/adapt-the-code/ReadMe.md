@@ -85,7 +85,7 @@ Now any class that used to directly call `GoogleService` can instead have a `Sig
 We provide [`TreasureFinder.java`](src/main/java/TreasureFinder.java) and [`Geolocator.java`](src/main/java/Geolocator.java).
 The `TreasureFinder` determines how close the user is to a treasure.
 However, it currently cannot be tested properly because `Geolocator` does not implement any interfaces and uses the real location of the user.
-Furthermore, `TreasureFinder` must have a parameterless constructor, because of external requirements.
+Furthermore, `TreasureFinder` must have a parameterless constructor, because of external requirements, and you cannot modify `Geolocator` (e.g. because it's in a library whose source code you do not have).
 Refactor `TreasureFinder` so that it can be tested with a fake location service, and write tests for it.
 
 
