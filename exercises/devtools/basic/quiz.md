@@ -10,7 +10,7 @@ Which of the following attributes of a software system are not among the key pro
 - [ ] Manageability
 - [ ] Reliability
 
-How many lines of code (LOC) are in the software of systems like the Boeing 767 avionics or o modern premium automobile?
+How many lines of code (LOC) are in the software of systems like the Boeing 767 avionics or a modern premium automobile?
 
 - [ ] Thousands
 - [ ] Tens of thousands

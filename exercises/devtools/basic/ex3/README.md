@@ -1,5 +1,5 @@
 #### Disclaimer for the dear readers
-If you are unsure about how a git command works, definitely use Google or pay a visit to StackOverflow. You can also check the [Git manual](https://git-scm.com/docs) for in-depth explanation of the commands. If it is too hard to keep track of all the git commands, then please refer to the [Git commands document](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).
+If you are unsure about how a git command works, definitely use Google or pay a visit to StackOverflow. You can also check the [Git manual](https://git-scm.com/docs) for in-depth explanation of the commands. If it is too hard to keep track of all the git commands, then please refer to the [Git commands document](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
 
 # An easy way to develop based on the git model  
 In this exercise, we will see a workflow model to use git for application development. This workflow should provide a consistent way to implement new features and fix bugs while avoiding conflicts with other developers.  Let's first go over a simple example, which demonstrates this workflow in high-level.  

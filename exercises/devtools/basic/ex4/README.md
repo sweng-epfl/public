@@ -41,7 +41,8 @@ public class TestProgram {
 }
 ```
 
-4. Right-click to the `TestProgram` file and select *Run TestProgram.main()* which will compile and run the program for you. You can run any class that has a main method this way.
+4. Right-click on the project folder and select the `Build Module` entry.
+5. Right-click on the `TestProgram` file and select *Run TestProgram.main()* which will compile and run the program for you. You can run any class that has a main method this way.
 
 
 ## Exercise 4.2: The Debugger
