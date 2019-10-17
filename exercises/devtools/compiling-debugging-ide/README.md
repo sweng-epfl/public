@@ -1,4 +1,5 @@
 # Exercise 4: Compiling and Debugging in the IDE
+
 In this exercise, we will use the IntelliJ IDE to apply what we have learned in [ex2](../ex2/README.md).
 
 For Java and Android development, developers are inclined to use IDEs. The reason is that IDEs come with a lot of components that help you to develop code easily such as syntax highlighting, code completion, compilation support, etc.

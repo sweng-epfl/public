@@ -9,23 +9,23 @@ You will also learn how to debug better and use different tools available to you
 
 ## Exercises
 
-- The [quiz](basic/quiz.md) will allow you to check how familiar you are with the course content.
+- The [quiz](quiz.md) will allow you to check how familiar you are with the course content.
 
 - Basics
-  - The first exercise [ex1](basic/ex1) will teach you about commits in general and how to write effective commit messages.
-  - The second exercise [ex2](basic/ex2) will teach (or refresh) you about the basics of compiling and debugging Java programs from the command line.
-  - The third exercise [ex3](basic/ex3) shows you how to effectively use the branching and merging model for collaborative software development.
-  - The fourth exercise [ex4](basic/ex4) shows you how to compile and debug Java projects using an Integrated Development Environment (IDE).
+  - The [first exercise](commit-messages.md) will teach you about commits in general and how to write effective commit messages.
+  - The [second exercise](java-basics.md) will teach (or refresh) you about the basics of compiling and debugging Java programs from the command line.
+  - The [third exercise](git-flow) shows you how to effectively use the branching and merging model for collaborative software development.
+  - The [fourth exercise](compiling-debugging-ide) shows you how to compile and debug Java projects using an Integrated Development Environment (IDE).
 
 - Intermediate
-  - The fifth exercise [ex5](intermediate/ex5) walks you through an example of C++ compilation and debugging to show you some command line tools available for C++ development.
+  - The [fifth exercise](compiling-debuging-cplusplus.md) walks you through an example of C++ compilation and debugging to show you some command line tools available for C++ development.
 
 - Advanced
-  - The sixth exercise [ex6](advanced/ex6) will teach you how to access the GitHub API with via the command line and Python.
+  - The [sixth exercise](apis) will teach you how to access the GitHub API with via the command line and Python.
 
 ## Solutions
 
-You can find the solutions [here](solutions/), but please try to solve the exercises by yourself before peeking at the solutions.
+You can find the solutions [here](solutions), but please try to solve the exercises by yourself before peeking at the solutions.
 
 
 ### Note

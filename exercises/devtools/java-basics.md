@@ -1,4 +1,3 @@
-
 # Exercise 2: Java Basics
 
 Java is the language we will use for development in both SwEng and SDP.
