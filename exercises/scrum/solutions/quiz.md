@@ -83,7 +83,7 @@ If you don't know what the Liskov Substitution Principle is, who do you go talk 
 
 - [ ] Product owner
 - [ ] Scrum master
-- [x] Guru 
+- [x] Guru (also known as manager)
 
 > The guru is in charge of the technical aspects of a project.
 

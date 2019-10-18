@@ -59,7 +59,7 @@ If you don't know what the Liskov Substitution Principle is, who do you go talk 
 
 - [ ] Product owner
 - [ ] Scrum master
-- [ ] Guru 
+- [ ] Guru (also known as manager)
 
 Which of the following should not happen during the Sprint?
 
