@@ -318,15 +318,16 @@ faulty software
 // Prototyping is the most extreme case of unstructured process. Its main points are to prototype and show to the customers 
 what the system would look like without any of the steps preceding "Coding"
 
-23. Which software development process is a sequence of "mini-waterfalls"?
-- [ ] Prototyping
-- [ ] Scrum
-- [ ] Spiral
-- [x] Incremental
+## Supplemental questions
 
-24. What are the weaknesses of the incremental software development process?
+23. What are the weaknesses of the incremental software development process?
 - [x] The design of the interfaces between components is tricky
 - [x] Customers might receive the most important functionality only at the end of the development
 - [x] There is no global overview of the project
 - [x] Planning and design of only a part of the system are hard without planning the entire system
 
+24. Which software development process is a sequence of "mini-waterfalls"?
+- [ ] Prototyping
+- [ ] Scrum
+- [ ] Spiral
+- [x] Incremental
