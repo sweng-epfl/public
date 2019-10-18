@@ -39,13 +39,6 @@ Which statements are correct regarding tests and proofs?
 - [ ] Proof techniques can verify programs with respect to low-level properties (such as division by zero) 
 - [ ] Proof techniques can verify higher-level properties (so called functional properties) 
 
-For sel4, how did the overall effort involved in proving corectness compare to the effort of writing the actual code of the kernel?
-
-- [ ] Roughly the same effort
-- [ ] Writing the code took 10x more effort than generating the proof
-- [ ] Generating the proof took 10x more effort than writing the code
-- [ ] Generating the proof took 100x more effort than writing the code 
-
 Is it possible to have a program with an infinite number of paths?
 
 - [ ] No, because the number of paths is exponential in the program size, and the program size is always finite
@@ -84,31 +77,6 @@ An earlier version of this class had a different type of project. The SwEng home
 - [ ] Block approach
 - [ ] Agile approach 
 - [ ] None of the above
-
-## Developer Tools
-
-Suppose we have the following C source code, in test.c: 
-
-```c
-#include <stdio.h>
-int main() { printf("Hello World!"); return 0; }
-```
-
-If we launch 'gcc -o test test.c', which creates the executable, which tools did we use:
-
-- [ ] Compiler 
-- [ ] Preprocessor 
-- [ ] Debugger
-- [ ] Builder
-- [ ] Linker 
-- [ ] Profiler
-
-Choose the correct order of the software building steps:
-
-- [ ] link, compile, preprocess, write code
-- [ ] preprocess, write code, compile, link
-- [ ] write code, preprocess, compile, link 
-- [ ] write code, preprocess, link, compile
 
 ## Version Control Systems
 

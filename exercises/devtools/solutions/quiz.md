@@ -47,16 +47,7 @@ Which statements are correct regarding tests and proofs?
 - [x] Proof techniques can verify programs with respect to low-level properties (such as division by zero) 
 - [x] Proof techniques can verify higher-level properties (so called functional properties) 
 
-> Roughly speaking, each path through the code corresponds to one possible behavior; one test exercises exactly one path; given that there are exponentially many paths through the code, it's hard to write tests for all of them. As seen in the case of Astree, proof techniques can be employed for low-level properties; as seen in the case of seL4, proof techniques can be employed for functional properties too, as long as they are formally specified.
-
-For sel4, how did the overall effort involved in proving corectness compare to the effort of writing the actual code of the kernel?
-
-- [ ] Roughly the same effort
-- [ ] Writing the code took 10x more effort than generating the proof
-- [ ] Generating the proof took 10x more effort than writing the code
-- [x] Generating the proof took 100x more effort than writing the code 
-
-> Generating the proof took 100x the time it too to write the code. Proving the correctness of code is difficult and time-consuming. See the video at 13:18.
+> Roughly speaking, each path through the code corresponds to one possible behavior; one test exercises exactly one path; given that there are exponentially many paths through the code, it's hard to write tests for all of them.
 
 Is it possible to have a program with an infinite number of paths?
 
@@ -107,35 +98,6 @@ An earlier version of this class had a different type of project. The SwEng home
 
 > The agile approach supports changing requirements, while the block approach is more suitable to scenarios where the requirements are fixed and well-known ahead of time. See video at 13:00.
 
-## Developer Tools
-
-Suppose we have the following C source code, in test.c: 
-
-```c
-#include <stdio.h>
-int main() { printf("Hello World!"); return 0; }
-```
-
-If we launch 'gcc -o test test.c', which creates the executable, which tools did we use:
-
-- [x] Compiler 
-- [x] Preprocessor 
-- [ ] Debugger
-- [ ] Builder
-- [x] Linker 
-- [ ] Profiler
-
-> The preprocessor is required to handle the #include directive, the compiler to generate the object file, and the linker to construct the executable. We did not use any builder, and clearly didn't try to debug or profile. See video at 3:45.
-
-Choose the correct order of the software building steps:
-
-- [ ] link, compile, preprocess, write code
-- [ ] preprocess, write code, compile, link
-- [x] write code, preprocess, compile, link 
-- [ ] write code, preprocess, link, compile
-
-> See video at 3:45.
-
 ## Version Control Systems
 
 Suppose a developer wants to cancel the changes they made to a piece of code and revert to a previous version. However, the developer is on a train, without access to the internet. This can be done in:
@@ -152,6 +114,3 @@ Which VCS does not require merging modifications?
 - [x] Locking VCS (first generation) 
 - [ ] Decentralized VCS(third generation)
 - [ ] Centralized VCS(second generation)
-
-> 
-
