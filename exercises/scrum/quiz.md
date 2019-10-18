@@ -1,5 +1,7 @@
 All questions have one or more correct answers.
 
+**Not all of this was covered in the lecture**, you may need to look terms up.
+
 ## Managing a software project
 
 Why do large software projects tend to miss their planned budgets and deadlines more often than small projects?
@@ -235,10 +237,6 @@ unless they contribute to the delivery of the Increment) ?
 - [ ] Scrum
 - [ ] Spiral
 - [ ] Incremental waterfall
-
-## Supplemental questions
-
-These were not directly covered in the lecture, but try to use web search to answer them.
 
 23. What are the weaknesses of the incremental software development process?
 - [ ] The design of the interfaces between components is tricky
