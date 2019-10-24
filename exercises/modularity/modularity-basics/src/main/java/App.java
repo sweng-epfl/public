@@ -10,6 +10,12 @@ public class App {
         compute();
     }
 
+    public static sum(List<Double> numbers){
+        double sum = 0;
+        for(double f : numbers){
+            sum += f;
+        }
+    }
     public static List<Double> compute() throws FileNotFoundException {
         File file = new File("data");
         List<Double> normalized = new ArrayList<>();
@@ -19,6 +25,7 @@ public class App {
             double number = scanner.nextDouble();
             numbers.add(number);
         }
+
         double sum = 0;
         for (double f : numbers) {
             sum += f;
