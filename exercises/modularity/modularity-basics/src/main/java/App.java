@@ -10,10 +10,18 @@ public class App {
         compute();
     }
 
-    public static sum(List<Double> numbers){
+    public static double sum(List<Double> numbers){
         double sum = 0;
         for(double f : numbers){
             sum += f;
+        }
+        return sum;
+    }
+
+    public static void scan(Scanner scanner, List<Double> numbers){
+        while (scanner.hasNextDouble()){
+            double number = scanner.nextDouble();
+            numbers.add(number);
         }
     }
     public static List<Double> compute() throws FileNotFoundException {
@@ -21,15 +29,8 @@ public class App {
         List<Double> normalized = new ArrayList<>();
         Scanner scanner = new Scanner(file);
         List<Double> numbers = new ArrayList<>();
-        while (scanner.hasNextDouble()) {
-            double number = scanner.nextDouble();
-            numbers.add(number);
-        }
-
-        double sum = 0;
-        for (double f : numbers) {
-            sum += f;
-        }
+        scan(scanner, numbers);
+        double sum = sum(numbers);
         double mean = sum / numbers.size();
         double sumSquare = 0;
         for (double f : numbers) {

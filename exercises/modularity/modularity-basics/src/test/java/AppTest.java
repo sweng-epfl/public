@@ -6,6 +6,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AppTest {
+
+    @Test
+    public void computeSum() {
+        List<Double> numbers = Arrays.asList(1.0,2.0,3.0);
+        double expected = 6;
+        double result = App.sum(numbers);
+        assertEquals(expected, result);
+    }
     @Test
     public void computeYieldsCorrectResult() throws FileNotFoundException {
         List<Double> normalized = App.compute();
