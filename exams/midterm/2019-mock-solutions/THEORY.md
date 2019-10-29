@@ -112,9 +112,9 @@ Which of the following are good Git commit messages:
 
 Which of the following Scrum events is attended by the key stakeholders?
 
-- [y] Scrum Retrospective
+- [n] Scrum Retrospective
 - [n] Sprint Planning
-- [n] Sprint Review
+- [y] Sprint Review
 - [n] Daily Scrum
 
 
