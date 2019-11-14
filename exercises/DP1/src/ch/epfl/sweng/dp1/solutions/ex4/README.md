@@ -1,2 +1,0 @@
-# DP1 / Exercise 4
-After quitting your job at the bank, you are now an owner of a Computer shop. Your shop sells only `PC`s and `Server`s. Each `PC` and each `Server` has a RAM, an HDD and a GPU. However, RAMs for servers can not be used for PCs. This also applies for HDDs and GPUs. You want to create a lot of PCs/Servers with the same configuration (i.e. same RAM, HDD and GPU). Use the Abstract Factory design pattern to do this.
