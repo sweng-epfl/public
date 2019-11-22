@@ -1,4 +1,4 @@
-## Exercise 5
+## Exercise: MVC in Java
 
 In this exercise, we have an implementation of the [Rock-Paper-Scissors game](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) using the Model-View-Controller (MVC) architecture in the packages `model`, `view`, and `controller` respectively.
 
