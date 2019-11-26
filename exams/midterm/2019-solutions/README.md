@@ -1,3 +1,12 @@
+# Solutions
+
+This folder contains the official solution to the exam, as well as the tests we used to grade your code and your tests.
+
+The distribution of points for the class are as follows:
+
+![Points distribution](stats.png)
+
+
 # Software Engineering - Midterm Exam
 
 This midterm exam comes from the `exams-GASPAR` repo of your `student-GASPAR` in the `sweng-epfl` GitHub organization.
