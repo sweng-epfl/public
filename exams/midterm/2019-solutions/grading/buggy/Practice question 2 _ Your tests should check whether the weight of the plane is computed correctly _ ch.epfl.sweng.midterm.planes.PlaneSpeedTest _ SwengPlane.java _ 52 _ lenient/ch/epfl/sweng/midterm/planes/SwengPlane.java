@@ -58,7 +58,7 @@ public class SwengPlane implements Plane {
 
         double weightFactor = Math.max(0D,
                 Math.min(computePlaneWeight(), WEIGHT_KG_AT_MIN_SPEED) - WEIGHT_KG_AT_MAX_SPEED)
-                / (WEIGHT_KG_AT_MAX_SPEED - WEIGHT_KG_AT_MIN_SPEED);
+                / (WEIGHT_KG_AT_MIN_SPEED - WEIGHT_KG_AT_MAX_SPEED);
         double cruiseSpeed = MAX_SPEED - ((MAX_SPEED - MIN_SPEED) * weightFactor);
 
         return currentDistance -> {
