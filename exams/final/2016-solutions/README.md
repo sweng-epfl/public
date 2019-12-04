@@ -1,6 +1,6 @@
 # Software Engineering
-## Sample Final Exam
-#### `8-Dec-2017`
+## Final Exam
+#### `16-Dec-2016`
 
 This exam comes from the `final-GASPAR` repo in the `sweng-epfl` GitHub organization. Please push your answers to this repo on the `master` branch. 
 
@@ -20,10 +20,10 @@ Exam rules:
 
 The exam is worth 100 points in total and has two parts. You have 180 minutes (3 hours) to complete both parts. Good luck!
 
-**Part 1: Practice [60 points]**
+**Part 1: Practice Solutions [60 points]**
 
 Please see [Practice.md](Practice.md) in this repo.
 
-**Part 2: Theory [40 points]**
+**Part 2: Theory Solutions [40 points]**
 
 Please see [Theory.md](Theory.md) in this repo.
