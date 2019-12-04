@@ -15,7 +15,14 @@ public class Rook extends Piece {
 
     @Override
     protected boolean isPieceMovementValid(Position.Offset offset) {
-        return (offset.horizontal != 0) || (offset.vertical != 0);
+        /* here was a bug: || instead of ^. It's also possible to use a "manual" implementation
+        of xor like
+
+        ((offset.horizontal == 0) && (offset.vertical != 0)) ||
+        ((offset.horizontal != 0) && (offset.vertical == 0))
+
+        */
+        return (offset.horizontal != 0) ^ (offset.vertical != 0);
     }
 
     @Override

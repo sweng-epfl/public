@@ -44,11 +44,15 @@ public abstract class Piece {
 
         Position.Offset offset = getPosition().offsetTo(destination);
 
-        if (!offset.isZero())
-            throw new InvalidMoveException("A no-op move issued");
+        // here was one of the bugs: a stray `!` in front of the condition
+        if (offset.isZero())
+            throw new InvalidMoveException("A no-op move issued (" +
+                                           destination.toString() + ")");
 
         if (!isPieceMovementValid(offset))
-            throw new InvalidMoveException();
+            throw new InvalidMoveException("Movement is forbidden by chess rules (" +
+                                           getPosition().toString() + " ->" +
+                                           destination.toString() + ")");
 
         position = destination;
     }
@@ -70,7 +74,9 @@ public abstract class Piece {
         if (destination != null)
             moveTo(destination);
         else
-            throw new InvalidPositionException();
+            throw new InvalidPositionException("Illegal movement requested(" +
+                                               (Character) column + ", " +
+                                               (Integer) row + ")");
 
     }
 

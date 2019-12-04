@@ -64,7 +64,6 @@ public class Position {
 
     /**
      * A relative movement necessary to get between `this` and `destination`
-     * @param destination destination of a planned move
      * @return {@link Offset} encoding distance across horizontal and vertical axes, from `this`
      * to `destination`
      */

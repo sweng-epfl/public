@@ -27,4 +27,20 @@ public class Pawn extends Piece {
     public Pawn copy() {
         return new Pawn(this);
     }
+
+    public Superpiece promote(PieceType promotedTo) throws InvalidMoveException {
+        /* First, we need to check if we can promote. This depends on the relation between our color
+        and position */
+        boolean canPromote = getColor() == WHITE ?
+        /* if we're white */ getPosition().getVertical() == Position.BOARD_END_VERTICAL
+                           :
+        /* if we're black */ getPosition().getVertical() == Position.BOARD_START_VERTICAL;
+
+        if (!canPromote)
+            throw new InvalidMoveException("Cannot promote at this position: " +
+                                           getPosition().toString());
+
+        // I check whether promotedTo is not KING or PAWN in the constructor
+        return new Superpiece(getPosition(), getColor(), promotedTo);
+    }
 }

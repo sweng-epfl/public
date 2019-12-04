@@ -45,7 +45,13 @@ public abstract class PieceTests<P extends Piece> {
     public void testMoveNull() throws InvalidPositionException, InvalidMoveException {
         piece.moveTo(null);
     }
-    
+
+    @Test
+    public void copyTest() {
+        Piece copy = piece.copy();
+        assertEquals(piece, copy);
+    }
+
     /**
      * Has to initialize the `piece` field of this template
      */
