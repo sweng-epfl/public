@@ -50,9 +50,67 @@ public final class Course {
 
 
     public CourseQuizFormatter getQuizFormatter(final User user) {
-        throw new UnsupportedOperationException("Not implemented.");
+        // The important part here is that all 3 cases return a different class, i.e. the Factory pattern
+        // Of course, this exam is simplistic, but in a real example it makes code much simpler
+        // instead of having a big class with many conditions on every method
+        // Here we use anonymous classes, but you could also create them in their own file, use nested classes, ...
+
+        // Don't forget the argument null check!
+        if (user == null) {
+            throw new IllegalArgumentException("User cannot be null.");
+        }
+
+        if (teachers.contains(user)) {
+            return createTeacherQuizFormatter(user);
+        }
+        if (students.contains(user)) {
+            return createStudentQuizFormatter(user);
+        }
+        return createGuestQuizFormatter();
     }
 
+
+    private static CourseQuizFormatter createTeacherQuizFormatter(final User user) {
+        return new CourseQuizFormatter() {
+            @Override
+            public String getGreeting() {
+                return "Hello, Prof. " + user.name + "!";
+            }
+
+            @Override
+            public String getQuestionText(final String statement, final String answer) {
+                return statement + " " + answer;
+            }
+        };
+    }
+
+    private static CourseQuizFormatter createStudentQuizFormatter(final User user) {
+        return new CourseQuizFormatter() {
+            @Override
+            public String getGreeting() {
+                return "Hello, " + user.name + "!";
+            }
+
+            @Override
+            public String getQuestionText(final String statement, final String answer) {
+                return statement;
+            }
+        };
+    }
+
+    private static CourseQuizFormatter createGuestQuizFormatter() {
+        return new CourseQuizFormatter() {
+            @Override
+            public String getGreeting() {
+                return "Hello!";
+            }
+
+            @Override
+            public String getQuestionText(String statement, String answer) {
+                return "You cannot see this question.";
+            }
+        };
+    }
 
     @Override
     public boolean equals(Object obj) {
