@@ -20,6 +20,10 @@ public class StandardUser extends User {
      * @throws IllegalArgumentException if the name is null.
      */
     public StandardUser(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Null name.");
+        }
+
         this.name = name;
     }
 
@@ -35,8 +39,7 @@ public class StandardUser extends User {
      */
     @Override
     public boolean canAsk(String text) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return text.length() >= 10;
     }
 
     /**
@@ -44,8 +47,7 @@ public class StandardUser extends User {
      */
     @Override
     public boolean canAnswer(Question question, String text) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return !question.getAuthor().equals(this);
     }
 
     // It seems your colleagues wrote this function but forgot to document it!

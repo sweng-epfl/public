@@ -12,14 +12,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public final class Forum {
+public final class Forum implements Observable {
     private final List<Question> questions;
+    private final List<Observer> observers;
 
     /**
      * Constructs an empty forum.
      */
     public Forum() {
         questions = new ArrayList<>();
+        observers = new ArrayList<>();
     }
 
     /**
@@ -36,12 +38,16 @@ public final class Forum {
      * @throws IllegalOperationException if the user cannot perform this operation.
      */
     public void postQuestion(User user, String text) {
-        // TODO (remove the following if block, and write the rest of the implementation)
-        if (true) {
-            throw new UnsupportedOperationException();
+        if (user == null || text == null) {
+            throw new IllegalArgumentException("Null args.");
+        }
+        if (!user.canAsk(text)) {
+            throw new IllegalOperationException();
         }
 
-        questions.add(new Question(user, text));
+        Question question = new Question(user, text);
+        questions.add(question);
+        notifyObservers(question);
     }
 
     /**
@@ -52,12 +58,19 @@ public final class Forum {
      * @throws IllegalOperationException if the user cannot perform this operation.
      */
     public void postAnswer(User user, Question question, String text) {
-        // TODO (remove the following if block, and write the rest of the implementation)
-        if (true) {
-            throw new UnsupportedOperationException();
+        if (user == null || question == null || text == null) {
+            throw new IllegalArgumentException("Null args.");
+        }
+        if (!questions.contains(question)) {
+            throw new NoSuchPostException();
+        }
+        if (!user.canAnswer(question, text)) {
+            throw new IllegalOperationException();
         }
 
-        question.addAnswer(new Answer(question, user, text));
+        Answer answer = new Answer(question, user, text);
+        question.addAnswer(answer);
+        notifyObservers(answer);
     }
 
     /**
@@ -68,11 +81,26 @@ public final class Forum {
      * @throws IllegalOperationException if the user cannot perform this operation.
      */
     public void editPost(User user, Post post, String text) {
-        // TODO (remove the following if block, and write the rest of the implementation)
-        if (true) {
-            throw new UnsupportedOperationException();
+        if (user == null || post == null || text == null) {
+            throw new IllegalArgumentException("Null args.");
+        }
+        if (!questions.contains(post) && questions.stream().noneMatch(q -> q.getAnswers().contains(post))) {
+            throw new NoSuchPostException();
+        }
+        if (!user.canEdit(post, text)) {
+            throw new IllegalOperationException();
         }
 
         post.setText(text);
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(Object arg) {
+        observers.forEach(o -> o.update(this, arg));
     }
 }

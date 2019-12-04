@@ -100,7 +100,6 @@ Which of the numbered lines make sense as code contracts?
 - [ ] `(4)`
 
 ### Question 7 [3 points]
-
 Which of the following are possible benefits of refactoring code?
 
 - [ ] Making program logic more coherent

@@ -7,7 +7,6 @@ package ch.epfl.sweng;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public final class Question extends Post {
     private final List<Answer> answers = new ArrayList<>();

@@ -9,48 +9,46 @@ package ch.epfl.sweng;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /**
- * A limited users, which is an user that is banned from using a specific word:
- * - The word cannot appear in a question text.
- * - The word cannot appear in an answer text.
- * - The word cannot be edited in.
- * - The word must be detected in a case-insensitive manner.
- * Aside from these limitations, limited users inherit their wrapped user's permissions.
- * The banned word is "Travis".
+ * A moderator, which is a special kind of user that has additional powers:
+ * - Moderators can answer any question without any restrictions.
+ * - Moderators can edit any posts without any restrictions.
+ * Moderation powers do not change the wrapped user's name or their permissions to ask questions.
  */
-public class LimitedUser extends User {
+public class Moderator extends User {
+    private final User user;
+
     /**
-     * Constructs a new limited user wrapping the specified user.
+     * Constructs a new moderator wrapping the specified user.
      *
      * @throws IllegalArgumentException if the user is null.
      */
-    public LimitedUser(User user) {
-        // TODO
-        throw new UnsupportedOperationException();
+    public Moderator(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("Null arg.");
+        }
+
+        this.user = user;
     }
 
     // See the base class' documentation for the other methods
 
     @Override
     public String getName() {
-        // TODO
-        throw new UnsupportedOperationException();
+        return user.getName();
     }
 
     @Override
     public boolean canAsk(String text) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return user.canAsk(text);
     }
 
     @Override
     public boolean canAnswer(Question question, String text) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return true;
     }
 
     @Override
     public boolean canEdit(Post post, String text) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return true;
     }
 }

@@ -1,10 +1,10 @@
 # Software Engineering
-## Final Exam
+## Mock Final Exam
 
-This final exam comes from the `exams-GASPAR` repo of your `student-GASPAR` team in the `sweng-epfl` GitHub organization.
+This mock final exam comes from the `exams-GASPAR` repo of your `student-GASPAR` team in the `sweng-epfl` GitHub organization.
 You have already been asked to clone this repo in advance of the exam in order to test that everything works well using a mock exam. Make sure to `git pull` this repo when the exam is released. Push your answers to the `master` branch on this repo.
 
-Grading will be done on a snapshot of the `master` branch of this repository from GitHub, not your machine. The snapshot will be taken at **12:15 on 14-Dec-2018**, and access to this repo will be terminated at that point (or earlier, if you leave the exam room). Please be careful not to overwrite your work, as we will not roll back your commits. Commit and push your work often during the exam, to make sure you don't lose local changes and to mitigate the risk of GitHub going down shortly before the end of the exam. We use automated scripts to extract the answers from your repo, so follow the instructions exactly, and do not place stray characters in the files you push.
+Grading will be done on a snapshot of the `master` branch of this repository from GitHub, not your machine. The snapshot will be taken at **12:15 on 14-Dec-2018**, and access to this repo will be terminated at that point (or earlier, if you leave the exam room). Please be careful not to overwrite your work, as we will not roll back your commits. Commit and push your work often during the exam, to make sure you don't lose local changes and to mitigate the risk of GitHub going down shortly before the end of the exam. We use automated scripts to extract the answers from your repo, so follow the instructions exactly, and do not place stray characters in the files you push. **We will grade the last version of your exam (both theory and practice) that successfully builds on Travis**.
 
 We strongly advise that you read each problem statement at least twice. You need to provide a correct answer to the _correct_ question in order to receive full credit. A correct answer to a _wrong or misinterpreted_ question will not earn credit. If you have any doubts, ask the SwEng staff.
 
@@ -21,12 +21,12 @@ Exam rules:
 - Toward the end of the exam, the staff may ask you to remain seated, in order to avoid disturbing students who want to work until the end of the exam timeslot.
 - If you need to use the bathroom during the exam, you must be escorted by a member of the staff. Leaving the room without an escort will be treated as an early departure: your repo will be locked, and you will not be permitted re-entry into the exam room.
 
-The final exam is worth 100 points in total, and you have 180 minutes (3 hours) to complete it. The exam consists of two parts:
+The mock final exam is worth 100 points in total, and you have 180 minutes (3 hours) to complete it. The exam consists of two parts:
 
-**Part 1: Theory [30 points]**
+**Part 1: Theory [25 points]**
 
 Please see [THEORY.md](THEORY.md) in this repo.
 
-**Part 2: Practice [70 points]**
+**Part 2: Practice [75 points]**
 
 Please see [PRACTICE.md](PRACTICE.md) in this repo.
