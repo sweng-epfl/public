@@ -53,23 +53,23 @@ private static int sumTransactions(Member member) {
 
 Indicate below which refactoring technique(s) your colleague used?
 
-- [ ] Inline method
-- [ ] Extract class
-- [ ] Extract method
-- [ ] Substitute algorithm
+- [n] Inline method
+- [n] Extract class
+- [y] Extract method
+- [y] Substitute algorithm
 
 ### Question 2
 
 In the video lecture on Refactoring Inheritance (at 8m55s) you saw an example of replacing Inheritance with Delegation. How does the refactoring solve the problem in the example? Choose all that apply.
 
-- [ ] In the original example, a caller could have directly called methods of Vector, potentially breaking the code contracts of Stack (for example, by adding an element in the middle of the Vector). Using delegation, an external caller cannot access the Vector member of Stack (if it is private, as it should be).
-- [ ] In the original example, the isEmpty() method of the Stack always calls the isEmpty() method of the Vector. The isEmpty() method of the Stack should be computed differently than that of the Vector, which is only possible using delegation.
-- [ ] The Stack has two additional methods, push() and pop(). Therefore, Stack cannot subclass Vector.
+- [y] In the original example, a caller could have directly called methods of Vector, potentially breaking the code contracts of Stack (for example, by adding an element in the middle of the Vector). Using delegation, an external caller cannot access the Vector member of Stack (if it is private, as it should be).
+- [n] In the original example, the isEmpty() method of the Stack always calls the isEmpty() method of the Vector. The isEmpty() method of the Stack should be computed differently than that of the Vector, which is only possible using delegation.
+- [n] The Stack has two additional methods, push() and pop(). Therefore, Stack cannot subclass Vector.
 
 ### Question 3
-Consider a snippet of Java code, from a larger project. 
-This snippet sets up a printer for mac OS X. 
-Each piece of functionality performed by the snippet is preceeded by a comment. 
+Consider a snippet of Java code, from a larger project.
+This snippet sets up a printer for mac OS X.
+Each piece of functionality performed by the snippet is preceeded by a comment.
 
 ```java
 
@@ -104,27 +104,27 @@ int b = preferences.getInt(CURTAIN_B, 0);
 int a = preferences.getInt(CURTAIN_A, 255);
 currentColor = new Color(r,g,b,a);
 ```
-Clearly, this monolithic snippet of code does too much. You decide to refactor it using the `Extract Method` pattern, to increase modularity. Which of the following function names seem appropriate for the new methods? 
+Clearly, this monolithic snippet of code does too much. You decide to refactor it using the `Extract Method` pattern, to increase modularity. Which of the following function names seem appropriate for the new methods?
 
-- [ ] dieIfNotRunningOnMacOsX()
-- [ ] setupLogfile()
-- [ ] getPreferencesAndColour()
-- [ ] setupPreferences()
+- [n] dieIfNotRunningOnMacOsX()
+- [y] setupLogfile()
+- [y] getPreferencesAndColour()
+- [n] setupPreferences()
 
-Refactor the given code according to your choices. You do not need to add any new code, simply break the existing monolith into separate methods. 
+Refactor the given code according to your choices. You do not need to add any new code, simply break the existing monolith into separate methods.
 
 ### Question 4
 
 I need to add a feature to code that smells. Which of the following is true?
 
-- [ ] I should add the feature first and then refactor the entire codebase. Refactoring the entire codebase gives me a better idea of how to refactor 
-- [ ] I should first refactor the program to make it easy to add the feature and only then add the feature
+- [n] I should add the feature first and then refactor the entire codebase. Refactoring the entire codebase gives me a better idea of how to refactor
+- [y] I should first refactor the program to make it easy to add the feature and only then add the feature
 
 ### Question 5
 
 Consider the following pseudo code for `Boxes` and `RobotPackers`. Consider how you would refactor the code:
 
-```java 
+```java
 class Box {
    String material;
    ......
@@ -134,9 +134,44 @@ class RobotPacker {
 
    private bool isFragile(Box foo) {
       switch(foo.material) {
-      case GLASS: //Complex exponential calculation for glass 
+      case GLASS: //Complex exponential calculation for glass
       case WOOD: //Complex quadratic calculation for wood
-      case METAL: //Complex logarithmic calculation for metal 
+      case METAL: //Complex logarithmic calculation for metal
    }
    ......
+}
+
+class Glass extends Box{
+  String material = "glass";
+
+  private void compute(){
+    //Complex exponential calculation
+  }
+
+}
+class Wood extends Box{
+  String material = "wood";
+
+  private void compute(){
+    //Complex exponential calculation
+  }
+
+}
+class Metal extends Box{
+  String material = "glass";
+
+  private void compute(){
+    //Complex exponential calculation
+  }
+
+}
+
+class RobotPacker {
+
+   private bool isFragile(Box foo) {
+     return foo.compute();
+   }
+   ......
+}
+
 }
