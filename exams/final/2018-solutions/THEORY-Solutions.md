@@ -118,9 +118,11 @@ Which of the numbered lines make sense as code contracts?
 - [y] `(3)`
 - [n] `(4)`
 
+**ERRATA**: Answer (1) is incorrect and should have been 'y', the member being private is not an issue here.
+
 **Explanation**:
 
-- `(1)` is invalid because it refers to a private member of the class, which contracts cannot use
+- ~~`(1)` is invalid because it refers to a private member of the class, which contracts cannot use~~
 - `(2)` is invalid because a class cannot "ensure" anything; in a class,there is no notion of an execution after which something could happen
 - `(3)` is a valid contract that guarantees the method will not fail because of the absence of a cookie
 - `(4)` is invalid because methods cannot have invariants
