@@ -1,1 +1,0 @@
-For exercise 3 you can access the solutions directly from ex3.

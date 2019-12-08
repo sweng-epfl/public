@@ -1,1 +1,0 @@
-You will find here a possible solution. Note that any solution that was produced using TDD and that respects the requirements is a valid solution.

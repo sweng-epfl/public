@@ -38,11 +38,8 @@ public class MinistryOfInformation {
      */
     public House findHouse(List<String> address)
         throws InvalidAddressException, AddressNotFoundException {
-        AddressUnit unit = directory.findUnit(address);
-        if (!(unit instanceof House)) {
-            throw new InvalidAddressException("The address is incomplete.");
-        }
-        return (House)unit;
+        // Put your code here.
+        throw new RuntimeException("Not implemented");
     }
 
     /**
@@ -68,16 +65,15 @@ public class MinistryOfInformation {
      * @param address - an address prefix, starting with the country name,
      *                  and listing the names of the intermediate address units
      *                  down to the necessary level.
-     * @throws - InvalidAddressException if the address is malformed
-     *         (e.g. empty, or contains dangling identifiers after the house
-     *          number)
+     * @throws - InvalidAddressException if the address is malformed (e.g. empty,
+     *         or contains dangling identifiers after the house number)
      *         - AddressNotFoundException if the address refers to
      *         an address unit that is not registered in the directory.
      */
     public int getPopulation(List<String> address)
         throws InvalidAddressException, AddressNotFoundException {
-        AddressUnit unit = directory.findUnit(address);
-        return unit.getPopulation();
+        // Put your code here.
+        throw new RuntimeException("Not implemented");
     }
 
     /**
@@ -86,22 +82,14 @@ public class MinistryOfInformation {
      * @param address - an address prefix, starting with the country name,
      *                  and listing the names of the intermediate address units
      *                  down to the necessary level.
-     * @throws - InvalidAddressException if the address is malformed
-     *         (e.g. empty, or contains dangling identifiers after the house
-     *          number)
+     * @throws - InvalidAddressException if the address is malformed (e.g. empty,
+     *         or contains dangling identifiers after the house number)
      *         - AddressNotFoundException if the address refers to an address
      *         unit that is not registered in the directory.
      */
     public void printAddresses(List<String> address)
         throws InvalidAddressException, AddressNotFoundException {
-        AddressUnit unit = directory.findUnit(address);
-        String separator = ", ";
-        String commonPrefix = "";
-        for (int i = 0; i < address.size() - 1; ++i) {
-            commonPrefix += address.get(i) + separator;
-        }
-        PrintAddressesVisitor v =
-            new PrintAddressesVisitor(commonPrefix, separator);
-        unit.accept(v);
+        // Put your code here.
+        throw new RuntimeException("Not implemented");
     }
 }

@@ -1,1 +1,0 @@
-Here is an example of test suite that achieves the required coverage. 

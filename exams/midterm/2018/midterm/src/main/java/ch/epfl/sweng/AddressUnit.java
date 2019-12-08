@@ -38,39 +38,4 @@ public abstract class AddressUnit {
      */
     public abstract void addAddress(List<String> address, House house)
         throws InvalidAddressException;
-
-    protected void checkAddress(List<String> address)
-        throws InvalidAddressException {
-        if (address == null) {
-            throw new InvalidAddressException("address is null");
-        }
-        if (address.isEmpty()) {
-            throw new InvalidAddressException("Incomplete address");
-        }
-        for (String s : address) {
-            if (s == null) {
-                throw new InvalidAddressException("a string in the " + 
-                                                  " address is null");
-            }
-            if(s.equals("")) {
-                throw new InvalidAddressException("a string in the " +
-                                                  "address is empty");
-            }
-        }
-
-        String unitName = address.get(0);
-
-        if (!unitName.equals(getName())) {
-            throw new InvalidAddressException("The " + unitName +
-                                              " does not match " +
-                                              getName());
-        }
-    }
-
-    public abstract AddressUnit findUnit(List<String> address)
-        throws InvalidAddressException, AddressNotFoundException;
-
-    public abstract int getPopulation();
-
-    public abstract void accept(AddressUnitVisitor v);
 }

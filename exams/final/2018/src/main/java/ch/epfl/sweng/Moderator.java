@@ -15,40 +15,39 @@ package ch.epfl.sweng;
  * Moderation powers do not change the wrapped user's name or their permissions to ask questions.
  */
 public class Moderator extends User {
-    private final User user;
-
     /**
      * Constructs a new moderator wrapping the specified user.
      *
      * @throws IllegalArgumentException if the user is null.
      */
     public Moderator(User user) {
-        if (user == null) {
-            throw new IllegalArgumentException("Null arg.");
-        }
-
-        this.user = user;
+        // TODO
+        throw new UnsupportedOperationException();
     }
 
     // See the base class' documentation for the other methods
 
     @Override
     public String getName() {
-        return user.getName();
+        // TODO
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean canAsk(String text) {
-        return user.canAsk(text);
+        // TODO
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean canAnswer(Question question, String text) {
-        return true;
+        // TODO
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean canEdit(Post post, String text) {
-        return true;
+        // TODO
+        throw new UnsupportedOperationException();
     }
 }

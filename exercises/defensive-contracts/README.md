@@ -9,11 +9,10 @@ In this exercise set, you will learn about defensive programming techniques to d
 - The [quiz](quiz/README.md) introduces the key topics of defensive programming and code contracts.
 
 - Basics
-  - [How Defensive Programming affects Code Coverage](basic/code-coverage/README.md)
   - [Neutral Return Values](basic/neutral-return-values/README.md)
   - [Bad Input Parameter Checks and Exceptions](basic/string-input-parameter-checks/README.md)
   - [Callback-based error-processing routines](basic/callbacks/README.md)
-  - [Interface Contracts](basic/interface-contracts/README.md)
+  - [How Defensive Programming affects Code Coverage](basic/code-coverage/README.md)
 
 - Intermediate
   - [Garbage-in ⇏ Garbage out](intermediate/csv-sanitization/README.md)

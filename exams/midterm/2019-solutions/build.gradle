@@ -1,0 +1,68 @@
+// !!!!!!!!!!!!!!!!!!!!!!
+// DO NOT TOUCH THIS FILE
+// !!!!!!!!!!!!!!!!!!!!!!
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'jacoco'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:28.0-jre'
+    // JUnit 5 "Jupiter"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+    // Hamcrest
+    testImplementation 'org.hamcrest:hamcrest-library:2.1'
+}
+
+application {
+    mainClassName 'ch.epfl.sweng.midterm.App'
+}
+
+compileJava {
+    // Always clean first
+    dependsOn clean
+}
+
+test {
+    useJUnitPlatform()
+    // Show stdout/stderr, helps for debugging
+    testLogging.showStandardStreams true
+    // Do not fail builds because of failing tests
+    ignoreFailures true
+}
+
+jacocoTestReport {
+    // XML report, for scripting purposes
+    reports.xml.enabled true
+    // HTML report, for human purposes
+    reports.html.destination file("${buildDir}/reports/coverage")
+}
+
+build {
+    // Always generate coverage
+    dependsOn jacocoTestReport
+    // Add some help to JaCoCo reports
+    doLast {
+        def msg = '''SwEng help:
+                     <ul>
+                       <li>JaCoCo calls statements "instructions"</li>
+                       <li>JaCoCo does not compute path coverage, because it is usually not helpful in real code</li>
+                       <li>The column 'Cxty' is the <a target="_blank" href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity</a></li>
+                     </ul>'''
+
+        fileTree("${buildDir}/reports/coverage").include('**/*.html').each { f ->
+            java.nio.file.Files.writeString(f.toPath(), java.nio.file.Files.readString(f.toPath()).replace('</h1>', "</h1><p>${msg}</p>"))
+        }
+    }
+    // Tell the user about the report file
+    doLast {
+        println 'You can view the code coverage report in build/reports/coverage/index.html'
+    }
+}

@@ -8,50 +8,21 @@ package ch.epfl.sweng;
 // You CAN add interface implementations.
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * A leaderboard that counts points.
  * The points are tallied as follows:
  * - Posting a question is worth 5 points.
  * - Posting an answer is worth 1 point.
  */
-public final class Leaderboard implements Observer {
-    // BigInts to avoid overflows
-    private final Map<User, BigInteger> scores;
-
+public final class Leaderboard {
     /**
      * Constructs a leaderboard for the specified forum.
      *
      * @throws IllegalArgumentException if the forum is null.
      */
     public Leaderboard(Forum forum) {
-        if (forum == null) {
-            throw new IllegalArgumentException("Null forum.");
-        }
-
-        scores = new HashMap<>();
-
-        forum.addObserver(this);
-    }
-
-    @Override
-    public void update(Observable observable, Object arg) {
-        Post post = (Post) arg;
-        scores.putIfAbsent(post.getAuthor(), BigInteger.ZERO);
-
-        long score;
-        if (post instanceof Question) {
-            score = 5;
-        } else {
-            score = 1;
-        }
-
-        scores.put(post.getAuthor(), scores.get(post.getAuthor()).add(BigInteger.valueOf(score)));
+        // TODO
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -88,42 +59,7 @@ public final class Leaderboard implements Observer {
      */
     @Override
     public String toString() {
-        int rank = 0;
-        int similarCount = 1;
-        BigInteger last = null;
-
-        List<Map.Entry<User, BigInteger>> sortedScores = new ArrayList<>(scores.entrySet());
-        sortedScores.sort(Leaderboard::compareEntries);
-
-        StringBuilder result = new StringBuilder();
-
-        for (Map.Entry<User, BigInteger> entry : sortedScores) {
-            if (entry.getValue().equals(last)) {
-                similarCount++;
-            } else {
-                rank += similarCount;
-                similarCount = 1;
-                last = entry.getValue();
-            }
-
-            result.append('#');
-            result.append(rank);
-            result.append(' ');
-            result.append(entry.getKey().getName());
-            result.append(' ');
-            result.append(entry.getValue());
-            result.append(System.lineSeparator());
-        }
-
-        return result.toString().trim();
-    }
-
-    private static int compareEntries(Map.Entry<User, BigInteger> a, Map.Entry<User, BigInteger> b) {
-        int first = b.getValue().compareTo(a.getValue());
-        if (first != 0) {
-            return first;
-        }
-
-        return a.getKey().getName().compareTo(b.getKey().getName());
+        // TODO
+        throw new UnsupportedOperationException();
     }
 }

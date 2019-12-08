@@ -20,14 +20,10 @@ public class House extends AddressUnit {
         this.landLinePhone = landLinePhone;
     }
 
-    /**
-     * Get the number of the phone installed in the house.
-     */
     public String getLandLinePhone() {
         return landLinePhone;
     }
 
-    @Override
     public int getPopulation() {
         return population;
     }
@@ -41,23 +37,6 @@ public class House extends AddressUnit {
     public void addAddress(List<String> address, House house)
         throws InvalidAddressException {
         throw new InvalidAddressException("The house can not have sub units");
-    }
-
-    @Override
-    public AddressUnit findUnit(List<String> address)
-        throws InvalidAddressException, AddressNotFoundException {
-        checkAddress(address);
-        if (1 < address.size()) {
-            throw new  InvalidAddressException("The address is overspecified " +
-                                               "(building/floor/flat# is not " +
-                                               "supported).");
-        }
-        return this;
-    }
-
-    @Override
-    public final void accept(AddressUnitVisitor v) {
-        v.visit(this);
     }
 }
 

@@ -1,0 +1,21 @@
+# Java
+*.class
+bin/
+gen/
+out/
+
+# Gradle
+.gradle/
+build/
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+local.properties
+
+# Eclipse
+.classpath
+.project
+
+# Logs
+*.log

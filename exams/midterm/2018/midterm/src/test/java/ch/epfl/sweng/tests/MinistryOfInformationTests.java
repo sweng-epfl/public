@@ -28,6 +28,7 @@ import java.io.PrintStream;
  * bogus houses. It then exercises the query methods in MinistryOfInformation
  * on the model.
  */
+
 public class MinistryOfInformationTests {
     private MinistryOfInformation moi = null;
     private House aRecipient = new House("234", 1, "+248 4 363 023");
@@ -149,7 +150,7 @@ public class MinistryOfInformationTests {
         moi.addAddress(Arrays.asList("Seychelles", "Mahe", "Port Glaud", "234"),
                       aRecipient);
         House r = moi.findHouse(Arrays.asList("Seychelles", "Mahe",
-                                              "Port Glaud", "234"));
+                                             "Port Glaud", "234"));
         assertEquals(r, aRecipient);
     }
 
@@ -157,7 +158,7 @@ public class MinistryOfInformationTests {
     public void testAddressResolutionNotFound()
         throws InvalidAddressException, AddressNotFoundException {
         House r = moi.findHouse(Arrays.asList("Seychelles", "Mahe",
-                                              "Port Glaud", "432"));
+                                             "Port Glaud", "432"));
     }
 
     @Test
@@ -170,20 +171,22 @@ public class MinistryOfInformationTests {
         assertEquals(house, moi.findHouse(address));
     }
 
+    @Ignore("Remove this line when doing the Population Census problem")
     @Test
     public void testGetPopulation()
         throws InvalidAddressException, AddressNotFoundException {
         moi.addAddress(Arrays.asList("Seychelles", "Mahe", "Port Glaud", "234"),
-                       aRecipient);
+                      aRecipient);
         assertEquals(1, (int)moi.getPopulation(Arrays.asList("Seychelles",
-                                                             "Mahe",
-                                                             "Port Glaud",
-                                                             "234")));
+                                                            "Mahe",
+                                                            "Port Glaud",
+                                                            "234")));
         assertEquals(4, (int)moi.getPopulation(Arrays.asList("Seychelles",
-                                                             "Mahe",
-                                                             "Port Glaud")));
+                                                            "Mahe",
+                                                            "Port Glaud")));
     }
 
+    @Ignore("Remove this line when doing the Broadcast problem")
     @Test
     public void testPrintAddresses()
         throws InvalidAddressException, AddressNotFoundException {
@@ -191,18 +194,18 @@ public class MinistryOfInformationTests {
             generateHouses("11", "+248 4 346 0", 5);
         for(House destination : dieulandDestinations) {
             moi.addAddress(Arrays.asList("Seychelles", "Dream Island",
-                                         "Dieuland", destination.getName()),
-                           destination);
+                                        "Dieuland", destination.getName()),
+                          destination);
         }
 
-        // Redirecting output stream
+        /* Redirecting output stream */
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        // Method being tested
+        /* Method being tested */
         moi.printAddresses(Arrays.asList("Seychelles",
-                                         "Dream Island",
-                                         "Dieuland"));
+                                        "Dream Island",
+                                        "Dieuland"));
 
         String outputMessage = outContent.toString();
 
@@ -214,78 +217,7 @@ public class MinistryOfInformationTests {
             assertTrue(outputMessage.contains(correctMessage));
         }
 
-        // Resetting output stream
+        /* Resetting output stream */
         System.setOut(null);
-    }
-
-    @Test
-    public void testGetLandLine()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList("Seychelles", "Mahe", "Port Glaud", "234"),
-                       aRecipient);
-        House r = moi.findHouse(Arrays.asList("Seychelles", "Mahe",
-                                              "Port Glaud", "234"));
-        assertEquals(r.getLandLinePhone(), aRecipient.getLandLinePhone());
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressOnHouseFails()
-        throws InvalidAddressException, AddressNotFoundException {
-        aRecipient.addAddress(new ArrayList<String>(), aRecipient);
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testFindUnitOverspecified()
-        throws InvalidAddressException, AddressNotFoundException {
-        aRecipient.findUnit(Arrays.asList(aRecipient.getName(), "bld 1"));
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testFindHouseEmptyAddress()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.findHouse(new ArrayList<String>());
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testFindHouseWrongCountry()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.findHouse(Arrays.asList("Switzerland", "Vaud", "Lausanne", "EPFL"));
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressIncomplete()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList("Seychelles", "Mahe"), aRecipient);
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressIncomplete2()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList("Seychelles"), aRecipient);
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressEmpty()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList(), aRecipient);
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressWrongCountry()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList("Switzerland", "Vaud", "Lausanne"), aRecipient);
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testFindHouseIncomplete()
-        throws InvalidAddressException, AddressNotFoundException {
-        House r = moi.findHouse(Arrays.asList("Seychelles", "Mahe", "Port Glaud"));
-    }
-
-    @Test(expected = InvalidAddressException.class)
-    public void testAddAddressInconsistent()
-        throws InvalidAddressException, AddressNotFoundException {
-        moi.addAddress(Arrays.asList("Seychelles", "Mahe", "Port Glaud", "235"),
-                       aRecipient);
     }
 }
