@@ -51,7 +51,7 @@ public final class PapademiaAdapter {
 
         final List<Course> poodleCourses = new ArrayList<>();
         for (final PapademiaCourse course : courses) {
-            // Remember, IS-Papademia can have null courses
+            // Remember, IS-Papademia can have null courses...
             if (course == null) {
                 continue;
             }
@@ -59,6 +59,10 @@ public final class PapademiaAdapter {
             final List<User> students = new ArrayList<>();
 
             for (final PapademiaUser user : users) {
+                // ...and null users
+                if (user == null) {
+                    continue;
+                }
                 if (user.taughtCourses.contains(course)) {
                     lecturers.add(new User(user.name));
                 }
