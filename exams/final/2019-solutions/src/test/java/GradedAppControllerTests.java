@@ -10,36 +10,40 @@ final class GradedAppControllerTests {
     // Overall, we accept extraneous leading/trailing spaces to be nice, and to treat CRLF (Windows) the same as LF (Unix),
     // except in tests specifically designed to check spacing
 
-    private static final AppController EMPTY_CONTROLLER = new AppController(name -> GradedTestsUtils.list());
-
     @GradedTest("AppController::handle should throw an IllegalArgumentException when given a null input")
     void t00_nullInput() {
-        assertThrows(IllegalArgumentException.class, () -> EMPTY_CONTROLLER.handle(null));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThrows(IllegalArgumentException.class, () -> controller.handle(null));
     }
 
     @GradedTest("AppController::handle should return null given a known command without text")
     void t01_commandWithoutText() {
-        assertThat(EMPTY_CONTROLLER.handle("show"), is(nullValue()));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("show"), is(nullValue()));
     }
 
     @GradedTest("AppController::handle should return null given an unknown command")
     void t02_exitWithArgThrows() {
-        assertThat(EMPTY_CONTROLLER.handle("explore"), is(nullValue()));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("explore"), is(nullValue()));
     }
 
     @GradedTest("AppController::handle should return the correct description for the main view")
     void t03_mainViewDescription() {
-        assertThat(EMPTY_CONTROLLER.handle("").description.trim(), is("Welcome!"));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("").description.trim(), is("Welcome!"));
     }
 
     @GradedTest("AppController::handle should return the correct commands for the main view")
     void t04_mainViewCommands() {
-        assertThat(EMPTY_CONTROLLER.handle("").commands, containsInAnyOrder("search", "show"));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("").commands, containsInAnyOrder("search", "show"));
     }
 
     @GradedTest("AppController::handle should ignore leading and trailing spaces for the 'main' view")
     void t05_commandWithSpacesWithoutText() {
-        assertThat(EMPTY_CONTROLLER.handle("   ").description.trim(), is("Welcome!"));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("   ").description.trim(), is("Welcome!"));
     }
 
     @GradedTest("AppController::handle should pass the text through unmodified for 'search'")
@@ -57,12 +61,14 @@ final class GradedAppControllerTests {
 
     @GradedTest("AppController::handle should return the correct description when a search returns no results")
     void t07_searchWithoutResultsHasCorrectText() {
-        assertThat(EMPTY_CONTROLLER.handle("search x").description.trim(), is("The search returned no results."));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("search x").description.trim(), is("The search returned no results."));
     }
 
     @GradedTest("AppController::handle should return the correct commands when a search returns no results")
     void t08_searchWithoutResultsHasCorrectCommands() {
-        assertThat(EMPTY_CONTROLLER.handle("search x").commands, containsInAnyOrder("search", "show"));
+        AppController controller = new AppController(name -> GradedTestsUtils.list());
+        assertThat(controller.handle("search x").commands, containsInAnyOrder("search", "show"));
     }
 
     @GradedTest("AppController::handle should return the correct description when a search returns results")
