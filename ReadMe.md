@@ -15,3 +15,4 @@ This repo contains related materials that we make available to the public. For E
 - [Lectures](lectures)
 - [Past midterm exams](exams/midterm/) along with solutions
 - [Past final exams](exams/final/) along with solutions
+- [Software Development Project](project)
