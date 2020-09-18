@@ -10,6 +10,7 @@ Our course tandem consists of one part that teaches the principles and concepts 
 
 This repo contains related materials that we make available to the public. For EPFL-specific information, please see [the course webpage](http://dslab.epfl.ch/teaching/sweng/).
 
+- [Bootcamp](bootcamp)
 - [Exercises](exercises)
 - [Lectures](lectures)
 - [Past midterm exams](exams/midterm/) along with solutions
