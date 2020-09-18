@@ -8,6 +8,8 @@ In this first part, we will introduce some of the tools you will use.
 
 Android Studio is the official recommended IDE for developpers wishing to develop Android apps. If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin - as Android Studio is just a special distribution of IntelliJ. Be aware that some menus or buttons may have slightly different names. You are free to use other tools if you want, but we will not provide support for them.
 
+> :information_source: Android Studio supports all mainstream operating systems; you can work on Windows, Mac, or Linux.
+
 Download and install Android Studio from [https://developer.android.com](https://developer.android.com). If you need any help, follow the [instructions](https://developer.android.com/studio/install.html).
 
 You should choose the default options (you will do more tool configuration later).
