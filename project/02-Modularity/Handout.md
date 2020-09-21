@@ -2,9 +2,9 @@
 
 In this second part of the SwEng project, you will add weather forecast capabilities to your app. Using an external service, [OpenWeatherMap](https://api.openweathermap.org/), you will display to the user a weather forecast at their location, or at an address of their choice. For that, you will also need to be able to find out where the user is located.
 
-> :information_source: In this part, we will use features that were introduced in Java 8. These features were not available on older versions of Android (Android < N - API Level 24). To use them, we either need to provide alternatives, or to loose compatibility with these older devices. Here, we choose to do the latter. To enable this, please go to your app `build.gradle` and set `minSdkVersion` to `24`.
+> :information_source: In this part, we will use features that were introduced in Java 8. These features were not available on older versions of Android (Android < N, API Level 24). To use them, we either need to provide alternatives, or to lose compatibility with these older devices. Here, we choose to do the latter. To enable this, please go to your app `build.gradle` and set `minSdkVersion` to `24`.
 
-Today, we will mostly focus on writing good abstractions and working modules. Handling errors won't be part of this project, so it doesn't matter if your app crashes when something goes wrong. We will learn later how to handle errors gracefully.
+Today, we will mostly focus on writing good abstractions and working modules. Handling errors is for later in the course, so it doesn't matter _for now_ if your app crashes when something goes wrong. We will learn later how to handle errors gracefully.
 
 > :information_source: **This part of the project is rather long**. Next part will be way shorter, so you can spend about 1.5 weeks on this part.
 
@@ -20,7 +20,7 @@ Before diving into the code, we ask you to first write down what the system you 
 
 Please take a moment to think about the modules and interfaces you will need and what kind of methods they should expose to their client (the rest of your app). We advise you to write that down on a sheet of paper, or try to explain it to a rubber duck on your desk, to convince you that it works and will fulfill its purpose.
 
-Remember, what you will code will need to be able to retrieve the location of the user, retrieve the weather at a given location, as well as convert an address to a location.
+Remember that your code will need to retrieve the location (latitude and longitude) of the user, let them input a custom address, convert an address to a location, and finally retrieve the weather at a given location.
 
 ## Design and write the interfaces
 
@@ -30,12 +30,12 @@ Now that you know how your system should work, you can write interfaces and data
 
 In theory, you will have three interfaces (the names are indicative):
  - `LocationService` that defines a method to get the current position of the device
- - `GeoCodingService` that defines a method to convert a position to an address (the reverse can also be useful if you want to display it to the user)
+ - `GeocodingService` that defines a method to convert a position to an address (the reverse can also be useful if you want to display it to the user)
  - `WeatherService` that defines a method to get the weather at a given location.
 
-You will also need a few classes to store the resulting forecast from the server. Think about _what values your client will need_ (while still making sure you can provide them - have a look at the [OneCall API documentation](https://openweathermap.org/api/one-call-api)). A `Location` class will also be needed to store the location - both when retrieving it in and when sending it to the weather API. Android already provides one, but you don't want to use it here, as it would not cleanly allow you to separate concerns and use an other provider in the future with the same interfaces.
+You will also need a few classes to store the resulting forecast from the server. Think about _what values your client will need_ (while still making sure you can provide them - have a look at the [OneCall API documentation](https://openweathermap.org/api/one-call-api)). A `Location` class will also be needed to store the location - both when retrieving it in and when sending it to the weather API. Android already provides one, but you don't want to use it here, as it would not cleanly allow you to separate concerns and use another provider in the future with the same interfaces.
 
-Regarding the design of the classes storing the forecast, here are a few advices. The API returns data in Json (a sort of key-value object notation), containing in particular the current weather and the forecast for the following days. See which fields interest you and design the interfaces and classes you need.
+Regarding the design of the classes storing the forecast, here is some advice. The API returns data in JSON (a sort of key-value object notation), containing in particular the current weather and the forecast for the following days. See which fields interest you and design the interfaces and classes you need.
 
 > :information_source: When you design a service that _waits_ on something (for example: an external API), you usually don't want to block the caller, but rather use asynchronous structures. We will introduce them later in the course, so **we don't ask you to use them for now**. **However, remember that -outside of this exercise- calling a web service synchronously from the main thread is in most of the cases a very bad practice.** 
 
@@ -43,7 +43,7 @@ Regarding the design of the classes storing the forecast, here are a few advices
 
 Now that you wrote the interfaces for your modules, you need to implement them. For each interface, create a class that implements the methods you defined. Here are a few hints and tips on what to do precisely. Feel free to ask on Piazza if you need suggestions!
 
-> :information_source: You may notice while writing the implementation that the interface misses something: a method parameter, a list of thrown exceptions... This is not that big of a deal: sometimes, when writing the actual code, you come up with something you didn't think you'd need. Updating the interface at this time to provide what you need for that is not an issue. **However, please go through the same reasoning every time you update the interface as when you wrote it: is it specific to my implementation? Does it give too much details about the implementation? Do I really need it? ...**. 
+> :information_source: You may notice while writing the implementation that the interface is missing something: a method parameter, a list of thrown exceptions... This is not that big of a deal: sometimes, when writing the actual code, you come up with something you didn't think you'd need. Updating the interface at this time to provide what you need for that is not an issue. **However, please go through the same reasoning every time you update the interface as when you wrote it: is it specific to my implementation? Does it give too much details about the implementation? Do I really need it? ...**. 
 
 > :warning: In particular in today's project, if you realize you need a `Context` (or similar Android system classes) to do something, you should not add it as a method parameter in the interface, as it makes it tightly coupled to the Android operating system. Think about other ways to provide the `Context` to your implementation. 
 
@@ -56,15 +56,13 @@ There are a few options to access the network in Android. We suggest you to use 
 But first, you need to disable a check. By default, Android disallows doing networking on main thread - as we explained, doing that is very bad. But since we will introduce asynchronicity later, you must add this code somewhere (for example in your main activity). This needs to run before the first call to your service.
 
 ```java
-// TODO: Remove this line of code once I learned about asynchronous operations!
+// TODO: Remove this line of code once I learn about asynchronous operations!
 StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build()); 
 ```
 
 > Hint: you will need to add the `INTERNET` permission to access the net. To do so, add the following to your App Manifest (`AndroidManifest.xml`)
 > `<uses-permission android:name="android.permission.INTERNET" />`
 > To apply the change, **uninstall the app from the device/virtual device**. Otherwise, the permission won't be granted.
-
-> For advanced students: if you already know about asynchronicity, the easy way to do async networking in Android is to use [Volley](https://developer.android.com/training/volley/simple). We will probably introduce this tool later this semester.
 
 >Hint: we provide here a small example of HTTP request done in this fashion:
 ```java
@@ -122,7 +120,7 @@ public double getTemperature(JSONObject json) throws JSONException {
 }
 ```
 
-You will find the exact content of the JSON in the [OneCall API documentation](https://openweathermap.org/api/one-call-api). Please note that in the array `daily`, the first entry (e.g. `daily[0]`) corresponds to the current day.
+You will find the exact content of the JSON in the [OneCall API documentation](https://openweathermap.org/api/one-call-api). Please note that in the array `daily`, the first entry (i.e. `daily[0]`) corresponds to the current day.
 
 ### Location
 
@@ -133,20 +131,20 @@ This service provides a method called `getLastKnownLocation(...)` (see [the docu
 
 > :warning: **Warning:** `getLastKnownLocation` will not return anything if no app tried to get a position before you do. As we are not trying to teach you everything about Android here, this will suffice. To generate a location, you will therefore need to open Google Maps once on the virtual device before actually testing the app. If you want, you can try to use more reliable positionning methods. Feel free!
 
-### GeoCoding
+### Geocoding
 
 Android provides a small service called [Geocoder](https://developer.android.com/reference/android/location/Geocoder). 
 This service provides everything your implementation will normally need.
 
-> :warning: Geocoder relies on the Google Mobile Services (GMS, also called Google Play Services) to work, so you need to make sure they are installed on your virtual device for this to work. Other providers of this feature may however exist, if you don't want to use GMS. **For advanced students:** you can for example call the Geocoder through a webservice (take a look at [the Geocoding Google API](https://developers.google.com/maps/documentation/geocoding/overview?hl=fr#GeocodingRequests) if you are interested).
+> :warning: Geocoder relies on the Google Play Services to work, so you need to make sure they are installed on your virtual device for this to work. Other providers of this feature may however exist, if you don't want to use Google Play. 
 
 ## Display the weather
 
-To wrap-up, you will need to use the services you wrote to display the weather in an actual activity.
+To wrap up, you will need to use the services you wrote to display the weather in an actual activity.
 
 We suggest you create a new activity, and create a button on the main screen to open it. 
 
-In this new activity, do everything you need to display the weather: add a text-field for the user to input a city name, a toggle or checkbox to allow them to use their GPS location instead, and finally add a button to fetch and display the weather. Don't forget to request the permissions required to access the location of the device! 
+In this new activity, do everything you need to display the weather: add a text field for the user to input a city name, a toggle or checkbox to allow them to use their GPS location instead, and finally add a button to fetch and display the weather. Don't forget to request the permissions required to access the location of the device! 
 
 Feel free to use icons to make it as pretty as you want, although this is not required and this is not the goal of this project session. 
 

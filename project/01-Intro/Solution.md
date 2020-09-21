@@ -12,7 +12,7 @@ The empty Activity contains a `Constraint Layout`, that defines the placement of
         ...
 ```
 
-A good practice in Android is to extract all the text constants in an other file. To do that easily, open the "Code" view of your screen, and put your cursor on both `android:text=...` fields. Do `Alt + Enter` to show the quick fix toolbox.
+A good practice in Android is to extract all the text constants in another file. To do that easily, open the "Code" view of your screen, and put your cursor on both `android:text=...` fields. Do `Alt + Enter` to show the quick fix toolbox.
 
 ### Create a greeting screen
 
@@ -25,7 +25,7 @@ In `GreetingActivity.java`:
 ```java
 
 public class GreetingActivity extends AppCompatActivity {
-	// Good practice: put constants in static final fields
+    // Good practice: put constants in static final fields
     public static final String EXTRA_USER_NAME = "username";
 
     @Override
