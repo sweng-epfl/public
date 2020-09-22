@@ -10,4 +10,8 @@ This project **is not graded**. However, we still expect you to work on it each 
 
 Find the handout here: [01-Intro/Handout.md](01-Intro/Handout.md)
 
-Solution will be published next week.
+The solution is here: [01-Intro/Solution.md](01-Intro/Solution.md), and you can browse the code here: [01-Intro/solution-code](01-Intro/solution-code)
+
+## Week 2: Modularity
+
+Find the handout here: [02-Modularity/Handout.md](02-Modularity/Handout.md)
