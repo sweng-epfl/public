@@ -15,3 +15,11 @@ The solution is here: [01-Intro/Solution.md](01-Intro/Solution.md), and you can 
 ## Week 2: Modularity
 
 Find the handout here: [02-Modularity/Handout.md](02-Modularity/Handout.md)
+
+The solution is here: [02-Modularity/Solution.md](02-Modularity/Solution.md), and you can browse the code here: [02-Modularity/solution-code]
+
+## Week 3: Operations
+
+Find the handout here: [03-Operations/Handout.md](03-Operations/Handout.md)
+
+There will be no solution for this part of the project.
