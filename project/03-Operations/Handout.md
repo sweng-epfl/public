@@ -391,6 +391,9 @@ jobs:
         KEYS: ${{ secrets.KEYS }}
       run: echo $KEYS > app/src/main/res/values/keys.xml
 
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
     - name: run tests
       uses: reactivecircus/android-emulator-runner@v2
       with:
