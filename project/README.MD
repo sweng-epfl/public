@@ -16,7 +16,7 @@ The solution is here: [01-Intro/Solution.md](01-Intro/Solution.md), and you can 
 
 Find the handout here: [02-Modularity/Handout.md](02-Modularity/Handout.md)
 
-The solution is here: [02-Modularity/Solution.md](02-Modularity/Solution.md), and you can browse the code here: [02-Modularity/solution-code]
+The solution is here: [02-Modularity/Solution.md](02-Modularity/Solution.md), and you can browse the code here: [02-Modularity/solution-code](02-Modularity/solution-code)
 
 ## Week 3: Operations
 
