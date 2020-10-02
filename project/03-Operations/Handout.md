@@ -80,7 +80,7 @@ When you create an Android project in Android Studio, a **.gitignore** file is c
 .cxx
 ```
 
-This line tells Git to ignore any files whose name ends with **.iml**, the **.gradle** directory, ... 
+This line tells Git to ignore any files whose name ends with **.iml**, the **.gradle** directory, ...
 
 Usually, your typical `.gitignore` file will exclude all build artifacts (**.class**, **.jar**, **.so**, ...), as well as project dependencies that you manage via a specific build tool (SBT, Gradle, NPM, ...), local IDE configuration (**.eclipse**, **.idea**, **project.iml**, ...) and, most important if your repository is public, **secrets** (**NEVER** upload a private key or API secret on a public facing git repository - thousands of people do that and get hacked, even by automatic bots that look for API keys on GitHub).
 
@@ -143,7 +143,7 @@ You can have multiple remote repositories, with different names.
 To demonstrate the power of Git, let's apply some changes to your app. You can, for example, change the greeting message.
 Compile your app and run it to validate your changes.
 
-Add the file(s) you just changed: 
+Add the file(s) you just changed:
 
 ```sh
 git add <file relative path>
@@ -345,11 +345,17 @@ If you want to do something a bit tricky, like identify which commit introduced 
 
 Github Actions is what we call a **continuous integration** service. It is directly integrated into GitHub, which makes it very practical to use.
 
-A CI automates the build of your application: you can define several actions to run either when a button is pressed, or at every push / pull request on a repository. This is a very powerful tool that enables you to, for example, run all your unit tests at every push to make sure you didn't break anything - or at every PR to make sure the PR _won't_ break anything if you merge it. You can also deploy code automatically to a production server, build the binaries for a release... 
+A CI automates the build of your application: you can define several actions to run either when a button is pressed, or at every push / pull request on a repository. This is a very powerful tool that enables you to, for example, run all your unit tests at every push to make sure you didn't break anything - or at every PR to make sure the PR _won't_ break anything if you merge it. You can also deploy code automatically to a production server, build the binaries for a release...
+
+### Adding encrypted secrets
+
+As was previously said, it is a **bad idea** to upload private keys or API secrets to a public git repository. However, this is quite problematic when using a CI service, as building and running parts of our code requires having access to these secrets. Thankfully, GitHub offers a workaround with [GitHub Secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets).  
+
+For this project, we'll want to create a GitHub secret with the content of your `keys.xml` file. To do so, follow the instructions to create a secret [here](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets). Name your secret `KEYS` and paste the content of your project's `app/src/main/res/values/keys.xml` file in it.
 
 ### Setting up your build
 
-GitHub Actions are small YAML files located in a special directory that GitHub reads and understands. 
+GitHub Actions are small YAML files located in a special directory that GitHub reads and understands.
 You can define multiple actions on a project, to react differently to different events.
 
 The action you will create for now will simply build your app and test it in the emulator. As you didn't write any test yet, the "test" part will **do nothing** - so for now your action will just check that your app _compiles_. But once we add tests later in the semester, this action will also report if the tests fail.
@@ -358,7 +364,7 @@ Actions are simply files in the repository, so you can create them with any test
 
 Go to your repository on GitHub and make sure you are logged in to your account. You should see an "Actions" tab, click it.
 
-On the next page, click "Skip this and set up a workflow yourself". 
+On the next page, click "Skip this and set up a workflow yourself".
 
 GitHub provides a lot of workflows for common use-cases, but doesn't explicitly recommend anything for Android apps, so we will build it ourselves.
 
@@ -380,6 +386,11 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
 
+    - name: add keys
+      env:
+        KEYS: ${{ secrets.KEYS }}
+      run: echo $KEYS > app/src/main/res/values/keys.xml
+
     - name: run tests
       uses: reactivecircus/android-emulator-runner@v2
       with:
@@ -394,8 +405,10 @@ We will now comment all the lines in this workflow.
  - Then you have a list of `jobs`. In this build, we only have one `job` called `test`. Each job defines multiple parameters:
  	- First, you have the `runs-on` paremeter, which defines the base container to use. Here, we want to run on `macos` because it enables hardware acceleration, which we need to run the emulator. We specifiy `macos-latest` to use the latest version of macos, as we don't care about the specific version used in the container.
  	- Then, we have a list of `steps` to run in the build. They are ran one after the other. A typical `step` has a name, `uses` one or multiple templates, and specifies some parameters defined by the template.
- 		+ The first action uses the standard template `actions/checkout@v2` (which corresponds to the tag `v2` on GitHub repository `actions/checkout` - actions are repositories themselves!). This action simply clones the repository and sets the current working repository in it. 
- 		+ Then, you have the action running the tests. This action uses the template `reactivecircus/android-emulator-runner@v2`. This template sets-up an emulator for you, and then lets you execute any script you like. Here, our `script` is a command that builds the app and executes the tests on an emulator. The documentation of this action can be found in the [GitHub Actions Marketplace](https://github.com/marketplace/actions/android-emulator-runner). You will probably want to have a look at this at some point in SDP!
+ 		+ The first action uses the standard template `actions/checkout@v2` (which corresponds to the tag `v2` on GitHub repository `actions/checkout` - actions are repositories themselves!). This action simply clones the repository and sets the current working repository in it.
+ 		+ The second action adds back the secret keys that were previously omitted from the repository.
+		First, the `KEYS` secret that we previously stored is accessed, and then copied to the `app/src/main/res/values/keys.xml` file. You can find out more about using secrets in a workflow [here](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
+ 		+ Finally, you have the action running the tests. This action uses the template `reactivecircus/android-emulator-runner@v2`. This template sets-up an emulator for you, and then lets you execute any script you like. Here, our `script` is a command that builds the app and executes the tests on an emulator. The documentation of this action can be found in the [GitHub Actions Marketplace](https://github.com/marketplace/actions/android-emulator-runner). You will probably want to have a look at this at some point in SDP!
 
 Now, you can commit the file using the dedicated button. After a few seconds, going back to the **Actions** tab you should see an action with the name you chose earlier. If everything goes fine, it should be running or scheduled to run soon. After a few minutes (~ 5-7mn) you should get a successfull result and a nice green check mark.Now, you can commit the file using the dedicated button. After a few seconds, going back to the **Actions** tab you should see an action with the name you chose earlier. If everything goes fine, it should be running or scheduled to run soon. After a few minutes (~ 5-7mn) you should get a successfull result and a nice green check mark.
 
