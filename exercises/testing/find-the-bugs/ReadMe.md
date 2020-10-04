@@ -12,6 +12,7 @@ This is a form of _regression testing_: adding tests that show the existence of 
 
 You may be thinking, _can't I just fix the bug first and then write a test that passes?_ The issue with doing that is that if you write the test afterwards, you can't be sure that it really catches the bug. You know that the test passes, but maybe it would have on the buggy code before you fixed it!
 
+> To run your tests, run `./gradlew build`. It will indicate the passing (or failing) tests. In the case of a failing test, it will link a detailed test report. 
 
 ## People and their age
 

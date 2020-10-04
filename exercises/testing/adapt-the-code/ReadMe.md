@@ -121,7 +121,7 @@ public class MyActivity extends Activity  {
 }
 ```
 
-In your tests, you can then configure the dependency before the activity is created, for instance.
+In your tests, you can then configure the dependency before the activity is created, for instance:
 
 ```java
 @RunWith(AndroidJUnit4.class)
@@ -138,5 +138,7 @@ public class MainActivityTest {
     // ... your tests here ...
 }
 ```
+
+> An `ActivityTestRule` launches the specified activity before each test annotated with `@Test` and each method annotated with `@Before` and terminates it after methods annotated with `@After`. It allows the manipulation of the activity during the test. Overriding some mehtods like `beforeActivityLaunched` or `afterActivityLaunched` allows executing code that should run before/after the activity is launched: this allows setting some dependencies and and "preparing the ground" for the tests. Read more about it [here](https://developer.android.com/reference/androidx/test/rule/ActivityTestRule).
 
 As an exercise, change the `WeatherService` and `TreasureFinder` classes from before to use this pattern. The changed classes should only have one constructor, taking no parameters.
