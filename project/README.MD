@@ -23,3 +23,7 @@ The solution is here: [02-Modularity/Solution.md](02-Modularity/Solution.md), an
 Find the handout here: [03-Operations/Handout.md](03-Operations/Handout.md)
 
 There will be no solution for this part of the project.
+
+## Week 4: Testing & Dependency Injection
+
+Find the handout here: [04-Testing/Handout.md](04-Testing/Handout.md)
