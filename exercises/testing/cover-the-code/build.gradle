@@ -1,36 +1,45 @@
+// !!!!!!!!!!!!!!!!!!!!!!
+// DO NOT TOUCH THIS FILE
+// !!!!!!!!!!!!!!!!!!!!!!
+
+// This build file has three goals:
+// - Provide a single "build" task that does everything
+// - Provide a base for exams, including testing and code coverage as well as reports for scripts
+// - Mimic IDE behavior that users may expect, e.g. always run all tests, show tests even if they pass, ...
+
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import java.nio.file.Files
 
 plugins {
-    // Apply the java plugin to add support for Java
     id 'java'
-
-    // Apply the application plugin to add support for building a CLI application
     id 'application'
-    
     id 'jacoco'
 }
 
+// This file requires Java >= 11, which is also currently the latest LTS release
+if (!JavaVersion.current().isJava11Compatible()) {
+    throw new GradleException('Please install Java 11 or newer')
+}
+
+// The only entry point is "build", or an empty array for IntelliJ/AndroidStudio's gradle sync
+if (project.gradle.startParameter.taskNames != [] && project.gradle.startParameter.taskNames != ['build']) {
+    throw new GradleException('Please only use the "build" task.')
+}
+
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
 
 dependencies {
-    // Use Hamcrest for assertions
-    testImplementation 'org.hamcrest:hamcrest-library:2.1'
-
-    // Use JUnit Jupiter API for testing.
+    // JUnit 5 "Jupiter"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
-
-    // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+    // Hamcrest
+    testImplementation 'org.hamcrest:hamcrest-library:2.1'
 }
 
 application {
-    // Define the main class for the application
-    mainClassName = 'App'
+    mainClassName 'App'
 }
 
 test {
