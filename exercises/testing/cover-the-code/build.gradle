@@ -16,16 +16,6 @@ plugins {
     id 'jacoco'
 }
 
-// This file requires Java >= 11, which is also currently the latest LTS release
-if (!JavaVersion.current().isJava11Compatible()) {
-    throw new GradleException('Please install Java 11 or newer')
-}
-
-// The only entry point is "build", or an empty array for IntelliJ/AndroidStudio's gradle sync
-if (project.gradle.startParameter.taskNames != [] && project.gradle.startParameter.taskNames != ['build']) {
-    throw new GradleException('Please only use the "build" task.')
-}
-
 repositories {
     jcenter()
 }
