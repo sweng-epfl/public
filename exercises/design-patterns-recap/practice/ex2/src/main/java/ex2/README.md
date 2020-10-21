@@ -1,4 +1,4 @@
-# Exercise 2
+# Exercise 2 (Builder)
 
 ## Part 1
 

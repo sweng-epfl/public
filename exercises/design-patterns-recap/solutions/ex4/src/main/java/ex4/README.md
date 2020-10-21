@@ -1,6 +1,24 @@
 # Exercise 4
 
-Here, the design pattern to use is the Adapter.
-Indeed, we would like to use a relational database (`DatabaseImpl`) without changing all the places in the code that use a key-value store (`KeyValueStoreImpl`).
-The adapter allows us to adapt the api of the relational database (`DatabaseImpl`) in order to make it match the api expected in the code (`KeyValueStore`).
-The adapter `DatabaseImplToKeyValueStoreAdapter` adapts the api of `DatabaseImpl` to the interface `KeyValueStore`. This way, all the places in the code that expect a `KeyValueStore` can receive a `DatabaseImplToKeyValueStoreAdapter` because it implements the interface `KeyValueStore`.
+Your application allows users to color primitive shapes, such as circles, triangles,
+and rectangles (look at the `App` class).
+You decide to introduce more complicated shapes in your system that could consist of multiple primitive shapes
+and even additional complicated shapes. For
+instance, you might have a shape that consists of 3 elements, two rectangles and one more shape that itself
+contains 2 elements, a triangle and a circle.
+
+
+Use the **composite design pattern** (check the `App` class) so you can have code as follows:
+
+```Java
+         Shape innerShape = new ShapeComposite();
+         innerShape.add(new Triangle());
+         innerShape.add(new Triangle());
+         Shape shape = new ShapeComposite();
+         shape.add(new Circle());
+         shape.add(new Rectangle());
+         shape.add(innerShape);
+```
+
+ and when we do `shape.color("black")`, all the shapes belonging to `shape` will be colored black.
+

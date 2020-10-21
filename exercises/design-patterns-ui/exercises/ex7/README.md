@@ -1,11 +1,33 @@
-# DP - UI -- Ex7
-Say you are creating a text editor that is able to manipulate documents. Specifically, the editor creates
-documents (`Document` class) that consist of smaller document parts (`DocumentPart` class). Your customer asked
-for a feature that converts a document to its HTML or plain text equivalent. Your approach is to introduce `toHTML` and `toPlainText` methods in your classes.
+# Exercise 7
+You implemented a service that uses a key-value store.
+You decide you want to move the key-value store to a remote server but without changing the `KeyValueStore` interface
+the client is currently using. 
 
-Have a look at the code. Do you see a problem with this approach? 
-What if a customer wants to convert a document to, let say, LaTeX? What would you
-do then? 
+Use the [Java Remote Method Invocation (RMI)](https://docs.oracle.com/javase/tutorial/rmi/index.html) system,
+so that you actually call a key-value store that resides in a (possibly) different machine. What is
+the underlying design pattern?
 
-Use one of the design patterns presented in lecture to make the code more modular and open to extension.
-Furthermore, introduce the ability to convert a document to LaTeX.
+Hint: You might have something like the following:
+
+```Java
+    public static void main(String[] args) {
+        KeyValueStoreRemote store;
+
+        try {
+            store = (KeyValueStoreRemote) Naming.lookup("//localhost/kvstore");
+
+            store.put(3, 1993);
+            System.out.println(store.get(3));
+
+            store.put(9, 1873);
+            System.out.println(store.get(9));
+
+            store.remove(3);
+            System.out.println(store.get(3));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+

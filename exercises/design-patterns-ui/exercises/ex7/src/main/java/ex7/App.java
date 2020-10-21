@@ -2,16 +2,15 @@ package ex7;
 
 public class App {
     public static void main(String[] args) {
-        DocumentPart plainText = new PlainText("some word");
-        DocumentPart boldText = new BoldText("this part is bolded!");
-        DocumentPart url = new HyperLink("this is a link", "http://google.com");
+        KeyValueStore store = new KeyValueStoreImpl();
 
-        Document document = new Document();
-        document.add(plainText);
-        document.add(boldText);
-        document.add(url);
+        store.put(3, 1993);
+        System.out.println(store.get(3));
 
-        System.out.println(document.toHTML());
-        System.out.println(document.toPlainText());
+        store.put(9, 1873);
+        System.out.println(store.get(9));
+
+        store.remove(3);
+        System.out.println(store.get(3));
     }
 }

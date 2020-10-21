@@ -24,6 +24,5 @@ Modify the code to accommodate these requirements by using a suitable design pat
 
 ### Solution
 
-In this exercise, the solution is to use the Observer pattern.<br>
 Here, the subject is the `DataStore` and the observers are the different kind of `Phone` and `Screen`. 
 When the subject changes, we want the observers to be notified in order to update their content to display the newly updated data.

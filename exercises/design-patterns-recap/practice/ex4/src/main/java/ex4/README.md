@@ -1,10 +1,24 @@
-# Exercise 4
+# Exercise 4 (Composite)
 
-You have been using a key-value store (`KeyValueStoreImpl`) in your application. 
-You realize that you might need to use transactions in the future,
-so you decide to store your data in a relational database (`DatabaseImpl`).
+Your application allows users to color primitive shapes, such as circles, triangles,
+and rectangles (look at the `App` class).
+You decide to introduce more complicated shapes in your system that could consist of multiple primitive shapes
+and even additional complicated shapes. For
+instance, you might have a shape that consists of 3 elements, two rectangles and one more shape that itself
+contains 2 elements, a triangle and a circle.
 
-How would you leverage `DatabaseImpl` but without modifying your application, meaning you can keep using
-the `KeyValueStore` interface? What design pattern would you use?
 
-Create a new class if needed, and instantiate it in the `StoreTest` class so you pass the test.
+Use the **composite design pattern** (check the `App` class) so you can have code as follows:
+
+```Java
+         Shape innerShape = new ShapeComposite();
+         innerShape.add(new Triangle());
+         innerShape.add(new Triangle());
+         Shape shape = new ShapeComposite();
+         shape.add(new Circle());
+         shape.add(new Rectangle());
+         shape.add(innerShape);
+```
+
+ and when we do `shape.color("black")`, all the shapes belonging to `shape` will be colored black.
+

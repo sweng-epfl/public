@@ -1,6 +1,6 @@
 ### Question 1
 
-Which of the following examples are likely to implement the Observer Design Pattern or the callback/listener? Select all that apply.
+Which of the following examples are likely to implement the Observer Design Pattern ? Select all that apply.
 
 - [ ] Push notifications 
 - [ ] android.widget.TextView and android.text.TextWatcher 
@@ -14,7 +14,7 @@ Imagine you have an application for managing a telephone directory through a web
 Of the following four design patterns, which would you say is the one implemented in the `Person` class?
 
 - [ ] Adapter
-- [ ] Proxy
+- [ ] Builder
 - [ ] Composite
 - [ ] Decorator
 
@@ -25,17 +25,8 @@ An example of the composite design pattern is a tree of menus and menu items; a 
 - [ ] yes
 - [ ] no
 
+
 ### Question 4
-
-Consider the Abstract Syntax Tree example in the lecture video about the Visitor Design Pattern (implementation sketch around 3m:30s). Suppose the children of the `AddNode` and `AssignmentNode` were publicly accessible, but that there was no `accept()` method in the `Node` interface.
-
-How would you need to change the `NodeVisitor` class to achieve functionality similar to the Visitor pattern?
-
-- [ ] Not possible, since without the `accept()` method one cannot visit all elements
-- [ ] Call `visit(lhs)` and `visit(rhs)`, or `visit(op1)` and `visit(op2)`, to visit the sub-elements of an operation
-- [ ] Identify the type of the sub-elements and call the appropriate methods, such as `visit((VariableNode)lhs)` or `visit((NumberLiteralNode)lhs)`
-
-### Question 5
 
 Consider the following implementation of an iterator for a custom list class, based on the standard Java's `ArrayList` implementation.
 

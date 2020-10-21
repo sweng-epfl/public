@@ -1,25 +1,26 @@
 # Design patterns recap: exercise set
 
-This exercise set will help you refresh your knowledge on the following design patterns:
+You should already be familiar with several design patterns. However as you probably haven't practiced them for a while, we provide you this exercise set to refresh your knowledge on the following design patterns if you need it :
 
+- Iterator
 - Builder
 - Decorator
 - Composite
 - Adapter
 - Observer
 
+:information_source: Feel free to only solve the exercises for the DPs you need a refresher about. While we are expecting you to know about these 6 design patterns, you don't need to solve the exercises about the ones you already feel very comfortable about.
+
+
 ## Exercises
 
 - [Quiz](QUIZ.md)
-- [Ex 1](practice/ex1/src/main/java/ex1/)
-- [Ex 2](practice/ex2/src/main/java/ex2/)
-- [Ex 3](practice/ex3/src/main/java/ex3/)
-- [Ex 4](practice/ex4/src/main/java/ex4/)
-- [Ex 5](practice/ex5/src/main/java/ex5/)
-- [Ex 6](practice/ex6/src/main/java/ex6/)
-- [Ex 7](practice/ex7/src/main/java/ex7/)
-- [Ex 8](practice/ex8/src/main/java/ex8/)
-- [Ex 9](practice/ex9/src/main/java/ex9/)
+- [Ex 1 (Observer)](practice/ex1/src/main/java/ex1/)
+- [Ex 2 (Builder)](practice/ex2/src/main/java/ex2/)
+- [Ex 3 (Adapter)](practice/ex3/src/main/java/ex3/)
+- [Ex 4 (Composite)](practice/ex4/src/main/java/ex4/)
+- [Ex 5 (Decorator)](practice/ex5/src/main/java/ex5/)
+- [Ex 6 (Iterator)](practice/ex6/src/main/java/ex6)
 
 ## Solutions
 

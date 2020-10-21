@@ -1,24 +1,29 @@
-# Exercise 5
+# Exercise 5 (Decorator)
 
-Your application allows users to color primitive shapes, such as circles, triangles,
-and rectangles (look at the `App` class).
-You decide to introduce more complicated shapes in your system that could consist of multiple primitive shapes
-and even additional complicated shapes. For
-instance, you might have a shape that consists of 3 elements, two rectangles and one more shape that itself
-contains 2 elements, a triangle and a circle.
+Assume you are operating a coffee shop that offers the following beverages: 
+`HouseBlend`, `DarkRoast`, etc. 
+For tracking the beverages, you created an `abstract class Beverage`
+that is extended by specific beverage classes. Furthermore, each beverage
+includes a `description` and a `cost` as seen in the figure below.
+
+![](classes.png)
+
+You decided to add different condiments in your coffees, 
+such as steamed milk, whipped milk, soy, etc. 
+You could introduce these condiments in your code by introducing classes such as
+ `DarkRoastWithSteamedMilk`, `DecafWithWhippedMilk`, etc. 
+ Among others, such an approach is not satisfactory, since it would bloat our codebase with extra classes.
+
+Therefore, we are going to use the **decorator pattern**. Fill up the remaining code or create more classes if needed
+so you pass from the `CafeShopTest` class.
+
+Use the following prices:
+
+![](prices.png)
 
 
-Use the **composite design pattern** (check the `App` class) so you can have code as follows:
+Try to understand what happens when we calculate some cost, 
+e.g., `new WhippedMilk(new Soy(new Steamed Milk(new DarkRoast()))).cost()`.
 
-```Java
-         Shape innerShape = new ShapeComposite();
-         innerShape.add(new Triangle());
-         innerShape.add(new Triangle());
-         Shape shape = new ShapeComposite();
-         shape.add(new Circle());
-         shape.add(new Rectangle());
-         shape.add(innerShape);
-```
 
- and when we do `shape.color("black")`, all the shapes belonging to `shape` will be colored black.
-
+ 

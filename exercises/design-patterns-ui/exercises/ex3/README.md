@@ -1,2 +1,6 @@
-# Exercise 3
-After quitting your job at the bank, you are now an owner of a Computer shop. Your shop sells only `PC`s and `Server`s. Each `PC` and each `Server` has a RAM, an HDD and a GPU. However, RAMs for servers can not be used for PCs. This also applies for HDDs and GPUs. You want to create a lot of PCs/Servers with the same configuration (i.e. same RAM, HDD and GPU). Use the Abstract Factory design pattern to do this.
+# Exercise 3 (Proxy)
+People use your application to read and write to files (look at the `App` class). 
+You notice that users are able to access highly confidential files. 
+
+Use the **proxy design pattern** to restrict access to all the files that contain the word "sensitive" in their filename.
+Do so by creating a `ProxyFile` class. Then, execute the `main` method from the `App` class and see what happens (```gradle run```).

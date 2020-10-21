@@ -1,3 +1,27 @@
 # Exercise 6
+## Solution
 
-This exercise is taken from [dotnetcodr](https://dotnetcodr.com/2013/05/30/design-patterns-and-practices-in-net-the-composite-pattern/).
+Your ```iterator``` method should be implemented this way
+
+```java
+        @Override
+        public Iterator<T> iterator() {
+            return new Iterator<T>() {
+
+                private Element<T> current = head;
+
+                @Override
+                public boolean hasNext() {
+                    return current != null;
+                }
+
+                @Override
+                public T next() {
+                    T data = current.getData();
+                    current = current.getNext();
+                    return data;
+                }
+            };
+        }
+```
+        

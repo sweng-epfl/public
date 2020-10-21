@@ -1,4 +1,4 @@
-# Exercise 1
+# Exercise 1 (Factory)
 
 You are the proud owner of a modern pizza shop, and you wrote the following code to make pizza (see [`Pizza.java`](src/main/java/ex1/Pizza.java) for what a pizza is):
 
@@ -40,4 +40,4 @@ You realize that your competitors have added a couple of trendy pizzas to their 
 
 Unfortunately, this kind of changes are likely to keep occurring, and it will be a mess to deal directly with these concrete class instantiations.
 
-How can you make this code more elegant using a factory design pattern? Is the [Static Factory Method](https://www.youtube.com/watch?v=TQvFReASujY&feature=youtu.be&t=1m5s) or the [GOF Factory Method](https://www.youtube.com/watch?v=TQvFReASujY&feature=youtu.be&t=6m20s) (i.e., virtual constructor) better suited? Rewrite the code to use the chosen design pattern.
+Your task is to make this code more elegant using the Factory design pattern.

@@ -1,33 +1,23 @@
-# DP - UI -- Ex10
-You implemented a service that uses a key-value store.
-You decide you want to move the key-value store to a remote server but without changing the `KeyValueStore` interface
-the client is currently using. 
+# Exercise 10
 
-Use the [Java Remote Method Invocation (RMI)](https://docs.oracle.com/javase/tutorial/rmi/index.html) system,
-so that you actually call a key-value store that resides in a (possibly) different machine. What is
-the underlying design pattern?
+## Todo app revamped
 
-Hint: You might have something like the following:
+In this exercise, you will recreate the todo app you made in [Exercise 8](../ex8/README.md) using a declarative framework suitable for MVVM.
 
-```Java
-    public static void main(String[] args) {
-        KeyValueStoreRemote store;
+Use [anvil-ui](https://github.com/anvil-ui/anvil) and recreate the application with this architecture.
 
-        try {
-            store = (KeyValueStoreRemote) Naming.lookup("//localhost/kvstore");
+This statement is voluntarily kept short to let you explore and struggle against new tools and environments. You should be able to find most of your answers on Google, but ask an assistant if you get stuck or if you do not understand a concept.
 
-            store.put(3, 1993);
-            System.out.println(store.get(3));
+### Declarative frameworks crash course
 
-            store.put(9, 1873);
-            System.out.println(store.get(9));
+Anvil UI is a declarative framework inspired by [ReactJS](https://reactjs.org/). In this framework, the view is not explicitely modified by the programmer (like setting a TextView or reading from an EditText). As you might remember from exercise 8, this synchronization between state of the model and state of the view must be manually enforced at every change, which proved to be a major source of bugs in application front-ends.
 
-            store.remove(3);
-            System.out.println(store.get(3));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+The solution to this problem came from functional programming: instead of remembering view state, we create a system in which the view is automatically derived at all times from model state changes, by letting client-side algorithms do the heavy lifting. In short, the key idea is to never modify the view, and instead describe views declaratively by enumerating all possible states. Views are then bound to the model state and react (heh) to any change using the Observer design pattern.
+
+```
+UI = f(state)
 ```
 
+Many big companies actively develop open-source declarative frameworks, to name a few examples: Facebook (ReactJS), Google (Angular, Flutter), Ebay (Marko).
 
+Some MVVM frameworks such as [VueJS](https://vuejs.org/) and the Android MVVM components also allow binding from the view to the state (unlike ReactJS and Anvil in which data flows from state to view). In these frameworks, state and view are always synchronized by means of reactive programming constructs such as Streams.

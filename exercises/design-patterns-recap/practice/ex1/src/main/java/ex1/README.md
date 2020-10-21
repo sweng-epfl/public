@@ -1,4 +1,4 @@
-# Exercise 1
+# Exercise 1 (Observer)
 
 You are now in charge of displaying some statistics such as the number of loans made each day. Currently, the statistics are stored in a `DataStore`. You are able to show these info on your `Phone` and computer `Screen` using the following code:  
 
@@ -20,4 +20,4 @@ When some data are updated, these changes will be shown on your `Phone` and `Scr
 
 The bank now wants to display these statistics on different kinds of `Screen` so that the bosses can monitor (e.g. your computer screen, the screen in the conference room, the screen in the cafeteria...). They also want these statistics to be shown on different kinds of `Phone` as well. 
 
-Modify the code to accommodate these requirements by using a suitable design pattern.
+Modify the code to accommodate these requirements by using the Observer Design Pattern.
