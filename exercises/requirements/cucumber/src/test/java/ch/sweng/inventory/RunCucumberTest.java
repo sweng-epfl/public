@@ -1,4 +1,4 @@
-package hellocucumber;
+package ch.sweng.inventory;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
