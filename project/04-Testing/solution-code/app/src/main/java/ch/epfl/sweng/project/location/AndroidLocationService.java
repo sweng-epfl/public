@@ -3,6 +3,7 @@ package ch.epfl.sweng.project.location;
 import android.location.Criteria;
 import android.location.LocationManager;
 import ch.epfl.sweng.project.location.LocationModule.LocationProvider;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -14,7 +15,7 @@ public final class AndroidLocationService implements LocationService {
     private final Criteria locationCriteria;
 
     @Inject
-    AndroidLocationService(LocationManager locationManager, @LocationProvider String locationProvider, Criteria locationCriteria) {
+    AndroidLocationService(LocationManager locationManager, @LocationProvider @Nullable String locationProvider, Criteria locationCriteria) {
         this.locationManager = locationManager;
         this.locationProvider = locationProvider;
         this.locationCriteria = locationCriteria;

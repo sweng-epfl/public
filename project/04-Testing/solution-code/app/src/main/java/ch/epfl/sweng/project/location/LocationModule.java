@@ -13,6 +13,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import javax.inject.Qualifier;
 import javax.inject.Singleton;
+import javax.annotation.Nullable;
 
 @Module
 @InstallIn(ApplicationComponent.class)
@@ -33,6 +34,7 @@ public abstract class LocationModule {
 
     @Provides
     @LocationProvider
+    @Nullable
     public static String provideLocationProvider(LocationManager locationManager, Criteria locationCriteria) {
         return locationManager.getBestProvider(locationCriteria, true);
     }
