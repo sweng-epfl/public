@@ -27,3 +27,5 @@ There will be no solution for this part of the project.
 ## Week 4: Testing & Dependency Injection
 
 Find the handout here: [04-Testing/Handout.md](04-Testing/Handout.md)
+
+The solution is here: [04-Testing/Solution.md](04-Testing/Solution.md) and you can browse the code here: [04-Testing/solution-code](04-Testing/solution-code)
