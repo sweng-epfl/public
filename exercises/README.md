@@ -1,2 +1,3 @@
-# exercises
-Exercises (not graded) to help students practice SwEng concepts
+# Exercises
+
+Exercises (not graded) to help students practice SwEng concepts.

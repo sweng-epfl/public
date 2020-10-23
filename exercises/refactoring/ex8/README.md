@@ -1,9 +1,8 @@
 # Refactoring an open-source Pacman game
 
-Now that you've learned the basic refactoring techniques, how you can make use an IDE and set up an automated code review tool, you are ready to take on a real challenge !
+Now that you've learned the basic refactoring techniques, how you can make use an IDE and set up an automated code review tool, you are ready to take on a real challenge!
 
-Your task is to refactor this [Pacman remake](https://github.com/sweng-epfl/exercise-pacman) as well as you can. If you don't know where to start, here are a couple of tips:
-- Fork the repository
+Your task is to refactor this [Pacman remake](pacman) as well as you can. If you don't know where to start, here are a couple of tips:
 - Open the project in your IDE
 - Look at the overall file structure: would you group the files differently, i.e. into packages / folders ? If yes, how ?
 - Go through the files: are there dependencies (superclass / interface) and do they make sense ? Which ones would you add / remove ?

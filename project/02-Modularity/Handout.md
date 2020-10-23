@@ -26,26 +26,26 @@ Remember that your code will need to retrieve the location (latitude and longitu
 
 > :warning: We advise you not to read this section before thinking about the previous one, as we will "spoil" one of the possible structure of this system.
 
-Now that you know how your system should work, you can write interfaces and data classes that _describe_ this behaviour. Don't think too much about the actual implementation, just write an interface that exposes the behaviour you need.
+Now that you know how your system should work, you can write interfaces that _describe_ this behaviour. Don't think too much about the actual implementation, just write an interface that exposes the behaviour you need.
 
 In theory, you will have three interfaces (the names are indicative):
- - `LocationService` that defines a method to get the current position of the device
- - `GeocodingService` that defines a method to convert a position to an address (the reverse can also be useful if you want to display it to the user)
+ - `LocationService` that defines a method to get the current location of the device
+ - `GeocodingService` that defines a method to convert an address to a location (the reverse can also be useful if you want to display it to the user)
  - `WeatherService` that defines a method to get the weather at a given location.
 
-You will also need a few classes to store the resulting forecast from the server. Think about _what values your client will need_ (while still making sure you can provide them - have a look at the [OneCall API documentation](https://openweathermap.org/api/one-call-api)). A `Location` class will also be needed to store the location - both when retrieving it in and when sending it to the weather API. Android already provides one, but you don't want to use it here, as it would not cleanly allow you to separate concerns and use another provider in the future with the same interfaces.
+You will also need a few classes to store the resulting forecast data returned by the server. Think about _which values your client will need_ (while still making sure you can provide them - have a look at the [OneCall API documentation](https://openweathermap.org/api/one-call-api)). A `Location` class will also be needed to store the location - both when retrieving it in and when sending it to the weather API. Android already provides one, but you don't want to use it here, as it would not cleanly allow you to separate concerns and use another provider in the future with the same interfaces. Feel free to create any additional class to store the data you think you need.
 
 Regarding the design of the classes storing the forecast, here is some advice. The API returns data in JSON (a sort of key-value object notation), containing in particular the current weather and the forecast for the following days. See which fields interest you and design the interfaces and classes you need.
 
-> :information_source: When you design a service that _waits_ on something (for example: an external API), you usually don't want to block the caller, but rather use asynchronous structures. We will introduce them later in the course, so **we don't ask you to use them for now**. **However, remember that -outside of this exercise- calling a web service synchronously from the main thread is in most of the cases a very bad practice.** 
+> :information_source: When you design a service that _waits_ on something (for example: an external API), you usually don't want to block the caller, but rather use asynchronous structures. We will introduce them later in the course, so **we don't ask you to use them for now**. **However, remember that -outside of this exercise- calling a web service synchronously from the main thread is in most cases a very bad practice.** 
 
 ## Implement the interfaces
 
 Now that you wrote the interfaces for your modules, you need to implement them. For each interface, create a class that implements the methods you defined. Here are a few hints and tips on what to do precisely. Feel free to ask on Piazza if you need suggestions!
 
-> :information_source: You may notice while writing the implementation that the interface is missing something: a method parameter, a list of thrown exceptions... This is not that big of a deal: sometimes, when writing the actual code, you come up with something you didn't think you'd need. Updating the interface at this time to provide what you need for that is not an issue. **However, please go through the same reasoning every time you update the interface as when you wrote it: is it specific to my implementation? Does it give too much details about the implementation? Do I really need it? ...**. 
+> :information_source: You may notice while writing the implementation that the interface is missing something: a method parameter, a list of thrown exceptions, etc. This is not that big of a deal: sometimes, when writing the actual code, you come up with something you didn't think you'd need. Updating the interface at this stage to provide what you need is not an issue. **However, please go through the same reasoning every time you update the interface as when you wrote it: is it specific to my implementation? Does it give too much details about the implementation? Is it really needed? ...**. 
 
-> :warning: In particular in today's project, if you realize you need a `Context` (or similar Android system classes) to do something, you should not add it as a method parameter in the interface, as it makes it tightly coupled to the Android operating system. Think about other ways to provide the `Context` to your implementation. 
+> :warning: If you realize you need a `Context` (or similar Android system classes) to do something, you should not add it as a method parameter in the interface, as it makes it tightly coupled to the Android operating system. Think about other ways to provide the `Context` to your implementation. 
 
 > :information_source: A `Context` is an interface to global information about an application environment. This is an abstract class whose implementation is provided by the Android system. It allows access to application-specific resources and classes, as well as up-calls for application-level operations such as launching activities, broadcasting and receiving intents, etc. (Source: [Android Documentation](https://developer.android.com/reference/android/content/Context))
 
@@ -53,7 +53,7 @@ Now that you wrote the interfaces for your modules, you need to implement them. 
 
 There are a few options to access the network in Android. We suggest you to use the native `HttpsUrlConnection`. See the [Android Documentation](https://developer.android.com/training/basics/network-ops/connecting#httpsurlconnection) for a good example of how it works.
 
-But first, you need to disable a check. By default, Android disallows doing networking on main thread - as we explained, doing that is very bad. But since we will introduce asynchronicity later, you must add this code somewhere (for example in your main activity). This needs to run before the first call to your service.
+But first, you need to disable a check. By default, Android disallows doing networking on the main thread - as we explained, doing that is very bad. But since we will introduce asynchronicity later in the course, you must add this code somewhere (for example in your main activity). This needs to run before the first call to your service.
 
 ```java
 // TODO: Remove this line of code once I learn about asynchronous operations!

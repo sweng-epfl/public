@@ -1,6 +1,6 @@
 # Advanced testing
 
-The exercises are designed such that, if you can correctly solve the Basic exercises every week, then you should be able to get a passing grade on the exams. If you additionally solve correctly the Intermediate exercises, then you should be able to get a very good grade on the exams. The Advanced exercises are for enthusiasts who want go beyond the standard material and get a black belt in Software Engineering. We will be happy to try and provide personalized feedback on your solutions to Advanced exercises if you wish, just send us the info via [this form](https://docs.google.com/forms/d/e/1FAIpQLSem_4qm_rf22V5--EUrh252_JKcBqoHF1Z67exwPz3tPdOjiQ/viewform).
+The exercises are designed such that, if you can correctly solve the Basic exercises every week, then you should be able to get a passing grade on the exams. If you additionally solve correctly the Intermediate exercises, then you should be able to get a very good grade on the exams. The Advanced exercises are for enthusiasts who want go beyond the standard material and get a black belt in Software Engineering. We will be happy to try and provide personalized feedback on your solutions to Advanced exercises if you wish, just contact the staff.
 
 Note that to be able to do Ex 1, 2 and 3, you need to first do the Ex 0 to setup the environment. We recommend you to use the VDI VMs provided by EPFL at [vdi.epfl.ch](https://vdi.epfl.ch/) (you need to be on the EPFL network or VPN to access them).
 
