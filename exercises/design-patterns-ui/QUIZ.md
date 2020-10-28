@@ -1,31 +1,5 @@
 # DP & UI quiz
 
-## Factory Method Design Pattern
-
-What Object-Oriented Progamming feature makes the original GOF Factory Method pattern possible? Select one.
-
-- [ ] Polymorphism
-- [ ] Encapsulation
-- [ ] Interfaces
-- [ ] Static methods
-
-Which of the following statements are true? Select all that apply.
-
-- [ ] Both the Static Factory Method and original GOF Factory Method are meant to control the number of instances that exist in a system
-- [ ] The GOF Factory Method can return different types of objects (subtypes of a common base class), while the Static Factory Method returns the same type of object
-- [ ] The Static Factory Method and original GOF Factory Method serve different purposes
-- [ ] The Static Factory Method and original GOF Factory Method are two alternative implementations of the same concept
-- [ ] In the original GOF Factory Method, the "createObject" method that instantiates an member of a class should never be static
-
-## Abstract Factory Design Pattern
-
-What are the tradeoffs of the Abstract Factory Pattern? Select all that apply.
-
-- [ ] It's hard to add or remove products
-- [ ] It's hard to add or remove factories
-- [ ] It's hard to switch between product families
-- [ ] It's hard to write unit tests
-
 ## Singleton Design Pattern
 
 Consider the following piece of code, which returns an httpClient for establishing a network connection:
