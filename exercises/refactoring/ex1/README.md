@@ -1,6 +1,6 @@
-# Identifying code smell :cheese:
+# Identifying code smells :cheese:
 
-A code that works is not necessarily good code. But how to identify if the code is good or not ? A good way is to learn to identify _code smell_. Examples of code smells include unreadable code, code that is too complex, code that doesn't follow good practices or code that is hard to maintain.
+A code that works is not necessarily good code. But how to identify if the code is good or not ? A good way is to learn to identify _code smells_. Examples of code smells include unreadable code, code that is too complex, code that doesn't follow good practices or code that is hard to maintain.
 
 In this exercise your task is to identify some common code smells.
 
