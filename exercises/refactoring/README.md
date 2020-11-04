@@ -15,7 +15,6 @@ The exercises are designed such that, if you can correctly solve the Basic exerc
   - [Ex 6: Refactoring with IntelliJ](ex6)
 
 - Advanced
-  - [Ex 7: Code climate](ex7)
   - [Ex 8: Refactoring an open-source game](ex8)
 
 
