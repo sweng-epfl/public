@@ -5,18 +5,17 @@ The exercises are designed such that, if you can correctly solve the Basic exerc
 ## Exercises
 
 - Basics
-  - [Ex 1 : Identifying code smell](ex1)
-  - [Ex 2 : Removing code smell](ex2)
-  - [Ex 3 : Duplication](ex3)
-  - [Ex 4 : Identifying refactoring techniques](ex4)
+  - [Ex 1: Identifying code smells](ex1)
+  - [Ex 2: Removing code smells](ex2)
+  - [Ex 3: Duplication](ex3)
+  - [Ex 4: Identifying refactoring techniques](ex4)
 
 - Intermediate
-  - [Ex 5 : Some more refactoring](ex5)
-  - [Ex 6 : Refactoring with IntelliJ](ex6)
+  - [Ex 5: Some more refactoring](ex5)
+  - [Ex 6: Refactoring with IntelliJ](ex6)
 
 - Advanced
-  - [Ex 7 : Code climate](ex7)
-  - [Ex 8 : Refactoring an open-source game](ex8)
+  - [Ex 8: Refactoring an open-source game](ex8)
 
 
 ## Solutions

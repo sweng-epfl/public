@@ -4,6 +4,6 @@ The staff of the Software Engineering class at EPFL (CS-305) have forked it here
 
 
 # Pacman
-a simple java game using swing also with Map Editor and Map Compiler
+A simple java game using swing also with Map Editor and Map Compiler
 
-![Alt text](/../master/pacman.png?raw=true "Screenshot")
+![Alt text](./pacman.png "Screenshot")

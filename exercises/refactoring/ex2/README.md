@@ -1,4 +1,4 @@
-# Removing code smell
+# Removing code smells
 
 Good job on identifying the code smells, now it's time to remove them !
 You can either directly edit this file or copy the code into an IDE / text editor.
