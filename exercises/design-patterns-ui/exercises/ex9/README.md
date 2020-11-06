@@ -16,10 +16,9 @@ Edit `build.gradle` and add to the `dependencies` section:
     compile 'io.javalin:javalin:3.6.0'
 ```
 
-Navigate to `src/main/java/ex11` and change the main method with the following code:
+Edit the main file with the following code:
 
 ```java
-    package ex11;
     import io.javalin.Javalin;
 
     public class App {
