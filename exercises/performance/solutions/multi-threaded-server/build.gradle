@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName 'SingleThreadedServer' // The main class that will be executed with ./gradlew run
+}
+
+dependencies {
+    compile "com.sparkjava:spark-core:2.9.3"
+}
