@@ -1,0 +1,38 @@
+diff --git a/src/main/java/ch/epfl/sweng/javapk/files/PackageRepository.java b/src/main/java/ch/epfl/sweng/javapk/files/PackageRepository.java
+index f179c9f..26600cc 100644
+--- a/src/main/java/ch/epfl/sweng/javapk/files/PackageRepository.java
++++ b/src/main/java/ch/epfl/sweng/javapk/files/PackageRepository.java
+@@ -14,6 +14,7 @@ import java.util.List;
+  * A repository of multiple APK packages.
+  */
+ public class PackageRepository {
++    private final static long CACHE_EXPIRATION = 12 * 60 * 60 * 1000; // 12 hours
+     private final String baseUrl;
+     private final String repository;
+ 
+@@ -33,17 +34,16 @@ public class PackageRepository {
+      */
+     private List<Package> downloadPackageList() throws IOException {
+         URL url = new URL(baseUrl + "/APKINDEX.tar.gz");
+-        File f = new File("." + repository + "-tmp.tar.gz");
++        File f = new File("list-" + repository + ".tar.gz");
+ 
+-        System.out.print("Synchronization with repository " + repository + "...");
+-        Networking.downloadFile(url, f, Terminal.progressBar("Synchronizing packages in repository " + repository));
+-        System.out.println();
+-
+-        // Read the list and delete the file
+-        List<Package> packages = parsePackageList(f);
+-        f.delete();
++        if (!f.exists() || (f.lastModified() + CACHE_EXPIRATION) < System.currentTimeMillis()) {
++            System.out.print("Preparing to synchronize package list from repository " + repository + "...");
++            Networking.downloadFile(url, f, Terminal.progressBar("Synchronizing packages in repository " + repository));
++            System.out.println();
++        }
+ 
+-        return packages;
++        // Read and return the list
++        return parsePackageList(f);
+     }
+ 
+     /**

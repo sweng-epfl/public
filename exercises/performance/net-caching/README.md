@@ -33,12 +33,12 @@ You will notice that this program uses the real Alpine Linux repositories, and n
 > Try to use the program to search for some packages and download some of them.
 
 Now, you have probably noticed that _every time_ you run the program, it needs to synchronize the repositories from the main server. 
-Depending on your network quality, this operation can take multiple seconds, which is particularly annoying. In particular, we
-know that the list of packages of the repository doesn't change all the time! We can safely assume that a package list is still valid after 
-a few hours. Sure, one or two packages may have been updated, but in general most of the packages don't change very often.
+Depending on your network quality, this operation can take multiple seconds, which is particularly annoying. 
+
+Thankfully, we know that the list of packages of the repository doesn't change very often. We can therefore safely assume that a package list is still valid after a few hours. Sure, one or two packages may have been updated, but in general most of the packages don't change every hour.
 
 > **Question 2:**
-> Modify the package manager to avoid synchronizing the repositories every time you run the program.
+> Modify the package manager to avoid synchronizing the repositories every time you run the program. 
 
 > **Question 3:**
 > Use the tool of your choice to estimate the speed-up on different operations. (For example, you can use Unix's `time`)
