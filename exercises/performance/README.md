@@ -10,8 +10,8 @@ In this exercise set, you will learn to improve your code's performance and meas
   - [Benchmarking with JMH](jmh-benchmarking)
 
 - Intermediate
-  - [Multi-threaded Server](multi-threaded-server)
-
+  - [Multi-threading in web servers](multi-threaded-server)
+  - [Performance in Python](python-performance)
 
 ## Solutions
 
