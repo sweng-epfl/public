@@ -22,3 +22,6 @@ bin/
 
 # Java crash logs
 hs_err_pid*
+
+#ipynb checkpoints
+.ipynb_checkpoints/
