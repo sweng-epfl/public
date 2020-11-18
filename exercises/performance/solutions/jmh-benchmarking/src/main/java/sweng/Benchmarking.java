@@ -12,6 +12,7 @@ import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +26,6 @@ import java.util.stream.Collectors;
 @Fork(2)
 @State(Scope.Benchmark)
 public class Benchmarking {
-
     @Benchmark
     public void cacheBenchmark(Blackhole bh) {
         CSVReader reader = new CSVReader("res/students.txt", new StudentCache());
@@ -80,4 +80,51 @@ public class Benchmarking {
         }
     }
 
+    @Benchmark
+    public void iterateLinkedListGetBenchmark(Blackhole bh) {
+        CSVReader reader = new CSVReader("res/students.txt", new UselessCache<>());
+        List<Student> students = new LinkedList<>(reader.read(1000));
+        for (int i = 0; i < 1000; ++i) {
+            bh.consume(students.get(i)); // slower than for-each, because must traverse the linkedlist up to i-th element every time get is called.
+        }
+    }
+
+    @Benchmark
+    public void iterateLinkedListForeachBechmark(Blackhole bh) {
+        CSVReader reader = new CSVReader("res/students.txt", new UselessCache<>());
+        List<Student> students = new LinkedList<>(reader.read(1000));
+        for (final Student s : students) {
+            bh.consume(s); // faster than for-loop, because foreach syntactic sugar for Iterator ensures linear traversal only once
+        }
+    }
+
+    @Benchmark
+    public void iterateArrayListGetBenchmark(Blackhole bh) {
+        CSVReader reader = new CSVReader("res/students.txt", new UselessCache<>());
+        List<Student> students = reader.read(1000);
+        for (int i = 0; i < 1000; ++i) {
+            bh.consume(students.get(i)); // unlike linkedlist, arraylist does not require traversal as elements are contiguous in memory
+        }
+    }
+
+    @Benchmark
+    public void iterateArrayListForeachBechmark(Blackhole bh) {
+        CSVReader reader = new CSVReader("res/students.txt", new UselessCache<>());
+        List<Student> students = reader.read(1000);
+        for (final Student s : students) {
+            bh.consume(s); // actually a bit slower than for-loop! This is because foreach desugars into for (Iterator<Student> i = students.iterator(); i.hasNext();) { Student s = i.next() }. Thus the hasNext / next interface induces some overhead.
+        }
+    }
+
+    @Benchmark
+    public void iterateMatrixRows(Blackhole bh) {
+        FixedMatrix m = new FixedMatrix();
+        bh.consume(m.sumRows());
+    }
+
+    @Benchmark
+    public void iterateMatrixColumns(Blackhole bh) {
+        FixedMatrix m = new FixedMatrix();
+        bh.consume(m.sumColumns()); // ouch! much slower, because CPU cache is not used: values are brought in as blocks, with adjacent values reused immediately when iterating through rows. With column-wise iteration, the cache blocks are replaced at every iteration, provided that the matrix is big enough.
+    }
 }

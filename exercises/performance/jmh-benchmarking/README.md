@@ -48,4 +48,20 @@ Note that parallel streams create some overhead for work-splitting and merging r
 
 ## Storing the reads: Set vs. List
 
-Finally, let's measure the performance difference when storing the read records in different data structures on which a `contains` check is done repeatedly.   
+Let's measure the performance difference when storing the read records in different data structures on which a `contains` check is done repeatedly.
+
+## LinkedList vs Iterator
+
+This time, read the file into a `LinkedList<Student>`. Compare the performance of iterating through the linked list using a for loop by using `get(i)` to consume a Student (make sure to hardcode the list size to avoid recomputing it at each iteration) vs using the foreach syntactic sugar of its Iterator (i.e. using `for (final Student s : students)` and consuming `s` directly). Does the result surprise you?
+
+## ArrayList vs Iterator
+
+Same as above, but use an `ArrayList<Student>` instead. The result may surprise you: can you think of what causes the difference?
+
+## Matrix iteration: orientation
+
+Ideally, the Java Virtual Machine should abstract away all low-level details of the underlying physical machine, such that programmers do not have to deal with the intricacies of resource management (such as memory). However, as we will see in this example, one cannot completely ignore the concrete architecture of the hardware.
+
+Implement a `FixedMatrix` class that stores the numbers `[0, 10000)` incrementally in an array of rows `int[][]`. Implement methods `sumRows` and `sumColumns`, which return the sum of all numbers in the matrix by naively iterating through elements by rows and columns respectively.
+
+You should see that the column-wise iteration of a row-oriented representation in memory yields awful performance, as much as ~10x slowdown. Why does this happen?
