@@ -12,6 +12,7 @@ In this exercise set, you will learn to improve your code's performance and meas
 - Intermediate
   - [Multi-threading in web servers](multi-threaded-server)
   - [Performance in Python](python-performance)
+  - [Caching Network Calls](net-caching)
 
 ## Solutions
 
