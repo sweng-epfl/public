@@ -33,6 +33,7 @@ The solution is here: [04-Testing/Solution.md](04-Testing/Solution.md) and you c
 ## Part 5: MVVM Refactoring
 
 Find the handout here: [05-MVVM/Handout.md](05-MVVM/Handout.md)
+The solution is here: [05-MVVM/Solution.md](05-MVVM/Solution.md) and you can browse the code here: [05-MVVM/solution-code](05-MVVM/solution-code)
 
 ## Part 6: Async
 
