@@ -28,33 +28,6 @@ For which of the following scenarios is the Waterfall model most appropriate?
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
 
-## Prototyping
-
-For which of the following scenarios is the Prototyping model most appropriate?
-
-- [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website. 
-- [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
-- [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
-- [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
-
-## Incremental
-
-For which of the following scenarios is the Incremental model most appropriate?
-
-- [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
-- [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
-- [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
-- [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down; the requirements are split into "must-have" features, which are strictly necessary to implement, and "nice-to-have" features, which are desirable, but not imperative. 
-
-## Spiral
-
-For which of the following scenarios is the Spiral model most appropriate?
-
-- [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
-- [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
-- [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials. 
-- [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down; the requirements are split into "must-have" features, which are strictly necessary to implement, and "nice-to-have" features, which are desirable, but not imperative.
-
 ## Scrum
 
 If you don't know what the Liskov Substitution Principle is, who do you go talk to?
@@ -231,22 +204,3 @@ unless they contribute to the delivery of the Increment) ?
 - [ ] The team doesn't know what to implement, so they work on requirements until they understand what the product they want to build.
 - [ ] An app for a class
 - [ ] Your hobby project
-
-22. Which software development process is a sequence of "mini-Waterfalls"?
-- [ ] Prototyping
-- [ ] Scrum
-- [ ] Spiral
-- [ ] Incremental waterfall
-
-23. What are the weaknesses of the incremental software development process?
-- [ ] The design of the interfaces between components is tricky
-- [ ] Customers might receive the most important functionality only at the end of the development
-- [ ] There is no global overview of the project
-- [ ] Planning and design of only a part of the system are hard without planning the entire system
-
-24. Which software development process can be described as the exact opposite of Waterfall?
-- [ ] Prototyping
-- [ ] Scrum
-- [ ] Spiral
-- [ ] Incremental
-
