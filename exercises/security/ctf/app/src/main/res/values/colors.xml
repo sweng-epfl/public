@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#CD0000</color>
+    <color name="primary_variant">#A30000</color>
+    <color name="secondary">#5ab7d4</color>
+    <color name="secondary_variant">#656AF4</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#EEEEEE</color>
+    <color name="text_title">#000000</color>
+    <color name="separator">#DDDDDD</color>
+    <color name="focused_background">#BBBBBB</color>$
+    <color name="unfocused_background">#00000000</color>
+</resources>
