@@ -412,7 +412,7 @@ class ChallengesRepositoryImpl(
                 ),
                 Challenge.Hint(
                     "LOC",
-                    "${getPublicRepoUrlUpToPackage() + "repositories/ChallengesRepository.kt#L472"}\n\n${getPublicRepoUrlUpToMain() + "cpp/native-lib.cpp"}"
+                    getPublicRepoUrlUpToMain() + "cpp/native-lib.cpp"
                 ),
             ),
             uiHooks = Challenge.FragmentHooks(
