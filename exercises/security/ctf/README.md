@@ -2,6 +2,8 @@
 
 In this exercise, you will hack an Android app by exploiting common security vulnerabilities in Android mobile apps through a beginner-friendly capture the flag (CTF) game. This app contains a series of challenges, each illustrating a realistic attack vector in mobile security: each challenge hides a string flag, which you will need to uncover and submit in order to gain points, by inspecting the source code, playing with the app features and using external tools.
 
+**Please do not attack the online leaderboard infrastructure, as we rely on third-party servers and services.**
+
 ## Getting started
 
 First make sure that you have Android Studio with an Android emulator and API 30 installed on your computer. If not, follow the following steps:
