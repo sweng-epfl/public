@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Sweng Project</string>
+    <string name="main_textfield_placeholder">Enter your name</string>
+    <string name="say_hi">Say Hi</string>
+    <string name="greeting_message">Hello %s!</string>
+    <string name="error_dialog_title">An error occurred while fetching the weather</string>
+    <string name="retry">Retry</string>
+    <string name="weather_no_weather_message">Please select a location and query the weather.</string>
+    <string name="weather_report_format">Temperature: average %.2f°, min %.2f°, max %.2f°. Weather: %s</string>
+    <string name="weather_header">Here is the weather forecast:</string>
+    <string name="weather">Weather</string>
+    <string name="weather_loading">Loading weather forecast…</string>
+    <string name="weather_iconurl_format">http://openweathermap.org/img/wn/%s@2x.png</string>
+    <string name="weather_use_gps">Use GPS Location</string>
+    <string name="weather_city_label">City</string>
+    <string name="weather_query_forecast">Forecast</string>
+    <string name="weather_forecast_today">Today</string>
+    <string name="weather_forecast_tomorrow">Tomorrow</string>
+    <string name="weather_forecast_after_tomorrow">In 2 days</string>
+    <string name="weather_condition_default">-</string>
+    <string name="weather_temperature_label">Temperatures</string>
+    <string name="weather_min_temperature_label">Min</string>
+    <string name="weather_avg_temperature_label">Avg</string>
+    <string name="weather_temperature_default">-</string>
+    <string name="weather_max_temperature_label">Max</string>
+</resources>
