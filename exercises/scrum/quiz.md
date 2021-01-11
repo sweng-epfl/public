@@ -40,7 +40,8 @@ If you're a software engineer on a Scrum team, which of the following should you
 
 - [ ] Have a daily Scrum meeting with the entire team to discuss about the progress of the tasks
 - [ ] Go talk to the Scrum Master anytime you encounter impediments
-- [ ] Talk with the Product Owner about removing tasks from the Sprint Backlog 
+- [ ] Talk with the Product Owner about removing tasks from the Sprint Backlog
+- [ ] Call a meeting with the Product Owner to update the Product Backlog
 
 ## More about Scrum
 
