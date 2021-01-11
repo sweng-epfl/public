@@ -92,7 +92,7 @@ If you're a software engineer on a Scrum team, which of the following should you
 - [x] Have a daily Scrum meeting with the entire team to discuss about the progress of the tasks
 - [ ] Go talk to the Scrum Master anytime you encounter impediments
 - [x] Talk with the Product Owner about removing tasks from the Sprint Backlog
-- [x] Call a meeting with the Product Owner to update the Product Backlog
+- [x] Meet with the Product Owner to update the Product Backlog
 
 > There should be no discussion during the daily scrum meeting, just reporting.
       The Product Owner has nothing to do with the Spring Backlog.
