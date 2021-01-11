@@ -8,64 +8,64 @@ Why do large software projects tend to miss their planned budgets and deadlines 
 
 - [ ] There usually aren't enough people working on the project
 - [ ] There are not enough managers in the project
-- [ ] The management task is more difficult and prone to wrong decisions as the project gets bigger 
+- [ ] The management task is more difficult and prone to wrong decisions as the project gets bigger
 - [ ] Teams fail to account for the fact that debugging takes 50% of the development cycle
 
 Which tools can help you better manage a software project?
 
-- [ ] The GitHub issue tracker 
-- [ ] A code review tool, even as basic as GitHub's comment feature 
-- [ ] The Emma code coverage measurement tool 
-- [ ] Git commit messages 
-- [ ] CheckStyle 
+- [ ] The GitHub issue tracker
+- [ ] A code review tool, even as basic as GitHub's comment feature
+- [ ] The Emma code coverage measurement tool
+- [ ] Git commit messages
+- [ ] CheckStyle
 
 ## Waterfall
 
 For which of the following scenarios is the Waterfall model most appropriate?
 
 - [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
-- [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects. 
+- [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
 
 ## Scrum
 
-If you don't know what the Liskov Substitution Principle is, who do you go talk to?
+If you're a software engineer on a Scrum team and you don't know what the Liskov Substitution Principle is, who do you go talk to?
 
 - [ ] Product owner
 - [ ] Scrum master
 - [ ] Guru (also known as manager)
 
-Which of the following should not happen during the Sprint?
+If you're a software engineer on a Scrum team, which of the following should you not do during the Sprint?
 
-- [ ] Have a daily scrum meeting with the entire team, and discuss about the progress of the tasks 
-- [ ] Go talk to the Scrum Master when having impediments
-- [ ] Talk with the Product Owner about removing tasks from the Backlog 
+- [ ] Have a daily Scrum meeting with the entire team to discuss about the progress of the tasks
+- [ ] Go talk to the Scrum Master anytime you encounter impediments
+- [ ] Talk with the Product Owner about removing tasks from the Sprint Backlog 
 
 ## More about Scrum
 
 Which meeting is held for the sake of the product?
 
 - [ ] daily scrum
-- [ ] sprint review 
+- [ ] sprint review
 - [ ] retrospective
 
 What is the limit on the duration of the daily scrum meeting?
 
 - [ ] 5 minutes
-- [ ] 15 minutes 
+- [ ] 15 minutes
 - [ ] 1 hour
 
 What information provides burnout chart?
 
 - [ ] Adjustements necessary to meet the deadline.
-- [ ] An estimation of the amount of work left for the sprint. 
+- [ ] An estimation of the amount of work left for the sprint.
 - [ ] Customer satisfaction.
-- [ ] The average team daily performance. 
+- [ ] The average team daily performance.
 
 What is included in every bar in the burnout chart?
 
-- [ ] the parts of user stories that remain to be done 
+- [ ] the parts of user stories that remain to be done
 - [ ] the completed features
 - [ ] the project manager's daily estimate of the remaining work
 
@@ -84,7 +84,7 @@ What is included in every bar in the burnout chart?
 - [ ] Daily Scrum
 
 
-3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner 
+3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner
 unless they contribute to the delivery of the Increment) ?
 - [ ] 2 to 4
 - [ ] 3 to 9
@@ -143,13 +143,13 @@ unless they contribute to the delivery of the Increment) ?
 - [ ] Yesterday, I worked with Alice.
 - [ ] Yesterday, I did <<this>>.
 - [ ] Today I will work on <<this>>.
-  
+
 13. Who should speak during the Daily Scrum?
 - [ ] Development Team
 - [ ] Product Owner
 - [ ] Scrum Master
 - [ ] Customer
- 
+
 14. What is/are the goal/goals of the Sprint Review?
 - [ ] Demo the Increment to receive feedback.
 - [ ] Adjust the Product Backlog
@@ -187,17 +187,17 @@ unless they contribute to the delivery of the Increment) ?
 19. If a team member starts talking about implementation details that prevented them from doing their tasks during the Daily Scrum, what should be done?
 - [ ] Ask them to explain further and try to resolve the issue on spot
 - [ ] Ask them to keep the implementation details for later and communicate after the meeting
-- [ ] Ignore their comment and 
+- [ ] Ignore their comment and
 - [ ] Everyone should explain their implementation problems during those meetings.
 
 
-## Other software development processes 
+## Other software development processes
 
 20. Which steps characterize the Waterfall development process?
 - [ ] Planning, Implementation, Testing, Retrospective
 - [ ] System Requirements, Software Requirements, Analysis, Prototype
 - [ ] Analysis, Program Design, Coding, Testing
-- [ ] Analysis, Program Design, Coding, Testing, Demoing 
+- [ ] Analysis, Program Design, Coding, Testing, Demoing
 
 21. What would be a good use case for Waterfall development?
 - [ ] The product is mission-critical and requires a high level of specification before any coding.

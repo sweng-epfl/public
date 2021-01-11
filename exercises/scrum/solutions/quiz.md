@@ -6,18 +6,18 @@ Why do large software projects tend to miss their planned budgets and deadlines 
 
 - [ ] There usually aren't enough people working on the project
 - [ ] There are not enough managers in the project
-- [x] The management task is more difficult and prone to wrong decisions as the project gets bigger 
+- [x] The management task is more difficult and prone to wrong decisions as the project gets bigger
 - [ ] Teams fail to account for the fact that debugging takes 50% of the development cycle
 
 > As projects get bigger, managing the development team becomes more complex, and this causes it to miss deadlines and implement the wrong functionality.
 
 Which tools can help you better manage a software project?
 
-- [x] The GitHub issue tracker 
-- [x] A code review tool, even as basic as GitHub's comment feature 
-- [x] The Emma code coverage measurement tool 
-- [x] Git commit messages 
-- [x] CheckStyle 
+- [x] The GitHub issue tracker
+- [x] A code review tool, even as basic as GitHub's comment feature
+- [x] The Emma code coverage measurement tool
+- [x] Git commit messages
+- [x] CheckStyle
 
 > All of these are useful. Use the issue tracker for making a plan (Video 2: 2:20), for doing code reviews (Video 3, 0:30), measuring testing efficiency (Video 4, 1:50), documenting your code (Video 3, 4:30), and adopting a coding standard (Video 3, 3:30)
 
@@ -26,7 +26,7 @@ Which tools can help you better manage a software project?
 For which of the following scenarios is the Waterfall model most appropriate?
 
 - [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
-- [x] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects. 
+- [x] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
 
@@ -39,7 +39,7 @@ For which of the following scenarios is the Waterfall model most appropriate?
 
 For which of the following scenarios is the Prototyping model most appropriate?
 
-- [x] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website. 
+- [x] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
 - [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
@@ -56,7 +56,7 @@ For which of the following scenarios is the Incremental model most appropriate?
 - [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
 - [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
-- [x] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down; the requirements are split into "must-have" features, which are strictly necessary to implement, and "nice-to-have" features, which are desirable, but not imperative. 
+- [x] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down; the requirements are split into "must-have" features, which are strictly necessary to implement, and "nice-to-have" features, which are desirable, but not imperative.
 
 > The incremental model is most suitable for the SBB application. The different features of the app can be developed in parallel, with different priorities (higher priority for the must-have features). Thus, the must-have features can be released early, while the nice-to-have features can be delayed for a future release.
       The website project is not suitable for the incremental model, as the requirements are very unclear. Unlike the prototype model, where the intermediate prototypes are meant to be discarded, in the incremental model each mini-project follows the waterfall model. If each alternative web technology would be implemented as a mini-project, the developer would need to gather detailed requirements from the client for each alternative --- this is a bad idea, since the client is not familiar with the technologies.
@@ -69,7 +69,7 @@ For which of the following scenarios is the Spiral model most appropriate?
 
 - [ ] While working with the Junior Entreprise EPFL, a talented web developer has to work on a new project with a client who wants a website for his company. This is the client's first website and they are not familiar with web technology. However, the client is enthusiastic and has lots of different ideas about how to organize the website.
 - [ ] The Volare Space Robotics Challenge was a contest organized by the ASI (Agenzia Spaziale Italiana) and ESA (European Space Agency). The goal was to make high-school students design robots that unload cargo from ESA's Automated Transfer Vehicle, while avoiding objects.
-- [x] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials. 
+- [x] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down; the requirements are split into "must-have" features, which are strictly necessary to implement, and "nice-to-have" features, which are desirable, but not imperative.
 
 > The spiral model is most appropriate for the start-up project. The project is complex, using various state-of-the-art technology. This brings an inherent risk --- new technology is untested and error prone. The spiral model enforces periodic evaluation of risks. If certain technology is unfeasible, the team can switch to a different technology, or re-design their product.
@@ -87,49 +87,51 @@ If you don't know what the Liskov Substitution Principle is, who do you go talk 
 
 > The guru is in charge of the technical aspects of a project.
 
-Which of the following should not happen during the Sprint?
+If you're a software engineer on a Scrum team, which of the following should you not do during the Sprint?
 
-- [x] Have a daily scrum meeting with the entire team, and discuss about the progress of the tasks 
-- [ ] Go talk to the Scrum Master when having impediments
-- [x] Talk with the Product Owner about removing tasks from the Backlog 
+- [x] Have a daily Scrum meeting with the entire team to discuss about the progress of the tasks
+- [ ] Go talk to the Scrum Master anytime you encounter impediments
+- [x] Talk with the Product Owner about removing tasks from the Sprint Backlog
+- [x] Call a meeting with the Product Owner to update the Product Backlog
 
-> There should be no discussion during the daily scrum meeting.
-      The Backlog should not change during the Sprint, it should be discussed during the Sprint Planning Meeting and Sprint Review.
+> There should be no discussion during the daily scrum meeting, just reporting.
+      The Product Owner has nothing to do with the Spring Backlog.
+      Changes to the Product Backlog are to be discussed between the developers and the Product Owner during the Sprint Planning Meeting and Sprint Review.
 
 ## More about Scrum
 
 Which meeting is held for the sake of the product?
 
 - [ ] daily scrum
-- [x] sprint review 
+- [x] sprint review
 - [ ] retrospective
 
-> 
+>
 
 What is the limit on the duration of the daily scrum meeting?
 
 - [ ] 5 minutes
-- [x] 15 minutes 
+- [x] 15 minutes
 - [ ] 1 hour
 
-> 
+>
 
 What information provides burnout chart?
 
 - [ ] Adjustements necessary to meet the deadline.
-- [x] An estimation of the amount of work left for the sprint. 
+- [x] An estimation of the amount of work left for the sprint.
 - [ ] Customer satisfaction.
-- [x] The average team daily performance. 
+- [x] The average team daily performance.
 
-> 
+>
 
 What is included in every bar in the burnout chart?
 
-- [x] the parts of user stories that remain to be done 
+- [x] the parts of user stories that remain to be done
 - [ ] the completed features
 - [ ] the project manager's daily estimate of the remaining work
 
-> 
+>
 
 
 ## Scrum-related questions
@@ -140,8 +142,8 @@ What is included in every bar in the burnout chart?
 - [ ] Product Owner
 - [ ] Development Team
 
-// Project Manager - there is no such role in Scrum. The Scrum Owner facilitates the team in the Scrum process 
-but does not manage the team. 
+// Project Manager - there is no such role in Scrum. The Scrum Owner facilitates the team in the Scrum process
+but does not manage the team.
 
 2. Which of the following events occur in Scrum?
 - [x] Sprint Planning
@@ -150,7 +152,7 @@ but does not manage the team.
 - [x] Daily Scrum
 
 
-3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner 
+3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner
 unless they contribute to the delivery of the Increment) ?
 - [ ] 2 to 4
 - [x] 3 to 9
@@ -178,8 +180,8 @@ and coordination cost a lot.
 - [ ] [Bug] The landing page doesn't render well, if the language of my device is not English.
 - [x] [Bug] When I click on the home button, the app doesn't redirect me there (tested from multiple locations in the app).
 
-// the second one doesn't describe what the login experience should be 
-the bug is not specified properly "doesn't render well" is not concrete. A bug Item has to include details on what is wrong 
+// the second one doesn't describe what the login experience should be
+the bug is not specified properly "doesn't render well" is not concrete. A bug Item has to include details on what is wrong
 with the user experience
 
 7. Who can move an item from the Product Backlog to the Sprint Backlog?
@@ -196,7 +198,7 @@ with the user experience
 - [ ] When the Scrum Master authorizes the Development Team to move an item.
 - [ ] When the Product Owner asks for an item to be done during the Sprint.
 
-// The Development Team is the only one who has the right to move items to the Sprint Backlog. However, they have a time 
+// The Development Team is the only one who has the right to move items to the Sprint Backlog. However, they have a time
 budget for the Sprint and can take a task only if a task is also defined well and estimated to fit into that time budget.
 
 9. What are acceptable durations of a Sprint?
@@ -213,7 +215,7 @@ budget for the Sprint and can take a task only if a task is also defined well an
 - [x] To serve the Development Team by removing impediments.
 - [ ] To serve the Organization by delivering high-value products.
 
-// The Scrum Master doesn't deliver high-value products themselves. Their role is to help everyone involved 
+// The Scrum Master doesn't deliver high-value products themselves. Their role is to help everyone involved
 in the Scrum process understand the Scrum theory and practices.
 
 11. What is the duration of the Daily Scrum?
@@ -229,15 +231,15 @@ in the Scrum process understand the Scrum theory and practices.
 - [ ] Yesterday, I worked with Alice.
 - [x] Yesterday, I did <<this>>.
 - [x] Today I will work on <<this>>.
-  
-// The format of communicating during the Daily Scrum is " Yesterday, I did this. Yesterday, I had a blocker/didn't have a blocker. Today, I will work on this." All other details should be left for after the meeting. 
-  
+
+// The format of communicating during the Daily Scrum is " Yesterday, I did this. Yesterday, I had a blocker/didn't have a blocker. Today, I will work on this." All other details should be left for after the meeting.
+
 13. Who should speak during the Daily Scrum?
 - [x] Development Team
 - [ ] Product Owner
 - [ ] Scrum Master
 - [ ] Customer
- 
+
 // The Daily Scrum meeting is an internal meeting for the Development Team to communicate how they are progressing on their tasks. The Scrum Master ensures that the format is observed but if they are not a part of the Development Team they don't have to participate in the Daily Scrum.
 
 14. What is the goal/What are the goals of the Sprint Review?
@@ -281,20 +283,20 @@ in the Scrum process understand the Scrum theory and practices.
 19. If a team member starts talking about implementation details that prevented them from doing their tasks during the Daily Scrum, what should be done?
 - [ ] Ask them to explain further and try to resolve the issue on spot
 - [x] Ask them to keep the implementation details for later and communicate after the meeting
-- [ ] Ignore their comment and 
+- [ ] Ignore their comment and
 - [ ] Everyone should explain their implementation problems during those meetings.
 
-// the Daily Scrum is all about short communication of what each member of the Development Team has achieved and what 
-they will do next. Any blockers should be reported as well but all implementation details should be kept for later and communicated only with members who express familiarity or wish to help with the issue. 
+// the Daily Scrum is all about short communication of what each member of the Development Team has achieved and what
+they will do next. Any blockers should be reported as well but all implementation details should be kept for later and communicated only with members who express familiarity or wish to help with the issue.
 
 
-## Other software development processes 
+## Other software development processes
 
 20. Which steps characterize are a part of the waterfall development?
 - [ ] Planning, Implementation, Testing, Retrospective
 - [ ] System Requirements, Software Requirements, Analysis, Prototype
 - [x] Analysis, Program Design, Coding, Testing
-- [ ] Analysis, Program Design, Coding, Testing, Demoing 
+- [ ] Analysis, Program Design, Coding, Testing, Demoing
 
 // All the steps are: System Requirements, Software Requirements, Analysis, Program Design, Coding, Testing, Operations
 
@@ -305,7 +307,7 @@ they will do next. Any blockers should be reported as well but all implementatio
 - [ ] An app for a class
 - [ ] Your hobby project
 
-// in the case of a critical system, for example, a car’s anti-lock braking system (ABS), you might consider a waterfall 
+// in the case of a critical system, for example, a car’s anti-lock braking system (ABS), you might consider a waterfall
 process to analyze the requirements and define the behavior of the system before starting to code and release potentially
 faulty software
 
@@ -315,7 +317,7 @@ faulty software
 - [ ] Spiral
 - [ ] Incremental
 
-// Prototyping is the most extreme case of unstructured process. Its main points are to prototype and show to the customers 
+// Prototyping is the most extreme case of unstructured process. Its main points are to prototype and show to the customers
 what the system would look like without any of the steps preceding "Coding"
 
 ## Supplemental questions
