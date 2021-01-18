@@ -252,12 +252,12 @@ What is meant by *defensive programming*?
 
 ### Question 18
 
-Which of the following should be in code comments?
+Which of the following _should_ be in code comments?
 
-- [x] *What* the code is doing.
+- [ ] *What* the code is doing.
 - [ ] *When* the code was written.
 - [ ] *Who* wrote the code.
-- [ ] *Why* the code is written the way it is.
+- [x] *Why* the code is written the way it is.
 
 
 ### Question 19
@@ -283,9 +283,9 @@ What can you say about this code?
 
 git is: (multiple answers may be possible)
 
-- [ ] A version control system.
+- [x] A version control system.
 - [ ] Linus Torvalds' greatest work.
-- [ ] Linus Torvalds' second greatest work, after Linux.
+- [x] Linus Torvalds' second greatest work, after Linux.
 - [ ] An instrument of the devil, created to destroy the files those who are foolish enough to try to understand its full power.
 
 ### Question 21
