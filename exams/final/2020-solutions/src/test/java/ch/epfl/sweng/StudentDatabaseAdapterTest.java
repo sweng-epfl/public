@@ -170,13 +170,6 @@ public final class StudentDatabaseAdapterTest {
             fail("An unexpected DatabaseException was thrown");
         }
 
-        student = new Student("", "", "");
-        try {
-            adapter.put(student);
-        } catch (DatabaseException e) {
-            fail("An unexpected DatabaseException was thrown");
-        }
-
         try {
             Student result = adapter.get(student.sciper);
             assertThat(result, is(student));

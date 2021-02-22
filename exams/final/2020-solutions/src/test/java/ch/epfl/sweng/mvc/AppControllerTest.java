@@ -49,9 +49,6 @@ public final class AppControllerTest {
         response = controller.handleRequest("");
         assertStringContains(response, "Error", "Invalid", "command");
 
-        response = controller.handleRequest("\t  \t ");
-        assertStringContains(response, "Error", "Invalid", "command");
-
         response = controller.handleRequest("remove123456");
         assertStringContains(response, "Error", "Invalid", "command");
 
@@ -69,9 +66,6 @@ public final class AppControllerTest {
         assertStringContains(response, "Error", "Invalid", "number", "argument", "put", "command");
 
         response = controller.handleRequest("put John");
-        assertStringContains(response, "Error", "Invalid", "number", "argument", "put", "command");
-
-        response = controller.handleRequest("put John \t \t");
         assertStringContains(response, "Error", "Invalid", "number", "argument", "put", "command");
 
         response = controller.handleRequest("put John 123456");
@@ -97,9 +91,6 @@ public final class AppControllerTest {
         String response;
         response = controller.handleRequest("put John " + sciper + " IC");
         assertStringContains(response, "Success", "Successfully", "added", sciper);
-
-        response = controller.handleRequest("\t   put John " + sciper + " IC   \t");
-        assertStringContains(response, "Success", "Successfully", "added", sciper);
     }
 
     @GradedTest("`handleRequest` should put the correct student in the database")
@@ -122,9 +113,6 @@ public final class AppControllerTest {
         response = controller.handleRequest("remove");
         assertStringContains(response, "Error", "Invalid", "number", "argument", "remove", "command");
 
-        response = controller.handleRequest("remove \t");
-        assertStringContains(response, "Error", "Invalid", "number", "argument", "remove", "command");
-
         response = controller.handleRequest("remove 123456 234567");
         assertStringContains(response, "Error", "Invalid", "number", "argument", "remove", "command");
     }
@@ -142,9 +130,6 @@ public final class AppControllerTest {
 
         String response;
         response = controller.handleRequest("remove " + sciper);
-        assertStringContains(response, "Success", "Successfully", "removed", sciper);
-
-        response = controller.handleRequest("\tremove " + sciper);
         assertStringContains(response, "Success", "Successfully", "removed", sciper);
     }
 
@@ -168,9 +153,6 @@ public final class AppControllerTest {
         response = controller.handleRequest("get");
         assertStringContains(response, "Error", "Invalid", "number", "argument", "get", "command");
 
-        response = controller.handleRequest("get \t");
-        assertStringContains(response, "Error", "Invalid", "number", "argument", "get", "command");
-
         response = controller.handleRequest("get 123456 234567");
         assertStringContains(response, "Error", "Invalid", "number", "argument", "get", "command");
     }
@@ -183,9 +165,6 @@ public final class AppControllerTest {
 
         String response;
         response = controller.handleRequest("get 123456");
-        assertStringContains(response, "Error", "Database", "failed", "retrieve");
-
-        response = controller.handleRequest("\t   get 123456");
         assertStringContains(response, "Error", "Database", "failed", "retrieve");
     }
 
@@ -200,9 +179,27 @@ public final class AppControllerTest {
         String result;
         result = controller.handleRequest("get " + sciper);
         assertStringContains(result, "Success", "Found", name, sciper, faculty, "ms");
+    }
 
-        result = controller.handleRequest("\t   get " + sciper + "   ");
-        assertStringContains(result, "Success", "Found", name, sciper, faculty, "ms");
+    @GradedTest("`handleRequest` should ignore leading and trailing spaces in the input")
+    public void handleRequestIgnoreWhitespacesInCommand() {
+        String name = "John";
+        String sciper = "523476";
+        String faculty = "GC";
+
+        database.onGet(s -> new Student(name, sciper, faculty));
+        database.onRemove(s -> {});
+
+        String response;
+
+        response = controller.handleRequest("\t   put John " + sciper + " IC   \t");
+        assertStringContains(response, "Success", "Successfully", "added", sciper);
+
+        response = controller.handleRequest("\t   get " + sciper + "   ");
+        assertStringContains(response, "Success", "Found", name, sciper, faculty, "ms");
+
+        response = controller.handleRequest("\tremove " + sciper);
+        assertStringContains(response, "Success", "Successfully", "removed", sciper);
     }
 
 }

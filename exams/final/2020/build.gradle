@@ -33,7 +33,15 @@ application {
     mainClassName 'ch.epfl.sweng.App'
 }
 
+run {
+    // Enforce UTF-8 everywhere for consistency
+    systemProperty 'file.encoding', 'utf-8'
+}
+
 test {
+    // Enforce UTF-8 everywhere for consistency
+    systemProperty 'file.encoding', 'utf-8'
+
     useJUnitPlatform()
     // Do not fail builds because of failing tests
     ignoreFailures true
