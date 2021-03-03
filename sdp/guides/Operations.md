@@ -50,6 +50,11 @@ check_android_task:
 
 > :information_source: If you need a different API level, check out the supported ones and their corresponding target on [the ReactiveCircus documentation](https://github.com/ReactiveCircus/docker-android-images)
 
+> :information_source: If you encounter an issue while running on Cirrus in the `wait_for_emulator` part with the following error message `No service published for: input`,
+> you can downgrade the `API_LEVEL` to `29` and change the `TARGET` to `default`. This should resolve your problem.
+> However, you should then consider using an android emulator with API level `29` on your machine to avoid any mismatch between your local setup and continuous integration.
+> The use of an emulator with a level lower than the target of `30` will not impact functionality.
+
 Then, add the following to the end of the `settings.gradle` file at the root of your repository (or create one if there is no such file):
 
 ```
