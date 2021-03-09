@@ -74,6 +74,8 @@ Which of the following are good performance optimizations to apply in this case 
 > Doing an integer multiplication is considerably faster than computing the square root.
 > By skipping even numbers, the semantics remain unchanged, but the cost of half of the iterations is saved.
 
+> Note that replacing the loop condition might result in an overflow of `i * i` if `isPrime` is called with a large `n`.
+
 ### Question 3 [4 points]
 
 During your internship at BarBaz Corp., you develop an app with a user interface.
