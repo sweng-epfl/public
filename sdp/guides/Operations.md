@@ -236,7 +236,7 @@ Commit your changes and push them. Cirrus CI will build your code, and push the 
 To avoid having to go to Code Climate manually, go to `Repo settings` in your repository on Code Climate, select `GitHub`, and set up and install `Pull request comments` and `Pull request status updates`.
 Code Climate will now send comments directly on pull requests.
 
-Finally, still in the repo settings on Code Climate, select `Test coverage`, ensure both `Enforce Diff Coverage` and `Enforce Total Coverage` are enabled, and increase the threshold to 80.
+Finally, still in the repo settings on Code Climate, select `Test coverage`, ensure `Enforce Total Coverage` is enabled, and increase the threshold to 80.
 This ensures that your pull requests maintain 80% code coverage at all times, which we require in SDP.
 
 
