@@ -86,7 +86,7 @@ This means keeping track of each member's progress to ensure nobody falls behind
 
 At the end of each sprint, you will write a summary of what you did, update the project board, then have your weekly meeting with members of the staff.
 
-The summary should be a Markdown file named `sprintN.md`, where N is the week number, in a `summaries` folder at the root of your repository.
+The summary should be either in a `summaries/sprintN.md` file in your repo, or in a `Sprint N` page in the repo wiki, as you prefer (where N is the week number).
 In it, each member in alphabetical order writes a few sentences about what they did, what went right, and what they need to improve next time.
 At the end, the Scrum Master additionally writes a few sentences about what the team did, what went right overall, and what the team needs to improve next time.
 Writing this summary will help you reflect about how to improve and will help the staff know what kind of guidance you need.
