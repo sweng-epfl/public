@@ -90,6 +90,7 @@ The summary should be either in a `summaries/sprintN.md` file in your repo, or i
 In it, each member in alphabetical order writes a few sentences about what they did, what went right, and what they need to improve next time.
 At the end, the Scrum Master additionally writes a few sentences about what the team did, what went right overall, and what the team needs to improve next time.
 Writing this summary will help you reflect about how to improve and will help the staff know what kind of guidance you need.
+When writing what went right and what you need to improve, focus on the _process_, not on the details of the work.
 
 Please read the [example of a weekly summary](./ExampleSummary.md) to get an idea of what we expect.
 
