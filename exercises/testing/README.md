@@ -21,7 +21,7 @@ Intermediate
 
 Advanced
 - [Fuzzing](fuzzing.md)
-- [Android](android)
+- [Find the bugs in an Android app](find-the-bugs-weather)
 
 
 The exercises are designed such that, if you can correctly solve the _Basic_ exercises every week, then you should be able to get a passing grade on the exams. If you additionally solve correctly the _Intermediate_ exercises, then you should be able to get a very good grade on the exams. The _Advanced_ exercises are for enthusiasts who want go beyond the standard material and get a black belt in Software Engineering.  We will be happy to try and provide personalized feedback on your solutions to _Advanced_ exercises if you wish, just contact the staff.
