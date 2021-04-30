@@ -1,34 +1,56 @@
 # Doing a demo in SDP
 
-An important part of every sprint review is a demo of your app.
-The first thing you need, of course, is a working app every week.
+The first part of every sprint review is a demo of your app to the customer, which in SDP is represented by the coaches.
+Your demo must be _aimed at customers_, even though SDP coaches also play a more technical role in other parts of the course.
+Your demo must be _from scratch_, even though SDP coaches also track your progress in other parts of the course.
+
+The first thing you need is a working app every week.
 It's important that it works, even if it has reduced functionality.
+You should do a demo with whatever functionality you have, even in the first few weeks of the semester.
 
-Start with an **elevator pitch**.
-Imagine the following scenario: you walk into an elevator and, oh my God!, there is the person you've always dreamt of meeting and convincing to adopt your app for her multi-national organization.
-So you now have an elevator ride's worth of time to pitch your app, to explain the concept in a way that she can understand it and be convinced.
-You must answer three key questions: Who is the app for? What does it do? Why is it needed? 
-Answer these questions in 30-60 seconds. Note that an elevator pitch is not the same thing as a sales pitch.
+Start with an **elevator pitch**: if you walked into an elevator and met someone who you'd like to turn into a customer,
+what could you say in the time of an elevator ride to convince that person?
+You must answer three key questions: Who is the app for? What does it do? Why is it needed?
+Answer these questions in 30-60 seconds, in a way that convinces the listener to give you more time.
+This is not a sales pitch; the goal is not to sell your app or services.
 
-After the elevator pitch, **demo your app**.
-This should take no more than 5 minutes.
-Do not give a tour of the features and functions but rather tell a user story and use the app as a companion.
-Instead of "Here you see the main menu, which allows you to find friends, determine where they are located, and send them messages...",
-you might try something like "Imagine you are downtown Lausanne and you have half an hour to kill until your next commitment. You take out your phone and look to see if there are any friends around.
-Aha! There is one. You message him ..."
+After the elevator pitch, **demo your app**: show how users can benefit from your app by demoing the key features to them.
+You must have a clear and concise story that makes users in your target demographic want to download and use your app.
+Do this in at most 5 minutes, preferably less, in a way that keeps the users interested throughout.
+This is not a tour of all of your app's features, only a user story that has your app as key companion.
 
-The demo should not show every single one of the app's features, only the ones relevant to the story.
-For instance, creating a forum post may be relevant to your story, but editing it is probably a waste of demo time.
+
+## Demo examples
+
+Examples of _good_ demo stories:
+
+> Imagine you are in town and you have half an hour to kill until your next commitment.
+> You take out your phone and look to see if there are any friends around, using OurApp.
+> Aha! There is one. You message him ...
+
+> You just started a new course, and you need a textbook for it. But you'd rather get a second-hand one if possible, to save money.
+> You take out your phone and search the textbook name in OurApp.
+> Someone is selling exactly the book you need! You make an offer ...
+
+Example of _bad_ demo stories:
+
+> Here you see the main menu of OurApp, which allows you to find friends, determine where they are located, and send them messages.
+> You can log in by pressing this button, which prompts you for your email ...
+
+> Last week OurApp could search for textbooks by name. As you can see, this week we added searching by course as well.
+> In this details screen here, we fixed the bug related to pictures, they are no longer rotated. Also ...
+
+## Preparing
 
 The #1 rule of demos is that [they don't work](https://www.youtube.com/watch?v=znxQOPFg2mo).
 Avoid enforcing the rule! A successful demo requires that you rehearse, rehearse, and rehearse.
-Please come prepared to class, and don't squander your chance to show off the app.
-Think ahead of time of the conditions in the room and what might go wrong.
-Will you show directly the screen of the phone, or will you project it using a beamer?
+Please come prepared, and don't squander your chance to show off the app.
+Think ahead of time of what might go wrong.
+Will you show directly the screen of the phone, or will you project on another screen?
 How will the lighting be? Will you allow your audience to interact with the app?
-Do you require network connectivity? GPS? Etc.
+Do you require network connectivity? GPS? ...
+
+## Rotating presenters
 
 Every member of the team must pitch and demo the app at least once during the semester.
-If you think that doing this is not your cup of tea, please watch [this video](https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are).
-
-After practicing the pitch and the demo throughout the semester, showing it off to your classmates at the end of the semester will be the easiest thing ever.
+If you think that doing this is not your cup of tea, please watch [this talk](https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are).
