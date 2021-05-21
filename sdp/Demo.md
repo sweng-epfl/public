@@ -40,6 +40,7 @@ Example of _bad_ demo stories:
 > Last week OurApp could search for textbooks by name. As you can see, this week we added searching by course as well.
 > In this details screen here, we fixed the bug related to pictures, they are no longer rotated. Also ...
 
+
 ## Preparing
 
 The #1 rule of demos is that [they don't work](https://www.youtube.com/watch?v=znxQOPFg2mo).
@@ -49,6 +50,16 @@ Think ahead of time of what might go wrong.
 Will you show directly the screen of the phone, or will you project on another screen?
 How will the lighting be? Will you allow your audience to interact with the app?
 Do you require network connectivity? GPS? ...
+
+
+## Avoiding the boring parts
+
+Any app has "boring" parts that must be done but aren't the focus of the app, such as logging in.
+Avoid these parts in your demo, as they take time but do not add value:
+
+- Log in before you start the demo.
+- If you need to type some long text as part of your demo, type it beforehand in another app and copy it, so all you have to do is paste it.
+
 
 ## Rotating presenters
 
