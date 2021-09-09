@@ -11,7 +11,7 @@
 
     <properties>
         <cucumber.version>6.7.0</cucumber.version>
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
