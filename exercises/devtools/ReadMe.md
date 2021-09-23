@@ -4,7 +4,7 @@ The exercises are designed such that, if you can correctly solve the Basic exerc
 
 
 These exercises will help you get started with git and use it in a way that will maximize collaboration and minimize conflicts between developers. 
-This exercise set assumes you have completed at least [Part 1](https://github.com/sweng-epfl/Bootcamp#part-i) of the SwEng bootcamp, and are familiar with `git init, add, commit, push, status` commands, and familiar with the command line and running `git` from the command line.
+This exercise set assumes you are familiar with `git init, add, commit, push, status` commands, and familiar with the command line and running `git` from the command line.
 You will also learn how to debug better and use different tools available to you as a developer.
 
 ## Exercises
