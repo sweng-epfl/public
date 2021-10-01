@@ -1,0 +1,32 @@
+----------------------------------------------------add to the dev1 branch
+public void printList(){
+    Node n = head;
+    while (n != null){
+        System.out.print(n.data+" ");
+        n = n.next;
+    }
+}
+
+
+-----------------------------------------------------add to the master branch
+public void pushFront(int data){
+    Node n  = new Node(data);
+    n.next = head;
+    head = n;
+}
+
+public static LinkedList createList(int arr[]){
+    LinkedList llist = new LinkedList();
+    for (int data : arr){
+        llist.pushFront(data);
+    }
+
+
+    return llist;
+}
+
+public static void main(String args[]) {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    LinkedList llist = createList(arr);
+    llist.printList();
+}
