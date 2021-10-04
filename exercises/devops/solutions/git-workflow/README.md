@@ -48,13 +48,32 @@ echo "# swengweek2" >> README.md
 git init  
 git add README.md  
 git commit -m "first commit"  
-git remote add origin https://github.com/<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example https://github.com/daksunt/swengweek2.git  
+git remote add origin git@github.com:<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example git@github.com:daksunt/swengweek2.git
 git push -u origin master  
 ```  
 
-![solution](3.png)
+Output:
+```console
+aksun@aksun-laptop:~/Desktop/sweng$ echo "# swengweek2" >> README.md
+aksun@aksun-laptop:~/Desktop/sweng$ git init
+Initialized empty Git repository in /home/aksun/Desktop/sweng/.git/
+aksun@aksun-laptop:~/Desktop/sweng$ git add README.md
+aksun@aksun-laptop:~/Desktop/sweng$ git commit -m "first commit"
+[master (root-commit) f42ce0d] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+aksun@aksun-laptop:~/Desktop/sweng$ git remote add origin git@github.com:daksunt/swengweek2.git
+aksun@aksun-laptop:~/Desktop/sweng$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:aksun/swengweek2.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
 
-4. Go to [exercises](./ex3). 
+4. Go to the folder this README file is in.
 
 ![solution](4.png)
 
@@ -126,7 +145,7 @@ git checkout -b fix-sort-bug
 ```  
 Pay attention to the asterisk.  
   
-Now, we created a branch for development.   We want to fix the code.  Open `QuickSort` file in a text editor of your own choice.  Go to line 24 and replace the $>$ operator with $<$ operator. 
+Now, we created a branch for development.   We want to fix the code.  Open `QuickSort` file in a text editor of your own choice.  Go to line 24 and replace the `>` operator with `<` operator. 
 
 ![solution](10.png)  
   

@@ -42,7 +42,7 @@ echo "# swengweek2" >> README.md
 git init  
 git add README.md  
 git commit -m "first commit"  
-git remote add origin https://github.com/<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example https://github.com/daksunt/swengweek2.git  
+git remote add origin git@github.com:<user-id>/<repo-id>.git #make sure user-id is your own, repo id is the name you have in the github. example git@github.com:daksunt/swengweek2.git
 git push -u origin master  
 ```  
 4. Go to the folder this README file is in.
