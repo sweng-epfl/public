@@ -1,7 +1,7 @@
-Testing
-=======
+Testing & Debugging
+===================
 
-Writing code is hard. Sometimes it's not clear what exactly the output of a function should be, and there are often many edge-cases you have to think about. Could you prove the program correct using formal logic? Maybe, but unfortunately, formal verification requires specific skills and takes a lot of time; making it scale to large programs is still a research topic.
+Writing code is hard. Sometimes it's not clear what exactly the output of a function should be, and there are often many edge-cases you have to think about. Could you prove the program correctness using formal logic? Maybe, but unfortunately, formal verification requires specific skills and takes a lot of time; making it scale to large programs is still am active research topic.
 
 The simplest way to gain _some_ confidence in your code is _manual testing_: run your code yourself and look at what it does. If it feels OK, good, otherwise, go and fix it. But this does not scale to large code bases: there are too many things that the code does to remember them all, and you may forget to check some parts.
 
@@ -9,19 +9,7 @@ This series of exercises introduces _automated testing_: write the tests once, a
 
 We will use two Java libraries: JUnit is the base testing library, and Hamcrest adds useful methods for testing. JUnit is supported by virtually all Java IDEs, which means that you can automatically run tests from an IDE and see the passed and failed tests; you can also do this from the command-line.
 
-Basics
-- [Find the bugs](find-the-bugs)
+Some exercises will require the use of a debugger. We strongly recommend using an IDE such as IntelliJ or Android Studio so that you can get familiar with the tools you will be using in the Software Development Project.
+
 - [Adapt the code](adapt-the-code)
-- [Cover the code](cover-the-code)
 - [Test driven development](test-driven-development)
-
-Intermediate
-- [Mocking](mocking.md)
-- [Specifications](specifications.md)
-
-Advanced
-- [Fuzzing](fuzzing.md)
-- [Find the bugs in an Android app](find-the-bugs-weather)
-
-
-The exercises are designed such that, if you can correctly solve the _Basic_ exercises every week, then you should be able to get a passing grade on the exams. If you additionally solve correctly the _Intermediate_ exercises, then you should be able to get a very good grade on the exams. The _Advanced_ exercises are for enthusiasts who want go beyond the standard material and get a black belt in Software Engineering.  We will be happy to try and provide personalized feedback on your solutions to _Advanced_ exercises if you wish, just contact the staff.

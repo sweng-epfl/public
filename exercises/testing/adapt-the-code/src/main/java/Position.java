@@ -1,4 +1,6 @@
+
 public final class Position {
+
     public double latitude;
     public double longitude;
 
@@ -6,4 +8,5 @@ public final class Position {
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
 }

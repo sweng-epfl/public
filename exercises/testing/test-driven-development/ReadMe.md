@@ -1,10 +1,10 @@
 # Test-Driven Development
 
-In this exercise, you will practice _Test-Driven Development_, TDD for short, in which tests help you write the code instead of only being a way to check code for correctness. The idea is simple:
+In this exercise, you will first practice writing a specification. You will then apply _Test-Driven Development_, TDD for short, in which tests help you write the code instead of only being a way to check code for correctness. The idea is simple:
 - Before writing code, write tests for the simplest feature your code will have.
-- Write code to makes the tests pass
+- Write code to make the tests pass
 - Write tests for the next feature
-- Write code to makes these new tests pass
+- Write code to make these new tests pass
 - ... and so on ...
 
 This has multiple benefits:
@@ -14,17 +14,15 @@ This has multiple benefits:
 - Since you wrote the tests before the code, they are good examples of how the code should work, which can be useful to the rest of the team.
 
 
-You are a new developer and want to make your own online concert ticket shop. Follow these steps:
+You are a new developer working on a 3D game engine *Anarchy3D™*. You are tasked with writing the new 3D vector class.
 
-- Create a class representing tickets.
-  Tickets should have a category (Normal, VIP, ...), a location, and a music group associated with it.
-  For simplicity, you can assume that music groups can be uniquely identified by their name.
+- In the class' documentation, write the specification for the `Vector3` class in informal language. This class should have at least the following capabilities:
+  * You should be able to check if the vector is the zero vector
+  * You should be able to compute the dot product with another vector
+  * You should be able to compute the length of the vector
+  * You should be able to compute the cross product with another vector
+  * You should be able to normalize the vector
+  * You should be able to scale the vector by a scalar
+  You are free to add any other functionality that you see fit. You can also use formal language, i.e., mathematical formulas, if required. Think about the edge cases when designing the specification and how they should be handled.
 
-- Create a class representing the actual shop. The shop should hold all currently available tickets and should allow the following operations:
-  - You should be able to add new tickets to your shop.
-  - You should be able to buy a ticket, given different requirements (the location/the group/the category or all of them).
-  - You should be able to improve the category of any ticket (i.e., change its category to VIP)  given a special promotion campaign.
-  - You should be able to change their ticket with an equivalent one (i.e., same group and category) in another given location, if available.
-  - You should have a way to print nicely the currently available tickets.
-
-Implement the shop using TDD. You are free to add any methods/classes that you like.
+Then, implement the `Vector3` class using TDD. You are free to add any methods/classes that you like.

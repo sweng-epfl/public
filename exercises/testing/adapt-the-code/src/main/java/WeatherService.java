@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 public class WeatherService {
+
     public Weather getWeatherToday() {
         String data;
         try {

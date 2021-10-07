@@ -1,3 +1,4 @@
+
 public enum Weather {
     UNKNOWN,
     SUNNY,
