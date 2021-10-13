@@ -1,18 +1,11 @@
 # Requirements
 
-The exercises are designed such that, if you can correctly solve the Basic exercises every week, then you should be able to get a passing grade on the exams.
-If you additionally solve correctly the Intermediate exercises, then you should be able to get a very good grade on the exams.
-
-In this exercise set, you will learn about translating user needs into requirements and then into code.
-
+This exercise set will help you practice transforming customer needs into good user stories. You will also learn to transform tbose needs into requirements and then into code. 
 
 ## Exercises
 
-- Basics
-  - [User stories](user-stories)
-
-- Intermediate
-  - [Cucumber](cucumber)
+- The [first exercise](user-stories) will let you practice turning customer needs into meaningful user stories.
+- In the [second exercise](cucumber) you'll learn to use [`cucumber`](https://cucumber.io/) to turn needs into requirements, and express those using code. 
 
 
 ## Solutions
