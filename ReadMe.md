@@ -21,6 +21,5 @@ This repo contains related materials that we make available to the public. For E
 - [Exercises](exercises)
 - [Mini-project](project)
 - [Tips and tricks](tips)
-- [Past midterm exams](exams/midterm/) along with solutions
-- [Past final exams](exams/final/) along with solutions
+- [Past exams](exams) along with solutions
 - [Software Development Project](sdp)
