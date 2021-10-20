@@ -13,5 +13,5 @@ Now write an implementation of this interface backed by [the yr.no API](https://
 
 Did you have to change your original interface? Why?
 
-How much of the implementation for this interface could you reuse if you had to write a client for the [SRG-SSR weather API](https://developer.srgssr.ch/apis/srgssr-weather)? Would you need to change the interface again? Would this new client need make use of additional interfaces internally?
+How much of the implementation for this interface could you reuse if you had to write a client for the [SRG-SSR weather API](https://developer.srgssr.ch/apis/srf-weather)? Would you need to change the interface again? Would this new client need make use of additional interfaces internally?
 
