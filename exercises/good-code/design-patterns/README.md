@@ -1,6 +1,5 @@
 # Design patterns: exercise set
 
-- [Quiz](QUIZ.md)
 - [MVC: Rock-Paper-Scissors](exercises/mvc-rockpaperscissors/)
 - [MVP: create an Android todo app](exercises/mvp/)
 
