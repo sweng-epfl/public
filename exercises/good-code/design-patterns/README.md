@@ -1,19 +1,6 @@
-# Design patterns and User Interfaces: exercise set
-
-This exercise set will help you practice the new design patterns you learn about in this week's lecture:
-
-- Singleton
-- Factory
-- Visitor
-- Proxy
-
-You will also apply the theory about user interfaces design patterns with 4 nano-projects for Android and the web:
-
-- MVC
-- MVP
-- MVVM
-
+# Design patterns: exercise set
 :information_source: The exercises are designed such that, if you can correctly solve the Basic exercises, then you should be able to get a passing grade on the exams. If you additionally solve correctly the Intermediate exercises, then you should be able to get a very good grade on the exams. The Advanced exercises are for enthusiasts who want go beyond the standard material and get a black belt in Software Engineering.
+
 
 ### Basic
 
@@ -34,7 +21,7 @@ You will also apply the theory about user interfaces design patterns with 4 nano
 - MVC: Rock-Paper-Scissors
     - [Exercise 8](exercises/ex8/)
 
-### Advanced
+### Advanced (optional)
 - [Exercise 9](exercises/ex9/) A web forum with MVC
 - [Exercise 10](exercises/ex10/): MVVM for Android - todo app revamped
 - [Exercise 11](exercises/ex11/): MVVM for the modern web - ReactJS/VueJS real-time chat mini-project

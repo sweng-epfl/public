@@ -2,7 +2,7 @@
 
 ## Solution 1
 
-See [ComputerBuilder.java](ComputerBuilder.java). The key idea is to allow mutability for the sake of construction. We also use a [Director.java](Director.java) to abstract away the actual construction.
+See [ComputerBuilder.java](src/main/java/ComputerBuilder.java). The key idea is to allow mutability for the sake of construction. We also use a [Director.java](src/main/java/Director.java) to abstract away the actual construction.
 
 ## Solution 2
 

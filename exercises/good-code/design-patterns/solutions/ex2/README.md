@@ -13,4 +13,4 @@ public class Logger {
 In this exercise, it is said that creating a new `Logger` instance takes a lot of time. Then, to avoid wasting lots of time, we would like to have only one instance of `Logger`. Hence, we have to turn `Logger` into a singleton. 
 
 ## Solutions
-There are multiple ways to do this, one is presented in the [`Logger`](src/main/java/ex5/Logger.java) class and another in the [`Logger2`](src/main/java/ex5/Logger2.java) class.
+There are multiple ways to do this, one is presented in the [`Logger`](src/main/java/Logger.java) class and another in the [`Logger2`](src/main/java/Logger2.java) class.

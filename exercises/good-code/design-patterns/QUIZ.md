@@ -1,4 +1,4 @@
-# DP & UI quiz
+# DP quiz
 
 ## Singleton Design Pattern
 
