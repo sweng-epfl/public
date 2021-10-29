@@ -60,12 +60,12 @@ THE POSSIBILITY OF SUCH DAMAGE.
         <!--
             JMH version to use with this project.
           -->
-        <jmh.version>1.26</jmh.version>
+        <jmh.version>1.33</jmh.version>
 
         <!--
             Java source/target to use for compilation.
           -->
-        <javac.target>1.8</javac.target>
+        <javac.target>17</javac.target>
 
         <!--
             Name of the benchmark Uber-JAR to generate.
