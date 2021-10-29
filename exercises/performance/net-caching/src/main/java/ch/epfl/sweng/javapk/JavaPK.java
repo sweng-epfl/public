@@ -83,6 +83,7 @@ public final class JavaPK {
         System.out.println("To install a package, use `javapk install <package name>`");
         System.out.println("To search for a package, use `javapk search <package name>`");
         System.out.println("To print information about a package, use `javapk info <package name>`");
+        System.out.println("In interactive mode, do not put `javapk`");
     }
 
     private Package findPackage(String packageName) {
