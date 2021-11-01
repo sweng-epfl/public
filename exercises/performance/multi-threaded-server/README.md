@@ -25,13 +25,9 @@ Your job is to create a server that:
 
 The multi-threaded version has to use a thread pool of size 4, and should handle each request on a separate thread.
 
-You can run the server with `./gradlew run` or directly from IntelliJ IDEA/Android Studio (after importing the Gradle project). By default, `./gradlew run` executes `SingleThreadedServer`, but you can change this behavior in `build.gradle` in the following way:
+You can run the server with `./gradlew run --args="single"` or `./gradlew run --args="multi"` (to run the single threaded and the multi threaded respectively). You can also run it directly from IntelliJ IDEA/Android Studio (after importing the Gradle project). To do so, you would need to add a new configuration that passes arguments as follows:
 
-```groovy
-application {
-    mainClassName 'SingleThreadedServer' // <-- Replace with 'MultiThreadedServer'
-}
-```
+![config](configs_intellij.png)
 
 ## Performance testing
 

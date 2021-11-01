@@ -8,7 +8,6 @@
 // The main tasks to use are 'build' (includes tests + coverage) and 'run'.
 
 import org.gradle.api.JavaVersion
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import java.nio.file.Files
 
@@ -16,6 +15,8 @@ plugins {
     id 'java'
     id 'application'
     id 'jacoco'
+
+    id "me.champeau.jmh" version "0.6.6"
 }
 
 repositories {
@@ -28,7 +29,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // Hamcrest
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
-    implementation 'com.sparkjava:spark-core:2.9.3'
 }
 
 def javaVersionTarget = "17"
@@ -41,7 +41,7 @@ if (JavaVersion.current().toString() != javaVersionTarget) {
 }
 
 application {
-    mainClassName 'App'
+    mainClass = 'App'
 }
 
 run {
@@ -64,12 +64,6 @@ test {
                 TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR
         // Always run all tests
         outputs.upToDateWhen { false }
-
-        // Show detailed information about failures
-        exceptionFormat = TestExceptionFormat.FULL
-        showExceptions = true
-        showCauses = true
-        showStackTraces = true
     }
 
     // If a crash happens during execution, tell the user about it
@@ -113,4 +107,9 @@ build {
     doLast {
         println "You can view the code coverage report in ${buildDir}/reports/coverage/index.html"
     }
+}
+
+jmhJar {
+    // Force 'gradle jmh' to always run the benchmark
+    outputs.upToDateWhen { false }
 }

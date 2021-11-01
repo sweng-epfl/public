@@ -21,7 +21,6 @@ public final class JavaPK {
     private void parseArguments(String[] args) {
         String operation = args[0].toLowerCase();
         args = Arrays.copyOfRange(args, 1, args.length);
-
         switch (operation) {
             case "download":
             case "i":
@@ -83,6 +82,7 @@ public final class JavaPK {
         System.out.println("To install a package, use `javapk install <package name>`");
         System.out.println("To search for a package, use `javapk search <package name>`");
         System.out.println("To print information about a package, use `javapk info <package name>`");
+        System.out.println("In interactive mode, do not put `javapk`");
     }
 
     private Package findPackage(String packageName) {

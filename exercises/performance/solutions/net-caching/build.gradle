@@ -28,6 +28,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // Hamcrest
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    implementation 'org.apache.commons:commons-compress:1.20'
 }
 
 def javaVersionTarget = "17"
@@ -40,7 +41,7 @@ if (JavaVersion.current().toString() != javaVersionTarget) {
 }
 
 application {
-    mainClass = 'App'
+    mainClassName = 'ch.epfl.sweng.javapk.JavaPK'
 }
 
 run {

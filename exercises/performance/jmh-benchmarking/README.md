@@ -12,18 +12,18 @@ We also provide you with a skeleton `Benchmark.java` file: it is the file in whi
 - The benchmark mode determines what will be measured: the average execution time; the throughput, i.e. the number of operations per second; a single execution time (without warmup); or all combined. We will use average execution time.
 - The output time unit determines the unit in which to display the output.
 - The warmup annotation specifies how many iterations of warmup to run and for how long. As the name suggests, this is used to "warm up" the jvm, and the measurements of these iterations are not taken into account. 
-- The measurement annotation specifies the number of iterations to run and their duration. THeir result will be taken into account during the benchmark. 
+- The measurement annotation specifies the number of iterations to run and their duration. Their result will be taken into account during the benchmark. 
 - The number of forks is the number of trials to run. 
 
 Notice that the only benchmark present takes a `Blackhole` as an argument. This structure provides a `consume` method to use values that would be otherwise considered as *dead code* by the JVM.  
 
 Let's build and run the benchmark. In the root directory run the following to build the benchmark:
 ```
-mvn clean verify
+./gradlew build
 ```
-Run the benchmark using the following command, using the self-contained executable JAR holding your benchmark:
+Run the benchmark using the following command:
 ```
-java -jar target/benchmarks.jar
+./gradlew jmh
 ```
 You will see the progress of the benchmark. When it's done, it will present the results. 
 
