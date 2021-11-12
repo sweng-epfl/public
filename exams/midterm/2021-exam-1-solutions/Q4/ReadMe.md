@@ -1,6 +1,6 @@
 # Question 4: Establishing foundations [25 points]
 
-You know that you will have to refactor SuperQuiz's parser for quiz questions soon, as new kinds of questions will be added to satisfy more users.
+You know that you will have to modify SuperQuiz's parser for quiz questions soon, as new kinds of questions will be added to satisfy more users.
 However, the current parser has no tests, which makes refactorings risky.
 
 Write tests for the parser in `src/test/java/QuizParserTests.java`, without modifying the parser itself nor anything under `src/main/java`.

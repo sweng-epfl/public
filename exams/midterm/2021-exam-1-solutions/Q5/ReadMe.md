@@ -1,9 +1,9 @@
 # Question 5: Separate development [35 points]
 
-Your colleagues already wrote the code for a new feature of the SuperQuiz app, fetching daily announcements from the server.
-However, the server does not implement that feature yet.
-Still, the server part of the feature has been specified, and you need to write tests to make sure the client does everything right...
-one of your coworkers thinks there is a bug in there.
+Your colleagues already wrote the code for a new feature of the SuperQuiz app: fetching daily announcements from the server.
+The interface to the server part of the feature has been fully specified, even if not implemented yet.
+Your task is to write a test suite for the client.
+In fact, one of your coworkers claims that there is a bug in the announcements fetcher.
 
 1. Make the minimal modifications necessary in `src/main/java/AnnouncementsFetcher.java` to make it testable:
   - The modified `AnnouncementsFetcher` should have no hardcoded dependencies on its environment.
