@@ -67,7 +67,7 @@ The most important files are:
 
 Open the app on your emulator, follow the on-screen instructions and have fun!
 
-If you are lost or stuck on a challenge, do not hesitate to take a look at the lecture notes, discuss with classmates, ask a TA or write a post on Piazza / Discord!
+If you are lost or stuck on a challenge, do not hesitate to take a look at the lecture notes, discuss with classmates, ask a TA or write a post on the course forum!
 
 ## Online Leaderboard
 
@@ -77,7 +77,7 @@ We also provide an online leaderboard to promote friendly competitivity.
 
 If you find a way to get a flag that does not seem to be the intended vulnerability, let us know! We will be very happy to award bonus points for creative hackers.
 
-The app is not supposed to crash. If you find any bug, weird behaviour or crash, please let us know on Piazza or in the [Github Issues](https://github.com/sweng-epfl/public/issues)! We will be very happy to improve our application.
+The app is not supposed to crash. If you find any bug, weird behaviour or crash, please let us know on the course forum or in the [Github Issues](https://github.com/sweng-epfl/public/issues)! We will be very happy to improve our application.
 
 ## Miscellaneous
 
