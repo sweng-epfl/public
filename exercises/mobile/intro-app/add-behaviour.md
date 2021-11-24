@@ -1,32 +1,10 @@
-# Exercise 1: getting started with Android development
-
-## Create an Android app
-
-We will kickstart your career as an Android software engineer by creating a friendly greeting application. This application will prompt the user to enter its name, and will then display a friendly welcome message.
-
-Below is a list of steps we suggest you take to build this app. In addition, you will find some hints below. 
-
-### Create the main screen
-
-First, you need to build the screen on which the users will enter their name. 
-
-Edit the **app/res/layout/activity_main.xml** file and add a *Plain Text* text field and a *Button* to your activity by dragging them from the component Palette. Each component has a set of attributes that can be displayed by clicking on it. In the Attributes of the *Plain Text* component, modify the *text* attribute as a hint for the user (e.g., "Name"). You can then style the text field and button as you like. You can also remove the existing *Text View* that Android Studio put there.
-
-One part is important, though: set the `id` attribute of both the text field and the button to a meaningful value, such as `mainName` and `mainGoButton`. You will use this ID to access the components from your source code. To do it, select the component and modify the id attribute in the Attributes tab (usually at the very top of the list). Alternatively, add **android:id="..."** to the XML code of the component.
-
-Launch your app. This will start an emulator and show the awesome activity you just created.
-
-### Create a greeting screen
-
-Now, let's create the screen on which the proper greeting message will be displayed. 
-
-To do so, add a second empty activity called **GreetingActivity** to your app and add a TextView with ID "greetingMessage" to its layout (the layout file is defined at `app/res/layout/activity_greeting.xml`).
-
-## Add behavior to your app
+# Exercise 1.2: Adding behavior to your app
 
 Now, you can add the code that starts the GreetingActivity when you click the button and sets the greeting message to "Hello <name>!", where <name> is the text field input. The [Android documentation on starting an activity](https://developer.android.com/training/basics/firstapp/starting-activity.html) contains all the information you need in order to do this. Reading documentation is an important part of being a software engineer.
 
 One hint: the Android documentation talks about editing the XML files directly. You can do this, but you don't need to since you can set all of the Views attributes using the interface designer in Android Studio.
+
+# Exercise 1: outro
 
 ## Clean up
 
