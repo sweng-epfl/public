@@ -2,8 +2,6 @@
 
 We will kickstart your career as an Android software engineer by creating a friendly greeting application. This application will prompt the user to enter its name, and will then display a friendly welcome message.
 
-Below is a list of steps we suggest you take to build this app. In addition, you will find some hints below. 
-
 ## Create the main screen
 
 First, you need to build the screen on which the users will enter their name. 

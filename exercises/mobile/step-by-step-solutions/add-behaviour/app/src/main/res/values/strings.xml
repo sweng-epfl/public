@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="main_textfield_placeholder">Enter your name</string>
+    <string name="say_hi">Say Hi</string>
+    <string name="greeting_message">Hello %s!</string>
+</resources>
