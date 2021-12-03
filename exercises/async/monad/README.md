@@ -10,4 +10,4 @@ Advice:
   - https://github.com/shelajev/promises
   - https://github.com/playframework/play1/blob/master/framework/src/play/libs/F.java
   - https://www.slideshare.net/JavaDayUA/unlocking-the-magic-of-monads-with-java-8
-- Also have a look at the solution [here](solutions/monad)
+- Also have a look at the solution [here](../solutions/monad)
