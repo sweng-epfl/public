@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class CFDistantCredentialDatabaseTest {
 
@@ -22,7 +22,7 @@ public class CFDistantCredentialDatabaseTest {
     public void tryToAuthUserThatDoesNotExistThrowsUnknownUser() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
         AtomicBoolean hasRightType = new AtomicBoolean(false);
-        CompletableFuture<AuthenticatedUser> cf = db.authenticate("any", "user").exceptionally(e -> {
+        CompletableFuture<AuthenticatedUser> cf = db.authenticate("any", "user").orTimeout(10, TimeUnit.SECONDS).exceptionally(e -> {
             hasRightType.set(e.getCause() instanceof UnknownUserException);
             throw new CompletionException(e);
         });
@@ -35,7 +35,7 @@ public class CFDistantCredentialDatabaseTest {
     @Test
     public void callAddUserOnEmptyDBAddsUserToDB() throws ExecutionException, InterruptedException {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234);
+        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
         AuthenticatedUser user = cf.get();
         assertThat(user.getUserName(), is("newuser"));
         assertThat(user.getSciper(), is("1234"));
@@ -46,8 +46,8 @@ public class CFDistantCredentialDatabaseTest {
     public void callAddUserTwiceWithSameCredentialsThrowsAlreadyExists() throws ExecutionException, InterruptedException {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
         AtomicBoolean hasRightType = new AtomicBoolean(false);
-        CompletableFuture<Void> cf = CompletableFuture.allOf(db.addUser("new", "user", 1234),
-                db.addUser("new", "user", 1234)).exceptionally(e -> {
+        CompletableFuture<Void> cf = CompletableFuture.allOf(db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS),
+                db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS)).exceptionally(e -> {
             hasRightType.set(e.getCause() instanceof AlreadyExistsUserException);
             throw new CompletionException(e);
         });
@@ -60,9 +60,9 @@ public class CFDistantCredentialDatabaseTest {
     @Test
     public void addUserAndAuthYieldCorrectUser() throws ExecutionException, InterruptedException {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234);
+        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
         cf.get();
-        cf = db.authenticate("newuser", "pwd");
+        cf = db.authenticate("newuser", "pwd").orTimeout(10, TimeUnit.SECONDS);
         AuthenticatedUser user = cf.get();
         assertThat(user.getUserName(), is("newuser"));
         assertThat(user.getSciper(), is("1234"));
@@ -72,10 +72,10 @@ public class CFDistantCredentialDatabaseTest {
     @Test
     public void addUserAndAuthWithWrongPwdThrowsInvalidCredentials() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234);
+        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
         cf.join();
         AtomicBoolean hasRightType = new AtomicBoolean(false);
-        cf = db.authenticate("newuser", "wrongpwd").exceptionally(e -> {
+        cf = db.authenticate("newuser", "wrongpwd").orTimeout(10, TimeUnit.SECONDS).exceptionally(e -> {
             hasRightType.set(e.getCause() instanceof InvalidCredentialException);
             throw new CompletionException(e);
         });
