@@ -18,20 +18,29 @@ public class App {
         // --- Part 1 ---
 
         // 1. Print the exact answer to System.out as soon as it is available
+        getExactAnswer().thenAccept(System.out::println);
+        
 
         // 2. Upload the exact answer as soon as it is available
+        CompletableFuture<Integer> correctAnswer = getExactAnswer();
+        getExactAnswer().thenApply(i -> Integer.toString(i)).thenCompose(App::upload);
+        
 
         // 3. Either the exact answer or the approximate answer,
         //    whichever one is available first,
         //    prefixed with "Exact: " or "Approximate: " as necessary,
         //    and printed to System.out
 
+        getExactAnswer().thenApply(i -> "Exact: " + i).acceptEither(getApproximateAnswer().thenApply(i -> "Approximate: " + i), System.out::println);
+
+        
         // 4. The answer with justification, printed to System.out;
         //    unless it throws an exception, in which case the normal answer, prefixed with "Exact: ",
         //    should be printed instead
         //    (hint: don't forget the documentation of CompletableFuture's interface CompletionStage...)
 
-
+        getAnswerWithJustification().exceptionallyCompose(e -> getExactAnswer().thenApply(i -> "Exact: " + i)).thenAccept(System.out::println);
+        
         // --- Part 2 ---
 
         // 5. Count sheep using the provided method, but stop the operation after 5 seconds if it's not finished.
