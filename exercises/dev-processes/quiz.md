@@ -2,8 +2,6 @@ All questions have one or more correct answers.
 
 **Not all of this was covered in the lecture**, you may need to look terms up.
 
-## Managing a software project
-
 Why do large software projects tend to miss their planned budgets and deadlines more often than small projects?
 
 - [ ] There usually aren't enough people working on the project
@@ -15,11 +13,9 @@ Which tools can help you better manage a software project?
 
 - [ ] The GitHub issue tracker
 - [ ] A code review tool, even as basic as GitHub's comment feature
-- [ ] The Emma code coverage measurement tool
+- [ ] The JaCoCo code coverage measurement tool
 - [ ] Git commit messages
-- [ ] CheckStyle
-
-## Waterfall
+- [ ] Static analysis tools such as Android Lint
 
 For which of the following scenarios is the Waterfall model most appropriate?
 
@@ -28,14 +24,6 @@ For which of the following scenarios is the Waterfall model most appropriate?
 - [ ] An EPFL graduate has been employed by a start-up as a software engineer, to work with a team of 10 people (electrical engineers, computer scientists and mechanical engineers). The start-up is developing a new robot that should revolutionize industrial manufacturing. The product is based on an entire suite of technical innovations in AI, motor control, computer vision and materials.
 - [ ] The SBB/CFF wants an external software company to develop a brand new app for smartphones. The app should replace most of the services offered by SBB customer service assistants at rail stations. All initial requirements for the app have been written down. However, there are some features that are not covered by the current requirements, but SBB might like to add to a future version of the application.
 
-## Scrum
-
-If you're a software engineer on a Scrum team and you don't know what the Liskov Substitution Principle is, who do you go talk to?
-
-- [ ] Product owner
-- [ ] Scrum master
-- [ ] Guru (also known as manager)
-
 If you're a software engineer on a Scrum team, which of the following should you not do during the Sprint?
 
 - [ ] Have a daily Scrum meeting with the entire team to discuss about the progress of the tasks
@@ -43,165 +31,96 @@ If you're a software engineer on a Scrum team, which of the following should you
 - [ ] Talk with the Product Owner about removing tasks from the Sprint Backlog
 - [ ] Meet with the Product Owner to update the Product Backlog
 
-## More about Scrum
-
 Which meeting is held for the sake of the product?
 
 - [ ] daily scrum
 - [ ] sprint review
 - [ ] retrospective
 
-What is the limit on the duration of the daily scrum meeting?
-
-- [ ] 5 minutes
-- [ ] 15 minutes
-- [ ] 1 hour
-
-What information provides burnout chart?
-
-- [ ] Adjustements necessary to meet the deadline.
-- [ ] An estimation of the amount of work left for the sprint.
-- [ ] Customer satisfaction.
-- [ ] The average team daily performance.
-
-What is included in every bar in the burnout chart?
-
-- [ ] the parts of user stories that remain to be done
-- [ ] the completed features
-- [ ] the project manager's daily estimate of the remaining work
-
-## Scrum-related questions
-
-1. Who is *not* a part of the Scrum Team?
+Who is *not* a part of the Scrum Team?
 - [ ] Project Manager
 - [ ] Scrum Master
 - [ ] Product Owner
 - [ ] Development Team
 
-2. Which of the following events occur in Scrum?
+Which of the following events occur in Scrum?
 - [ ] Sprint Planning
 - [ ] Sprint Retrospective
 - [ ] Sprint Review
 - [ ] Daily Scrum
 
-
-3. What is the recommended range of the team size of a Development Team (not counting the Scrum Master and the Product Owner
-unless they contribute to the delivery of the Increment) ?
-- [ ] 2 to 4
-- [ ] 3 to 9
-- [ ] 5 to 10
-- [ ] 5 to 6
-
-4. What is the main responsibility of the Product Owner?
+What is the main responsibility of the Product Owner?
 - [ ] Manage the Product Backlog
 - [ ] Assign tasks to the Development Team
 - [ ] Explain the Product Backlog Items to the customers and the Development Teams
 - [ ] Make demos for the customers
 
-5. Can another member of the Scrum Team change the priority of a Product Backlog besides the Product Owner?
+Can another member of the Scrum Team change the priority of a Product Backlog besides the Product Owner?
 - [ ] Yes
 - [ ] No
 
-
-6. What is an appropriate item in the Product Backlog?
+What is an appropriate item in the Product Backlog?
 - [ ] As a registered user, I can click on the settings button from the navigation pane so I can access the settings screen from everywhere in the app.
 - [ ] Login
 - [ ] [Bug] The landing page doesn't render well, if the language of my device is not English.
 - [ ] [Bug] When I click on the home button, the app doesn't redirect me there (tested from multiple locations in the app).
 
-7. Who can move an item from the Product Backlog to the Sprint Backlog?
+Who can move an item from the Product Backlog to the Sprint Backlog?
 - [ ] Product Owner
 - [ ] Scrum Master
 - [ ] Development Team
 - [ ] Customer
 
-8. When can an item be selected for the Sprint Backlog?
+When can an item be selected for the Sprint Backlog?
 - [ ] When the Development Team thinks an item in the Product Backlog is clear.
 - [ ] When the Development Team estimated they can do it within the allocated time for the Sprint.
 - [ ] When the Scrum Master authorizes the Development Team to move an item.
 - [ ] When the Product Owner asks for an item to be done during the Sprint.
 
-9. What are acceptable durations of a Sprint?
-- [ ] 5 days
-- [ ] 7 days
-- [ ] 20 days
-- [ ] 15 days
-
-10. What is the role of the Scrum Master?
+What is the role of the Scrum Master?
 - [ ] To serve the Product Owner by helping them communicate with the Development Team
 - [ ] To serve the Development Team by coaching them in self-organization and flexibility
 - [ ] To serve the Development Team by removing impediments.
 - [ ] To serve the Organization by delivering high-value products.
 
-11. What is the duration of the Daily Scrum ("standup meeting")?
-- [ ] <=15min
-- [ ] 1h
-- [ ] The Daily Scrum can take as much time as required to explain all the work the Development Team has done but less than 30min.
-- [ ] The Daily Scrum is not time-boxed.
-
-12. What kind of statements should every member of the Development Team make during the Daily Scrum?
+What kind of statements should every member of the Development Team make during the Daily Scrum?
 - [ ] Yesterday, I was blocked because of <<this>> or Yesterday I didn't have any blockers.
 - [ ] Yesterday, I worked with Alice.
 - [ ] Yesterday, I did <<this>>.
 - [ ] Today I will work on <<this>>.
 
-13. Who should speak during the Daily Scrum?
+Who should speak during the Daily Scrum?
 - [ ] Development Team
 - [ ] Product Owner
 - [ ] Scrum Master
 - [ ] Customer
 
-14. What is/are the goal/goals of the Sprint Review?
+What is/are the goal/goals of the Sprint Review?
 - [ ] Demo the Increment to receive feedback.
 - [ ] Adjust the Product Backlog
 - [ ] Make a presentation about what needs to be done and what has been done.
 - [ ] Discuss what went wrong and what went well
 
-15. Who takes part in the Sprint Review?
+Who takes part in the Sprint Review?
 - [ ] Development Team
 - [ ] Product Owner
 - [ ] Invited Stakeholders
 - [ ] Scrum Master
 
-16. What is the maximum duration of the Sprint Review?
-- [ ] 1h
-- [ ] 30min
-- [ ] 1d
-- [ ] 4h
-
-17. Pick the correct descriptions of the Sprint Retrospective.
+Pick the correct descriptions of the Sprint Retrospective.
 - [ ] The Sprint Retrospective is for the Scrum Team to inspect what worked and what didn't during the Sprint.
 - [ ] The goal of the Sprint Retrospective is to identify improvements that the Scrum Team can implement in the next Sprint.
 - [ ] The Scrum Team can update its definition of Done during the Sprint Retrospective.
 - [ ] The Sprint Retrospective's results have to communicated with the customers.
 
-## Scenarios
-
-18. If you encounter a bug while you're working on your task during the Sprint, what do you need to do?
+If you encounter a bug while you're working on your task during the Sprint, what do you need to do?
 - [ ] Fix the bug immediately.
 - [ ] Log the bug and communicate to the Product Owner what you found.
 - [ ] Work on the bug after you finish your task.
 - [ ] Ask your teammates who’s available to fix the bug.
 
-
-
-19. If a team member starts talking about implementation details that prevented them from doing their tasks during the Daily Scrum, what should be done?
+If a team member starts talking about implementation details that prevented them from doing their tasks during the Daily Scrum, what should be done?
 - [ ] Ask them to explain further and try to resolve the issue on spot
 - [ ] Ask them to keep the implementation details for later and communicate after the meeting
 - [ ] Ignore their comment and
 - [ ] Everyone should explain their implementation problems during those meetings.
-
-
-## Other software development processes
-
-20. Which steps characterize the Waterfall development process?
-- [ ] Planning, Implementation, Testing, Retrospective
-- [ ] System Requirements, Software Requirements, Analysis, Prototype
-- [ ] Analysis, Program Design, Coding, Testing
-- [ ] Analysis, Program Design, Coding, Testing, Demoing
-
-21. What would be a good use case for Waterfall development?
-- [ ] The product is mission-critical and requires a high level of specification before any coding.
-- [ ] The team doesn't know what to implement, so they work on requirements until they understand what the product they want to build.
-- [ ] An app for a class
-- [ ] Your hobby project
