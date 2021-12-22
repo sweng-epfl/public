@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -21,49 +19,38 @@ public class CFDistantCredentialDatabaseTest {
     @Test
     public void tryToAuthUserThatDoesNotExistThrowsUnknownUser() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        AtomicBoolean hasRightType = new AtomicBoolean(false);
-        CompletableFuture<AuthenticatedUser> cf = db.authenticate("any", "user").orTimeout(10, TimeUnit.SECONDS).exceptionally(e -> {
-            hasRightType.set(e.getCause() instanceof UnknownUserException);
-            throw new CompletionException(e);
-        });
-        assertThrows(ExecutionException.class, cf::get);
-        assertThat(cf.isCompletedExceptionally(), is(true));
-        assertThat(hasRightType.get(), is(true));
+        var exception = assertThrows(CompletionException.class, () -> db.authenticate("any", "user").orTimeout(10, TimeUnit.SECONDS).join());
+        assertThat(exception.getCause(), isA(UnknownUserException.class));
     }
 
     // 2. Calling `addUser` on empty database will add the correct user
     @Test
-    public void callAddUserOnEmptyDBAddsUserToDB() throws ExecutionException, InterruptedException {
+    public void callAddUserOnEmptyDBAddsUserToDB() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
         CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
-        AuthenticatedUser user = cf.get();
+        AuthenticatedUser user = cf.join();
         assertThat(user.getUserName(), is("newuser"));
         assertThat(user.getSciper(), is("1234"));
     }
 
     // 3. Calling `addUser` twice with the same user will fail
     @Test
-    public void callAddUserTwiceWithSameCredentialsThrowsAlreadyExists() throws ExecutionException, InterruptedException {
+    public void callAddUserTwiceWithSameCredentialsThrowsAlreadyExists() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        AtomicBoolean hasRightType = new AtomicBoolean(false);
-        CompletableFuture<Void> cf = CompletableFuture.allOf(db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS),
-                db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS)).exceptionally(e -> {
-            hasRightType.set(e.getCause() instanceof AlreadyExistsUserException);
-            throw new CompletionException(e);
-        });
-        assertThrows(ExecutionException.class, cf::get);
-        assertThat(cf.isCompletedExceptionally(), is(true));
-        assertThat(hasRightType.get(), is(true));
+        var exception = assertThrows(CompletionException.class, () -> CompletableFuture.allOf(
+                db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS),
+                db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS)
+            ).join());
+        assertThat(exception.getCause(), isA(AlreadyExistsUserException.class));
     }
 
     // 4. Adding a user to the database and trying to `authenticate` the same user will yield the correct user
     @Test
-    public void addUserAndAuthYieldCorrectUser() throws ExecutionException, InterruptedException {
+    public void addUserAndAuthYieldCorrectUser() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
-        cf.get();
-        cf = db.authenticate("newuser", "pwd").orTimeout(10, TimeUnit.SECONDS);
-        AuthenticatedUser user = cf.get();
+        db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS).join();
+        CompletableFuture<AuthenticatedUser> cf = db.authenticate("newuser", "pwd").orTimeout(10, TimeUnit.SECONDS);
+        AuthenticatedUser user = cf.join();
         assertThat(user.getUserName(), is("newuser"));
         assertThat(user.getSciper(), is("1234"));
     }
@@ -72,15 +59,8 @@ public class CFDistantCredentialDatabaseTest {
     @Test
     public void addUserAndAuthWithWrongPwdThrowsInvalidCredentials() {
         CFDistantCredentialDatabase db = new CFDistantCredentialDatabase();
-        CompletableFuture<AuthenticatedUser> cf = db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS);
-        cf.join();
-        AtomicBoolean hasRightType = new AtomicBoolean(false);
-        cf = db.authenticate("newuser", "wrongpwd").orTimeout(10, TimeUnit.SECONDS).exceptionally(e -> {
-            hasRightType.set(e.getCause() instanceof InvalidCredentialException);
-            throw new CompletionException(e);
-        });
-        assertThrows(ExecutionException.class, cf::get);
-        assertThat(cf.isCompletedExceptionally(), is(true));
-        assertThat(hasRightType.get(), is(true));
+        db.addUser("newuser", "pwd", 1234).orTimeout(10, TimeUnit.SECONDS).join();
+        var exception = assertThrows(CompletionException.class, () -> db.authenticate("newuser", "wrongpwd").orTimeout(10, TimeUnit.SECONDS).join());
+        assertThat(exception.getCause(), isA(InvalidCredentialException.class));
     }
 }
