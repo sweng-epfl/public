@@ -19,7 +19,3 @@ The exercises are designed such that, if you can correctly solve the Basic exerc
 - Advanced (optional)
   - [Regular Expression-based Denial-of-Service](regex-dos.md)
   - [C String Buffer overflows](c-buffer-overflow.md)
-
-## Solutions
-
-You can find the solutions [here](solutions), but please try to solve the exercises by yourself before peeking at the solutions.

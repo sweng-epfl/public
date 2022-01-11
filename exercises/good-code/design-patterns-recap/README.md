@@ -5,13 +5,9 @@
 ## Exercises
 
 - [Quiz](QUIZ.md)
-- [Ex 1 (Observer)](practice/ex1)
-- [Ex 2 (Builder)](practice/ex2)
-- [Ex 3 (Adapter)](practice/ex3)
-- [Ex 4 (Composite)](practice/ex4)
-- [Ex 5 (Decorator)](practice/ex5)
-- [Ex 6 (Iterator)](practice/ex6)
-
-## Solutions
-
-You can find the solutions [here](solutions), but please try to solve the exercises by yourself before peeking at the solutions.
+- [Ex 1 (Observer)](observer)
+- [Ex 2 (Builder)](builder)
+- [Ex 3 (Adapter)](adapter)
+- [Ex 4 (Composite)](composite)
+- [Ex 5 (Decorator)](decorator)
+- [Ex 6 (Iterator)](iterator)
