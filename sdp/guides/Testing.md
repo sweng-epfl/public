@@ -22,10 +22,11 @@ In this first part, we will test the **Greeting** part of the app. We will see l
 In your `app/build.gradle` you will want to add the following dependencies (some may already be listed in your dependencies, while others may require version updates by pressing Alt+Enter on names highlighted in yellow):
 
 ```
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test:rules:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
 ```
 
 ### Write the tests

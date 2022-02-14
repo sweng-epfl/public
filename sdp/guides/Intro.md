@@ -13,17 +13,17 @@ Download and install Android Studio from [https://developer.android.com](https:/
 
 You should choose the default options (you will do more tool configuration later).
 
-Once you reach the welcome screen, please click on **Configure** at the bottom right of the window, and select **SDK Manager**. Then, in the **SDK Platforms** tab, please install **Android 11** (API Level 30).
-After that, in the **SDK Tools** tab, first select **Show Package Details** (at the bottom right), then choose **Android SDK Build Tool 30.0.2** and install it, if it is not installed already. 
+Once you reach the welcome screen, please click on **More Actions** at the middle of the window, and select **SDK Manager**. Then, in the **SDK Platforms** tab, please install **Android 12** (API Level 31).
+After that, in the **SDK Tools** tab, first select **Show Package Details** (at the bottom right), then choose **Android SDK Build Tool 31.0.0** and install it, if it is not installed already. 
 
 ## Create a new project
 
-Launch the *Start a new Android Studio project* wizard.
+Click on *New project* button.
 In the first dialog, select *Empty activity*.
 In the next dialog, name your project and choose a package name (for instance **com.github.yourusername.bootcamp**.
 This naming convention is called [Reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation)).
 
-In *Language* please select **Java**, and in *minimum SDK* please select **API 23: Android 6.0 (Marshmallow)**. After a bit of time, you should see Android Studio open up with a number of files created for this project.
+In *Language* please select **Java**, and in *Minimum SDK* please select **API 23: Android 6.0 (Marshmallow)**. After a bit of time, you should see Android Studio open up with a number of files created for this project.
 
 > :information_source: You can always change the minimum SDK later if you need to, but please keep in mind that not all devices have the latest version of Android.
 
@@ -39,17 +39,16 @@ An Android project actually has two **build.gradle** files. With a command line,
 - **build.gradle** `(Module: ...)`: this is the app-level gradle file, i.e. **app/build.gradle**.
 
 Open now the **app/build.gradle**. In this file, please modify the following settings if they are not already at these values:
-* `compileSdkVersion 30`
-* `buildToolsVersion "30.0.2"`
-* `minSdkVersion 23`
-* `targetSdkVersion 30`
+* `compileSdk 31`
+* `minSdk 23`
+* `targetSdk 31`
 * In the *dependencies*, multiple lines may be yellow, indicating that newer versions exist. You can bump the versions using the `Alt`+`Enter` shortcut, select `Change to x.y.z`. The dependencies should be updated as follows:
-  * `implementation 'androidx.appcompat:appcompat:1.2.0'`
-  * `implementation 'com.google.android.material:material:1.3.0'`
-  * `implementation 'androidx.constraintlayout:constraintlayout:2.0.4'`
+  * `implementation 'androidx.appcompat:appcompat:1.4.1'`
+  * `implementation 'com.google.android.material:material:1.5.0'`
+  * `implementation 'androidx.constraintlayout:constraintlayout:2.1.3'`
   * `testImplementation 'junit:junit:4.13.2'`
-  * `androidTestImplementation 'androidx.test.ext:junit:1.1.2'`
-  * `androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'`
+  * `androidTestImplementation 'androidx.test.ext:junit:1.1.3'`
+  * `androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'`
 
 Plase also make sure that the `compileOptions` block inside the `android` block has Java 8 enabled, so that you can use modern features such as lambdas:
 ```gradle
@@ -65,23 +64,22 @@ android {
 
 ...
 ```
-
-And in the top level **build.gradle** file, please update the following version if it is not already up-to-date:
-
+> :information_source: 
+If you have chosen kotlin, make sure to have this dependencies: 
 ```gradle
-classpath "com.android.tools.build:gradle:4.1.2"
+implementation 'androidx.core:core-ktx:1.7.0'
 ```
 
-After making changes in `build.gradle` files, Android Studio will show a banner at the top of the editor suggesting a gradle sync; you should accept it.
+After making changes in `build.gradle` files, Android Studio will show a blue banner at the top of the editor suggesting a gradle sync; you should accept it (Sync Now).
 You can also manually sync using the "Sync project with Gradle files" at the top right, which should look like an elephant with an arrow pointing downwards.
 
 
 ## Create an emulator to run the app
 
 The last thing you need to do before running your new app is to create the emulator on which your app will run.
-In Android Studio, use *Tools* > *AVD Manager*. A dialog will open, guiding you through the creation of your virtual device. Click *Create virtual device* to start the process.
-You can keep all the default settings. You may need to download a system image before continuing. Under the *Recommended* tab, download the **Android 11** (API Level 30) image.
-Once done, your virtual device should appear in the *Virtual Device Manager*, which you can now close.
+In Android Studio, use *Tools* > *Device Manager*. A tab will open, guiding you through the creation of your virtual device. Click *Create device* to start the process.
+You can keep all the default settings. You may need to download a system image before continuing. Under the *Recommended* tab, download the **Android 12** (API Level 31) image.
+Once done, your virtual device should appear in the *Device Manager*, which you can now close.
 
 To run your app, you can now use *Run* > *Run 'app'*. It will take a few seconds to start up the emulator and then you will see Android itself start up, followed by your app. 
 
@@ -102,7 +100,7 @@ Below is a list of steps we suggest you take to build this app. In addition, you
 
 First, you need to build the screen on which the users will enter their name. 
 
-Edit the **app/res/layout/activity_main.xml** file and add a *Plain Text* text field and a *Button* to your activity by dragging them from the component palette.
+Edit the **app > res > layout > activity_main.xml** file and add a *Plain Text* text field and a *Button* to your activity by dragging them from the component palette.
 Each component has a set of attributes that can be displayed by clicking on it. In the Attributes of the *Plain Text* component, modify the *text* attribute as a hint for the user (e.g., "Name").
 You can then style the text field and button as you like. You can also remove the existing *Text View* that Android Studio put there.
 
@@ -116,11 +114,11 @@ Launch your app. This will start an emulator and show the awesome activity you j
 
 Now, let's create the screen on which the proper greeting message will be displayed. 
 
-To do so, add a second empty activity called **GreetingActivity** to your app and add a TextView with ID "greetingMessage" to its layout (the layout file is defined at `app/res/layout/activity_greeting.xml`).
+To do so, add a second empty activity called **GreetingActivity** to your app and add a TextView with ID "greetingMessage" to its layout (the layout file is defined at  **app > res > layout > activity_greeting.xml**).
 
 ## Add behavior to your app
 
-Now, you can add the code that starts the GreetingActivity when you click the button and sets the greeting message to "Hello <name>!", where <name> is the text field input.
+Now, you can add the code that starts the GreetingActivity when you click the button and sets the greeting message to "Hello \<name>!", where \<name> is the text field input.
 The [Android documentation on starting an activity](https://developer.android.com/training/basics/firstapp/starting-activity.html) contains all the information you need in order to do this.
 Reading documentation is an important part of being a software engineer.
 
@@ -158,5 +156,5 @@ You might find useful [this post](https://stackoverflow.com/questions/51126834/w
 Here are a few hints:
 
 - The build may be corrupted; try running Build > Clean Project, Rebuild Project.
-- Your emulator may be stuck. Try rebooting it, and if it stays frozen, delete the virtual device and recreate it (Tools > AVD Manager).
+- Your emulator may be stuck. Try rebooting it, and if it stays frozen, delete the virtual device and recreate it (Tools > Device Manager).
 - If you or your friend has an Android phone, you can check whether the emulator is at fault by connecting your phone to the computer, authorize it and run the app on the phone directly (you may need to enable the phone's developer options).
