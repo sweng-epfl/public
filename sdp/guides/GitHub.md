@@ -3,7 +3,6 @@
 This guide is a quick introduction to GitHub's main features.
 
 It assumes that you already know how to create a GitHub repository, and how to use Git's main features.
-If you need to refresh your memory, the [Software Engineering mini-project part 3](https://github.com/sweng-epfl/public/blob/master/project/03-Operations/Handout.md) contains a good description.
 
 GitHub has many features we will not need in SDP, such as automatically moving items within projects based on actions done in the corresponding issues or pull requests.
 You may find [their documentation](https://docs.github.com/en/github) interesting to discover advanced features.
@@ -22,9 +21,9 @@ We will use this extensively in SDP, to mark who has to do what work.
 You can assign labels to issues in order to filter them later, such as "bugs" or "new features".
 
 In SDP, you will use labels to track the time you expect to spend on an issue, as well as the time you actually spend on it.
-This allows you to improve your estimations over time. We suggest you create the following labels, which make it easy to divide work in equal parts:
-- "estimated: 2h", "estimated: 3h", "estimated: 5h", "estimated: 8h"
-- "actual: 1h", "actual: 2h", "actual: 3h", "actual: 5h", "actual: 8h", "actual: 13h", "actual: 21h"
+This allows you to improve your estimations over time. We suggest you create labels such as the following:
+- "estimated: 2h", "estimated: 3h", "estimated: 5h"
+- "actual: 1h", "actual: 2h", "actual: 3h", "actual: 5h", "actual: 10h"
 
 
 ## Projects

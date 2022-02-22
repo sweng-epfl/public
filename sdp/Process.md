@@ -5,7 +5,7 @@ The repository will allow you to track your progress and to communicate with you
 
 This document will teach you how to manage your repository according to SDP's variant of the Scrum development process.
 Scrum is all about helping you deliver better software faster through minimalism in processes, inspired by the Agile manifesto.
-We encourage you to refresh your memory of concepts such as "version control", "user stories" and "sprints" using the Software Engineering course material we summarized [on Moodle](https://moodle.epfl.ch/course/view.php?id=16172).
+We encourage you to refresh your memory of concepts such as "version control", "user stories" and "sprints" using the course material we summarized on Moodle.
 
 In SDP, your team is what Scrum calls the "Development Team", and you share the role of "Product Owner" with your coaches since you both can decide what to include in the app.
 While this is not always realistic, it means that you will work on something you care about rather than merely implementing features you are told to.
@@ -44,9 +44,10 @@ This definition of done can change if unexpected issues are found during develop
 Knowing how much work to take on each week is not easy, and SDP will help you get better at this.
 Each task should be assigned to a team member, and that team member should estimate how much time the task will take.
 Once done, the team member can compare the expected and actual time to improve the next estimates.
-In SDP, we implement this using issue labels: mark issues with labels such as "expected: 5h" and "actual: 8h".
+In SDP, we implement this using issue labels: mark issues with labels such as "expected: 3h" and "actual: 5h".
 
-Please keep in mind you that SDP is a 4-credit course, which means around 8 hours of work per week per teammate. See the [EPFL FAQs](https://www.epfl.ch/education/bachelor/study-programs-structure/faqs/) for more information.
+Please keep in mind you that SDP is a 4-credit course, which means around 8 hours of work per week per teammate, 1 of which is used for meetings and code reviews.
+See the [EPFL FAQs](https://www.epfl.ch/education/bachelor/study-programs-structure/faqs/) for more information.
 
 
 ## Workflow
@@ -74,9 +75,9 @@ You can prefix your comments with one word indicating the kind of comment it is,
 Make sure you talk about the code, not the author. "You are wrong" or "Your code is bad" will put your teammates on the defensive, whereas "This code looks wrong to me, because..." is constructive.
 
 To help the team members know what others are doing, you will hold what Scrum calls "standup meetings".
-These are short meetings during which each member, in turn, explains what they are working on and whether they are blocked on anything.
+These are _short_ meetings during which each member, in turn, explains what they are working on and whether they are blocked on anything.
 Standup meetings are not for extended discussion, but to identify any blocking issues so that the rest of the team can decide how to react,
-such as holding a later meeting to discuss a design issue or asking one member to help another. You should have these meetings at least twice a week.
+such as holding a later meeting to discuss a design issue or asking one member to help another. You should have these meetings twice a week.
 
 If you are the Scrum Master for the current sprint, you are responsible for making the process go smoothly.
 This means keeping track of each member's progress to ensure nobody falls behind, scheduling the standup meetings, making sure pull requests get feedback on time, and so on.
@@ -84,13 +85,13 @@ This means keeping track of each member's progress to ensure nobody falls behind
 
 ## Weekly meeting
 
-At the end of each sprint, you will write a summary of what you did, update the project board, then have your weekly meeting with members of the staff.
+At the end of each sprint, you will write a summary of problems you had update the project board, then have your weekly meeting with members of the staff.
 
-The summary should be either in a `summaries/sprintN.md` file in your repo, or in a `Sprint N` page in the repo wiki, as you prefer (where N is the week number).
-In it, each member in alphabetical order writes a few sentences about what they did, what went right, and what they need to improve next time.
-At the end, the Scrum Master additionally writes a few sentences about what the team did, what went right overall, and what the team needs to improve next time.
+The summary should be in a `Sprint N` page in the repo wiki, where N is the week number.
+In it, each member in alphabetical order writes a few sentences about any problems they encountered in terms of process, what they should have done instead, and how they will improve in the future.
+The Scrum Master also writes the same for the entire team.
 Writing this summary will help you reflect about how to improve and will help the staff know what kind of guidance you need.
-When writing what went right and what you need to improve, focus on the _process_, not on the details of the work.
+The summary must be about the _process_, not about _implementation_ details.
 
 Please read the [example of a weekly summary](./ExampleSummary.md) to get an idea of what we expect.
 
@@ -98,17 +99,15 @@ Updating the project board means creating a new "Done in sprint N" column and mo
 the user stories whose tasks are all done, and the bugs which have been fixed by merged pull requests.
 You should also move the note with the name of the Scrum Master for sprint N at the top of the done column.
 
-It is important that only merged pull requests count as done. Pull requests which are still open do not count, even if they're almost done, and neither do branches that have no pull request open yet.
+It is important that only merged pull requests count as done.
+Pull requests which are still open do not count, even if they're almost done, and neither do branches that have no pull request open yet.
 
-If your team already knows what you want to do for the upcoming sprint, you can plan this in the project board already.
-The staff may require you to change your plans to ensure you meet the basic app requirements.
-Otherwise, the staff can help your team decide, both in terms of what to do and of how to estimate the time needed for tasks.
-As the semester progresses, your team should become more independent and plan its next work every time.
+You should plan what you will do for the next week before the weekly meeting with the staff, though the staff can help you if you are unsure
+and may require you to change your plans to ensure you meet the basic app requirements.
+As the semester progresses, your team should become more independent and plan its next work well every time.
 
 Each meeting begins with your team making a demo of your app to the staff, using either a real phone or an emulator.
 The demo must use the code that is in the main branch of your repository, without any code that has not been merged yet.
-This demo should be targeted at users, not developers, and should be "from scratch", not incremental.
-Think of it as a pitch: you have a few minutes to convince someone who has never seen your app to use it.
 At the beginning of the semester, your demos may be short due to a lack of features, but you should still work on the pitch itself,
 such as why someone would want to use your app and what they would get out of it.
 The Scrum Master is in charge of making sure the team prepares a good demo.

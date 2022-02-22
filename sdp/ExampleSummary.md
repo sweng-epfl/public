@@ -1,6 +1,7 @@
 # Example weekly summary
 
-This document is an example of a good weekly summary.
+This document is an example of good weekly summaries.
+Importantly, none of the summaries talk about the low-level details of what they did; instead, they reflect on what they could do better at the process level.
 
 ---
 
@@ -8,57 +9,52 @@ This document is an example of a good weekly summary.
 
 ## Bernadetta
 
-I implemented single-sign-on login through EPFL's Tequila authentication system.
+I had to duplicate a fair bit of code while implementing a new login method, as I had not thought of how to reuse the code for existing login methods beforehand.
 
-My time estimate was accurate, probably thanks to my experience implementing login via Google accounts two sprints ago.
+In hindsight, I should have started with a quick design of how the new EPFL authentication system differs from our existing Google authentication, and what code they could share.
+I will pay more attention to the existing code for my next tasks.
 
-Next time, I'll think more about how to reuse existing code, since I didn't do that there is a bunch of duplicated logic between Google and EPFL logins.
+On a positive note, my time estimate was very accurate, way better than the previous weeks! This is probably because I also implemented the other login method, so I knew what it entailed.
 
 
 ## Caspar
 
-I implemented the map view for items, but I could not implement the "show itinerary" feature as the service we're using for the map does not support it, which is not documented.
+I realized too late that the "show itinerary" feature I was tasked with could not be implemented quickly because the service we use for the map does not support it, which is not documented.
 
-The interface I designed for the map will be particularly useful for some of the next high-priority features, such as viewing all of the user's favorite items at once.
-
-Next time, I'll try another map service and begin with a rough prototype to ensure it actually supports the features we need.
+In hindsight, I should not have left this to the last minute.
+Next time I have to implement an entirely new feature, I'll begin with a quick prototype to make sure it is feasible with the libraries we already use,
+to leave time to discuss with the team if it doesn't work.
 
 
 ## Dorothea
 
-I implemented filtering and searching for items, as well as an offline cache for the user's favorite items.
+I found a library that did exactly what we wanted for our "filter and search" feature, so it only took me a couple of hours instead of being work for the entire week!
 
-The filter and search feature was supposed to take the whole week, but I found a library that did exactly what we needed, so I integrated it,
-and had time to add the offline cache, which was the highest-priority item in the product backlog.
-
-In hindsight, I should maybe have spent the extra time on other tasks such as helping Caspar with the map itinerary feature.
+While this was a positive, my decision to then take the topmost task from the product backlog and work on it was not good, as Caspar could've used my help on the itinerary feature.
+Next time I'm in this situation, I will instead ask the team if there is something I could help with.
 
 
 ## Ferdinand
 
-I implemented a drawer menu for the app. It works on almost all devices, but there is a visual bug on some devices from one manufacturer, which I added to the product backlog.
-
-My task went very smoothly thanks to the detailed Android documentation.
-
-Next time, I'll try to pick a harder task, since this one was not very challenging.
+I had no particular problems this week.
+If anything, I believe I should pick a harder task next time, as my work this week was not very challenging.
 
 
 ## Hubert (Scrum Master)
 
-I did not manage to implement either of my tasks, which were adding more fields to items and adding a basic interface to edit existing items, due to other projects keeping me too busy.
-
+I did not manage to implement either of my tasks due to other projects keeping me too busy.
 On the positive side, I did have time to prepare a demo for the app, including some of the new features.
 
+In hindsight, I should not have committed to doing so many things in the same week.
 Next time, I will manage my time better to avoid spending all of it on something else.
 
 
 ## Petra
 
-I implemented localization in the app, with a choice of English and German for now.
+I finished my task, but had a stressful few hours near the end as I had to update my code to handle new features merged by others during the week.
 
-I learned a lot of interesting ideas for our user interface, and implemented some of them to allow for dynamic language switching.
-
-Next time, I will try to coordinate more with the rest of the team, as I got surprised by some new localization requirements from some of the pull requests merged during the week, which were stressful to integrate last-minute.
+In hindsight, I worked alone the entire week and missed our standup meeting due to another commitment.
+Next time, I will coordinate more with the rest of the team, and plan my time so I do not miss our standup meetings.
 
 
 ## Overall team
@@ -67,4 +63,4 @@ We implemented almost all of the user stories we had assigned to this sprint, an
 
 Our time estimates are getting better, and this week we did not have any major problems due to them, unlike last week.
 
-However, we only did one standup meeting at the beginning of the week, which was not enough since Petra was blindsided by new localization to do and Dorothea was not aware that her freed time could have been put to better use.
+However, we only did one standup meeting at the beginning of the week, which was not enough since Petra was blindsided by new work to do and Dorothea was not aware that her freed time could have been put to better use.

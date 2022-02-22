@@ -1,11 +1,12 @@
 # Android Intro
 
-This introduction document is based on [the introduction of the mini-project](https://github.com/sweng-epfl/public/blob/master/project/01-Intro/Handout.md) we proposed in the Software Engineering course.
-It introduces some of the tools you will use.
+This introduction document presents the tools you will use.
 
 ## Setup Android Studio
 
-Android Studio is the official recommended IDE for developpers wishing to develop Android apps. If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin - as Android Studio is just a special distribution of IntelliJ. Be aware that some menus or buttons may have slightly different names. You are free to use other tools if you want, but we will not provide support for them.
+Android Studio is the official recommended IDE for developpers wishing to develop Android apps.
+If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin - as Android Studio is just a special distribution of IntelliJ.
+Be aware that some menus or buttons may have slightly different names. You are free to use other tools if you want, but we will not provide support for them.
 
 > :information_source: Android Studio supports all mainstream operating systems; you can work on Windows, Mac, or Linux.
 
@@ -27,13 +28,22 @@ In *Language* please select **Java**, and in *Minimum SDK* please select **API 2
 
 > :information_source: You can always change the minimum SDK later if you need to, but please keep in mind that not all devices have the latest version of Android.
 
-> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android. If you want, you can therefore choose to do the project in Kotlin.
+> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android.
+> If you want, you can therefore choose to do the project in Kotlin. Either way, your entire team has to agree on which language you pick.
 
-This is a good time to open a file explorer and look at all the files that have been created. The Android developer documentation on [managing projects](https://developer.android.com/studio/projects/index.html) provides a good overview of what all these files do.
+This is a good time to open a file explorer and look at all the files that have been created.
+The Android developer documentation on [managing projects](https://developer.android.com/studio/projects/index.html) provides a good overview of what all these files do.
 
-First of all, Android projects use a build system called *Gradle*. This is a very common tool in the Java ecosystem. It allows developpers to specify the way a project should be built, which dependencies it needs, how it should be tested... It's similar to a Makefile in C/C++, only with more features. In *Gradle*, each project is defined using a `build.gradle` file that the tool reads and understand.
+First of all, Android projects use a build system called *Gradle*.
+This is a very common tool in the Java ecosystem.
+It allows developpers to specify the way a project should be built, which dependencies it needs, how it should be tested...
+It's similar to a Makefile in C/C++, only with more features.
+In Gradle, each project is defined using a `build.gradle` file that the tool reads and understand.
 
-An Android project actually has two **build.gradle** files. With a command line, it's easy to distinguish them since one is located at the root of the project while the other one is located in the `app` folder. With Android Studio, it can be a bit tricky to distinguish these files. Under `Gradle Scripts` in the file explorer, you will find the following:
+An Android project actually has two **build.gradle** files.
+With a command line, it's easy to distinguish them since one is located at the root of the project while the other one is located in the `app` folder.
+With Android Studio, it can be a bit tricky to distinguish these files.
+Under `Gradle Scripts` in the file explorer, you will find the following:
 
 - **build.gradle** `(Project: ...)`: this is the top-level gradle file.
 - **build.gradle** `(Module: ...)`: this is the app-level gradle file, i.e. **app/build.gradle**.
@@ -83,7 +93,9 @@ Once done, your virtual device should appear in the *Device Manager*, which you 
 
 To run your app, you can now use *Run* > *Run 'app'*. It will take a few seconds to start up the emulator and then you will see Android itself start up, followed by your app. 
 
-> :information_source: If you're running the emulator on Linux, you may need to manually configure hardware acceleration. Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM. If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
+> :information_source: If you're running the emulator on Linux, you may need to manually configure hardware acceleration.
+> Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM.
+> If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
 
 
 ## Create an Android app
@@ -149,7 +161,8 @@ If you encounter some other warning, and believe it to either be a false positiv
 ## <a name="FAQ"></a> FAQ
 
 ### My Android app shows a blank screen when adding controls
-You might find useful [this post](https://stackoverflow.com/questions/51126834/why-cant-i-see-text-in-activity-main-xml-when-i-create-a-new-android-studio-pro).
+
+You might find [this post](https://stackoverflow.com/questions/51126834/why-cant-i-see-text-in-activity-main-xml-when-i-create-a-new-android-studio-pro) useful.
 
 ### When running my app, Android Studio indefinitely installs APK
 
@@ -157,4 +170,5 @@ Here are a few hints:
 
 - The build may be corrupted; try running Build > Clean Project, Rebuild Project.
 - Your emulator may be stuck. Try rebooting it, and if it stays frozen, delete the virtual device and recreate it (Tools > Device Manager).
-- If you or your friend has an Android phone, you can check whether the emulator is at fault by connecting your phone to the computer, authorize it and run the app on the phone directly (you may need to enable the phone's developer options).
+- If you or your friend has an Android phone, you can check whether the emulator is at fault by connecting your phone to the computer,
+  authorize it and run the app on the phone directly (you may need to enable the phone's developer options).

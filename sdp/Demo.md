@@ -59,6 +59,7 @@ Avoid these parts in your demo, as they take time but do not add value:
 
 - Log in before you start the demo.
 - If you need to type some long text as part of your demo, type it beforehand in another app and copy it, so all you have to do is paste it.
+- If you want to wait for a notification to appear, have a "plan B" in case it does not appear immediately; notifications can be delayed for many reasons outside your control.
 
 
 ## Rotating presenters

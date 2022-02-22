@@ -293,4 +293,4 @@ To show the build status on Cirrus CI, add the following to any Markdown file, s
 
 You can also get badges from Code Climate, by going to your repo settings there and copying the markdown from the `Badges` section.
 
-If you want even more badges, have a look at https://shields.io/.
+If you want even more badges, have a look at <https://shields.io/>.
