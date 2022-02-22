@@ -137,12 +137,12 @@ Selection is done as before, using `onView`.
 To check, you will use `check()` instead of `perform()`.
 The arguments of `check` are any `Matcher` working on a `View`. `ViewMatchers` provides a lot of such matchers (the same ones you can use in `onView`).
 
-> :information_source: To close the activity, you will need to call method `close` on your `ActivityScenario`. Alternatively, you can use a `try-with-resource` block:
->
-> ```java
-> try (ActivityScenario<GreetingActivity> scenario = ActivityScenario.launch(intent)) {
->     // Assert stuff on the activity           
-> }
-> ```
+To close the activity, you will need to call method `close` on your `ActivityScenario`. Alternatively, you can use a `try-with-resource` block:
+
+```java
+try (ActivityScenario<GreetingActivity> scenario = ActivityScenario.launch(intent)) {
+    // Assert stuff on the activity           
+}
+```
 
 This automatically calls `scenario.close()` at the end of the try block, or if an `Exception` occurs - which guarantees you always close the activity at the end of your test.
