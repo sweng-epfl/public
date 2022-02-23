@@ -51,7 +51,7 @@ Next time, I will manage my time better to avoid spending all of it on something
 
 ## Petra
 
-I finished my task, but had a stressful few hours near the end as I had to update my code to handle new features merged by others during the week.
+I finished my task, but had a stressful few hours at the end of the sprint as I had to update my code to handle new features merged by others.
 
 In hindsight, I worked alone the entire week and missed our standup meeting due to another commitment.
 Next time, I will coordinate more with the rest of the team, and plan my time so I do not miss our standup meetings.

@@ -107,6 +107,7 @@ and may require you to change your plans to ensure you meet the basic app requir
 As the semester progresses, your team should become more independent and plan its next work well every time.
 
 Each meeting begins with your team making a demo of your app to the staff, using either a real phone or an emulator.
+The Scrum Master of the elapsed sprint must lead the demo, though other team members can participate as supporting actors, especially for apps that facilitate interactions between people.
 The demo must use the code that is in the main branch of your repository, without any code that has not been merged yet.
 At the beginning of the semester, your demos may be short due to a lack of features, but you should still work on the pitch itself,
 such as why someone would want to use your app and what they would get out of it.
