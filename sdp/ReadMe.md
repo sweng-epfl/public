@@ -8,12 +8,12 @@ You will be in the role of a software engineer, occasionally taking on the role 
 The goal of SDP is for you to switch from engineering software on your own to engineering software as part of a team, which is how most real-world software is built.
 
 
-Overall, SDP will work in roughly the same way each week:
+Overall, SDP will work in roughly the same way each sprint:
 
 1. Work on your tasks, collaborating with your teammates as needed
 2. Have at least two "stand-up" meetings on a fixed schedule, to coordinate with your team
 3. Write down a summary of any issues regarding the process, reflecting on what you could have done to avoid it and how you will improve in the future
-4. Meet with members of the staff to demo your app, discuss your progress, and agree on what to do in the next week
+4. Meet with members of the staff to demo your app, discuss your progress, and agree on what to do in the next sprint
 
 
 At the end of the semester, you will have a chance to show off your hard work to your classmates, and vote for your favorite apps as part of the "Battle of the Apps" competition.

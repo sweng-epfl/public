@@ -4,9 +4,9 @@ The first part of every sprint review is a demo of your app to the customer, whi
 Your demo must be _aimed at customers_, even though SDP coaches also play a more technical role in other parts of the course.
 Your demo must be _from scratch_, even though SDP coaches also track your progress in other parts of the course.
 
-The first thing you need is a working app every week.
+The first thing you need is a working app after every sprint.
 It's important that it works, even if it has reduced functionality.
-You should do a demo with whatever functionality you have, even in the first few weeks of the semester.
+You should do a demo with whatever functionality you have, even in the first few sprints.
 
 Start with an **elevator pitch**: if you walked into an elevator and met someone who you'd like to turn into a customer,
 what could you say in the time of an elevator ride to convince that person?
@@ -37,7 +37,7 @@ Example of _bad_ demo stories:
 > Here you see the main menu of OurApp, which allows you to find friends, determine where they are located, and send them messages.
 > You can log in by pressing this button, which prompts you for your email ...
 
-> Last week OurApp could search for textbooks by name. As you can see, this week we added searching by course as well.
+> Last time OurApp could search for textbooks by name. As you can see, this time we added searching by course as well.
 > In this details screen here, we fixed the bug related to pictures, they are no longer rotated. Also ...
 
 

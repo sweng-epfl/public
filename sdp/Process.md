@@ -17,7 +17,7 @@ Scrum also has the concept of "Scrum Master", one person who is in charge of hel
 
 The main way you will track your progress is through a GitHub project, which Scrum calls the "Board".
 Your GitHub project should start with columns for the "Product Backlog", the "Sprint Backlog", and the "Sprint Tasks".
-Each week, you will create an additional "Done in sprint N" column in which you will move the corresponding items.
+Each sprint, you will create an additional "Done in sprint N" column in which you will move the corresponding items.
 
 The "Product Backlog" contains _all_ user stories related to your app, ordered by priority.
 Having too many of them is never a problem, as the team will only implement the highest-priority ones.
@@ -41,7 +41,7 @@ Each task should correspond to work done by a single person, though a single per
 Each task implicitly includes the corresponding tests. Tasks should be have a clear "definition of done", such as implementing a specific interface, or making a specific end-to-end scenario work.
 This definition of done can change if unexpected issues are found during development, but such changes must be discussed with the team members implementing other parts of the overall user story.
 
-Knowing how much work to take on each week is not easy, and SDP will help you get better at this.
+Knowing how much work to take on each sprint is not easy, and SDP will help you get better at this.
 Each task should be assigned to a team member, and that team member should estimate how much time the task will take.
 Once done, the team member can compare the expected and actual time to improve the next estimates.
 In SDP, we implement this using issue labels: mark issues with labels such as "expected: 3h" and "actual: 5h".
@@ -56,7 +56,7 @@ Your workflow in SDP will be centered around GitHub pull requests.
 You will write code, submit a pull request, and make changes requested by your teammates.
 You will also review your teammates' pull requests. You will also use continuous integration to ensure your changes work on other people's machines and not just on yours.
 
-We ask that all pull requests must be reviewed by at least two teammates, and thus all teammates should do at least two reviews per week if all goes well.
+We ask that all pull requests must be reviewed by at least two teammates, and thus all teammates should do at least two reviews per sprint if all goes well.
 Since the first review is typically larger than the second, you should rotate who does the first review to equalize effort.
 Pull requests are the _only_ way your code can get into the main branch of the repository.
 
@@ -84,17 +84,17 @@ If you are the Scrum Master for the current sprint, you are responsible for maki
 This means keeping track of each member's progress to ensure nobody falls behind, scheduling the standup meetings, making sure pull requests get feedback on time, and so on.
 
 
-## Weekly meeting
+## Sprint meeting
 
-At the end of each sprint, you will write a summary of problems you had update the project board, then have your weekly meeting with members of the staff.
+At the end of each sprint, you will write a summary of problems you had update the project board, then have a meeting with members of the staff.
 
-The summary should be in a `Sprint N` page in the repo wiki, where N is the week number.
+The summary should be in a `Sprint N` page in the repo wiki, where N is the sprint number.
 In it, each member in alphabetical order writes a few sentences about any problems they encountered in terms of process, what they should have done instead, and how they will improve in the future.
 The Scrum Master also writes the same for the entire team.
 Writing this summary will help you reflect about how to improve and will help the staff know what kind of guidance you need.
 The summary must be about the _process_, not about _implementation_ details.
 
-Please read the [example of a weekly summary](./ExampleSummary.md) to get an idea of what we expect.
+Please read the [example of a sprint summary](./ExampleSummary.md) to get an idea of what we expect.
 
 Updating the project board means creating a new "Done in sprint N" column and moving all items that are fully done in there, i.e., the tasks whose pull requests are all merged,
 the user stories whose tasks are all done, and the bugs which have been fixed by merged pull requests.
@@ -103,7 +103,7 @@ You should also move the note with the name of the Scrum Master for sprint N at 
 It is important that only merged pull requests count as done.
 Pull requests which are still open do not count, even if they're almost done, and neither do branches that have no pull request open yet.
 
-You should plan what you will do for the next week before the weekly meeting with the staff, though the staff can help you if you are unsure
+You should plan what you will do for the next sprint before the meeting with the staff, though the staff can help you if you are unsure
 and may require you to change your plans to ensure you meet the basic app requirements.
 As the semester progresses, your team should become more independent and plan its next work well every time.
 
