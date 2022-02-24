@@ -56,7 +56,8 @@ Your workflow in SDP will be centered around GitHub pull requests.
 You will write code, submit a pull request, and make changes requested by your teammates.
 You will also review your teammates' pull requests. You will also use continuous integration to ensure your changes work on other people's machines and not just on yours.
 
-We ask that all pull requests must be reviewed by at least two teammates.
+We ask that all pull requests must be reviewed by at least two teammates, and thus all teammates should do at least two reviews per week if all goes well.
+Since the first review is typically larger than the second, you should rotate who does the first review to equalize effort.
 Pull requests are the _only_ way your code can get into the main branch of the repository.
 
 It may be useful to have more than one pull request per task.
