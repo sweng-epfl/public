@@ -49,20 +49,6 @@ An example of the composite design pattern is a tree of menus and menu items; a 
 
 ### Question 4
 
-Consider the Abstract Syntax Tree example in the lecture video about the Visitor Design Pattern (implementation sketch around 3m:30s). Suppose the children of the `AddNode` and `AssignmentNode` were publicly accessible, but that there was no `accept()` method in the `Node` interface.
-
-How would you need to change the `NodeVisitor` class to achieve functionality similar to the Visitor pattern?
-
-- [ ] Not possible, since without the `accept()` method one cannot visit all elements
-- [ ] Call `visit(lhs)` and `visit(rhs)`, or `visit(op1)` and `visit(op2)`, to visit the sub-elements of an operation
-- [x] Identify the type of the sub-elements and call the appropriate methods, such as `visit((VariableNode)lhs)` or `visit((NumberLiteralNode)lhs)`
-
-> The role of the `accept()` method is to serve as the second round of dispatch in the double-dispatch scheme of the Visitor pattern. By calling the abstract `accept()`, the exact node type is identified at runtime and the appropriate `accept()` method is dispatched, in turn calling the appropriate `visit()` (see video lecture at 5m:08s).
->
-> Without the `accept()` method, we have to identify the type of the sub-elements explicitly, as done in option #3. Then it becomes possible to visit all elements of a structure even without using the classic Visitor pattern, which makes option #1 incorrect. However, without the Visitor pattern the code is more complex and less manageable. Regarding option #2, simply calling `visit(lhs)` instead of `lhs.accept()` would cause a compiler error, because the target `visit()` overload cannot be determined statically.
-
-### Question 5
-
 Consider the following implementation of an iterator for a custom list class, based on the standard Java's `ArrayList` implementation.
 
 ```java
