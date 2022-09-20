@@ -6,7 +6,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.1",
-    "socket.io": "^2.4.1",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^2.4.0"
   },
   "scripts": {
