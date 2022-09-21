@@ -1,0 +1,23 @@
+task update {
+    doLast {
+        file("../../").eachDirRecurse { dir ->
+            def d = dir.toString()
+            if (file(d + "/build.gradle").exists() && !dir.equals(file("./"))) {
+                println("Updating: " + d)
+                copy {
+                    from(".")
+                    into(d)
+                    include("gradle/**")
+                    include("gradlew")
+                    include("gradlew.bat")
+                    include("build.gradle.template")
+                    rename("build.gradle.template", "build.gradle")
+                }
+                exec {
+                    workingDir(d)
+                    commandLine("git", "update-index", "--chmod=+x", "gradlew")
+                }
+            }
+        }
+    }
+}
