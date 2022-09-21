@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * EXERCISE: Write some automated tests for these functions.
+ * Think about which properties the functions have and how you can test them.
  */
 public final class Functions {
     /**

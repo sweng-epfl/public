@@ -1,5 +1,6 @@
 public class PeopleCounter {
-    // TODO: A "people counter" that:
+    // EXERCISE: Design a "people counter" with TDD.
+    // The counter:
     // - starts at 0
     // - has a configurable max
     // - can increment (+1)
