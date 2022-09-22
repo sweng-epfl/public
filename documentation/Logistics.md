@@ -22,9 +22,9 @@ These requirements are explicitly stated at the top of their notes, and should i
 
 The course is designed to be assessed with exams similar to the post-lecture exercises.
 Each exam contains some theoretical questions, answered with text, and some practical questions, answered with code.
-Grading can be somewhat automated for the coding part [TODO add and document our autograder].
+Grading the coding part is partly automated: the basic correctness of code can be assessed with automated tests, and the coverage of test code can be measured automatically.
 
-As part of providing fair and valid assessment [TODO citation for the definitions],
+To provide fair and valid assessments,
 all post-lecture exercises have not only solutions but also assessment criteria similar to those of an exam, though less detailed.
 This way, students can tell whether their solution matches what is expected, especially with regards to design.
 For instance, solving a problem in a "brute force" manner by writing lots of code without thinking should get a worse mark than a thoughtful design

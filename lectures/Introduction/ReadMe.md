@@ -109,7 +109,7 @@ But if an engineer turns in a "95% complete" plane, the result is heavily depend
 If the seats aren't as comfortable as they could be, or the maximal speed is a little below what it should be, the customer might still be happy.
 But if the wing is only half finished, the plane cannot fly, even if it is "95% complete", and the customer will reject it!
 
-In previous courses, you have learnt how to write code. In this course, you will learn the other key steps of software development:
+In previous courses, you have learned how to write code. In this course, you will learn the other key steps of software development:
 - **Requirements**: how to tell what users need, and how to translate these into software
 - **Design**: how to think about software at a high level, to make software easier to write and maintain
 - **Evolution**: how to take an existing piece of software and evolve it to fix bugs and add features

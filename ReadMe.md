@@ -62,6 +62,8 @@ clear structuring of lectures including well-defined objectives and assessment c
 There is a large body of research on teaching and learning, and this course attempts to use evidence-based techniques to improve
 learning compared to the traditional "sit in a lecture hall and listen for a couple hours" format.
 
+Students should read the [guide to succeed](documentation/Succeeding.md).
+
 Lecturers should read the [logistics documentation](documentation/Logistics.md).
 
 
