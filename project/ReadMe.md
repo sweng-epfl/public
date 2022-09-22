@@ -2,8 +2,8 @@
 
 This is a companion course taught after the Software Engineering course.
 
-To apply the concepts from the Software Engineering course,
-students form a team and build an Android app over the course of the semester, following good software engineering practices and in particular the Scrum development method.
+To apply the concepts from the Software Engineering course, students form a team and build an Android app,
+following good software engineering practices and in particular the Scrum development method.
 Students play the role of a software engineer, occasionally taking on the role of the "Scrum Master".
 
 The key objective is to switch from engineering software on one's own to engineering software as part of a team, which is how most real-world software is built.
@@ -17,7 +17,7 @@ Overall, the course works in roughly the same way each sprint:
 4. Meet with members of the staff to demo your app, discuss your progress, and agree on what to do in the next sprint
 
 
-At the end of the semester, you will have a chance to show off your hard work to your classmates, and vote for your favorite apps as part of a friendly competition.
+At the end of the course, you will have a chance to show off your hard work to your classmates, and vote for your favorite apps as part of a friendly competition.
 The staff will award prizes to the apps with the most votes.
 This competition will not impact your grade, but it should help motivate you.
 

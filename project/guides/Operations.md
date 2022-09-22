@@ -240,7 +240,7 @@ Code Climate will now send comments directly on pull requests.
 Finally, still in the repo settings on Code Climate, select `Test coverage`, ensure `Enforce Total Coverage` is enabled, and increase the threshold to 80.
 This ensures that your pull requests maintain 80% code coverage at all times, which is required in this course.
 
-> :information_source: At the beginning of the semester, you may have lots of code that is not worth the effort of covering,
+> :information_source: At the beginning of the project, you may have lots of code that is not worth the effort of covering,
 > such as an implementation of a database interface that talks to a real database.
 > You may choose to remove this check until you have enough code that can be covered, at which point you will put it back and never remove it again.
 

@@ -1,6 +1,6 @@
 # Development process
 
-You will use a GitHub repository as your navigation panel for the semester: issues, project board, code, and continuous integration.
+You will use a GitHub repository as your navigation panel: issues, project board, code, and continuous integration.
 The repository will allow you to track your progress and to communicate with your team and the staff.
 
 This document will teach you how to manage your repository in a fashion inspired by the Scrum development process.
@@ -102,12 +102,12 @@ Pull requests which are still open do not count, even if they're almost done, an
 
 You should plan what you will do for the next sprint before the meeting with the staff, though the staff can help you if you are unsure
 and may require you to change your plans to ensure you meet the basic app requirements.
-As the semester progresses, your team should become more independent and plan its next work well every time.
+As the project progresses, your team should become more independent and plan its next work well every time.
 
 Each meeting begins with your team making a demo of your app to the staff, using either a real phone or an emulator.
 The Scrum Master of the elapsed sprint must lead the demo, though other team members can participate as supporting actors, especially for apps that facilitate interactions between people.
 The demo must use the code that is in the main branch of your repository, without any code that has not been merged yet.
-At the beginning of the semester, your demos may be short due to a lack of features, but you should still work on the pitch itself,
+At the beginning of the project, your demos may be short due to a lack of features, but you should still work on the pitch itself,
 such as why someone would want to use your app and what they would get out of it.
 The Scrum Master is in charge of making sure the team prepares a good demo.
 

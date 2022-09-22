@@ -64,5 +64,5 @@ Avoid these parts in your demo, as they take time but do not add value:
 
 ## Rotating presenters
 
-Every member of the team must pitch and demo the app at least once during the semester.
+Every member of the team must pitch and demo the app at least once during the course.
 If you think that doing this is not your cup of tea, please watch [this talk](https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are).
