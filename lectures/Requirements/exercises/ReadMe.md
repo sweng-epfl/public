@@ -9,7 +9,7 @@ Please read and follow the prerequisites in the lecture notes for [Infrastructur
 **Theoretical exercises**:
 
 - [Q1: User stories](Q1.md)
-- [Q2: User stories](Q1.md)
+- [Q2: User stories](Q2.md)
 - [Q3: Personas](Q3.md)
 - [Q4: Personas](Q4.md)
 
