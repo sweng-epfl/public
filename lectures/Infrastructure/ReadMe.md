@@ -515,7 +515,7 @@ Your colleagues in this context include "future you". No matter how "obvious" or
 The typical format of a commit message is a one-line summary followed by a blank line and then as many lines as needed for details. For instance, this is a good commit message:
 
 ```
-Fixes adding favorites on small phones
+Fix adding favorites on small phones
 
 The favorites screen had too many buttons stacked on the same row.
 On phones with small screens, there wasn't enough space to show them all,
