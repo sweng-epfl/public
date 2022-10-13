@@ -392,7 +392,7 @@ int pickOne(int[] array) {
   // ...
 }
 ```
-If a piece of code calls `pickOne` with a null or empty array, the method will throw an `AssertionError`.
+If a piece of code calls `pickOne` with a null or empty array, the method will throw an `IllegalArgumentException`.
 
 Why bother checking this explicitly when the method would fail early anyway if the array was null or empty, since the method will dereference the array and index its contents?
 The type of exception thrown indicates _whose fault it is_.
