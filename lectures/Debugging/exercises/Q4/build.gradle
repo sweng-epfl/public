@@ -42,7 +42,7 @@ if (JavaVersion.current().toString() != javaVersionTarget) {
 }
 
 application {
-    mainClass = "App"
+    mainClass = "ch.epfl.sweng.App"
 }
 
 run {
