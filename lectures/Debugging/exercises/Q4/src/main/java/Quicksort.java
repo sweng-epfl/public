@@ -1,5 +1,3 @@
-package ch.epfl.sweng;
-
 import java.util.Comparator;
 
 /**
