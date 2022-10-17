@@ -1,5 +1,3 @@
-package ch.epfl.sweng;
-
 import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
