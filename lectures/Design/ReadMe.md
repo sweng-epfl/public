@@ -372,6 +372,9 @@ An interesting example of this is [the "top secret" room](https://zelda-archive.
 If the player manages to get the game into an unknown state, for instance by switching between map areas too quickly for the game to catch up,
 the game recognizes that it is confused and drops the player into a special room, and pretends that this is intentional and the player has found a secret area.
 
+One coarse form of repair is to "turn it off and on again", such as restarting a program, or rebooting the operating system.
+The state immediately after starting is known to work, but this cannot be hidden from users and is more of a way to work around a failure.
+
 However, only repair if the entirety of a module's state can be repaired to a state known to work.
 Repairing only part of a module risks creating a Frankenstein abomination that only makes the problem worse.
 
