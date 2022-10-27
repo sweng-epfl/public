@@ -327,6 +327,7 @@ Note that the crash is not the only bug.
 First, there is no base case to the recursive method that builds a tree, so you should add one to handle the `list.size() == 0` case. <br>
 Second, the bounds for sub-lists are off: they should be `0..mid` and `mid+1..list.size()`. <br>
 There is a correctness bug: the constructor uses `l` twice, when it should set `right` to `r`. This would not have happened if the code used better names!
+We provide a [corrected version](exercises/solutions/lecture/BinaryTree.java).
 </details>
 
 
@@ -465,9 +466,10 @@ Add code to `IntStack` to catch problems early, and fix any bugs you find in the
 <summary>Solution (click to expand)</summary>
 First, the constructor needs to throw if `maxSize < 0`, since that is invalid. <br>
 Second, the stack should have the invariant `-1 <= top < values.length`, as discussed above.
-After adding this invariant, note that `top--` in `pop` can break the invariant since it is used unconditionally. The same goes for `top++` in `push`.
-These need to be changed to only modify `top` if necessary.
+After adding this invariant, note that `top--` in `pop` can break the invariant since it is used unconditionally, and needs to be changed.
+`push` also uses `top` incorrectly, as it needs to increment it before, not after, inserting the value.
 To enable the users of `IntStack` to safely call `push`, one can expose an `isFull()` method, and use it as a precondition of `push`.
+We provide a [corrected version](exercises/solutions/lecture/Stack.java).
 </details>
 
 

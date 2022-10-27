@@ -182,6 +182,7 @@ It's your turn now! Open [the in-lecture exercise project](exercises/lecture) an
 <summary>Example solution (click to expand)</summary>
 You could test the Fibonacci method using the "is" matcher we discussed earlier for numbers such as 1 and 10, and test that it throws an exception with numbers below 0 such as -1. <br>
 To test the string splitting function, you could use Hamcrest's "contains" matcher, and for the shuffling function, you could use "arrayContainingInAnyOrder".
+We provide some [examples](exercises/solutions/lecture/FunctionsTests.java).
 </details>
 
 ---
@@ -389,6 +390,7 @@ Write tests first then implement the code and fix your code if it doesn't pass t
 <summary>Example tests (click to expand)</summary>
 You could have four tests: the counter initializes to zero, the "increment" method increments the counter,
 the "reset" method sets the counter to zero, and the "increment" method does not increment beyond the maximum.
+We provide [sample tests](exercises/solutions/lecture/PeopleCounterTests.java) and [a reference implementation](exercises/solutions/lecture/PeopleCounter.java).
 </details>
 
 ----
@@ -492,6 +494,8 @@ Change it to make it testable, write tests for it, and change `App.java` to matc
 <details>
 <summary>Suggestions (click to expand)</summary>
 The changes necessary are similar to those we discussed above, including injecting an `HttpClient` dependency and making the function return a `String`.
+We provide [an example `JokeFetcher`](exercises/solutions/lecture/JokeFetcher.java), [an example `App`](exercises/solutions/lecture/App.java),
+and [tests](exercises/solutions/lecture/JokeFetcherTests.java).
 </details>
 
 ----

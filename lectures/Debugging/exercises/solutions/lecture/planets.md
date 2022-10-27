@@ -1,0 +1,5 @@
+- The indentation is inconsistent (2, 3, 7 spaces...)
+- The names of classes are inconsistent (camelCase, snake_case, Firstletteruppercased, ...)
+- There is commented-out code that could be removed
+- The comments are useless as they try to describe _how_ the code works...
+  - ...and misleading, because `sorted` _returns_ a sorted list, it does not sort in-place
