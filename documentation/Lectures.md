@@ -70,3 +70,12 @@ Overall:
 - Avoid slide transitions unless there is a good reason
 - Slides start with a title slide, lead-in slides, then an "Objectives" slide
 - Slides end with a "Summary" slide
+
+
+## Lecture note format
+
+Important concepts should be `_emphasized like this_`.
+
+For images, use HTML tags to specify a width of 50%, otherwise they are too large; see existing lecture notes for examples.
+
+For in-lecture exercises, use `<details>` blocks with a `<p>` inside so that Markdown works; see existing lecture notes for examples.

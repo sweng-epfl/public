@@ -156,9 +156,13 @@ If you try to use this code, the PHP interpreter will give the following error: 
 What's wrong? _(Hint: this is not a problem you can solve by staring at the code, use tools!)_
 <details>
 <summary>Solution (click to expand)</summary>
+<p>
+
 Looking up this odd name in your favorite search engine will find existing questions
 teaching you that this is actually Hebrew, the PHP authors' language, for "double colon".
-The error is that instead of a double colon, the code should use an arrow "->".
+The error is that instead of a double colon, the code should use an arrow `->`.
+
+</p>
 </details>
 
 #### Exercise
@@ -166,9 +170,13 @@ If a colleague told you that they received a bug report from a user of the "Win3
 with the error code 39, could you tell what caused the error?
 <details>
 <summary>Solution (click to expand)</summary>
+<p>
+
 Looking up "win32 error code 39" or something similar in your favorite search engine will find Microsoft's documentation for the Win32 programming interface,
 on which you will learn that error code 0x27, which is the number 39 in hexadecimal, means the disk is full.
 You could then discuss how to best handle this error, such as by showing a helpful message to the user, or perhaps deleting some of your app's temporary files and trying again.
+
+</p>
 </details>
 
 

@@ -105,11 +105,19 @@ The following names all look somewhat reasonable, why are they poor?
 - `SortedList` (in C#'s `System.Collections`)
 <details>
 <summary>Answers (click to expand)</summary>
-"pickling" is a rather odd way to refer to serializing and deserializing data as "preserving" it. <br>
-"binhex" sounds like a name for some binary and hexadecimal utilities, but it's actually for a module that handles an old Mac format. <br>
-A linked list and a doubly linked list are not the same thing, yet Java names the latter as if it was the former. <br>
-A vector has a specific meaning in mathematics; C++'s "vector" is really a resizeable array. <br>
-"Sorted list" is a great name for a sorted list class. But the class with that name is a sorted map!
+<p>
+
+`pickling` is a rather odd way to refer to serializing and deserializing data as "preserving" it.
+
+`binhex` sounds like a name for some binary and hexadecimal utilities, but it's actually for a module that handles an old Mac format.
+
+A linked list and a doubly linked list are not the same thing, yet Java names the latter as if it was the former.
+
+A vector has a specific meaning in mathematics; C++'s `vector` is really a resizeable array.
+
+`SortedList` is an acceptable name for a sorted list class. But the class with that name is a sorted map!
+
+</p>
 </details>
 
 ---
@@ -324,10 +332,17 @@ Run the code in the [binary-tree](exercises/lecture/binary-tree) folder. It cras
 Note that the crash is not the only bug.
 <details>
 <summary>Solution (click to expand)</summary>
-First, there is no base case to the recursive method that builds a tree, so you should add one to handle the `list.size() == 0` case. <br>
-Second, the bounds for sub-lists are off: they should be `0..mid` and `mid+1..list.size()`. <br>
+<p>
+
+First, there is no base case to the recursive method that builds a tree, so you should add one to handle the `list.size() == 0` case.
+
+Second, the bounds for sub-lists are off: they should be `0..mid` and `mid+1..list.size()`.
+
 There is a correctness bug: the constructor uses `l` twice, when it should set `right` to `r`. This would not have happened if the code used better names!
+
 We provide a [corrected version](exercises/solutions/lecture/BinaryTree.java).
+
+</p>
 </details>
 
 
@@ -464,12 +479,20 @@ Check out the code in the [stack](exercises/lecture/stack) folder, which contain
 Add code to `IntStack` to catch problems early, and fix any bugs you find in the process.
 <details>
 <summary>Solution (click to expand)</summary>
-First, the constructor needs to throw if `maxSize < 0`, since that is invalid. <br>
+<p>
+
+First, the constructor needs to throw if `maxSize < 0`, since that is invalid.
+
 Second, the stack should have the invariant `-1 <= top < values.length`, as discussed above.
-After adding this invariant, note that `top--` in `pop` can break the invariant since it is used unconditionally, and needs to be changed.
-`push` also uses `top` incorrectly, as it needs to increment it before, not after, inserting the value.
+
+After adding this invariant, note that `top--` in `pop` can break the invariant since it is used unconditionally. The same goes for `top++` in `push`.
+These need to be changed to only modify `top` if necessary.
+
 To enable the users of `IntStack` to safely call `push`, one can expose an `isFull()` method, and use it as a precondition of `push`.
+
 We provide a [corrected version](exercises/solutions/lecture/Stack.java).
+
+</p>
 </details>
 
 

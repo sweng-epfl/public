@@ -87,9 +87,15 @@ Similarly, if you already know who exactly is in a group of users, there is no n
 What personas could a video chat app have?
 <details>
 <summary>Example solutions (click to expand)</summary>
-Anne, a manager who frequently talks to her team while working remotely. <br>
-Basil, a pensioner who wants to video chat his grandkids to stay in touch. <br>
+<p>
+
+Anne, a manager who frequently talks to her team while working remotely.
+
+Basil, a pensioner who wants to video chat his grandkids to stay in touch.
+
 Carlos, a doctor who needs to talk to patients as part of a telemedicine setup.
+
+</p>
 </details>
 
 ---
@@ -127,9 +133,15 @@ Stories that are too hard to understand and especially too vague will fail the "
 What user stories could a video chat app have?
 <details>
 <summary>Example solutions (click to expand)</summary>
-As Anne, I want to see my calendar within the app, so that I can schedule meetings without conflicting with my other engagements. <br>
-As Basil, I want to launch a meeting from a message my grandkids send me, so that I do not need to spend time configuring the app. <br>
+<p>
+
+As Anne, I want to see my calendar within the app, so that I can schedule meetings without conflicting with my other engagements.
+
+As Basil, I want to launch a meeting from a message my grandkids send me, so that I do not need to spend time configuring the app.
+
 As a privacy enthusiast, I want my video chats to be encrypted end-to-end, so that my data cannot be leaked if the app servers get hacked.
+
+</p>
 </details>
 
 #### Exercise
@@ -141,7 +153,11 @@ Which of the following are good user stories and why?
 5. As a developer, I want to improve the log in screen, so that users can log in with Google accounts
 <details>
 <summary>Solutions (click to expand)</summary>
+<p>
+
 1 is too vague, 2 is acceptable since the reason is implicit and obvious, 3 is way too specific, 4 is great, and 5 is terrible as it relates to developers not users.
+
+</p>
 </details>
 
 
@@ -224,11 +240,15 @@ The overall workflow is as follows:
 What language would you use to discuss a course registration system at a university (or any other system you use frequently), and what test scenarios could you define?
 <details>
 <summary>Example solutions (click to expand)</summary>
+<p>
+
 A course registration system could have students, which are entities identified by a university e-mail who have a list of courses and grades associated with the courses, and
 lecturers, which are associated with the courses they teach and can edit said courses. Courses themselves might have a name, a code, a description, and a number of credits.
 
 Some testing scenarios might be "given that a user is already enrolled in a course, when the user tries to enroll again, then that has no effect", or "given that a lecturer
 is in charge of a course, when the lecturer sets grades for a student in the course, then that student's grade is updated".
+
+</p>
 </details>
 
 
