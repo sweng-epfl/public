@@ -328,8 +328,10 @@ The first few times, you may be slower than you would be without one, but after 
 
 ---
 #### Exercise
-Run the code in the [binary-tree](exercises/lecture/binary-tree) folder. It crashes! Use a debugger to figure out why, and fix the bugs.
+Run the code in the [binary-tree](exercises/lecture/binary-tree) folder.
+First, run it. It crashes! Use a debugger to add breakpoints and inspect what happens until you figure out why, and fix the bugs.
 Note that the crash is not the only bug.
+
 <details>
 <summary>Solution (click to expand)</summary>
 <p>
@@ -477,6 +479,9 @@ This fixes the problem without requiring data copies, which slow down the code.
 #### Exercise
 Check out the code in the [stack](exercises/lecture/stack) folder, which contains an `IntStack` class and a usage example.
 Add code to `IntStack` to catch problems early, and fix any bugs you find in the process.
+First, look at what the constructor should do. Once you've done that, add an invariant and use it, and a precondition for `push`.
+Then fix any bugs you find.
+
 <details>
 <summary>Solution (click to expand)</summary>
 <p>

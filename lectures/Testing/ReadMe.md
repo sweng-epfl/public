@@ -178,13 +178,15 @@ If the function does throw an exception of the right type, `assertThrows` return
 ---
 #### Exercise
 It's your turn now! Open [the in-lecture exercise project](exercises/lecture) and test `Functions.java`.
+Start by testing valid values for `fibonacci`, then test that it rejects invalid values.
+For `split` and `shuffle`, remember that Hamcrest has many matchers and has documentation.
 <details>
 <summary>Example solution (click to expand)</summary>
 <p>
 
-You could test the Fibonacci method using the "is" matcher we discussed earlier for numbers such as 1 and 10, and test that it throws an exception with numbers below 0 such as -1.
+You could test `fibonacci` using the `is` matcher we discussed earlier for numbers such as 1 and 10, and test that it throws an exception with numbers below `0` using `assertThrows`.
 
-To test the string splitting function, you could use Hamcrest's "contains" matcher, and for the shuffling function, you could use "arrayContainingInAnyOrder".
+To test `split`, you could use Hamcrest's `contains` matcher, and for the shuffling function, you could use `arrayContainingInAnyOrder`.
 
 We provide some [examples](exercises/solutions/lecture/FunctionsTests.java).
 
@@ -392,12 +394,15 @@ Once you finish, you will go back to asking for requirements, and so on until yo
 #### Exercise
 It's your turn now! In [the in-lecture exercise project](exercises/lecture) you will find `PeopleCounter.java`, which is documented but not implemented.
 Write tests first then implement the code and fix your code if it doesn't pass the tests, in a TDD fashion.
+First, think of what tests to write, then write them, then implement the code.
+
 <details>
 <summary>Example tests (click to expand)</summary>
 <p>
 
-You could have four tests: the counter initializes to zero, the "increment" method increments the counter,
-the "reset" method sets the counter to zero, and the "increment" method does not increment beyond the maximum.
+You could have five tests: the counter initializes to zero, the "increment" method increments the counter,
+the "reset" method sets the counter to zero, the "increment" method does not increment beyond the maximum,
+and the maximum cannot be below zero.
 
 We provide [sample tests](exercises/solutions/lecture/PeopleCounterTests.java) and [a reference implementation](exercises/solutions/lecture/PeopleCounter.java).
 
@@ -502,6 +507,8 @@ The implementations of the "Data client" interface, such as Ethernet or Wi-Fi, w
 #### Exercise
 It's your turn now! In [the in-lecture exercise project](exercises/lecture) you will find `JokeFetcher.java`, which is not easy to test in its current state.
 Change it to make it testable, write tests for it, and change `App.java` to match the `JokeFetcher` changes and preserve the original program's functionality.
+Start by writing an interface for an HTTP client, implement it by moving existing code around, and use it in `JokeFetcher`. Then add tests.
+
 <details>
 <summary>Suggestions (click to expand)</summary>
 <p>

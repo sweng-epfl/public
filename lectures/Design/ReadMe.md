@@ -265,10 +265,26 @@ and themselves depend on the red modules and their lowest-level abstractions:
 
 <p align="center"><img alt="A module diagram as explained in text" src="images/system.svg" width="50%" /></p>
 
+One way to do this at the level of individual functions is to write the high-level module first, with a high-level interface,
+and an implementation that uses functions you haven't written yet.
+For instance, for a method that predicts the weather:
+
+```java
+int predictWeather(LocalDate date) {
+    var past = getPastWeather(date);
+    var temps = extractTemperatures(past);
+    return predict(temps);
+}
+```
+
+After doing this, you can implement `getPastWeather` and others, themselves in terms of lower-level interfaces, until you either implement the lowest level yourself or reuse existing code for it.
+For instance, `getPastWeather` will likely be implemented with some HTTP library, while `extractTemperature` will likely be custom-made for the format of `past`.
+
 ---
 #### Exercise
 Look at `App.java` in the [`calc`](exercises/lecture/calc) project. It mixes all kinds of concepts together. Modularize it!
 Think about what modules you need, and how you should design the overall system.
+First off, what will the new `main` method look like?
 <details>
 <summary>Suggested solution (click to expand)</summary>
 <p>
@@ -471,11 +487,13 @@ This fixes two of MVC's problems: users don’t need to know about the intermedi
 ---
 #### Exercise
 Transform the code of `App.java` in the [`weather`](exercises/lecture/weather) project to use the MVP pattern.
+As a first step, what will the interface of your model and view look like?
+Once that's set, implement them by moving the existing code around, and think about what the presenter should look like.
 <details>
 <summary>Suggested solution (click to expand)</summary>
 <p>
 
-First, define interfaces for the model and the view. The model should provide a method to get the forecast, and the view should provide a method to show text and one to run the application.
+The model should provide a method to get the forecast, and the view should provide a method to show text and one to run the application.
 Then, move the existing code into implementations of the model and the view, and write a presenter that binds them together.
 See the [solution file](exercises/solutions/lecture/Weather.java) for an example.
 
@@ -535,12 +553,13 @@ Programs such as Google Drive do not need to know about other programs such as a
 ---
 #### Exercise
 You've transformed the [`weather`](exercises/lecture/weather) project to use the MVP pattern already, now add a retrying middleware that retries until the weather is known and not `???`.
+As a first step, write a middleware that wraps a model and provides the same interface as the model, without adding functionality.
+Then add the retrying logic to your middleware.
 <details>
 <summary>Suggested solution (click to expand)</summary>
 <p>
 
-Since you have a model interface already, you need an implementation of it that takes another model as a constructor parameter,
-and uses it in a retry loop to get the forecast.
+Your middleware needs to use the wrapped model in a loop, possibly with a limit on retries.
 See the [solution file](exercises/solutions/lecture/RetryingWeather.java) for an example.
 
 </p>
@@ -549,8 +568,9 @@ See the [solution file](exercises/solutions/lecture/RetryingWeather.java) for an
 ---
 
 Beware: just because you _can_ use all kinds of patterns does not mean you _should_.
-Remember to avoid cargo cults!
-Otherwise you might end up with an "implementation of AspectInstanceFactory that locates the aspect from the BeanFactory using a configured bean name".
+Remember to avoid cargo cults! If "You Aren't Gonna Need It", don't do it.
+Otherwise you might end up with an "implementation of AspectInstanceFactory that locates the aspect from the BeanFactory using a configured bean name",
+just in case somebody _could_ want this flexibility.
 [Really](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/config/SimpleBeanFactoryAwareAspectInstanceFactory.html)!
 
 ## Summary
