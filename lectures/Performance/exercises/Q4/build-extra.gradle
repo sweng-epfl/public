@@ -1,0 +1,9 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath("me.champeau.jmh:jmh-gradle-plugin:0.6.7")
+    }
+}
+apply plugin: me.champeau.jmh.JMHPlugin
