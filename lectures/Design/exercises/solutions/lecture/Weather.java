@@ -34,7 +34,7 @@ public class App {
         public void run(Presenter presenter) {
             while (true) {
                 scanner.nextLine();
-                presenter.onInput(this);
+                presenter.onInput();
             }
         }
     }
@@ -48,7 +48,7 @@ public class App {
             this.view = view;
         }
 
-        public void onInput(View view) {
+        public void onInput() {
             view.show("Weather forecast: " + model.getForecast());
         }
 
