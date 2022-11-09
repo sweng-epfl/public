@@ -1,0 +1,112 @@
+// !!!!!!!!!!!!!!!!!!!!!!
+// DO NOT TOUCH THIS FILE
+// !!!!!!!!!!!!!!!!!!!!!!
+
+// This file is an extensible Gradle build file for EPFL's Software Engineering course,
+// designed to allow students to easily build and test their code from the command-line,
+// and to allow the staff to automatically test code including coverage.
+// The main tasks to use are 'build' (includes tests + coverage) and 'run'.
+
+import org.gradle.api.JavaVersion
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import java.nio.file.Files
+
+plugins {
+    id("java")
+    id("application")
+    id("jacoco")
+}
+
+if (file("build-extra.gradle").exists()) {
+    apply from: "build-extra.gradle"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testImplementation("org.hamcrest:hamcrest:2.2")
+}
+
+def javaVersionTarget = "17"
+if (JavaVersion.current().toString() != javaVersionTarget) {
+    println "!!!\n!!!"
+    println "WARNING: This project was designed for Java ${javaVersionTarget} but you are instead using Java ${JavaVersion.current()}."
+    println "         If you get this message while configuring an IDE such as IntelliJ or Android Studio, feel free to ignore it as long as it does not appear when running the app or tests."
+    println "         Otherwise, please use Java ${javaVersionTarget}, or continue using your version at your own risk."
+    println "!!!\n!!!"
+}
+
+application {
+    mainClass = "App"
+}
+
+run {
+    systemProperty("file.encoding", "UTF-8")
+
+    // Allow users to input stuff during the 'run' task, necessary for System.in to work
+    standardInput = System.in
+}
+
+test {
+    useJUnitPlatform()
+
+    systemProperty("file.encoding", "UTF-8")
+
+    testLogging {
+        // Always show all tests, even passed ones; also, show stdout/stderr, helps for debugging
+        events(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR)
+        // Always run all tests
+        outputs.upToDateWhen { false }
+
+        // Show detailed information about failures
+        exceptionFormat = TestExceptionFormat.FULL
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+    }
+
+    // If a crash happens during execution, tell the user about it
+    afterSuite { desc, result ->
+        if (result.exception) {
+            if (result.exception.message.contains("Could not complete execution")) {
+                println("A crash happened while executing unit tests:")
+                result.exception.cause.printStackTrace()
+            } else {
+                println("An unknown error occurred while executing unit tests:")
+                result.exception.printStackTrace()
+            }
+        }
+    }
+}
+
+jacocoTestReport {
+    // XML report, for scripts
+    reports.xml.required = true
+    // HTML report, for humans
+    reports.html.destination = file("${buildDir}/reports/coverage")
+}
+
+build {
+    // Always generate coverage
+    dependsOn(jacocoTestReport)
+    doLast {
+        def msg = """Notes:
+                     <ul>
+                       <li>JaCoCo calls statements 'instructions'</li>
+                       <li>JaCoCo does not compute path coverage, because it is usually not helpful in real code</li>
+                       <li>The column 'Cxty' is the <a target="_blank" href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity</a></li>
+                     </ul>"""
+
+        fileTree("${buildDir}/reports/coverage").include("**/*.html").each { f ->
+            Files.writeString(f.toPath(), Files.readString(f.toPath()).replace("</h1>", "</h1><p>${msg}</p>"))
+        }
+    }
+    doLast {
+        println("If you added tests, you can view the code coverage report in ${buildDir}/reports/coverage/index.html")
+    }
+}
