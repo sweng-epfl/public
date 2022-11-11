@@ -499,7 +499,7 @@ class WeatherViewModel {
     int getTemperature() { return temperature; }
 
     // Data change event
-    void registerForTemperatureChanges(Runnable action) { this.temperatureCallback = temperatureCallback; }
+    void registerForTemperatureChanges(Runnable action) { this.temperatureCallback = action; }
 
     // Command
     void updateTemperature() {
