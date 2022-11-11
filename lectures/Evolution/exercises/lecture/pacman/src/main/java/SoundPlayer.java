@@ -11,7 +11,7 @@ public class SoundPlayer {
                 try {
                     Clip clip = AudioSystem.getClip();
                     AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            Main.class.getResourceAsStream("resources/sounds/" + name));
+                            App.class.getResourceAsStream("resources/sounds/" + name));
                     clip.open(inputStream);
                     clip.start();
                 } catch (Exception e) {
@@ -25,7 +25,7 @@ public class SoundPlayer {
         try {
             Clip clip = AudioSystem.getClip();
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                    Main.class.getResourceAsStream("resources/sounds/" + name));
+                    App.class.getResourceAsStream("resources/sounds/" + name));
             clip.open(inputStream);
             clip.start();
         } catch (Exception e) {
@@ -37,7 +37,7 @@ public class SoundPlayer {
         try {
             Clip clip = AudioSystem.getClip();
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                    Main.class.getResourceAsStream("resources/sounds/siren.wav"));
+                    App.class.getResourceAsStream("resources/sounds/siren.wav"));
             clip.open(inputStream);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (Exception e) {
