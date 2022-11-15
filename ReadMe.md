@@ -6,8 +6,9 @@ enabling students to go from _writing code_ to _developing software_.
 This repository contains all course material.
 To get a copy of this repository on your computer, please see the [cloning instructions](documentation/Cloning.md).
 
-The course is originally taught by the [Dependable Systems Lab](https://dslab.epfl.ch) at [EPFL](https://ic.epfl.ch).
-For EPFL-specific details please see [the course web page](https://dslab.epfl.ch/teaching/sweng/).
+_This course is originally taught by [Prof. George Candea](https://dslab.epfl.ch/people/candea/) and [Solal Pirelli](https://dslab.epfl.ch/people/pirelli/) at [EPFL](https://ic.epfl.ch)._
+_Solal Pirelli wrote the lecture notes. Alexandre Piveteau and Karim Sabaa wrote the exercises in their current form. Many thanks to all of the past staff who contributed to previous editions as well._
+_For EPFL-specific details please see [the course web page](https://dslab.epfl.ch/teaching/sweng/)._
 
 
 ## Course objectives
@@ -37,8 +38,8 @@ The remaining lectures can be done in any order, here is a suggested one:
 
 - [Debugging](lectures/Debugging/)
 - [Design](lectures/Design/)
-- [Performance](lectures/Performance/)
 - [Evolution](lectures/Evolution/)
+- [Performance](lectures/Performance/)
 - [Asynchrony](lectures/Asynchrony/)
 - [Teamwork](lectures/Teamwork/)
 - [Security](lectures/Security/)

@@ -4,7 +4,7 @@
 
 Each lecture is 120 minutes, including the exercises during the lecture.
 This translates to 30 minutes + 2x45 minutes, which means a lecture fills three 45-minute slots with 15 minutes to spare at the beginning.
-This beginning slot can be used for (1) administrivia during the first lecture, (2) quizzes during most lectures, and (3) exam reviews for lectures after an exam.
+This beginning slot can be used for (1) administrivia during the first lecture, (2) quizzes during most lectures to recap the previous one, and (3) exam reviews for lectures after an exam.
 
 
 ## Requirements
@@ -15,7 +15,7 @@ and that they have access to this computer _during lectures_ for in-lecture exer
 The first lecture, as an exception, does not require a computer. Its exercises can be done orally and with a smartphone.
 
 The second and third lecture require students to install software.
-These requirements are explicitly stated at the top of their notes, and should ideally be communicated in advance to avoid stressing students at the start of the corresponding lecture.
+These requirements are explicitly stated at the top of their notes, and should be communicated in advance to avoid stressing students at the start of the corresponding lecture.
 
 
 ## Assessment

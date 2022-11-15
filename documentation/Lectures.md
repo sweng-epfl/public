@@ -13,13 +13,9 @@ The [Anderson and Krathwohl taxonomy](https://www.depauw.edu/files/resources/kra
 After establishing objectives, the rest of the lecture follows: what exercises will allow students to know if they have achieved the objectives?
 What material must be explained to achieve these objectives? This is called "backwards course design".
 
-The contents of lectures should be _actionable_: students should realize what they can do, when they should do it, and why.
-This is particularly important for software engineering because real-world examples are way too large for an exercise, thus students must
-understand how the material taught in class applies on real projects.
-
-Each lecture also includes a quiz.
-Quizzes should be challenging and especially built around common misunderstandings, so that students can realize quickly what their misconceptions are.
-The goal is for 30-60% of students to get any given question right on the first try.
+The contents of lectures should be _actionable_: students should understand what they can do, when they should do it, and why.
+This is particularly important for software engineering because real-world examples are way too large for an exercise,
+thus students must understand how the material taught in class applies on real projects.
 
 
 ## Slide format
