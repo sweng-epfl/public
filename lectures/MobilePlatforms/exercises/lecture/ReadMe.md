@@ -15,11 +15,12 @@ the [instructions](https://developer.android.com/studio/install.html).
 
 You should choose the default options (you will do more tool configuration later).
 
-Once you reach the welcome screen, please click on **More Actions** at the top right of the window,
-and select **SDK Manager**. Then, in the **SDK Platforms** tab, please install **Android 12L** (API
-Level 32). After that, in the **SDK Tools** tab, first select **Show Package Details** (at the
-bottom right), then choose **Android SDK Build Tool 33.0.0** and install it, if it is not installed
-already.
+After installing, start up Android Studio.
+On the welcome screen, please click on **More Actions** and select **SDK Manager**.
+Then, in the **SDK Platforms** tab, please install **Android 12L** (API Level 32).
+After that, again under **More Actions** > **SDK Manager**,
+in the **SDK Tools** tab, first select **Show Package Details** (at the bottom right),
+then choose **Android SDK Build Tool 33.0.0** and install it, if it is not installed already.
 
 ## Open the SwEng App project
 
