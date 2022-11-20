@@ -9,8 +9,8 @@ public final class CachingWeatherAPI implements WeatherAPI {
         this.wrapped = wrapped;
         this.cache = new HashMap<>();
 
-        if (wrapped instanceof WeatherObservable) {
-            ((WeatherObservable) wrapped).registerOverrideListener(this::invalidateCache);
+        if (wrapped instanceof WeatherObservable obs) {
+            obs.registerOverrideListener(this.cache::clear);
         }
     }
 
@@ -20,9 +20,5 @@ public final class CachingWeatherAPI implements WeatherAPI {
             cache.put(city, wrapped.getWeather(city));
         }
         return cache.get(city);
-    }
-
-    private void invalidateCache() {
-        this.cache.clear();
     }
 }
