@@ -60,7 +60,7 @@ the *Recommended* tab, download the **Android 12L** (API Level 32) image. Once d
 device should appear in the *Virtual Device Manager*, which you can now close.
 
 To run your app, you can now use *Run* > *Run 'app'*. It will take a few seconds to start up the
-emulator and then you will see Android itself start up, followed by your app.
+emulator and then you will see Android itself start up, followed by your app. If the AVD doesn't start on its own, do it yourself then run the app.
 
 > :information_source: If you're running the emulator on Linux, you may need to manually configure hardware acceleration. Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM. If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
 
