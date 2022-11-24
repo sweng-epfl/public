@@ -1,5 +1,9 @@
 # Android Persistence
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/6318990/203812830-f5879db6-ce7e-478f-8376-0c5f7f9873fe.jpg" width="200">
+</p>
+
 When developing an Android application, you will often need to store data as an offline cache. This
 can be done in a variety of ways, but the most common way is to use a database. There are many
 different types of databases, but the most common one is the SQLite database. SQLite is a relational

@@ -1,7 +1,9 @@
 # Lecture exercises
 
 In preparation for Friday's lecture, we ask you
-to [set up your Android Studio environment](Q0.1%20-%20Setup.md) and to run the SwEng App project.
+to [set up your Android Studio environment](setup.md) and to run the SwEng App project.
 
-During the lecture, we will go through a few basics of Android development as part of the
-[Android Basics](Q0.2%20-%20Android%20Basics.md) exercise.
+During the lecture, we will go through a few basics of Android development. First,
+we'll [create another activity](button.md). Then,
+we'll [implement navigation between the two activities and we'll see how to display a list of items on the screen](navigation.md)
+.

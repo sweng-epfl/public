@@ -1,5 +1,9 @@
 # _Model View ViewModel_ on Android
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/6318990/203812544-9593cdbd-d5cb-47b7-8acf-bf6ac3b1b8d4.jpg" width="200">
+</p>
+
 In this exercise, you will learn how to implement the MVVM pattern on Android. To do so, you will be
 building a simple Hacker News client, which displays the top stories from the
 official [Hacker News API](https://github.com/HackerNews/API).
@@ -13,7 +17,7 @@ The project is already set up for you. Here are its main packages:
   classes that will be used to fetch the stories from the API
   using [Retrofit](https://square.github.io/retrofit/), a library that makes it easy to fetch data
   from REST APIs.
-* `ch.epfl.sweng.presentation` (currently empty) will the view-model package. It will contain
+* `ch.epfl.sweng.presentation` (currently empty) is the view-model package. It will contain
   the `StoriesViewModel` class, which is the view-model of the application and will responsible for
   fetching the stories from the Hacker News API and exposing them to the view.
 * `ch.epfl.sweng.view` contains the view of the application. It features the `MainActivity` class,
