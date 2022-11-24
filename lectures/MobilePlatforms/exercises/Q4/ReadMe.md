@@ -178,5 +178,5 @@ so, you will need to:
    need to fetch the top stories from the API, and then fetch the corresponding items from the API.
    You will then need to map the hacker news items objects to `Story` objects, and expose them to
    the view using a `LiveData` object. You will need to transform the `List<Long>` returned by the
-   API into a `List<Story>`. You may use the `map` or `switchMap` transformations methods of
-   the `LiveData` class to do so.
+   API into a `List<Story>`. You may use the static `map` or `switchMap` methods of
+   the `Transformations` class to do so.
