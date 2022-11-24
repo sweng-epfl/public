@@ -169,10 +169,10 @@ public final class NewsActivity extends AppCompatActivity {
 
     private static List<Story> generateStories() {
         return List.of(
-                new Story(0, "title 0", "https://epfl.ch").build(),
-                new Story(1, "title 1", "https://epfl.ch").build(),
-                new Story(2, "title 2", "https://epfl.ch").build(),
-                new Story(3, "title 3", "https://epfl.ch").build());
+                new Story(0, "title 0", "https://epfl.ch"),
+                new Story(1, "title 1", "https://epfl.ch"),
+                new Story(2, "title 2", "https://epfl.ch"),
+                new Story(3, "title 3", "https://epfl.ch"));
     }
 }
 ```
