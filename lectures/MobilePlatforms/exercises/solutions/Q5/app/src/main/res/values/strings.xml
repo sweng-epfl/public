@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SwEng HackerNews</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_clear">Clear</string>
+</resources>
