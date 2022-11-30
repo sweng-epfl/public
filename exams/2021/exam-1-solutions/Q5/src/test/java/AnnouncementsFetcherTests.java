@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 final class AnnouncementsFetcherTests {
     @Test
-    public void cannotUseNullClient() {
+    public void constructorThrowsOnNullClient() {
         // Arrange
         Clock clock = () -> 0;
         // Act and Assert
@@ -16,7 +16,7 @@ final class AnnouncementsFetcherTests {
     }
 
     @Test
-    public void cannotUseNullClock() {
+    public void constructorThrowsOnNullClock() {
         // Arrange
         HttpClient client = url -> "text";
         // Act and Assert
@@ -24,7 +24,7 @@ final class AnnouncementsFetcherTests {
     }
 
     @Test
-    public void errorMessageInCaseOfException() {
+    public void fetchReturnsErrorMessageInCaseOfIOException() {
         // Arrange
         HttpClient client = url -> {
             throw new IOException();
@@ -62,7 +62,7 @@ final class AnnouncementsFetcherTests {
     }
 
     @Test
-    public void dayOfTheWeekIsRespected() {
+    public void dayOfTheWeekIsRespectedForVisibility() {
         // Arrange
         HttpClient client = url -> "0:::Hidden\n3:::Visible\nAlways visible";
         Clock clock = () -> 3;

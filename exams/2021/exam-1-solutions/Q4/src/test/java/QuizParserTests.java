@@ -7,49 +7,49 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 final class QuizParserTests {
     @Test
-    public void nullTextIsInvalid() {
+    public void parseThrowsIllegalArgOnNullText() {
         var parser = new QuizParser();
         assertThrows(IllegalArgumentException.class, () -> parser.parse(null));
     }
 
     @Test
-    public void emptyTextIsInvalid() {
+    public void parseThrowsIllegalArgOnEmptyText() {
         var parser = new QuizParser();
         assertThrows(IllegalArgumentException.class, () -> parser.parse(""));
     }
 
     @Test
-    public void wrongHeadingStartIsInvalid() {
+    public void parseThrowsWrongFormatOnWrongHeadingStart() {
         var parser = new QuizParser();
         assertThrows(QuizFormatException.class, () -> parser.parse("Question\n- Choice 1\n- Choice 2\n> Solution"));
     }
 
     @Test
-    public void missingLinesAfterHeadingIsInvalid() {
+    public void parseThrowsIllegalArgOnMissingLines() {
         var parser = new QuizParser();
         assertThrows(IllegalArgumentException.class, () -> parser.parse("# Question\n"));
     }
 
     @Test
-    public void questionWithoutChoicesIsInvalid() {
+    public void parseThrowsWrongFormatOnQuestionWithoutChoices() {
         var parser = new QuizParser();
         assertThrows(QuizFormatException.class, () -> parser.parse("# Question\n> Solution"));
     }
 
     @Test
-    public void questionWithoutSolutionIsInvalid() {
+    public void parseThrowsIllegalArgOnQuestionWithoutSolution() {
         var parser = new QuizParser();
         assertThrows(IllegalArgumentException.class, () -> parser.parse("# Question\n- Choice 1\n- Choice 2"));
     }
 
     @Test
-    public void questionWithoutSolutionPrefixIsInvalid() {
+    public void parseThrowsWrongFormatOnQuestionWithoutSolutionPrefix() {
         var parser = new QuizParser();
         assertThrows(QuizFormatException.class, () -> parser.parse("# Question\n- Choice 1\n- Choice 2\nSolution"));
     }
 
     @Test
-    public void extraLinesAfterSolutionAreInvalid() {
+    public void parseThrowsIllegalArgOnExtraLinesAfterSolution() {
         var parser = new QuizParser();
         assertThrows(IllegalArgumentException.class, () -> parser.parse("# Question\n- Choice 1\n- Choice 2\n> Solution\nSomething else"));
     }
@@ -68,17 +68,17 @@ final class QuizParserTests {
         // Assert
 
         @Test
-        public void heading() {
+        public void validHeaderIsParsed() {
             assertThat(question.heading, is("Question"));
         }
 
         @Test
-        public void choices() {
+        public void validChoicesAreParsed() {
             assertThat(question.choices, contains("Choice 1", "Choice 2"));
         }
 
         @Test
-        public void solution() {
+        public void validSolutionIsParsed() {
             assertThat(question.solution, is("Solution"));
         }
     }

@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public final class PresenterTest {
 
     @Test
-    public void viewDisplayUserInfoOnValidCredential() {
+    public void viewDisplaysUserInfoOnValidCredential() {
         String testName = "user";
         String testSciper = "sciper";
 
@@ -64,7 +64,7 @@ public final class PresenterTest {
     }
 
     @Test
-    public void viewDisplayErrorOnInvalidCredential() {
+    public void viewDisplaysErrorOnInvalidCredential() {
         String testName = "user";
 
         AtomicBoolean flag = new AtomicBoolean(false);
@@ -105,7 +105,7 @@ public final class PresenterTest {
     }
 
     @Test
-    public void viewShowBlockedOnThreeInvalidCredentials() {
+    public void viewDisplaysBlockedOnThreeInvalidCredentials() {
         String testName = "user";
 
         AtomicInteger count = new AtomicInteger(0);
@@ -126,8 +126,9 @@ public final class PresenterTest {
             @Override
             public void displayError(String msg) {
                 assertThat(msg, containsString(testName));
-                if (count.get() >= 3)
+                if (count.get() >= 3) {
                     assertThat(msg, containsString("blocked"));
+                }
                 count.incrementAndGet();
             }
 
