@@ -211,6 +211,7 @@ Think back to the SQLite example: the code would be impossible to change if any 
 The same as for the rest of the code.
 Test code should be in the same version control repository as other code, and should be reviewed just like other code when making changes.
 This also means tests should have proper names, not `test1` or `testFeatureWorks` but specific names that give information in an overview of tests such as `nameCanIncludeThaiCharacters`.
+Avoid names that use vague descriptions such as "correctly", "works", or "valid".
 
 
 ## What metric can one use to evaluate tests?
