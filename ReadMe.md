@@ -11,7 +11,7 @@ _Solal Pirelli wrote the lecture notes. Alexandre Piveteau and Karim Sabaa wrote
 _For EPFL-specific details please see [the course web page](https://dslab.epfl.ch/teaching/sweng/)._
 
 
-## Course objectives
+## Objectives
 
 After completing this course, students should be able to:
 - Recognize common needs and issues in software development
@@ -20,6 +20,11 @@ After completing this course, students should be able to:
 - Organize the development of software during its entire lifecycle, from team formation to long-term support
 - Critique software developed by others in a constructive and evidence-based manner
 - Produce software that enables users to reliably and efficiently perform the tasks they require
+
+
+## Prerequisites
+
+This course assumes familiarity with the basics of programming, and specifically the Java programming language to practice the theoretical concepts taught in class.
 
 
 ## Lectures
