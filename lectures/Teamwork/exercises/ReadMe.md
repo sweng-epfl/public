@@ -2,8 +2,8 @@
 
 **Theoretical exercises**:
 
-- [Q1: Workflows](Q2.md)
-- [Q2: Scrum workflow](Q1.md)
+- [Q1: Workflows](Q1.md)
+- [Q2: Scrum workflow](Q2.md)
 - [Q3: Case Study](Q3.md)
 
 **Practical exercises**:
