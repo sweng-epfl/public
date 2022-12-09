@@ -30,8 +30,7 @@ This course assumes familiarity with the basics of programming, and specifically
 ## Lectures
 
 This course introduces key software engineering topics in one lecture each.
-Each lecture is designed to take 120 minutes and includes exercises to be done during the lecture,
-longer exercises to be done after the lecture, and a small quiz to refresh one's memory before going on to the next lecture.
+Each lecture is designed to take 120 minutes and includes exercises to be done during the lecture and longer exercises to be done after the lecture.
 
 The first three lectures should be done in order, as they are prerequisites for the rest:
 
