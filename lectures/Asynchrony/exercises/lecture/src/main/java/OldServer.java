@@ -10,8 +10,9 @@ public final class OldServer {
             Utils.sleep(1_000); // pretend we're doing a network request that takes some time
             if (random.nextInt(5) == 0) { // unlikely to succeed!
                 callback.accept("Success");
+            } else {
+                errorCallback.accept(new RuntimeException("Failure"));
             }
-            errorCallback.accept(new RuntimeException("Failure"));
         }).start();
     }
 }
