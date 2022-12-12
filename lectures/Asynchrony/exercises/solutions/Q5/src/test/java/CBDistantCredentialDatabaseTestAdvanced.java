@@ -25,14 +25,17 @@ public class CBDistantCredentialDatabaseTestAdvanced extends FutureBasedTests {
 
 
     private static class AdapterCallback implements CredentialDatabaseCallback {
-        CompletableFuture adaptedFuture;
+        private final CompletableFuture adaptedFuture;
+
         public AdapterCallback(CompletableFuture adaptedFuture) {
             this.adaptedFuture = adaptedFuture;
         }
+
         @Override
         public void onSuccess(StudentUser user) {
             adaptedFuture.complete(user);
         }
+
         @Override
         public void onError(DatabaseException exception) {
             adaptedFuture.completeExceptionally(exception);

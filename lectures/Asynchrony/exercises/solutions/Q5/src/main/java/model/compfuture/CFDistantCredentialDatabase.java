@@ -20,7 +20,7 @@ public class CFDistantCredentialDatabase implements CFCredentialDatabase {
         return CompletableFuture.supplyAsync(() -> {
             RandomSleeper.sleepRand(5);
             if (PASSWORDS.containsKey(userName)) {
-                throw new CompletionException(new AlreadyExistsUserException(userName));
+                throw new CompletionException(new UserAlreadyExistsException(userName));
             } else {
                 PASSWORDS.put(userName, userPassword);
                 IDs.put(userName, id);

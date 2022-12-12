@@ -1,7 +1,4 @@
-import model.AlreadyExistsUserException;
-import model.InvalidCredentialException;
-import model.StudentUser;
-import model.UnknownUserException;
+import model.*;
 import model.compfuture.CFCredentialDatabase;
 import org.junit.jupiter.api.Test;
 
@@ -43,7 +40,7 @@ public abstract class FutureBasedTests {
                 db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS),
                 db.addUser("new", "user", 1234).orTimeout(10, TimeUnit.SECONDS)
         ).join());
-        assertThat(exception.getCause(), isA(AlreadyExistsUserException.class));
+        assertThat(exception.getCause(), isA(UserAlreadyExistsException.class));
     }
 
     // 4. Adding a user to the database and trying to `authenticate` the same user will yield the correct user

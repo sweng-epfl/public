@@ -2,110 +2,97 @@ import model.*;
 import model.callback.CBDistantCredentialDatabase;
 import org.junit.jupiter.api.Test;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CBDistantCredentialDatabaseTestSimple {
 
     // 1. Trying to authenticate a user that does not exist throws
     @Test
-    public void tryToAuthUserThatDoesNotExistThrowsUnknownUser() throws InterruptedException {
+    public void tryToAuthUserThatDoesNotExistThrowsUnknownUser() throws Throwable {
         CBDistantCredentialDatabase db = new CBDistantCredentialDatabase();
-        CallbackWait callback = new CallbackWait();
+        var callback = new Callback();
         db.authenticate("unknown", "user", callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        assertThat(callback.users, is(empty()));
-        assertThat(callback.dbExceptions.size(), is(1));
-        assertThat(callback.dbExceptions.element(), instanceOf(UnknownUserException.class));
+        assertThrows(UnknownUserException.class, () -> callback.join(10));
     }
 
     // 2. Calling `addUser` on empty database will add the correct user
     @Test
-    public void callAddUserOnEmptyDBAddsUserToDB() throws InterruptedException {
+    public void callAddUserOnEmptyDBAddsUserToDB() throws Throwable {
         CBDistantCredentialDatabase db = new CBDistantCredentialDatabase();
-        CallbackWait callback = new CallbackWait();
+        var callback = new Callback();
         db.addUser("usrnm", "pwd", 1234, callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        assertThat(callback.dbExceptions, is(empty()));
-        assertThat(callback.users.size(), is(1));
-        assertThat(callback.users.element().getUserName(), is("usrnm"));
-        assertThat(callback.users.element().getID(), is("1234"));
+        var user = callback.join(10);
+        assertThat(user.getUserName(), is("usrnm"));
+        assertThat(user.getID(), is("1234"));
     }
 
     // 3. Calling `addUser` twice with the same user will fail
     @Test
-    public void callAddUserTwiceWithSameCredentialsThrowsAlreadyExists() throws InterruptedException {
+    public void callAddUserTwiceWithSameCredentialsThrowsAlreadyExists() throws Throwable {
         CBDistantCredentialDatabase db = new CBDistantCredentialDatabase();
-        CallbackWait callback = new CallbackWait();
-        db.addUser("usrnm", "pwd", 1234, callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        callback = new CallbackWait();
-        db.addUser("usrnm", "pwd", 1234, callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        assertThat(callback.users, is(empty()));
-        assertThat(callback.dbExceptions.size(), is(1));
-        assertThat(callback.dbExceptions.element(), instanceOf(AlreadyExistsUserException.class));
+        var callback1 = new Callback();
+        db.addUser("usrnm", "pwd", 1234, callback1);
+        callback1.join(10);
+        var callback2 = new Callback();
+        db.addUser("usrnm", "pwd", 1234, callback2);
+        assertThrows(UserAlreadyExistsException.class, () -> callback2.join(10));
     }
 
     // 4. Adding a user to the database and trying to `authenticate` the same user will yield the correct user
     @Test
-    public void addUserAndAuthYieldCorrectUser() throws InterruptedException {
+    public void addUserAndAuthYieldCorrectUser() throws Throwable {
         CBDistantCredentialDatabase db = new CBDistantCredentialDatabase();
-        CallbackWait callback = new CallbackWait();
-        db.addUser("usrnm", "pwd", 1234, callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        callback = new CallbackWait();
-        db.authenticate("usrnm", "pwd", callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        assertThat(callback.dbExceptions, is(empty()));
-        assertThat(callback.users.size(), is(1));
-        assertThat(callback.users.element().getUserName(), is("usrnm"));
-        assertThat(callback.users.element().getID(), is("1234"));
+        var callback1 = new Callback();
+        db.addUser("usrnm", "pwd", 1234, callback1);
+        callback1.join(10);
+        var callback2 = new Callback();
+        db.authenticate("usrnm", "pwd", callback2);
+        var user = callback2.join(10);
+        assertThat(user.getUserName(), is("usrnm"));
+        assertThat(user.getID(), is("1234"));
     }
 
     // 5. Adding a user to the database and trying to `authenticate` the same user with a wrong password will throw
     @Test
-    public void addUserAndAuthWithWrongPwdThrowsInvalidCredentials() throws InterruptedException {
+    public void addUserAndAuthWithWrongPwdThrowsInvalidCredentials() throws Throwable {
         CBDistantCredentialDatabase db = new CBDistantCredentialDatabase();
-        CallbackWait callback = new CallbackWait();
-        db.addUser("usrnm", "pwd", 1234, callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        callback = new CallbackWait();
-        db.authenticate("usrnm", "wrongpwd", callback);
-        assertThat(callback.waitOnNotify(10), is(true));
-        assertThat(callback.users, is(empty()));
-        assertThat(callback.dbExceptions.size(), is(1));
-        assertThat(callback.dbExceptions.element(), instanceOf(InvalidCredentialException.class));
+        var callback1 = new Callback();
+        db.addUser("usrnm", "pwd", 1234, callback1);
+        callback1.join(10);
+        var callback2 = new Callback();
+        db.authenticate("usrnm", "wrongpwd", callback2);
+        assertThrows(InvalidCredentialException.class, () -> callback2.join(10));
     }
 
     /**
-     * Helper class for credential db callback
-     * This class will block waiting on a result while async call complete and log the different results
+     * Helper class to block for a callback
      */
-    private static class CallbackWait implements CredentialDatabaseCallback {
-        public final Queue<StudentUser> users = new LinkedList<>();
-        public final Queue<DatabaseException> dbExceptions = new LinkedList<>();
-        private final CountDownLatch doneSignal = new CountDownLatch(1);
+    private static class Callback implements CredentialDatabaseCallback {
+        private final CompletableFuture<StudentUser> future = new CompletableFuture<>();
 
         @Override
         public void onSuccess(StudentUser user) {
-            users.add(user);
-            doneSignal.countDown();
+            assertThat(future.isDone(), is(false));
+            future.complete(user);
         }
 
         @Override
         public void onError(DatabaseException exception) {
-            dbExceptions.add(exception);
-            doneSignal.countDown();
+            assertThat(future.isDone(), is(false));
+            future.completeExceptionally(exception);
         }
 
-        public boolean waitOnNotify(int timeout) throws InterruptedException {
-            return doneSignal.await(timeout, TimeUnit.SECONDS);
+        public StudentUser join(int timeoutInSeconds) throws Throwable {
+            try {
+                return future.orTimeout(timeoutInSeconds, TimeUnit.SECONDS).join();
+            } catch (CompletionException e) {
+                // makes testing easier
+                throw e.getCause();
+            }
         }
     }
 }

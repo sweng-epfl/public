@@ -17,7 +17,7 @@ public class CBDistantCredentialDatabase implements CBCredentialDatabase {
     public void addUser(String userName, String userPassword, int id, CredentialDatabaseCallback callback) {
         RandomSleeper.sleepRandAndRun(5, () -> {
             if (PASSWORDS.containsKey(userName)) {
-                callback.onError(new AlreadyExistsUserException(userName));
+                callback.onError(new UserAlreadyExistsException(userName));
             } else {
                 PASSWORDS.put(userName, userPassword);
                 Ids.put(userName, id);
