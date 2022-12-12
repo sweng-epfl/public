@@ -15,7 +15,7 @@ task update {
                 }
                 exec {
                     workingDir(d)
-                    commandLine("git", "update-index", "--chmod=+x", "gradlew")
+                    commandLine("git", "update-index", "--chmod=+x", "--add", "gradlew")
                 }
             }
         }

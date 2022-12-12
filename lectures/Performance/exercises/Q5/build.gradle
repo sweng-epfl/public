@@ -10,6 +10,8 @@
 import org.gradle.api.JavaVersion
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.gradle.api.tasks.testing.TestResult
+import org.gradle.api.tasks.testing.TestResult.ResultType
 import java.nio.file.Files
 
 plugins {
@@ -42,7 +44,7 @@ if (JavaVersion.current().toString() != javaVersionTarget) {
 }
 
 application {
-    mainClass = "ch.epfl.sweng.javapk.JavaPK"
+    mainClass = "App"
 }
 
 run {
@@ -52,6 +54,11 @@ run {
     standardInput = System.in
 }
 
+// We maintain our own list of test results, mapping full name to (display name, result)
+// Otherwise, we cannot get the full name of tests with e.g. a @DisplayName, or using @RepeatedTest
+// We then print them all at once into a CSV file, for use by scripts
+// (We cannot print one by one because of the possible presence of repeated tests; for those, any failure => overall failure)
+var currentSuite = new HashMap<String, Tuple2<String, TestResult>>()
 test {
     useJUnitPlatform()
 
@@ -70,16 +77,27 @@ test {
         showStackTraces = true
     }
 
-    // If a crash happens during execution, tell the user about it
+    afterTest { test, res ->
+        if (res.resultType == ResultType.SKIPPED) {
+            return
+        }
+        var fullName = "${test.className}.${test.name.split('\\(')[0]}"
+        if (test.name.contains('[') && currentSuite.containsKey(fullName) && res.resultType == ResultType.SUCCESS) {
+            // [ in a test name is an indicator of a repeated test
+            return
+        }
+        currentSuite.put(fullName, new Tuple2(test.displayName, res))
+    }
+
     afterSuite { desc, result ->
-        if (result.exception) {
-            if (result.exception.message.contains("Could not complete execution")) {
-                println("A crash happened while executing unit tests:")
-                result.exception.cause.printStackTrace()
-            } else {
-                println("An unknown error occurred while executing unit tests:")
-                result.exception.printStackTrace()
-            }
+        if (desc.parent != null) {
+            // We only care about the root suite
+            return
+        }
+        var file = new File(buildDir, "tests.csv")
+        file.write("FullName,DisplayName,Result,ErrorMessage" + System.lineSeparator())
+        currentSuite.each { name, props ->
+            file.append("${name},\"${props.first.replace('"', '""')}\",${props.second.resultType},\"${props.second.exception?.message?.replace('"', '""') ?: ""}\"" + System.lineSeparator())
         }
     }
 }

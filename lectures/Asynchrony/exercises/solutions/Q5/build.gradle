@@ -10,12 +10,18 @@
 import org.gradle.api.JavaVersion
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.gradle.api.tasks.testing.TestResult
+import org.gradle.api.tasks.testing.TestResult.ResultType
 import java.nio.file.Files
 
 plugins {
-    id 'java'
-    id 'application'
-    id 'jacoco'
+    id("java")
+    id("application")
+    id("jacoco")
+}
+
+if (file("build-extra.gradle").exists()) {
+    apply from: "build-extra.gradle"
 }
 
 repositories {
@@ -23,44 +29,44 @@ repositories {
 }
 
 dependencies {
-    // JUnit 5 "Jupiter"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    // Hamcrest
-    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testImplementation("org.hamcrest:hamcrest:2.2")
 }
 
 def javaVersionTarget = "17"
 if (JavaVersion.current().toString() != javaVersionTarget) {
-    println '!!!\n!!!'
+    println "!!!\n!!!"
     println "WARNING: This project was designed for Java ${javaVersionTarget} but you are instead using Java ${JavaVersion.current()}."
-    println '         If you get this message while configuring an IDE such as IntelliJ or Android Studio, feel free to ignore it as long as it does not appear when running the app or tests.'
+    println "         If you get this message while configuring an IDE such as IntelliJ or Android Studio, feel free to ignore it as long as it does not appear when running the app or tests."
     println "         Otherwise, please use Java ${javaVersionTarget}, or continue using your version at your own risk."
-    println '!!!\n!!!'
+    println "!!!\n!!!"
 }
 
 application {
-    mainClass = 'App'
+    mainClass = "App"
 }
 
 run {
-    // Force UTF-8
-    systemProperty "file.encoding", "UTF-8"
+    systemProperty("file.encoding", "UTF-8")
 
     // Allow users to input stuff during the 'run' task, necessary for System.in to work
     standardInput = System.in
 }
 
+// We maintain our own list of test results, mapping full name to (display name, result)
+// Otherwise, we cannot get the full name of tests with e.g. a @DisplayName, or using @RepeatedTest
+// We then print them all at once into a CSV file, for use by scripts
+// (We cannot print one by one because of the possible presence of repeated tests; for those, any failure => overall failure)
+var currentSuite = new HashMap<String, Tuple2<String, TestResult>>()
 test {
     useJUnitPlatform()
 
-    // Force UTF-8
-    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty("file.encoding", "UTF-8")
 
     testLogging {
         // Always show all tests, even passed ones; also, show stdout/stderr, helps for debugging
-        events TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED,
-                TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR
+        events(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR)
         // Always run all tests
         outputs.upToDateWhen { false }
 
@@ -71,16 +77,27 @@ test {
         showStackTraces = true
     }
 
-    // If a crash happens during execution, tell the user about it
+    afterTest { test, res ->
+        if (res.resultType == ResultType.SKIPPED) {
+            return
+        }
+        var fullName = "${test.className}.${test.name.split('\\(')[0]}"
+        if (test.name.contains('[') && currentSuite.containsKey(fullName) && res.resultType == ResultType.SUCCESS) {
+            // [ in a test name is an indicator of a repeated test
+            return
+        }
+        currentSuite.put(fullName, new Tuple2(test.displayName, res))
+    }
+
     afterSuite { desc, result ->
-        if (result.exception) {
-            if (result.exception.message.contains('Could not complete execution')) {
-                println('A crash happened while executing unit tests:')
-                result.exception.cause.printStackTrace()
-            } else {
-                println('An unknown error occurred while executing unit tests:')
-                result.exception.printStackTrace()
-            }
+        if (desc.parent != null) {
+            // We only care about the root suite
+            return
+        }
+        var file = new File(buildDir, "tests.csv")
+        file.write("FullName,DisplayName,Result,ErrorMessage" + System.lineSeparator())
+        currentSuite.each { name, props ->
+            file.append("${name},\"${props.first.replace('"', '""')}\",${props.second.resultType},\"${props.second.exception?.message?.replace('"', '""') ?: ""}\"" + System.lineSeparator())
         }
     }
 }
@@ -94,22 +111,20 @@ jacocoTestReport {
 
 build {
     // Always generate coverage
-    dependsOn jacocoTestReport
-    // Add some help to JaCoCo reports
+    dependsOn(jacocoTestReport)
     doLast {
-        def msg = '''SwEng help:
+        def msg = """Notes:
                      <ul>
-                       <li>JaCoCo calls statements "instructions"</li>
+                       <li>JaCoCo calls statements 'instructions'</li>
                        <li>JaCoCo does not compute path coverage, because it is usually not helpful in real code</li>
                        <li>The column 'Cxty' is the <a target="_blank" href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity</a></li>
-                     </ul>'''
+                     </ul>"""
 
-        fileTree("${buildDir}/reports/coverage").include('**/*.html').each { f ->
-            Files.writeString(f.toPath(), Files.readString(f.toPath()).replace('</h1>', "</h1><p>${msg}</p>"))
+        fileTree("${buildDir}/reports/coverage").include("**/*.html").each { f ->
+            Files.writeString(f.toPath(), Files.readString(f.toPath()).replace("</h1>", "</h1><p>${msg}</p>"))
         }
     }
-    // Tell the user about the report file
     doLast {
-        println "You can view the code coverage report in ${buildDir}/reports/coverage/index.html"
+        println("If you added tests, you can view the code coverage report in ${buildDir}/reports/coverage/index.html")
     }
 }
