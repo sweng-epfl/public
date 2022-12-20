@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/icon_home"
+        android:title="@string/menu_item_home" />
+    <item
+        android:id="@+id/menu_challenges"
+        android:enabled="true"
+        android:icon="@drawable/icon_flag"
+        android:title="@string/menu_item_challenges" />
+    <item
+        android:id="@+id/menu_leaderboard"
+        android:enabled="true"
+        android:icon="@drawable/icon_leaderboard"
+        android:title="@string/menu_item_leaderboard" />
+</menu>

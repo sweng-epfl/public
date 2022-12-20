@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<header class="site-header">
+    <a href="https://dslab.epfl.ch/">
+        <h1 style="margin-top: 0">
+            <img src="dslab-logo.png" style="width: 10%">
+            Dependable Systems Lab
+        </h1>
+    </a>
+</header>
+
+<div class="row">
+
+    <h1 id="software-engineering">Software Engineering</h1>
+
+    <p>We teach undergraduate software engineering as a tandem of courses:</p>
+
+    <ul>
+        <li><a href="https://dslab.epfl.ch/teaching/sweng">CS-305: Software Engineering</a> (<em>SwEng</em>),
+            in the Fall semester, and
+        </li>
+        <li><a href="https://dslab.epfl.ch/teaching/sweng/proj">CS-306: Software Development
+            Project</a> (<em>SDP</em>), in the Spring semester
+        </li>
+    </ul>
+
+    <p>Together, they cover the basics of modern software development, focusing on techniques and
+        practices used
+        to build computer software that meets high standards of quality, reliability, security, and
+        maintainability.</p>
+
+    <p>All course materials are hosted in our <a href="https://github.com/sweng-epfl/public">public
+        repo</a>.
+        All EPFL-specific details appear below.</p>
+
+    <p>The two courses are designed to be taken as a sequence. If a student already masters the
+        SwEng material,
+        taking SwEng is an easy refresher; if not, then succeeding in SDP is highly improbable.
+        Therefore,
+        students can either take SwEng on its own, or SwEng together with SDP. If you insist on
+        taking SDP
+        without taking SwEng before, you must first contact us and
+        explain why.</p>
+
+    <p>Tell us your name: <input id="name" type="text"/></p>
+    <p id="greeting"></p>
+</div>
+</body>
+<script>
+    let input = document.getElementById("name")
+    let greeting = document.getElementById("greeting")
+    input.addEventListener("keyup", (event) => {
+        greeting.innerHTML = input.value
+    });
+    window.flag = ""; // will be filled by Challenge's onCreateView hook
+</script>
+</html>
