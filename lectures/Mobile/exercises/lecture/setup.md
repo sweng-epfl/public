@@ -28,7 +28,7 @@ Launch Android Studio, and select **open**. Then, navigate to the folder where t
 is located, and select the **SwEng App** folder. After a bit of time, you should see Android Studio
 open up with a number of files loaded for this project.
 
-> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android. On Friday, we will use Java.
+> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android. During the lecture, we will use Java.
 
 First of all, Android projects use a build system called *Gradle*. This is a very common tool in the
 Java ecosystem. It allows developers to specify the way a project should be built, which

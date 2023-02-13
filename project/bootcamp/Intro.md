@@ -5,17 +5,20 @@ This introduction document presents the tools you will use.
 ## Setup Android Studio
 
 Android Studio is the official recommended IDE for developpers wishing to develop Android apps.
-If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin - as Android Studio is just a special distribution of IntelliJ.
+If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin, as Android Studio is just a special distribution of IntelliJ.
 Be aware that some menus or buttons may have slightly different names. You are free to use other tools if you want, but we will not provide support for them.
 
 > :information_source: Android Studio supports all mainstream operating systems; you can work on Windows, Mac, or Linux.
 
-Download and install Android Studio from [https://developer.android.com](https://developer.android.com). If you need any help, follow the [instructions](https://developer.android.com/studio/install.html).
+Download and install Android Studio from [https://developer.android.com](https://developer.android.com).
+If you need any help, follow the [instructions](https://developer.android.com/studio/install.html).
 
 You should choose the default options (you will do more tool configuration later).
 
-Once you reach the welcome screen, please click on **More Actions** at the middle of the window, and select **SDK Manager**. Then, in the **SDK Platforms** tab, please install **Android 12** (API Level 31).
-After that, in the **SDK Tools** tab, first select **Show Package Details** (at the bottom right), then choose **Android SDK Build Tool 31.0.0** and install it, if it is not installed already. 
+Once you reach the welcome screen, please click on **More Actions** at the middle of the window, and select **SDK Manager**.
+Then, in the **SDK Platforms** tab, please install **Android 12** (API Level 31).
+After that, in the **SDK Tools** tab, first select **Show Package Details** (at the bottom right),
+then choose **Android SDK Build Tool 31.0.0** and install it, if it is not installed already. 
 
 ## Create a new project
 
@@ -24,18 +27,17 @@ In the first dialog, select *Empty activity*.
 In the next dialog, name your project and choose a package name (for instance **com.github.yourusername.bootcamp**.
 This naming convention is called [Reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation)).
 
-In *Language* please select **Java**, and in *Minimum SDK* please select **API 23: Android 6.0 (Marshmallow)**. After a bit of time, you should see Android Studio open up with a number of files created for this project.
+In *Language* please select **Java**, and in *Minimum SDK* please select **API 23: Android 6.0 (Marshmallow)**.
+After a bit of time, you should see Android Studio open up with a number of files created for this project.
 
 > :information_source: You can always change the minimum SDK later if you need to, but please keep in mind that not all devices have the latest version of Android.
 
-> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android.
-> If you want, you can therefore choose to do the project in Kotlin. Either way, your entire team has to agree on which language you pick.
+> :information_source: You can pick **Kotlin** as a language if you'd like. Your entire team must agree on which language you will use for the project.
 
 This is a good time to open a file explorer and look at all the files that have been created.
 The Android developer documentation on [managing projects](https://developer.android.com/studio/projects/index.html) provides a good overview of what all these files do.
 
-First of all, Android projects use a build system called *Gradle*.
-This is a very common tool in the Java ecosystem.
+First of all, Android projects use a build system called *Gradle*, which is a common tool in the Java ecosystem.
 It allows developpers to specify the way a project should be built, which dependencies it needs, how it should be tested...
 It's similar to a Makefile in C/C++, only with more features.
 In Gradle, each project is defined using a `build.gradle` file that the tool reads and understand.
@@ -75,7 +77,7 @@ android {
 ...
 ```
 > :information_source: 
-If you have chosen kotlin, make sure to have this dependencies: 
+If you have chosen Kotlin, make sure to have this dependency: 
 ```gradle
 implementation 'androidx.core:core-ktx:1.7.0'
 ```
@@ -100,7 +102,8 @@ To run your app, you can now use *Run* > *Run 'app'*. It will take a few seconds
 
 ## Create an Android app
 
-We will kickstart your career as an Android software engineer by creating a friendly greeting application. This application will prompt the user to enter its name, and will then display a friendly welcome message.
+We will kickstart your career as an Android software engineer by creating a friendly greeting application.
+This application will prompt the user to enter their name, and will then display a friendly welcome message.
 
 Below is a list of steps we suggest you take to build this app. In addition, you will find some hints below. Try to follow the steps as well as you can. If you get stuck, there are several options:
 * Check the hints below.

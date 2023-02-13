@@ -1,41 +1,84 @@
 # EPFL Software Development Project
 
-This is a companion course taught after the Software Engineering course.
+In this companion course taught after the Software Engineering course, students build an Android app in a team following a [Scrum-like process](./process),
+rotating for the role of "Scrum Master", advised by coaches from the staff.
 
-To apply the concepts from the Software Engineering course, students form a team and build an Android app,
-following good software engineering practices and in particular the Scrum development method.
-Students play the role of a software engineer, occasionally taking on the role of the "Scrum Master".
+The course is divided into two-week Scrum sprints. Teams meet with their assigned coaches every week, either to finish a sprint and plan the next one,
+or as an intermediary meeting during a sprint to ensure everything is going well.
+During each sprint, students work on their assigned tasks, review each other’s code, and have intermediate “standup” meetings to coordinate.
 
-The key objective is to switch from engineering software on one's own to engineering software as part of a team, which is how most real-world software is built.
+The first sprint is a special one in which all teams work on the ["bootcamp"](./bootcamp), basic tasks to ensure everyone has a solid foundation for the rest of the course.
 
-
-Overall, the course works in roughly the same way each sprint:
-
-1. Work on tasks, collaborating with teammates as needed
-2. Have at least two "stand-up" meetings on a fixed schedule, to coordinate with the team
-3. Write down a summary of any issues regarding the process, reflecting on what you could have done to avoid it and how you will improve in the future
-4. Meet with members of the staff to demo your app, discuss your progress, and agree on what to do in the next sprint
+At the end of the course, teams show off their app to the entire class, and vote for their favorite apps as part of a friendly competition.
+Teams who made the highest-voted apps get prizes. The competition does not impact grades, but helps with motivation.
 
 
-At the end of the course, you will have a chance to show off your hard work to your classmates, and vote for your favorite apps as part of a friendly competition.
-The staff will award prizes to the apps with the most votes.
-This competition will not impact your grade, but it should help motivate you.
+## Objectives
+
+* Build a useful, robust, and maintainable app as part of a team
+* Plan development time effectively to release features on schedule
+* Evaluate code produced by teammates and give constructive feedback
+* Apply the Scrum methodology in a real-world scenario
+
+As part of building an app, students will learn the pitfalls of real-world software engineering,
+such as fixing code that only works on one developer’s machine, working around tooling bugs, and dealing with incomplete documentation.
 
 
-## Bootcamp
+## Prerequisites
 
-We would like you to get started with Android and to know the course's development process before you start working on your app,
-thus we have written a set of "bootcamp" guides to help you get started.
-Your team's app will start from the output of the bootcamp.
+This course requires mastery of EPFL's Software Engineering course, but does _not_ assume previous knowledge of Android programming.
 
-While you will need to learn new things as part of the project, we want you to learn only what you need and when you need it.
-This way, you will be able to make useful contributions quickly, rather than spending weeks learning new concepts that you may not end up using.
 
-Here are the steps to create an app:
+## App requirements
 
-1. Create a "Hello, world!" app by following [the intro guide](./guides/Intro.md).
-2. Add tests to your app by following [the testing guide](./guides/Testing.md).
-3. Learn GitHub features and create a repository by following [the GitHub guide](./guides/GitHub.md).
-4. Add continuous integration to your app by following [the operations guide](./guides/Operations.md).
+All apps must meet the basic requirements of **functionality** and **resilience**: 
+apps must accomplish compelling tasks for clear use cases, in a way that is easy to use and consistent with the Android experience;
+and apps must work in the face of user errors, malice, and external issues such as a lack of Internet connectivity, with a test suite to demonstrate this.
 
-All team members must also learn about the development process by reading [the development process document](./Process.md).
+To ensure that students encounter real-world challenges, and to provide fair grading conditions across teams, all apps must also meet the following requirements:
+* **Split app model**: the app must use a public cloud service, such as Google Firebase
+* **User support**: the app must have a concept of authentication, for instance using Android’s built-in Google authentication
+* **Sensor use**: the app must use at least one phone sensor, such as GPS, camera, or microphone, as part of a core feature of the app
+* **Offline mode**: the app must be usable without Internet connectivity, by paring down features compared to the normal experience
+
+Teams are not allowed to write their own backend unless they have a good reason approved in writing by the instructor.
+This is to ensure (a) the app will still work in the future without someone to set up and maintain a backend,
+and (b) the project scope is restricted enough to be feasible within the course.
+Security, privacy, and vendor lock-in are valid concerns but outside the scope of this course.
+
+Sensor usage should drive some behavior in the app, such as finding nearby points of interest with the GPS, or augmenting reality by drawing over a video feed.
+Merely getting sensor data and storing it in a field shown to users is too simple and not enough.
+
+
+## Grading
+
+The course grade is composed of an individual grade and a team grade.
+
+The individual grade is based on what each student does each sprint.
+The first sprint, in which all teams do the same tasks, does not count for the individual grade, though students still receive indicative feedback.
+The individual grade is an average of all sprint grades with equal weight, dropping the worst sprint so that students need not worry if they miss one sprint due to illness or some other emergency.
+
+The team grade is based on the app and applies to all members of the team.
+The team is graded after each third of the course, counting for 10%, 30%, and 60% of the team grade respectively.
+
+Grades are assessed per course objective as one of _Excellent_, _Good_, _OK_, _Poor_, _Very Poor_.
+These correspond to 100%, 80%, 60%, 30%, and 0%, where 60% is a passing grade.
+The final course grade is half individual grade and half team grade, though the course staff reserve the right to make exceptions for cases that warrant it.
+
+All criteria, below, are equally weighted within each grade.
+The staff will use their professional opinion to decide which grade best applies for each case.
+These criteria are provided as guidelines to help set expectations, not to argue about semantics.
+
+
+| **Individual** | **Excellent** | **Good** | **OK** | **Poor** | **Very Poor** |
+|----------------|---------------|----------|--------|----------|---------------|
+| **Teamwork** | Proactively helps the rest of the team, such as by considering overall architecture in code reviews | Helps the rest of the team when asked, such as by asking good questions in code reviews | Is responsive and keeps the rest of the team informed, such as by pointing out potential bugs in code reviews | Misunderstandings with the rest of the team, no real effort to communicate, such as code reviews that only point out glaring problems | Little to no communication with the rest of the team, no code reviews |
+| **Planning** | Merged a large improvement | Merged a reasonable improvement | Merged an incremental improvement | Nothing merged, but some work in draft pull requests | No work, not even drafts |
+| **Code** | Maintainable, robust, and documented code at the module level | Maintainable, robust, and documented code at the function level | The code is resilient to basic errors, but not easy to maintain | The code only works in the “happy path” | No code merged, or code doesn’t work at all |
+| **Testing** | Tests for all or almost all cases | Tests for most cases | Tests for success cases and some basic errors | Few tests, even for success cases | No tests at all |
+
+| **Team** | **Excellent** | **Good** | **OK** | **Poor** | **Very Poor** |
+|----------|---------------|----------|--------|----------|---------------|
+| **Functionality** | The app provides clear value to users in a way that fits the Android ecosystem | The app provides value but needs some explanation for the average Android user | The app has some useful features, but not enough to form a coherent whole | The app might be useful in niche scenarios, but only for users willing to learn how to use it | The app has too few features or is too hard to use to provide value to anyone |
+| **Resilience** | The app is resilient to all or almost all failures, including malicious inputs, and has a comprehensive test suite to demonstrate this | The app is resilient to user and environment errors but not to malice, and has a test suite that covers the non-malicious cases | The app occasionally crashes due to edge case errors, and may not have enough tests to expose these bugs | The app may corrupt data due to errors, and has few tests outside of the “happy path” | Even normal usage of the app frequently leads to crashes or data corruption, and there is no serious testing |
+| **Maintainability** | The code is modular, is clean, makes use of appropriate abstractions, and has enough documentation that another team could take over productively |The code is clean and documented at the function level, but modules are not always organized well, and another team would need some help to take over | The code is mostly clean, but not clear or documented enough for another team to take over without serious help | The code is hard to understand even at the level of functions, another team might prefer to start from scratch | The code is so hard to understand that even the current team finds it difficult |

@@ -48,6 +48,8 @@ The remaining lectures can be done in any order, here is a suggested one:
 - [Teamwork](lectures/Teamwork/)
 - [Security](lectures/Security/)
 
+We also provide a [lecture on mobile platforms](lectures/Mobile) to introduce the concepts seen in the project (see below).
+
 
 ## Exams
 
