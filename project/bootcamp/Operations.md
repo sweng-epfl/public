@@ -1,14 +1,81 @@
 # Operations
 
-This guide introduces continuous integration for your Android app, to which you then add code coverage and static analysis.
+Your Android app has some code and tests, let's now add code coverage, continuous integration, and static analysis.
 
-> :information_source: If you are using this guide to integrate Cirrus with an existing application, and not one created recently,
-> you may need to update some tool versions, such as Gradle itself and the `com.android.tools.build:gradle` package.
+
+## Code coverage with JaCoCo
+
+You will use [JaCoCo](https://www.eclemma.org/jacoco/) to measure the coverage of your tests.
+
+In your **app/build.gradle**, add the following to existing blocks:
+```
+plugins {
+    ...
+    id 'jacoco'
+}
+
+android {
+    ...
+    buildTypes {
+        ...
+        debug {
+            testCoverageEnabled true
+        }
+    }
+}
+```
+Then add the following to the end of the file:
+```
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+
+    def fileFilter = [
+        '**/R.class',
+        '**/R$*.class',
+        '**/BuildConfig.*',
+        '**/Manifest*.*',
+        '**/*Test*.*',
+        'android/**/*.*',
+    ]
+    def debugTree = fileTree(dir: "$project.buildDir/intermediates/javac/debug/classes", excludes: fileFilter)
+    def mainSrc = "$project.projectDir/src/main/java"
+
+    sourceDirectories.setFrom(files([mainSrc]))
+    classDirectories.setFrom(files([debugTree]))
+    executionData.setFrom(fileTree(dir: project.buildDir, includes: [
+            'outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec',
+            'outputs/code_coverage/debugAndroidTest/connected/*/coverage.ec'
+    ]))
+}
+
+connectedCheck {
+    finalizedBy jacocoTestReport
+}
+```
+
+> :information_source: If you use tools that generate code, such as [Hilt](https://developer.android.com/training/dependency-injection/hilt-android),
+> you should add exclusions for generated code (in Hilt's case, `'**/*Hilt*.*', 'hilt_aggregated_deps/**', '**/*_Factory.class', '**/*_MembersInjector.class'` should work)
+
+> :information_source: If you use Kotlin instead of Java, `debugTree` should use `"$project.buildDir/tmp/kotlin-classes/debug"` instead
+
+Then, sync Android Studio with Gradle using either the banner that pops up at the top of the editor or the button in the top right.
+
+Running the Gradle task `connectedCheck` will now generate a coverage report, which will be in `app/build/reports/jacoco/jacocoTestReport/html`.
+Open `index.html` with a Web browser to see the report.
 
 
 ## Creating a repo
 
 Create a repository on GitHub and push the code of your app up until now, i.e., the code and tests.
+This should be a _public_ repository to benefit from the free tiers of various services.
 
 
 ## Continuous integration with Cirrus CI
@@ -75,83 +142,6 @@ You can also go to https://cirrus-ci.com/ and log in to see all of your builds.
 > - Using an x86 emulator image and enabling KVM in the container allows for much faster execution than the default ARM emulator, even with HAXM as GitHub does on macOS Android containers
 > - The script builds the project after launching the emulator and before waiting for the emulator to have finished booting, thus the emulator boots in parallel with the build, saving time
 > - The script disables Android animations, to ensure tests do not fail because animations slow them down
-
-
-## Code coverage with JaCoCo
-
-One common and useful way to measure the usefulness of automated tests is _code coverage_.
-
-You will use JaCoCo to measure code coverage.
-
-In your **app/build.gradle**, add the following:
-
-```
-...
-plugins {
-    ...
-    id 'jacoco'
-}
-
-android {
-    ...
-    buildTypes {
-        ...
-        debug {
-            testCoverageEnabled true
-        }
-    }
-}
-
-dependencies {
-    ...
-}
-
-tasks.withType(Test) {
-    jacoco.includeNoLocationClasses = true
-    jacoco.excludes = ['jdk.internal.*']
-}
-
-task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-
-    def fileFilter = [
-        '**/R.class',
-        '**/R$*.class',
-        '**/BuildConfig.*',
-        '**/Manifest*.*',
-        '**/*Test*.*',
-        'android/**/*.*',
-        // Exclude Hilt generated classes
-        '**/*Hilt*.*',
-        'hilt_aggregated_deps/**',
-        '**/*_Factory.class',
-        '**/*_MembersInjector.class'
-    ]
-    def debugTree = fileTree(dir: "$project.buildDir/intermediates/javac/debug/classes", excludes: fileFilter)
-    def mainSrc = "$project.projectDir/src/main/java"
-
-    sourceDirectories.setFrom(files([mainSrc]))
-    classDirectories.setFrom(files([debugTree]))
-    executionData.setFrom(fileTree(dir: project.buildDir, includes: [
-            'outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec',
-            'outputs/code_coverage/debugAndroidTest/connected/*/coverage.ec'
-    ]))
-}
-
-connectedCheck {
-    finalizedBy jacocoTestReport
-}
-```
-
-> :information_source: If you use Kotlin instead of Java, `debugTree` should be `fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)` instead.
-
-Then, sync Android Studio with Gradle using either the banner that pops up at the top of the editor or the button in the top right.
-
-Whenever you run Android unit tests, from Android Studio or from the command line using `gradlew.bat connectedCheck` (Windows) or `./gradlew connectedCheck` (Linux/macOS),
-JaCoCo will now generate a coverage report, which will be in `app/build/reports/jacoco/jacocoTestReport/html`. Open `index.html` with a Web browser to see the report.
 
 
 ## Code quality with Code Climate
@@ -251,24 +241,9 @@ First, make sure that your latest commit has finished building on Cirrus CI afte
 
 In your GitHub repository, go to `Settings`, then `Branches`, then click on the `Add rule` button, and:
 - Set the name pattern to `*` (which matches all branches)
-- Enable `Require pull request reviews before merging` with value `2`
+- Enable `Require pull request reviews before merging` with value `1`
 - Enable `Require status checks to pass before merging`, and check `Run Android tests`
 - Enable `Require branches to be up to date before merging`, to prevent conflicts if multiple pull requests are merged soon after each other
 - Enable `Include administrators`, to ensure all team members have the same constraints
 
 Congrats, you're done!
-
-
-## Bonus: Badges
-
-Now that you have a continuous integration pipeline, you can show off your tests and analysis results to the world!
-
-To show the build status on Cirrus CI, add the following to any Markdown file, such as your project's "read me" file, replacing `USER` and `REPO` with your username and repository name respectively:
-
-```
-[![Build Status](https://api.cirrus-ci.com/github/USER/REPO.svg)](https://cirrus-ci.com/github/USER/REPO)
-```
-
-You can also get badges from Code Climate, by going to your repo settings there and copying the markdown from the `Badges` section.
-
-If you want even more badges, have a look at <https://shields.io/>.
