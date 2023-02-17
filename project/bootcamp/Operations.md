@@ -3,43 +3,56 @@
 This guide introduces continuous integration for your Android app, to which you then add code coverage and static analysis.
 
 > :information_source: If you are using this guide to integrate Cirrus with an existing application, and not one created recently,
-> you may need to update some tool versions, such as Gradle itself, and the `com.android.tools.build:gradle` package.
+> you may need to update some tool versions, such as Gradle itself and the `com.android.tools.build:gradle` package.
+
+
+## Creating a repo
+
+Create a repository on GitHub and push the code of your app up until now, i.e., the code and tests.
 
 
 ## Continuous integration with Cirrus CI
 
-In Software Engineering, we presented GitHub Actions as one way to do continuous integration, i.e., to run your tests automatically on a server so that you can be confident your code works not only on your own machine.
+In Software Engineering, we presented GitHub Actions as one way to do continuous integration,
+i.e., to run your tests automatically on a server so that you can be confident your code works not only on your own machine.
 
 We recommend you use Cirrus CI instead of GitHub Actions, for two main reasons: it supports faster hardware acceleration, which speeds up the builds,
 and it has no monthly limits, which means you do not need to worry about the number of builds you do.
 
-Go to [the GitHub Marketplace page for Cirrus CI](https://github.com/marketplace/cirrus-ci), scroll down and select `Public Repositories` (which is the free option), click on `Install it for free`, and confirm.
+Go to [the GitHub Marketplace page for Cirrus CI](https://github.com/marketplace/cirrus-ci), scroll down and select `Public Repositories` (which is the free option),
+click on `Install it for free`, and confirm.
 You will be asked which repositories the extension should have access to; feel free to pick either all repositories or just the one for your project.
 
-Then, add a file named `.cirrus.yml` to the root of your repository with the following contents:
+Then, add a file named `.cirrus.yml` to the root of your repository with the following contents, inspired by [the Cirrus CI examples page](https://cirrus-ci.org/examples/#android):
+```yaml
+container:
+  image: cirrusci/android-sdk:33
+  cpu: 4
+  memory: 8G
+  kvm: true
 
-```
 check_android_task:
   name: Run Android tests
-  env:
-    API_LEVEL: 30
-    TARGET: google_apis
-    ARCH: x86
-  container:
-    image: reactivecircus/android-emulator-$API_LEVEL:latest
-    kvm: true
-    cpu: 8
-    memory: 10G
-  create_device_script:
-    echo no | avdmanager create avd --force --name test --abi "$TARGET/$ARCH" --package "system-images;android-$API_LEVEL;$TARGET;$ARCH"
-  start_emulator_background_script:
-    $ANDROID_SDK_ROOT/emulator/emulator -avd test -no-window -gpu swiftshader_indirect -no-snapshot -no-audio -no-boot-anim -camera-back none
-  build_script: |
+  install_emulator_script:
+    sdkmanager --install "system-images;android-33;google_apis;x86_64"
+  create_avd_script:
+    echo no | avdmanager create avd --force
+      --name emulator
+      --package "system-images;android-33;google_apis;x86_64"
+  start_avd_background_script:
+    $ANDROID_HOME/emulator/emulator
+      -avd emulator
+      -no-audio
+      -no-boot-anim
+      -gpu swiftshader_indirect
+      -no-snapshot
+      -no-window
+      -camera-back none
+  assemble_instrumented_tests_script: |
     chmod +x gradlew
     ./gradlew assembleDebugAndroidTest
-  wait_for_emulator_script: |
-    adb wait-for-device
-    adb shell input keyevent 82
+  wait_for_avd_script:
+    adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 3; done; input keyevent 82'
   disable_animations_script: |
     adb shell settings put global window_animation_scale 0.0
     adb shell settings put global transition_animation_scale 0.0
@@ -48,46 +61,10 @@ check_android_task:
     ./gradlew check connectedCheck
 ```
 
-> :information_source: If you need a different API level, check out the supported ones and their corresponding target on [the ReactiveCircus documentation](https://github.com/ReactiveCircus/docker-android-images)
-
-> :information_source: If you encounter an issue while running on Cirrus in the `wait_for_emulator` part with the following error message `No service published for: input`,
-> you can downgrade the `API_LEVEL` to `29` and change the `TARGET` to `default`. This should resolve your problem.
-> However, you should then consider using an android emulator with API level `29` on your machine to avoid any mismatch between your local setup and continuous integration.
-> The use of an emulator with a level lower than the target of `30` will not impact functionality.
-
-Then, add the following to the end of the `settings.gradle` file at the root of your repository (or create one if there is no such file):
-
-```
-ext.isCiServer = System.getenv().containsKey("CIRRUS_CI")
-ext.isDefaultBranch = System.getenv()["CIRRUS_BRANCH"] == "master"
-ext.buildCacheHost = System.getenv().getOrDefault("CIRRUS_HTTP_CACHE_HOST", "localhost:12321")
-
-buildCache {
-    local {
-        enabled = !isCiServer
-    }
-    remote(HttpBuildCache) {
-        url = "http://${buildCacheHost}/"
-        enabled = isCiServer
-        push = isDefaultBranch
-    }
-}
-```
-
-> :information_source: Note that you should change the second line in case your default branch name is not `master`.
-
-And add the following to the end of the `gradle.properties` file at the root of your repository (again, create it if it doesn't exist):
-
-```
-org.gradle.daemon=true
-org.gradle.caching=true
-org.gradle.parallel=true
-org.gradle.configureondemand=true
-org.gradle.jvmargs=-Dfile.encoding=UTF-8
-```
-
-> :information_source: These last two file editions allow Cirrus CI to cache your builds, which makes them faster,
-> and requires fewer resources from Cirrus CI (as they are providing these resources for free, being a considerate user is important).
+Then, follow the instructions to add a [build cache](https://cirrus-ci.org/examples/#build-cache)
+by appending to (or creating) the `settings.gradle` and `gradle.properties` files at the root of your repository.
+This allows Cirrus CI to cache your builds, which makes them faster,
+and requires fewer resources from Cirrus CI (as they are providing these resources for free, being a considerate user is important).
 
 Commit these changes and push, and you should now see a yellow circle next to your commit, on which you can click to get more information.
 This circle will turn into a green checkmark or a red cross depending on whether your build succeeds or fails.
@@ -106,7 +83,7 @@ One common and useful way to measure the usefulness of automated tests is _code 
 
 You will use JaCoCo to measure code coverage.
 
-In your **app** `build.gradle`, add the following:
+In your **app/build.gradle**, add the following:
 
 ```
 ...
