@@ -77,6 +77,10 @@ Open `index.html` with a Web browser to see the report.
 Create a repository on GitHub and push the code of your app up until now, i.e., the code and tests.
 This should be a _public_ repository to benefit from the free tiers of various services.
 
+**Important**: Make sure your commits on GitHub are properly attributed to your username.
+If that is not the case, consult [the documentation](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user)
+and fix it now.
+
 
 ## Continuous integration with Cirrus CI
 

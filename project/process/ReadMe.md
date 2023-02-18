@@ -43,6 +43,8 @@ and if you under-estimate, you will need to spend time splitting your task into 
 
 Once all tasks for the current item have been created and assigned, do the same with the next item in the Product Backlog, until all team members have a full sprint’s worth of work.
 
+_(If you'd like, you can "pair program" on tasks, but there must be exactly one person ultimately responsible for each task, and the distribution of responsibilities must be balanced across tasks)_
+
 
 ## Working on a task
 
