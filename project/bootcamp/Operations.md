@@ -93,19 +93,19 @@ You will be asked which repositories the extension should have access to; feel f
 Then, add a file named `.cirrus.yml` to the root of your repository with the following contents, inspired by [the Cirrus CI examples page](https://cirrus-ci.org/examples/#android):
 ```yaml
 container:
-  image: cirrusci/android-sdk:33
+  image: cirrusci/android-sdk:30
   cpu: 4
-  memory: 8G
+  memory: 16G
   kvm: true
 
 check_android_task:
   name: Run Android tests
   install_emulator_script:
-    sdkmanager --install "system-images;android-33;google_apis;x86_64"
+    sdkmanager --install "system-images;android-30;google_apis;x86"
   create_avd_script:
     echo no | avdmanager create avd --force
       --name emulator
-      --package "system-images;android-33;google_apis;x86_64"
+      --package "system-images;android-30;google_apis;x86"
   start_avd_background_script:
     $ANDROID_HOME/emulator/emulator
       -avd emulator
@@ -124,12 +124,25 @@ check_android_task:
     adb shell settings put global window_animation_scale 0.0
     adb shell settings put global transition_animation_scale 0.0
     adb shell settings put global animator_duration_scale 0.0
+  screen_record_background_script:
+    for n in $(seq 1 20); do adb exec-out screenrecord --time-limit=180 --output-format=h264 - > $n.h264; done
   check_script:
     ./gradlew check connectedCheck
+  always:
+    wait_for_screenrecord_script:
+      pkill -2 -x adb
+      sleep 2
+    screenrecord_artifacts:
+      path: "*.h264"
 ```
 
+> :information_source: This script uploads recordings of the emulator screen as Cirrus CI artifacts, letting you see why tests fail!
+> However, these recordings are in an uncommon format, your favorite video player might not be able to read them. `ffplay` definitely works
+> (and is also available on Windows via the Windows Subsystem for Linux), you could also convert them using software such as `ffmpeg`.
+
 Then, follow the instructions to add a [build cache](https://cirrus-ci.org/examples/#build-cache)
-by appending to (or creating) the `settings.gradle` and `gradle.properties` files at the root of your repository.
+by appending to (or creating) the `settings.gradle` and `gradle.properties` files at the root of your repository, **but, importantly,**
+make sure the comparison in the former of `CIRRUS_BRANCH` is done against the actual name of your main branch, which might be `main`, `master`, `dev`, or whatever you're using.
 This allows Cirrus CI to cache your builds, which makes them faster,
 and requires fewer resources from Cirrus CI (as they are providing these resources for free, being a considerate user is important).
 
