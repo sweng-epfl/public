@@ -129,7 +129,7 @@ check_android_task:
   check_script:
     ./gradlew check connectedCheck
   always:
-    wait_for_screenrecord_script:
+    wait_for_screenrecord_script: |
       pkill -2 -x adb
       sleep 2
     screenrecord_artifacts:
@@ -137,6 +137,7 @@ check_android_task:
 ```
 
 > :information_source: This script uploads recordings of the emulator screen as Cirrus CI artifacts, letting you see why tests fail!
+> Android limits each recording to 3 minutes, so you will get multiple such recordings if your tests take longer than that.
 > However, these recordings are in an uncommon format, your favorite video player might not be able to read them. `ffplay` definitely works
 > (and is also available on Windows via the Windows Subsystem for Linux), you could also convert them using software such as `ffmpeg`.
 
@@ -155,47 +156,38 @@ You can also go to https://cirrus-ci.com/ and log in to see all of your builds.
 > - Using an x86 emulator image and enabling KVM in the container allows for much faster execution than the default ARM emulator, even with HAXM as GitHub does on macOS Android containers
 > - The script builds the project after launching the emulator and before waiting for the emulator to have finished booting, thus the emulator boots in parallel with the build, saving time
 > - The script disables Android animations, to ensure tests do not fail because animations slow them down
+> - The script uses Android 30 because the Android 33 image seems to have stability issues, as multiple system components cause "not responding" dialogs right after boot
 
 
 ## Code quality with Code Climate
 
-Code Climate is an automated code review tool that ensures your projects complies with a predefined set of rules and best practices.
+Code Climate is an automated code review tool that ensures your projects complies with good software engineering practices, and lets you visualize the code coverage of pull requests without having to build them locally..
 
-You will use Code Climate to ensure that your code follows good software engineering practices, and to visualize code coverage of all builds, including pull requests, without having to run them locally.
-
-Go to the [Code Climate](https://codeclimate.com/quality/) website, click on `Get Started`, and authorize the login with your GitHub account.
+Go to the [Code Climate](https://codeclimate.com/quality/) website, click on `Sign up with GitHub` further down the page, and authorize the login with your GitHub account.
 Choose `Open Source`, then `Add a repository`, and authorize Code Climate to access your public GitHub repositories.
 Then, click on the `Add repo` button next to the repository you're using.
 
 Now, while viewing your repository on Code Climate, go to `Repo Settings` then to `Test coverage`. Copy the `Test reporter ID`.
-Go to [Cirrus CI](https://cirrus-ci.com), select your repository, click on the settings wheel in the top right, and paste the test reporter ID under `Secured Variables`, then click the `Encrypt` button.
+Go to your repository page on Cirrus CI, click on the settings wheel in the top right, and paste the test reporter ID under `Secured Variables`, then click the `Encrypt` button.
 Copy the resulting value.
 
 > :information_source: Despite the "ENCRYPTED[...]" name, the value is not itself an encrypted value, but a unique ID allowing Cirrus CI to know which variable you are referring to.
 > Thus, you do not need to worry about putting this value in a public configuration file, as no one can "decrypt" it except Cirrus CI's own servers.
 
-In your repository's `.cirrus.yml` file, add the encrypted value in the environment variables (replacing `ENCRYPTED[abcdefg]` by the actual value you just copied, including the `ENCRYPTED[]` wrapper):
-
+In your repository's `.cirrus.yml` file, add an `env` block at the very beginning, before the `task` block,
+with the encrypted value in the environment variables (replacing `ENCRYPTED[abcdefg]` by the actual value you just copied, including the `ENCRYPTED[]` wrapper):
 ```
-check_android_task:
-  ...
-  env:
-    ...
-    CC_TEST_REPORTER_ID: ENCRYPTED[abcdefg]
-  ...
+env:
+  CC_TEST_REPORTER_ID: ENCRYPTED[abcdefg]
 ```
-
 Then add the following just after `disable_animations_script`:
-
 ```
   prepare_codeclimate_script: |
     curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     chmod +x ./cc-test-reporter
     ./cc-test-reporter before-build
 ```
-
 And the following just after `check_script`:
-
 ```
   report_codeclimate_script: |
     export JACOCO_SOURCE_PATH=app/src/main/java/
@@ -204,7 +196,6 @@ And the following just after `check_script`:
 ```
 
 To make sure Code Climate does not include the tests themselves in coverage, which would bias the results, create a file named `.codeclimate.yml` at the root of your repository with the following contents:
-
 ```
 exclude_patterns:
 - "**/test/"
@@ -225,38 +216,44 @@ This ensures that your pull requests maintain 80% code coverage at all times, wh
 > You may choose to remove this check until you have enough code that can be covered, at which point you will put it back and never remove it again.
 
 
-## Android Lint in Cirrus CI
+## Tests and Lint in Cirrus CI
 
-Let's add another form of static analysis to your project, the built-in Android "linter".
+Let's enable Cirrus to run the built-in Android "linter", which is another form of static analysis to show potential issues, and display its output as well as failed tests.
 The Android linter warns you about common issues in your code. For instance, if you hard-code the user interface text, the linter will warn you that you should use resources instead,
 so that you can translate the user interface to another language easily.
 
-At the end of your repo's `.cirrus.yml` file, add the following:
-
+In your `.cirrus.yml` file, immediately after the `report_codeclimate_script` block, add the following block:
 ```
   lint_script:
     ./gradlew lintDebug
-  always:
-    android-lint_artifacts:
+```
+And after the `screenrecord_artifacts` block, add the following block:
+
+```
+    android_lint_artifacts:
       path: ./app/build/reports/lint-results-debug.xml
-      type: text/xml
       format: android-lint
+    test_artifacts:
+      path: "./app/build/test-results/**/*.xml"
+      format: junit
+    androidtest_artifacts:
+      path: "./app/build/outputs/**/*.xml"
+      format: junit
 ```
 
-Commit and push. You will now be able to see Android's linter output directly from GitHub, in the detailed output of the Cirrus CI check when clicking on the status icon next to a commit and in pull requests.
+Commit and push. You will now be able to see linter and tests output within GitHub, in the detailed output of the Cirrus CI check when clicking on the status icon next to a commit and in pull requests.
 
 
-## Pull request checks
+## Branch protection in GitHub
 
 Finally, let's make sure nobody can accidentally merge a pull request that does not pass automated and manual checks.
 
 First, make sure that your latest commit has finished building on Cirrus CI after your last push, and that it builds correctly.
 
-In your GitHub repository, go to `Settings`, then `Branches`, then click on the `Add rule` button, and:
+In your GitHub repository, go to `Settings`, then `Branches`, then click on the `Add branch protection rule` button, and:
 - Set the name pattern to `*` (which matches all branches)
-- Enable `Require pull request reviews before merging` with value `1`
+- Enable `Require pull request reviews before merging` with `1` approval
 - Enable `Require status checks to pass before merging`, and check `Run Android tests`
-- Enable `Require branches to be up to date before merging`, to prevent conflicts if multiple pull requests are merged soon after each other
-- Enable `Include administrators`, to ensure all team members have the same constraints
+- Enable `Do not allow bypassing the above settings`, to ensure all team members have the same constraints
 
 Congrats, you're done!
