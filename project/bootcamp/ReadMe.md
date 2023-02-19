@@ -12,7 +12,7 @@ This way, you will be able to make useful contributions quickly, rather than spe
 
 **Each team member, individually**, must:
 
-1. Read the [development process description](../process) to understand how the project will work
+1. Read the [course description](../ReadMe.md), including the [development process description](../process), to understand how the course will work
 2. Create a "Hello, world!" app by following [the intro guide](./Intro.md).
 3. Add tests to the app by following [the testing guide](./Testing.md).
 4. Add continuous integration to the app by following [the operations guide](./Operations.md).
