@@ -6,7 +6,7 @@ A CI automates the build of your application: you can define several actions to 
 
 ## Forking the repo
 
-To get started, fork [this](https://github.com/sweng-epfl/sample-app-without-ci) repository, which contains a sample Android application written in Kotlin. We will be setting up a Github Actions pipeline for it. You can find more information on how to fork a repository [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+To get started, use [this](./sample-app-without-ci) repository, which contains a sample Android application written in Kotlin. We will be setting up a Github Actions pipeline for it. You can find more information on how to fork a repository [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 ## Setting up your build
 
