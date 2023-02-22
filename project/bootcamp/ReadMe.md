@@ -23,4 +23,4 @@ This way, you will be able to make useful contributions quickly, rather than spe
 
 TBD
 
-If you encounter any problems, your first reaction should be to check on internet if you can find a fix. That is what any staff member would first suggest if you ask for help. There are a lot of tutorials when it comes to Android app development, and StackOverflow remains a good source of answers. If you cannot find a solution yourself, ask on the course forum.
+If you encounter any problems, your first reaction should be to look for a solution or workaround on the Internet. That is what any staff member would first suggest if you ask for help. There are a lot of tutorials when it comes to Android app development, and StackOverflow remains a good source of answers. If you cannot find a solution yourself, ask on the course forum.
