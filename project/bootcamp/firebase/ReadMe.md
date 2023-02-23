@@ -1,4 +1,4 @@
-# Firebase Bootcamp - SDP 2023
+# Firebase
 
 ## Introduction
 
