@@ -7,10 +7,12 @@ Your team's app will start from the output of the bootcamp.
 While you will need to learn new things as part of the project, we want you to learn only what you need and when you need it.
 This way, you will be able to make useful contributions quickly, rather than spending weeks learning new concepts that you may not end up using.
 
+If you encounter any problems, your first reaction should be to look for a solution or workaround on the Internet. That is what any staff member would first suggest if you ask for help. There are a lot of tutorials when it comes to Android app development, and StackOverflow remains a good source of answers.
+
 
 ## First week
 
-**Each team member, individually**, must:
+Each team member, individually, must:
 
 1. Read the [course description](../ReadMe.md), including the [development process description](../process), to understand how the course will work
    (you do not need to create a GitHub team repo and project yet, only know what we expect you to do later)
@@ -21,6 +23,13 @@ This way, you will be able to make useful contributions quickly, rather than spe
 
 ## Second week
 
-TBD
+Divide the following tasks among your team, each of which introduces one concept:
 
-If you encounter any problems, your first reaction should be to look for a solution or workaround on the Internet. That is what any staff member would first suggest if you ask for help. There are a lot of tutorials when it comes to Android app development, and StackOverflow remains a good source of answers. If you cannot find a solution yourself, ask on the course forum.
+- [Firebase](./firebase/ReadMe.md)
+- [Fragments](./Fragments.md)
+- [Google authentication](./GoogleAuthentication.md)
+- [Kotlin and Jetpack Compose](./Kotlin-Jetpack.md)
+- [Google Maps](./Maps.md)
+- [Web APIs](./WebAPI.md)
+
+Each task should result in a pull request to the team repository, with a code review from a team member. Whether you actually merge the pull request depends on whether you think the task will be useful for your app at this stage, you could also close it and come back to it later.
