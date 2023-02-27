@@ -4,6 +4,22 @@ Google Maps is an API that you are likely to use in your application. It can be 
 # API key
 Before being able to use Google Maps in your application, you will need to create an API key for Google Maps. You will find [here](https://developers.google.com/maps/documentation/android-sdk/get-api-key) a tutorial on how to set up the API key.
 
+Unfortunately, Google asks for billing information to generate this API key but there is a workaround:
+
+First, go to your project's webpage and get its ID for later (go to this page and select the correct project, or create one): 
+https://console.cloud.google.com/welcome
+
+Then, go to this page (by replacing "YOUR-PROJECT-ID" with the correct id) and click "ACTIVATE".
+This will load a page asking you to turn on billing, click on "CANCEL":
+
+https://console.cloud.google.com/marketplace/product/google/maps-android-backend.googleapis.com?project=YOUR-PROJECT-ID
+
+Finally, go to this page (still replacing "YOUR-PROJECT-ID" with the correct id) and click "CREATE CREDENTIALS", then select "API key". This will generate an API key that you can now use without needing to give Google your billing information:
+
+https://console.cloud.google.com/apis/credentials?project=YOUR-PROJECT-ID
+
+The newly generated API key should appear on this same page.
+
 After creating the key, you can create you Google Maps fragment or activity in your app, and you will need to add the API key in your app's manifest.
 
 # Basic exercise
