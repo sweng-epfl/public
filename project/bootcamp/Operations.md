@@ -255,7 +255,7 @@ Finally, let's make sure nobody can accidentally merge a pull request that does 
 First, make sure that your latest commit has finished building on Cirrus CI after your last push, and that it builds correctly.
 
 In your GitHub repository, go to `Settings`, then `Branches`, then click on the `Add branch protection rule` button, and:
-- Set the name pattern to `*` (which matches all branches)
+- Write the name of your main branch
 - Enable `Require pull request reviews before merging` with `1` approval
 - Enable `Require status checks to pass before merging`, and check `Run Android tests`
 - Enable `Do not allow bypassing the above settings`, to ensure all team members have the same constraints
