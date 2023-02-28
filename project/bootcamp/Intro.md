@@ -52,7 +52,7 @@ Under `Gradle Scripts` in the file explorer, you will find the following:
 
 Open now the **app/build.gradle**. In this file, please modify the following settings if they are not already at these values:
 - `compileSdk 33`
-- `minSdk 24`
+- `minSdk 28`
 - `targetSdk 33`
 - In the *dependencies*, multiple lines may be yellow, indicating that newer versions exist.
   You can bump the versions using the `Alt`+`Enter` shortcut, select `Change to x.y.z`.
