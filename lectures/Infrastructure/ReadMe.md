@@ -535,7 +535,7 @@ Git has a `log` command to show the history, and `git log --oneline` will show o
 A good summary should be short and in the imperative mood.
 For instance:
 - "Fix bug #145"
-- *Add an HD version of the wallpaper"
+- "Add an HD version of the wallpaper"
 - "Support Unicode 14.0"
 
 The details should describe _what_ the changes do and _why_ you did them, but not _how_.
