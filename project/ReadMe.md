@@ -72,10 +72,11 @@ These criteria are provided as guidelines to help set expectations, not to argue
 
 | **Individual** | **Excellent** | **Good** | **OK** | **Poor** | **Very Poor** |
 |----------------|---------------|----------|--------|----------|---------------|
-| **Teamwork** | Proactively helps the rest of the team, such as by considering overall architecture in code reviews | Helps the rest of the team when asked, such as by asking good questions in code reviews | Is responsive and keeps the rest of the team informed, such as by pointing out potential bugs in code reviews | Misunderstandings with the rest of the team, no real effort to communicate, such as code reviews that only point out glaring problems | Little to no communication with the rest of the team, no code reviews |
+| **Professionalism** | Proactively and professionally helping the team | Helping the team when needed, in a professional manner | Keeping the team informed, but not always early enough or in a professional manner | Misunderstandings with the rest of the team, subpar communication skills | Little to no communication with the rest of the team |
 | **Planning** | Merged a large improvement | Merged a reasonable improvement | Merged an incremental improvement | Nothing merged, but some work in draft pull requests | No work, not even drafts |
 | **Code** | Maintainable, robust, and documented code at the module level | Maintainable, robust, and documented code at the function level | The code is resilient to basic errors, but not easy to maintain | The code only works in the “happy path” | No code merged, or code doesn’t work at all |
-| **Testing** | Tests for all or almost all cases | Tests for most cases | Tests for success cases and some basic errors | Few tests, even for success cases | No tests at all |
+| **Tests** | Tests for all or almost all cases | Tests for most cases | Tests for success cases and some basic errors | Few tests, even for success cases | No tests at all |
+| **Reviews** | Thorough code reviews that consider the architecture and future evolution of the codebase | Deep code reviews that consider the context of the code within the codebase | Code reviews that keep everyone informed and point out potential bugs | Code reviews that don't say much, only pointing out glaring problems | No code reviews |
 
 | **Team** | **Excellent** | **Good** | **OK** | **Poor** | **Very Poor** |
 |----------|---------------|----------|--------|----------|---------------|
