@@ -105,11 +105,11 @@ container:
 check_android_task:
   name: Run Android tests
   install_emulator_script:
-    sdkmanager --install "system-images;android-30;google_apis;x86"
+    sdkmanager --install "system-images;android-30;google_apis_playstore;x86"
   create_avd_script:
     echo no | avdmanager create avd --force
       --name emulator
-      --package "system-images;android-30;google_apis;x86"
+      --package "system-images;android-30;google_apis_playstore;x86"
   start_avd_background_script:
     $ANDROID_HOME/emulator/emulator
       -avd emulator
