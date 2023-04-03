@@ -1,3 +1,20 @@
+# Notes from grading
+
+**Question 1**: Avoid stating unrealistic assumptions, such as the use of Model-View-Presenter or server-side prefetching.
+
+**Question 2**: Remember compatibility exists at both the source and binary levels, changing the return type is never binary compatible
+
+**Question 3**: Abstraction leaks have nothing to do with information leaks, they are about "is this at the right level of abstraction?".
+I/O is anything Input/Output-related, such as networking, disks, and so on, not only "the disk might be too full".
+Checked exceptions means that it's not the code's fault but expected errors such as potential I/O or backend issues,
+not anything related to compile-time vs run-time, easy vs hard to handle, or precise vs abstract definitions.
+
+**Question 4**: Use design patterns! They are well-known solutions to well-known problems, in real life if you try to submit spaghetti code it will most likely
+be rejected by your teammates and you will have wasted time.
+
+**Question 5**: No need to track users and attempts in separate data structures, a map from users to number of attempts is the only state needed.
+
+
 # Software Engineering - Exam 2
 
 Grading will be done on the state of the `exam-GASPAR` repository at **12:00 on Friday, November 19, 2021**, and access to this repo will be terminated at that point.
