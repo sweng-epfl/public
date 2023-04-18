@@ -291,7 +291,7 @@ But someone whose native language is read right to left, such as Arabic, might s
 This is rather unfortunate, but it is the way human communication works: people have implicit expectations that are sometimes at odds. Software thus needs to adapt.
 Another example is putting "Vincent van Gogh" in a list of people sorted by last name. Is Vincent under "G" for "Gogh" or under "V" for "van Gogh"?
 That depends on who you ask: Dutch people expect the former, Belgians the latter. Software needs to adapt, otherwise at least one of these two groups will be confused.
-Using the culture-specific format for dates is another example: "10/01" mean very different dates to an American and to someone from the rest of the world.
+Using the culture-specific format for dates is another example: "10/01" mean very different dates to someone from the USA and to someone from the rest of the world.
 
 One important part of localization is people's names.
 Many software systems out there are built with odd assumptions about people's names, such as "they are composed entirely of letters", or "family names have at least 3 letters", or simply "family names are something everyone has".

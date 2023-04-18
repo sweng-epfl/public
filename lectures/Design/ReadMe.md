@@ -332,10 +332,10 @@ Keep in mind that the goal is to discuss system design, not to adhere to specifi
 As long as everyone agrees on what each diagram element means, whether or not you adhere to a specific convention such as UML is irrelevant.
 
 Beware of the phenomenon known as "[cargo cult programming](https://en.wikipedia.org/wiki/Cargo_cult_programming)".
-The idea of a "cargo cult" originated in remote islands used by American soldiers as bases during wars.
-These islands were home to native populations who had no idea what planes were, but who realized that when Americans did specific gestures involving military equipment,
+The idea of a "cargo cult" originated in remote islands used by USA soldiers as bases during wars.
+These islands were home to native populations who had no idea what planes were, but who realized that when soldiers did specific gestures involving military equipment,
 cargo planes full of supplies landed on the islands. They naturally hypothesized that if they, the natives, could replicate these same gestures, more planes might land!
-Of course, from our point of view we know this was useless because they got the correlation backwards: Americans were doing landing gestures because they knew planes were coming, not the other way around.
+Of course, from our point of view we know this was useless because they got the correlation backwards: soldiers were doing landing gestures because they knew planes were coming, not the other way around.
 But the natives did not know that, and tried to get cargo planes to land.
 Some of these cults lasted for longer than they should have, and their modern-day equivalent in programming is engineers who design their system
 "because some large company, like Google or Microsoft, does it that way" without the knowledge nor the understanding of why the large company does it that way.

@@ -83,7 +83,7 @@ Consider a program that takes as input a list of students with their grades, and
 This is a good example of software automating a task that would be lengthy and error-prone to perform manually.
 The software turns a line in the input such as `Alice, 9/10` into an email sent to Alice informing her of her grade.
 Does it still work if, instead of having a name using English letters such as Alice, the student is named 狄仁傑 or محمد بن موسی خوارزمی?
-What if the student has an American-style name such as "Bob, Jr", which includes a comma that is also used by the software to separate names and grades in the input?
+What if the student has an USA-style name such as "Bob, Jr", which includes a comma that is also used by the software to separate names and grades in the input?
 What happens if, after sending the first few emails, the computer the software is running on loses its Internet connection? Do emails get lost? Does running the software again result in duplicate emails?
 Can the software handle notifying users in another language than English?
 For instance, in French, salutations are often gender-specific, with the English "Dear Alice"/"Dear Bob" becoming the French "_Chère_ Alice"/"_Cher_ Bob". Can the software handle this?
