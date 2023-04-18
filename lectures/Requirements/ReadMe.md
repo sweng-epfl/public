@@ -293,7 +293,7 @@ Another example is putting "Vincent van Gogh" in a list of people sorted by last
 That depends on who you ask: Dutch people expect the former, Belgians the latter. Software needs to adapt, otherwise at least one of these two groups will be confused.
 Using the culture-specific format for dates is another example: "10/01" mean very different dates to someone from the USA and to someone from the rest of the world.
 
-One important part of localization is people's names.
+One important part of internationalization is people's names.
 Many software systems out there are built with odd assumptions about people's names, such as "they are composed entirely of letters", or "family names have at least 3 letters", or simply "family names are something everyone has".
 In general, [programmers believe many falsehoods about names](https://shinesolutions.com/2018/01/08/falsehoods-programmers-believe-about-names-with-examples/),
 which leads to a lot of pain for people who have names that do not comply to those falsehoods, such as people with hyphens or apostrophes in their names, people whose names are one or two letters long,
