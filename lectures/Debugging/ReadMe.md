@@ -216,7 +216,7 @@ But now that you know you forgot to plug in your phone, you can attack the root 
 You could in theory continue asking "why?", but it stops being helpful after a few times.
 In this case, perhaps the "real" root cause is that you forget things often, but you cannot easily fix that.
 
-At a high level, there are three steps to debugging: reproduce the bug, isolate the root cause, and debug.
+At a high level, there are three steps to debugging: reproduce the bug, isolate it, and debug it.
 
 Reproducing the bug means finding the conditions under which it appears:
 - What environment?
