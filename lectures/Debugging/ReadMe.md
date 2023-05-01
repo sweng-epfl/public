@@ -24,6 +24,7 @@ Take a look at [planets.py](exercises/lecture/planets.py) in the in-lecture exer
 Do you find it easy to read and understand? Probably not.
 Did you spot the fact that sorting doesn't work because the code uses a function that returns the sorted list, but does not use its return value, rather than an in-place sort?
 It's a lot harder to spot that bug when you have to use so much brain power just to read the code.
+(You can find more concrete issues in [the solution](exercises/solutions/lecture/planets.md))
 
 Unfortunately, hard-to-read code doesn't only happen in exercises within course lecture notes.
 Consider the following snipped from the ScalaTest framework:
