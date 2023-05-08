@@ -24,12 +24,4 @@ public final class Basics {
         // TODO
         return CompletableFuture.completedFuture(null);
     }
-
-    /** Prints to `System.out` the weather given by `Weather.all`,
-        unless it takes more than 2 seconds,
-        in which case it prints the weather given by `Weather.today` prefixed with "Today: " */
-    public static CompletableFuture<Void> tryPrintAllWeather() {
-        // TODO (hint: remember that CompletableFuture's documentation includes methods inherited from CompletionStage)
-        return CompletableFuture.completedFuture(null);
-    }
 }

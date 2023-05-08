@@ -168,9 +168,12 @@ The resulting code is poorly structured. Just because something is simple does n
 
 Instead of overly-simple callbacks, modern code uses _futures_.
 A future is an object that represents an operation in one of three states: in progress, finished successfully, or failed.
+It is a kind of "box" that encapsulates a bit of code that may or may not have started executing yet.
 
 In Java, futures are represented with the `CompletableFuture<T>` class, where T is the type of the result.
-Since `void` is not a type, Java has the type `Void` with a capital `V` to indicate no result, thus an asynchronous operation that would return `void` if it was synchronous instead returns a `CompletableFuture<Void>`.
+For instance, a synchronous operation could return `String`, and an equivalent asynchronous operation would return `CompletableFuture<String>` instead.
+Since `void` is not a type, Java has the type `Void` with a capital `V` to indicate no result,
+thus an asynchronous operation that would return `void` if it was synchronous instead returns a `CompletableFuture<Void>`.
 `CompletableFuture`s can be composed with synchronous operations and with asynchronous operations using various methods.
 
 ### Composing `CompletableFuture`s
@@ -280,7 +283,7 @@ Another reason to create futures is when adapting old asynchronous code that use
 
 ---
 #### Exercise
-Take a look at the four methods in [`Basics.java`](exercises/lecture/src/main/java/Basics.java), and complete them one by one, based on the knowledge you've just acquired.
+Take a look at the three methods in [`Basics.java`](exercises/lecture/src/main/java/Basics.java), and complete them one by one, based on the knowledge you've just acquired.
 You can run `App.java` to see if you got it right.
 
 <details>
@@ -290,7 +293,6 @@ You can run `App.java` to see if you got it right.
 - Printing today's weather is done by composing `Weather.today` with `System.out.println` using `thenAccept`
 - Uploading today's weather is done by composing `Weather.today` with `Server.upload` using `thenCompose`
 - Printing either weather is done using `acceptEither` on two individual futures, both of which use `thenApply` to prefix their results, with `System.out.println` as the composition operation
-- Finally, `Weather.all` should be composed with `orTimeout` and `exceptionallyCompose` to use `Weather.today` as a backup
 
 We provide a [solution example](exercises/solutions/lecture/src/main/java/Basics.java).
 
@@ -385,6 +387,7 @@ Instead, cancellation should be _cooperative_: the operation you want to cancel 
 
 Some frameworks have built-in support for cancellation, but in Java you have to do it yourself.
 One way to do it is to pass around an `AtomicBoolean` value, which serves as a "box" to pass by reference a flag indicating whether a future should be canceled.
+(The fact it is atomic is irrelevant here, we just need some way to pass a reference to a Boolean value)
 Because this is shared state, you must be disciplined in its use: only write to it outside of the future, and only read from it inside of the future.
 The computation in the future should periodically check whether it should be canceled, and if so throw a cancellation exception instead of continuing:
 ```java

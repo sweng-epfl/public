@@ -22,14 +22,4 @@ public final class Basics {
         return Weather.today().thenApply(w -> "Today: " + w)
                       .acceptEither(Weather.yesterday().thenApply(w -> "Yesterday: " + w), System.out::println);
     }
-
-    /** Prints to `System.out` the weather given by `Weather.all`,
-        unless it takes more than 2 seconds,
-        in which case it prints the weather given by `Weather.today` prefixed with "Today: " */
-    public static CompletableFuture<Void> tryPrintAllWeather() {
-        return Weather.all()
-                      .orTimeout(2, TimeUnit.SECONDS)
-                      .exceptionallyCompose(e -> Weather.today().thenApply(w -> "Today: " + w))
-                      .thenAccept(System.out::println);
-    }
 }
