@@ -2,7 +2,7 @@
 
 **Theoretical exercises**:
 
-- [Q1: Design Pattern](Q1.md)
+- [Q1: Design Patterns](Q1.md)
 - [Q2: API Design](Q2.md)
 - [Q3: Modular Design](Q3.md)
 
