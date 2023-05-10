@@ -16,9 +16,6 @@ public class App {
         System.out.println("- Printing some weather");
         Basics.printSomeWeather().join();
 
-        System.out.println("- Printing all weather?");
-        Basics.tryPrintAllWeather().join();
-
         System.out.println();
         System.out.println("--- Advanced ---");
 
