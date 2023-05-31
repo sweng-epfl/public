@@ -79,7 +79,7 @@ db.child(PHONE_NB).setValue(EMAIL)
 val future = CompletableFuture<String>()
 
 db.child(phone.text.toString()).get().addOnSuccessListener {
-  if (it.value == null) future.completeExceptionally(NoSuchFieldException())
+  if (it.value == null) future.completeExceptionally(NoSuchElementException())
   else future.complete(it.value as String)
 }.addOnFailureListener {
     future.completeExceptionally(it)
