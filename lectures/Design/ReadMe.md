@@ -196,7 +196,7 @@ Instead, one can inject a "comparison" function as a parameter of the sort funct
 ```scala
 def sort(items, less_than) = {
   ...
-  if (less_than(items(i), items(j))
+  if (less_than(items(i), items(j)))
     ...
 }        
 ```
