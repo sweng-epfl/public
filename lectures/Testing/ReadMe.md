@@ -532,8 +532,15 @@ when(client.get(anyString())).thenReturn("Hello");
 // there are also methods to throw an exception, check that specific calls were made, etc.
 ```
 
+It is typically useful to write at least a few end-to-end tests to ensure your "glue" code and primitives do not have obvious issues.
+You may want to _stress_ test your modules by sending a lot of requests to simulate periods of high activity, which could reveal bugs related to concurrency.
+If you do not know exactly what end-to-end test to write, consider at least a _smoke_ test: if you poke the module, it should not start leaking smoke.
+A smoke test is a test that checks some basic property that any correct implementation should have, such as "not crashing when launched", and can help signal deeper issues quickly.
+For instance, if you are writing a compiler, the compiled form of a "hello world" program should be a file with more than 0 bytes.
+The exact shape of the file is left to specific unit tests, but if running your compiler doesn't produce a file or produces an empty one, you know something is wrong.
+
 There are other kinds of tests we have not talked about in this lecture, such as performance testing, accessibility testing, usability testing, and so on.
-We will see some of them in future lectures.
+Some of them are covered in other lectures.
 
 
 ## Summary
