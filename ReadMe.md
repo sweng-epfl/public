@@ -55,6 +55,8 @@ We also provide a [lecture on mobile platforms](lectures/Mobile) to introduce th
 
 For example purposes, we provide [past exams](exams/).
 
+Lecturers should read the [exams documentation](documentation/Exams.md).
+
 
 ## Project
 
