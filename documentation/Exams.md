@@ -126,7 +126,7 @@ Statements
 Code
 - All classes have documentation indicating whether they should or should not be modified and how (see below)
 - All methods to be implemented by students are stubbed as `throw new UnsupportedOperationException("TODO");`, not empty, so that tests always fail on unimplemented code
-- All references to classes in code documentation use @link so that an IDE can point out mistakes in such references
+- All references to classes in code documentation use `@link` so that an IDE can point out mistakes in such references
 - All methods clearly describe whether `null` is allowed for each parameter and for the return value, as well as for sub-values such as list items
 - All methods have `@throws` for any exception they should throw, including unchecked ones, with the exact constraints
   - For async methods, make it clear if this is inside a Future or directly outside of it
@@ -153,18 +153,18 @@ These must be class documentation, not file headers as some IDEs collapse those.
 For `build.gradle`, provided "sanity check" tests, and any source file students shouldn't touch:
 
 ```
-// !!!!!!!!!!!!!!!!!!!!!!
-// DO NOT TOUCH THIS FILE
-// !!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!
+DO NOT TOUCH THIS FILE
+!!!!!!!!!!!!!!!!!!!!!!
 ```
 
 For provided example tests, or other provided examples such as a "main" class:
 
 ```
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// You CAN edit everything in this file
-// You CAN delete this file
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+You CAN edit everything in this file
+You CAN delete this file
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 
 For test files student need to fill (note the placeholder):
@@ -180,11 +180,11 @@ You MUST NOT rename or delete this file
 For all other source files:
 
 ```
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// You CAN change the bodies of existing methods and constructors
-// You CAN add new `private` members
-// You MUST NOT add interface implementations or new non-`private` members, unless explicitly instructed to do so
-// You MUST NOT edit the names, parameters, checked exceptions, or return types of existing members
-// You MUST NOT delete existing members
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+You CAN change the bodies of existing methods and constructors
+You CAN add new `private` members
+You MUST NOT add interface implementations or new non-`private` members, unless explicitly instructed to do so
+You MUST NOT edit the names, parameters, checked exceptions, or return types of existing members
+You MUST NOT delete existing members
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
