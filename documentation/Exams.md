@@ -1,15 +1,15 @@
 # Designing exams and exercises
 
-Exams are how we test whether students achieve the course objectives.
-Our exercises are "exam-like": they have the same structure and we provide solutions that include high-level criteria for how one might grade them.
+Exams test whether students achieve the course objectives.
+Exercises are "exam-like": they have the same structure, and their solutions include high-level criteria for how one might grade them.
 Exercise sets also include concrete ideas for how students could use the lecture's teachings in their own projects.
 
 ## Objectives
 
 Questions must be:
-- _Valid_: their results must reflect students' mastery, which needs clarity what we grade and how we grade it
-- _Reliable_: answers must be graded consistently, so grades depend on the answer and not on the grader, the student, or other external factors
-- _Scalable_: grading answers should be quick, so that a pair of graders can go through a couple hundred answers in an afternoon
+- _Valid_: expectations must be clear so that grades reflect students' mastery of the objectives, not their luck or their ability to memorize lots of information
+- _Reliable_: answers must be graded consistently so that grades depend on the answer and not on the grader, the student, or other external factors
+- _Scalable_: grading answers must be quick so that a pair of graders can go through a couple hundred answers in an afternoon
 
 Potential issues include:
 - Questions that require reading too much or writing too much, leading to grades that reflect reading or writing skills rather than thinking skills
@@ -46,7 +46,7 @@ For instance, a theoretical question might introduce a system, ask how one would
 Each theoretical question should have a rubric with three, or four at most, expected "fully correct" answers.
 _This limit makes grading scalable, do not exceed it_.
 Graders will then create alternate "partially correct" rubric items as they see them.
-The private grading criteria may contain additional information, such as "we will not accept X here because...", or "Y should only get 2/4 points here because...".
+The private grading criteria may contain additional information, such as "X is unacceptable here because...", or "Y should only get 2/4 points here because...".
 
 Sub-questions start with the minimum amount of context necessary. They then have a question, a placeholder for answers, and grading criteria, in the following format:
 ```
@@ -86,14 +86,14 @@ Any information specific to classes or methods should only be in those methods' 
 Each practical question should have a rubric with three, or four at most, expected properties of the code that must be manually graded, such as "readable code" or "injection of the dependencies".
 _This limit makes grading scalable, do not exceed it_.
 Graders will then create alternate "partially good" rubric items as they see them.
-The private grading criteria may contain additional information, such as "we expect students to create a new class with design pattern X because...".
+The private grading criteria may contain additional information, such as "design pattern X is a particularly good fit here because...".
 Expected properties should be high-level ones such as "features X and Y are not coupled", not low-level ones such as "using design pattern X", even if there is one obvious solution,
 since students may come up with alternate, equally valid solutions that should not be penalized merely for being different than the intended solution.
 
 Questions should include public high-level grading criteria indicating how many points students will get for each sub-task, including their (test) code being maintainable.
 Criteria should all be positive grading, giving points for things students do, and not taking points away for things they haven't done.
 
-The code we provide must use the exact same build files as the exercises, so that students know they will be able to build the exam if they can build the exercises.
+Exam code must use the exact same build files as the exercises, so that students know they will be able to build the exam if they can build the exercises.
 It must also be of the quality expected from the best students: documented, good naming, robust error handling, no copy/pasted code, no unused imports, and so on.
 
 Exam statements provide one basic test for both code and testing sub-parts.
