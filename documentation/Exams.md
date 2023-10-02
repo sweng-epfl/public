@@ -57,6 +57,8 @@ In 1 sentence, explain/suggest/... ...:
 _You will receive up to 5 points for ..._
 ```
 Students should know what properties their answer should have, so that they do not waste time writing more than is expected or lose points writing less than is expected.
+The sentence limit, which should typically be 1 or 2, is there as a basis to reject overly long answers that attempt to gain points by mentioning every possible viewpoint,
+which includes many LLM-generated answers.
 
 Questions should feel like a conversation with engineers or managers. For instance, questions can involve a colleague asking for the student's opinion about a piece of code.
 Importantly, this means questions must involve real-world applications of concepts, they should not be abstract questions about facts.
