@@ -6,7 +6,7 @@ enabling students to go from _writing code_ to _developing software_.
 This repository contains all course material.
 To get a copy of this repository on your computer, please see the [cloning instructions](documentation/Cloning.md).
 
-_This course is originally taught by [Prof. George Candea](https://dslab.epfl.ch/people/candea/) and [Solal Pirelli](https://dslab.epfl.ch/people/pirelli/) at [EPFL](https://ic.epfl.ch)._
+_This course was originally taught by [Prof. George Candea](https://dslab.epfl.ch/people/candea/) and [Solal Pirelli](https://dslab.epfl.ch/people/pirelli/) at [EPFL](https://ic.epfl.ch)._
 _Solal Pirelli wrote the lecture notes. Alexandre Piveteau and Karim Sabaa wrote the exercises in their current form. Many thanks to all of the past staff who contributed to previous editions as well._
 _For EPFL-specific details please see [the course web page](https://dslab.epfl.ch/teaching/sweng/)._
 
