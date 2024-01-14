@@ -518,7 +518,7 @@ return Weather.today()
     .thenApply(w -> "Today: " + w)
     .acceptEither(
          Weather.yesterday()
-                .thenApply(w->"Yesterday: " + w),
+                .thenApply(w-> "Yesterday: " + w),
          System.out::println
      );
 ```

@@ -19,10 +19,10 @@ What should be in a user story?
 ## Question 2
 
 _Validation_ is checking that the code...
-1. ...correctly implements an interface
-2. ...corresponds to what users want
-3. ...corresponds to a user story
-4. ...can be mathematically proved correct
+1. Correctly implements an interface
+2. Corresponds to what users want
+3. Corresponds to a user story
+4. Can be mathematically proved correct
 
 <details>
 <summary>Click to show the answer</summary>
