@@ -4,13 +4,16 @@ We will grade the `exam-GASPAR` repository in its state as of **12:00 on Friday,
 repo will be terminated at that time.
 
 There are two kinds of questions in this exam: free-form theory questions and coding questions.
-For free-form theory questions, answer in the space indicated by question marks `???`; do not modify any other part of
-the file.
+For free-form theory questions, answer in the space indicated by question marks `???`; do not modify any other part of the file.
 For coding questions, answer in the files mentioned in the question; do not touch any other files.
 Failure to follow these instructions will result in the deduction of points.
 
-Remember to push often, every time you have improved your exam. Check the `Actions` tab to make sure that what you
-pushed compiles.
+> [!IMPORTANT]
+> If you use an IDE such as IntelliJ, make sure to import each code question on its own
+> by importing its build.gradle file. If you import the entire exam as a project instead, you will get build errors.
+
+> [!TIP]
+> Remember to push often, every time you have improved your exam. Check the `Actions` tab to make sure that what you pushed compiles.
 
 The exam is worth 100 points in total, and it consists of five questions plus a feedback survey:
 

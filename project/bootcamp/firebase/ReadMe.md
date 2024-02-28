@@ -30,7 +30,8 @@ Your real-time database is now empty and should look like the following.
 
 Feel free to manually add some key-value entries to the database in order to get a grasp on its internal organization. Also, this might be useful for future troubleshooting.
 
-> :warning: Use your personal Google account instead of your university one, otherwise you will not be able to create a database. But you can later give admin rights to your university account and those of your teammates.
+> [!WARNING]
+> Use your personal Google account instead of your university one, otherwise you will not be able to create a database. But you can later give admin rights to your university account and those of your teammates.
 
 
 It is important to note that the keys in this database are represented as URLs or paths (strings), while the values can be of any type (i.e. numbers, Boolean values, serialized objects, etc.). This allows for a clean nested hierarchical data organization.
@@ -67,9 +68,12 @@ More specifically, your view should look like this.
 val db: DatabaseReference = Firebase.database.reference
 db.child(PHONE_NB).setValue(EMAIL)
 ```
-> :information_source: To better organize our code, the database instance can be put as a private attribute of our activity.
 
-> :information_source: Notice how it does not require us to pass the URL of our database, as this is fetched automatically from the generated JSON file.
+> [!TIP]
+> To better organize our code, the database instance can be put as a private attribute of our activity.
+
+> [!TIP]
+> Notice how it does not require us to pass the URL of our database, as this is fetched automatically from the generated JSON file.
 
 7. Now you can already start your application and manually test if the 'set' button works as expected by manually looking into the database (the change should be instantaneous)!
 
@@ -89,7 +93,9 @@ future.thenAccept {
   emailView.text = it
 }
 ```
-> :warning: Notice how the 'get' function is slightly more complicated as it is asynchronous! As such, Firebase has a callback that is triggered when either the value has been retrieved or when no value is associated to the key (in which case `null` is returned). Thus, we have wrapped the callback into a future for better modularity and ease of understanding.
+
+> [!WARNING]
+> Notice how the 'get' function is slightly more complicated as it is asynchronous! As such, Firebase has a callback that is triggered when either the value has been retrieved or when no value is associated to the key (in which case `null` is returned). Thus, we have wrapped the callback into a future for better modularity and ease of understanding.
 
 9. Our FireApp 🔥 is now up and running. You can check its simple functionality manually (i.e. 'get' and 'set') and see how it impacts our database instance.
 
@@ -109,7 +115,8 @@ Before you end, we invite you to do one (or both!) of the following tasks.
 
 2. Similarly, abstract the FireDatabase into a generic Database class, which offers two functions: 'get' and 'set'. Then, code a MockDatabase (using a HashMap for example) and write a similar 'setAndGet' test.
 
-> :information_source: To easily switch the database instance in your code, you can have your database as a static reference somewhere that will be overwritten into a MockDatabase instance when your tests are starting.
+> [!TIP]
+> To easily switch the database instance in your code, you can have your database as a static reference somewhere that will be overwritten into a MockDatabase instance when your tests are starting.
 
 ## Tutorials
 

@@ -15,7 +15,8 @@ In an `androidTest` you can start an activity, click on UI elements, check if te
 To write UI tests, Android offers the [Espresso](https://developer.android.com/training/testing/espresso) framework.
 It's a collection of functions you can use in tests to interact automatically with the app and to ensure that the displayed content matches some criteria.
 
-> :information_source: You might also want to take a look at [Barista](https://github.com/AdevintaSpain/Barista),
+> [!TIP]
+> You might also want to take a look at [Barista](https://github.com/AdevintaSpain/Barista),
 > a framework built on top of Espresso which removes most of the boilerplate needed for Espresso tasks.
 
 ## Installing the dependencies
@@ -59,7 +60,8 @@ Your main activity fires an `Intent` containing the username, which enables the 
 
 This way, you can test each activity independently.
 
-> :information_source: Testing activities independently is great, as it allows you to tightly control the state of the activity when you start the text.
+> [!TIP]
+> Testing activities independently is great, as it allows you to tightly control the state of the activity when you start the text.
 > But Espresso also allows you to change activities during a test: you can therefore write an "end-to-end" test, simulating a complete usage scenario from a user.
 > If you want, we suggest you try to write such a test once you understand how Espresso works.
 

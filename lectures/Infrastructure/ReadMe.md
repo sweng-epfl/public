@@ -1,6 +1,7 @@
 # Infrastructure
 
-> **Prerequisites**: Before following this lecture, you should:
+> [!IMPORTANT]
+> Before following this lecture, you should:
 > - Install Git. On Windows, use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) as Git is designed mostly for Linux.
 >   On macOS, see [the git documentation](https://git-scm.com/download/mac). On Linux, Git may already be installed, or use your distribution's package manager.
 >   If you have successfully installed Git, running `git --version` in the command line should show a version number.

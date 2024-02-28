@@ -23,7 +23,8 @@ There are two kinds of questions in this exam: free-form theory questions and co
 For free-form theory questions, answer in the space indicated by question marks `???`.
 For code questions, answer in the files mentioned in the question, without touching other files.
 
-> :information_source: If you use an IDE such as IntelliJ, make sure to import each code question on its own
+> [!IMPORTANT]
+> If you use an IDE such as IntelliJ, make sure to import each code question on its own
 > by importing its build.gradle file. If you import the entire exam as a project instead, you will get build errors.
 
 The exam is worth 100 points in total, and it consists of five questions plus a feedback survey:

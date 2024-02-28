@@ -9,7 +9,8 @@ Android Studio is the official recommended IDE for developpers wishing to develo
 If you are already an IntelliJ IDEA user, you may keep it as long as you install the Android Plugin, as Android Studio is just a special distribution of IntelliJ.
 Be aware that some menus or buttons may have slightly different names. You are free to use other tools if you want, but we will not provide support for them.
 
-> :information_source: Android Studio supports all mainstream operating systems; you can work on Windows, Mac, or Linux.
+> [!NOTE]
+> Android Studio supports all mainstream operating systems; you can work on Windows, Mac, or Linux.
 
 Download and install Android Studio from [https://developer.android.com](https://developer.android.com), or update it if you already have it.
 If you need any help, follow the [instructions](https://developer.android.com/studio/install.html).
@@ -31,9 +32,11 @@ This naming convention is called [Reverse domain name notation](https://en.wikip
 In *Language* select **Java**, and in *Minimum SDK* select **API 24: Android 7.0 (Nougat)**, then click "Finish".
 After a bit of time, you should see Android Studio open up with a number of files created for this project.
 
-> :information_source: You can always change the minimum SDK later if you need to, but please keep in mind that not all devices have the latest version of Android.
+> [!NOTE]
+> You can always change the minimum SDK later if you need to, but please keep in mind that not all devices have the latest version of Android.
 
-> :information_source: You can pick **Kotlin** as a language if you'd like. Your entire team must agree on which language you will use for the project.
+> [!NOTE]
+> You can pick **Kotlin** as a language if you'd like. Your entire team must agree on which language you will use for the project.
 
 This is a good time to open a file explorer and look at all the files that have been created, since you anyway have to wait until Android Studio has finished indexing files,
 which the progress bar at the bottom-right of the window indicates.
@@ -67,12 +70,14 @@ Open now the **app/build.gradle**. In this file, please modify the following set
 Plase also make sure that the `compileOptions` block inside the `android` block has both `sourceCompatibility` and `targetCompatibility`
 set to `JavaVersion.VERSION_1_8`, i.e., Java 8, so that you can use modern features such as lambdas.
 
-> :information_source: You may have noticed JUnit is set to version 4, not 5 as we used in the Software Engineering course.
-> This is because Google does not provide official support for the newer JUnit 5 on Android.
+> [!NOTE]
+> You may have noticed JUnit is set to version 4, not 5 as we used in the Software Engineering course.
+> This is because Google does not currently provide official support for the newer JUnit 5 on Android.
 > Such an incompatibility is a common issue in software engineering.
 > That being said, if you're feeling adventurous, you could try [this unofficial plugin](https://github.com/mannodermaus/android-junit5) to use JUnit 5 on Android.
 
-> :information_source: If you picked Kotlin, make sure you have `androidx.core:core-ktx` as a dependency, and update it if necessary.
+> [!IMPORTANT]
+> If you picked Kotlin, make sure you have `androidx.core:core-ktx` as a dependency, and update it if necessary.
 
 After making changes in a `build.gradle` file, Android Studio will show a blue banner at the top of the editor suggesting to "Sync Now", you should do so.
 You can also manually sync using the "Sync project with Gradle files" at the top right, which should look like an elephant with an arrow pointing downwards.
@@ -91,7 +96,8 @@ Once done, your virtual device should appear in the Device Manager, which you ca
 To run your app, you can now use "Run" > "Run 'app'".
 It will take a few seconds to start up the emulator and then you will see Android itself start up, followed by your app. 
 
-> :information_source: If you're running the emulator on Linux, you may need to manually configure hardware acceleration.
+> [!IMPORTANT]
+> If you're running the emulator on Linux, you may need to manually configure hardware acceleration.
 > Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM.
 > If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
 

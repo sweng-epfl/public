@@ -28,7 +28,8 @@ Launch Android Studio, and select **open**. Then, navigate to the folder where t
 is located, and select the **SwEng App** folder. After a bit of time, you should see Android Studio
 open up with a number of files loaded for this project.
 
-> :information_source: While the default is *Java*, *Kotlin* is now the recommended programming language for Android. During the lecture, we will use Java.
+> [!NOTE]
+> While the default is *Java*, *Kotlin* is now the recommended programming language for Android. During the lecture, we will use Java.
 
 First of all, Android projects use a build system called *Gradle*. This is a very common tool in the
 Java ecosystem. It allows developers to specify the way a project should be built, which
@@ -44,7 +45,8 @@ Under `Gradle Scripts` in the file explorer, you will find the following:
 - **build.gradle** `(Project: ...)`: this is the top-level gradle file.
 - **build.gradle** `(Module: ...)`: this is the app-level gradle file, i.e. **app/build.gradle**.
 
-> :information_source: Android Studio is quite helpful. Did you know that many errors can be resolved by pressing Alt+Enter? That Shift+F6 renames a variable? We recommend starting to get familiar with Android Studio now, because you will use it throughout the next semester.
+> [!NOTE]
+> Android Studio is quite helpful. Did you know that many errors can be resolved by pressing Alt+Enter? That Shift+F6 renames a variable? We recommend starting to get familiar with Android Studio now, because you will use it throughout the next semester.
 
 Android Studio may show a banner at the top of the editor suggesting a gradle sync; you should
 accept it. You can also manually sync using the "Sync project with Gradle files" at the top right,
@@ -62,6 +64,7 @@ device should appear in the *Virtual Device Manager*, which you can now close.
 To run your app, you can now use *Run* > *Run 'app'*. It will take a few seconds to start up the
 emulator and then you will see Android itself start up, followed by your app.
 
-> :information_source: If you're running the emulator on Linux, you may need to manually configure hardware acceleration. Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM. If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
+> [!NOTE]
+> If you're running the emulator on Linux, you may need to manually configure hardware acceleration. Follow the [official instructions](https://developer.android.com/studio/run/emulator-acceleration#vm-linux) on how to setup KVM. If you run into the error `/dev/kvm device permission denied` then [this StackOverflow post](https://stackoverflow.com/questions/37300811/android-studio-dev-kvm-device-permission-denied/45749003) will help you troubleshoot it.
 
 Congrats, you are now all set up for starting Android development ;)

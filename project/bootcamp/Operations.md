@@ -61,10 +61,12 @@ connectedCheck {
 }
 ```
 
-> :information_source: If you use tools that generate code, such as [Hilt](https://developer.android.com/training/dependency-injection/hilt-android),
+> [!TIP]
+> If you use tools that generate code, such as [Hilt](https://developer.android.com/training/dependency-injection/hilt-android),
 > you should add exclusions for generated code (in Hilt's case, `'**/*Hilt*.*', 'hilt_aggregated_deps/**', '**/*_Factory.class', '**/*_MembersInjector.class'` should work)
 
-> :information_source: If you use Kotlin instead of Java, `debugTree` should use `"$project.buildDir/tmp/kotlin-classes/debug"` instead
+> [!IMPORTANT]
+> If you use Kotlin instead of Java, `debugTree` should use `"$project.buildDir/tmp/kotlin-classes/debug"` instead
 
 Then, sync Android Studio with Gradle using either the banner that pops up at the top of the editor or the button in the top right.
 
@@ -140,7 +142,8 @@ check_android_task:
       path: "*.h264"
 ```
 
-> :information_source: This script uploads recordings of the emulator screen as Cirrus CI artifacts, letting you see why tests fail!
+> [!TIP]
+> This script uploads recordings of the emulator screen as Cirrus CI artifacts, letting you see why tests fail!
 > Android limits each recording to 3 minutes, so you will get multiple such recordings if your tests take longer than that.
 > However, these recordings are in an uncommon format, your favorite video player might not be able to read them. `ffplay` definitely works
 > (and is also available on Windows via the Windows Subsystem for Linux), you could also convert them using software such as `ffmpeg`.
@@ -155,7 +158,8 @@ Commit these changes and push, and you should now see a yellow circle next to yo
 This circle will turn into a green checkmark or a red cross depending on whether your build succeeds or fails.
 You can also go to https://cirrus-ci.com/ and log in to see all of your builds.
 
-> :information_source: A few things to note, if you ever want to modify this script or reuse it for another project:
+> [!NOTE]
+> A few things to note, if you ever want to modify this script or reuse it for another project:
 > - YAML can be tricky to work with; as a general rule, always use the `|` pipe trick to make multi-line scripts in a Cirrus CI config file
 > - Using an x86 emulator image and enabling KVM in the container allows for much faster execution than the default ARM emulator, even with HAXM as GitHub does on macOS Android containers
 > - The script builds the project after launching the emulator and before waiting for the emulator to have finished booting, thus the emulator boots in parallel with the build, saving time
@@ -175,7 +179,8 @@ Now, while viewing your repository on Code Climate, go to `Repo Settings` then t
 Go to your repository page on Cirrus CI, click on the settings wheel in the top right, and paste the test reporter ID under `Secured Variables`, then click the `Encrypt` button.
 Copy the resulting value.
 
-> :information_source: Despite the "ENCRYPTED[...]" name, the value is not itself an encrypted value, but a unique ID allowing Cirrus CI to know which variable you are referring to.
+> [!NOTE]
+> Despite the "ENCRYPTED[...]" name, the value is not itself an encrypted value, but a unique ID allowing Cirrus CI to know which variable you are referring to.
 > Thus, you do not need to worry about putting this value in a public configuration file, as no one can "decrypt" it except Cirrus CI's own servers.
 
 In your repository's `.cirrus.yml` file, add an `env` block at the very beginning, before the `task` block,
@@ -215,7 +220,8 @@ Code Climate will now send comments directly on pull requests.
 Finally, still in the repo settings on Code Climate, select `Test coverage`, ensure `Enforce Total Coverage` is enabled, and increase the threshold to 80.
 This ensures that your pull requests maintain 80% code coverage at all times, which is required in this course.
 
-> :information_source: At the beginning of the project, you may have lots of code that is not worth the effort of covering,
+> [!TIP]
+> At the beginning of the project, you may have lots of code that is not worth the effort of covering,
 > such as an implementation of a database interface that talks to a real database.
 > You may choose to remove this check until you have enough code that can be covered, at which point you will put it back and never remove it again.
 

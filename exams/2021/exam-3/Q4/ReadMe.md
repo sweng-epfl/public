@@ -14,8 +14,6 @@ Here is a schema representing the architecture:
     <img src="Q4_architecture.png" alt="Q4 architecture design" width="500"/>
 </p>
 
-
-
 In its current state, the video provider simply forwards file requests to the EU database. You need to let the video
 provider query from both databases. In case both databases have the requested video file, the video provider should
 always forward the result coming from the database that responds first. The provider should propagate exceptions in case no
@@ -25,14 +23,16 @@ complete.
 Additionally, providers should provide a caching feature. They store the **2 video files most recently** requested by any caller of the provider. You have to use the _LRU_ policy for cache eviction. You
 may assume that the databases are immutable, i.e. the database content (video files) never changes.
 
-**NOTICE**: Points may be subtracted for changing code that should stay untouched, especially if doing so renders the
-video provider useless, or changes its intended purpose (or that of any other component of the Swengflix distribution
-system).
+> [!IMPORTANT]
+> Points may be subtracted for changing code that should stay untouched, especially if doing so renders the
+> video provider useless, or changes its intended purpose (or that of any other component of the Swengflix distribution system).
 
-**IMPORTANT**: The `App.java` file is not a part of the exercise. It may be useful for checking that your solution
-works as intended but you are **not required** to write any code into it. `App.java` will **not be graded**.
+> [!IMPORTANT]
+> The `App.java` file is not a part of the exercise. It may be useful for checking that your solution
+> works as intended but you are **not required** to write any code into it. `App.java` will **not be graded**.
 
-> :information_source: Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
+> [!TIP]
+>  Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
 
 - _You get 6 points if the video provider can query both databases correctly._
 - _You get 13 more points if you handle Futures correctly._

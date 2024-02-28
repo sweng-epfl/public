@@ -1,6 +1,7 @@
 # Testing
 
-> **Prerequisite**: Before following this lecture, you should make sure you can build and run the [sample project](exercises/sample-project).
+> [!IMPORTANT]
+> Before following this lecture, you should make sure you can build and run the [sample project](exercises/sample-project).
 
 It's tempting to think that testing is not necessary if one "just" writes correct code from the first try and double-checks the code before running it.
 

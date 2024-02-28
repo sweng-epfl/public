@@ -13,10 +13,12 @@ this representation.
 Complete the code skeleton in the `main` method of `App.java`, without modifying the existing code in the rest of the codebase. 
 You are allowed to create new classes if necessary.
 
-> :information_source: When dealing with an `AuthResult` instance, you can assume that the types of the mapped attributes are
+> [!IMPORTANT]
+> When dealing with an `AuthResult` instance, you can assume that the types of the mapped attributes are
 > always correct, i.e., if present, the username is always a `String` and the SCIPER is always an `Integer`.
 
-> :information_source: Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
+> [!TIP]
+> Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
 
 _You get 13 points if you write a working version of `App.java`._
 _You get 6 more points if your solution is well encapsulated._

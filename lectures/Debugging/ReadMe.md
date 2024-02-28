@@ -1,6 +1,7 @@
 # Debugging
 
-> **Prerequisite**: You are _strongly_ encouraged, though not strictly required, to use an IDE for the exercises about debugging in this lecture.
+> [!NOTE]
+> You are _strongly_ encouraged, though not strictly required, to use an IDE for the exercises about debugging in this lecture.
 > Alternatively, you can use Java's built-in command-line debugger, `jdb`, but it is far less convenient than a graphical user interface.
 
 Writing code is only one part of software engineering; you will often spend more time _reading_ code than writing code.

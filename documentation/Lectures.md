@@ -75,3 +75,5 @@ Important concepts should be `_emphasized like this_`.
 For images, use HTML tags to specify a width of 50%, otherwise they are too large; see existing lecture notes for examples.
 
 For in-lecture exercises, use `<details>` blocks with a `<p>` inside so that Markdown works; see existing lecture notes for examples.
+
+GitHub supports fancy markers for blockquotes such as "note" and "warning", see https://github.com/orgs/community/discussions/16925

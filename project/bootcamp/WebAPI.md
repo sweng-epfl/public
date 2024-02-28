@@ -11,7 +11,8 @@ APIs and external data are not under your control. They take time to load, they 
 ### Step 1: Carefully check a site's API documentation.
 You should read the documentation of the API you are using, and make sure you understand how it works. Both the **request** format and the **response** format are important.
 
-> :information_source: [JSON](https://www.json.org/json-en.html) is a common format for APIs. It is a way to represent data in a human-readable format. It is similar to a dictionary in Python, or a map in Java. For example, here is how a server could respond to the following JSON-encoded request:
+> [!NOTE]
+> [JSON](https://www.json.org/json-en.html) is a common format for APIs. It is a way to represent data in a human-readable format. It is similar to a dictionary in Python, or a map in Java. For example, here is how a server could respond to the following JSON-encoded request:
 >
 > ```json
 > // Client request
@@ -91,7 +92,7 @@ data class BoredActivity(
 ```
 
 In Retrofit, you define an interface that describes the API you want to call. To call the BoredAPI API, you can define an interface like this:
-    
+
 ```kotlin
 interface BoredApi {
     @GET("activity")
@@ -112,7 +113,8 @@ val retrofit = Retrofit.Builder()
 
 The `baseUrl` parameter is the base URL of the API. The `addConverterFactory` method specifies how the response will be converted to an object. In this case, we use `GsonConverterFactory` (the G instead of J is intentional, it is named after Gson, a library that handles JSON). This will convert the response to a `BoredActivity` object.
 
-> :information_source: You don't need to store all value fields in the response from the server into the data class `BoredActivity`, you can keep a subset of those that you want. Retrofit won't complain about missing properties since it only maps what we need, and it won't even complain if we were to add properties that are not in the JSON response.
+> [!TIP]
+> You don't need to store all value fields in the response from the server into the data class `BoredActivity`, you can keep a subset of those that you want. Retrofit won't complain about missing properties since it only maps what we need, and it won't even complain if we were to add properties that are not in the JSON response.
 
 Now, we can create an instance of the `BoredApi` interface:
 

@@ -23,10 +23,12 @@ _You get 11 points if you write a working MVP application that can authenticate 
 _You get 8 more points if you implement the security feature correctly._
 _You get 7 more points if your solution is modular and well encapsulated._
 
-> :information_source: If for some reason your computer cannot run a basic Swing application you can use the simple command-line
+> [!IMPORTANT]
+> If for some reason your computer cannot run a basic Swing application you can use the simple command-line
 > view, but otherwise, your application should work with either of them.
 
-> :information_source: Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
+> [!TIP]
+> Use `./gradlew run` (or `gradlew.bat run` on Windows) to run the application.
 
 ## Part 2: Testing [13 points]
 
