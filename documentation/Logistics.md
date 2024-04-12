@@ -34,3 +34,8 @@ coverage but with reliable and maintainable tests.
 
 In general, exercises and exams should be graded as if they were real-world scenarios. Would a pull request containing the student's answer be merged as is?
 Would it receive minor "nitpicking" feedback, or perhaps major feedback? Would it be closed as too poor in quality to even review?
+
+
+## Scripts
+
+The `scripts` top-level folder contains scripts to manage exams and to update Gradle build files.
