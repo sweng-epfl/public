@@ -1,0 +1,74 @@
+{
+  "GitHub": {
+    "Organization": "sweng-epfl",
+    "StaffTeam": "staff",
+    "RepoPrefix": "exam-",
+    "TeamPrefix": "student-",
+    "SkeletonRepoName": "exam-skeleton"
+  },
+  "ExamDirectory": "exam-2",
+  "ExamName": "SwEng Exam 2",
+  "ExtraItems": [ "ReadMe.md", ".gitignore", ".github" ],
+  "ExecutableFilenames": [ "gradlew", ".github-actions-build.sh" ],
+  "GradescopeId": "123",
+  "ReportExtraRemark": "The absolute grade out of 6 is graded based on the points out of 100, as explained in lectures.",
+  "Questions": [
+    {
+      "Type": "FreeForm",
+      "Name": "Question 1",
+      "GradescopeId": "111",
+      "File": "Q1.md"
+    },
+    {
+      "Type": "FreeForm",
+      "Name": "Question 2",
+      "GradescopeId": "222",
+      "File": "Q2.md"
+    },
+    {
+      "Type": "FreeForm",
+      "Name": "Question 3",
+      "GradescopeId": "333",
+      "File": "Q3.md"
+    },
+    {
+      "Type": "Code",
+      "Name": "Question 4",
+      "Path": "Q4",
+      "GradescopeId": "444",
+      "Files": [ "src/**/*.java" ],
+      "GradedTestsFile": "evaluations/Q4/ListAdapterTest.java",
+      "PointsPerGradedTest": {
+        "ListAdapterTest.constructorThrowsExceptionWhenNull": 1,
+        "ListAdapterTest.constructorThrowsExceptionWhenEmptyList": 1,
+        "ListAdapterTest.getRootReturnsElementWhenListHasOneElement": 1,
+        "ListAdapterTest.getRootReturnsFirstElementWhenListHasManyElements": 1,
+        "ListAdapterTest.getLeftReturnsCorrectSubtree": 1,
+        "ListAdapterTest.getRightReturnsCorrectSubtree": 2,
+        "ListAdapterTest.getLeftReturnsNullOnSingleElementList": 1,
+        "ListAdapterTest.getLeftReturnsNullWhenEmpty": 1,
+        "ListAdapterTest.getRightReturnsNullOnSingleElementList": 1,
+        "ListAdapterTest.getRightReturnsNullWhenEmpty": 1
+      }
+    },
+    {
+      "Type": "Code",
+      "Name": "Question 5",
+      "Path": "Q5",
+      "GradescopeId": "555",
+      "Files": [ "src/**/*.java" ],
+      "MinimalTestsFile": "evaluations/Q5/ProvidedWeatherServiceTest.java",
+      "GradedTestsFile": "evaluations/Q5/WeatherServiceTest.java",
+      "PointsPerGradedTest": {
+        "WeatherServiceTest.weatherProviderReturnsIdenticalWeatherTwice": 5,
+        "WeatherServiceTest.weatherProviderReturnsUpdatedWeatherAfterChange": 5,
+        "WeatherServiceTest.weatherProvidedReturnsWeatherForMultipleCities": 5
+      }
+    },
+    {
+      "Type": "FeedbackSurvey",
+      "Name": "Survey",
+      "Points": 2
+    }
+  ]
+}

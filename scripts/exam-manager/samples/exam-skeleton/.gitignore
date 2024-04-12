@@ -1,0 +1,25 @@
+# Gradle
+build/
+.gradle/
+
+# IntelliJ / Android Studio
+.idea/
+out/
+*.iml
+local.properties
+
+# Eclipse
+bin/
+.settings/
+.project
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Java
+hs_err_pid*
+replay_pid*
+*.hprof

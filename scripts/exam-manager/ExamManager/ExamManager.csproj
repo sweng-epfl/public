@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="evaluations\**" />
+    <Compile Remove="reports\**" />
+    <Compile Remove="repos\**" />
+    <EmbeddedResource Remove="evaluations\**" />
+    <EmbeddedResource Remove="reports\**" />
+    <EmbeddedResource Remove="repos\**" />
+    <None Remove="evaluations\**" />
+    <None Remove="reports\**" />
+    <None Remove="repos\**" />
+    <None Remove="github-token.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="28.0.1" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0" />
+    <PackageReference Include="Octokit" Version="3.0.0" />
+    <PackageReference Include="ShellProgressBar" Version="5.2.0" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageReference Include="Wivuu.JsonPolymorphism" Version="1.0.16" />
+  </ItemGroup>
+
+</Project>
