@@ -1,5 +1,8 @@
 # Security
 
+> [!WARNING]
+> These lecture notes are preliminary and will be improved soon.
+
 ## Objectives
 
 Because software is everywhere, it has become a prime target for attack: compromising the software behind a system is a good way to take control of the entire system. Unlike hardware and humans, software can be attacked remotely and automatically. Security is thus an important aspect of software engineering, even though it is often considered a hindrance by users. As a software engineer, you will need to keep security in mind when writing code. Unfortunately, there is no easy way to tell whether a piece of code is secure; rather, one can go through a list of well-known security problems and check whether the code is vulnerable to any of them. One common category of security problems is privacy problems: anything that can allow someone to view user data when they shouldn’t be able to, or infer facts about users based on the code’s behavior.

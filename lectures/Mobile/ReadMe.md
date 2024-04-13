@@ -1,5 +1,8 @@
 # Mobile Platforms
 
+> [!WARNING]
+> These lecture notes are preliminary and will be improved soon.
+
 This lecture's purpose is to give you a high-level picture of what the universe of mobile applications and devices is like. You will read about:
 
 * Differences between desktops and mobile devices w.r.t. applications, security, energy, and other related aspects

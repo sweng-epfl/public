@@ -1,5 +1,8 @@
 # Performance
 
+> [!WARNING]
+> These lecture notes are preliminary and will be improved soon.
+
 Producing correct results is not the only goal of software.
 Results must be produced in reasonable time, otherwise users may not wait for a response and give up.
 Providing a timely response is made harder by the interactions between software components and between software and hardware, as well as the inherent conflicts between different definitions of performance.

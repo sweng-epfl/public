@@ -1,5 +1,8 @@
 # Teamwork
 
+> [!WARNING]
+> These lecture notes are preliminary and will be improved soon.
+
 Working on your own typically means engineering a small application, such as a calculator.
 To design bigger systems, teams are needed, including not only engineers but also designers, managers, customer representatives, and so on.
 There are different kinds of tasks to do, which need to be sub-divided and assigned to people: requirements elicitation, design, implementation, verification, maintenance, and so on.
