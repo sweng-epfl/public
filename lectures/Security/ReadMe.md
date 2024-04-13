@@ -194,15 +194,15 @@ JSON (JavaScript Object Notation) is a very common format for data serialization
 
 ```
 case class Address(street: String, city: String, zipcode: String, country: String)
-case class Person(firstname: String, lastname: String, age: Int, address: Address)
+case class Person(givenname: String, familyname: String, age: Int, address: Address)
 
 val arthur = Person("Arthur", "Dent", 42, Address("Country Lane", "Cottington", "PO16 7GZ", "United Kingdom"))
 print(Json.stringify(arthur))
 
 >>> 
 {
-	"firstname": "Arthur",
-	"lastname": "Dent",
+	"givenname": "Arthur",
+	"familyname": "Dent",
 	"age": 42,
 	"address": {
 		"street": "Country Lane",

@@ -68,9 +68,9 @@ We also provide a [lecture on mobile platforms](lectures/Mobile) to introduce th
 
 ## Meta
 
-This course uses modern evidence-based teaching methods, with a particular focus on interactivity during lectures through exercises and
-clear structuring of lectures including well-defined objectives and assessment criteria.
-There is a large body of research on teaching and learning, and this course attempts to use evidence-based techniques to improve
+This course uses modern evidence-based teaching methods: interactivity during lectures, clear structuring including well-defined objectives and assessment criteria,
+and spaced repetition including per-lecture quizzes and frequent exams.
+There is a large body of research on teaching and learning, and this course uses evidence-based techniques to improve
 learning compared to the traditional "sit in a lecture hall and listen for a couple hours" format.
 
 Documentation:

@@ -289,7 +289,7 @@ Consider the following illustration:
 What do you see? Since you're reading English text, you might think this is an illustration of a t-shirt going from dirty to clean through a washing machine.
 But someone whose native language is read right to left, such as Arabic, might see the complete opposite: a t-shirt going from clean to dirty through the machine.
 This is rather unfortunate, but it is the way human communication works: people have implicit expectations that are sometimes at odds. Software thus needs to adapt.
-Another example is putting "Vincent van Gogh" in a list of people sorted by last name. Is Vincent under "G" for "Gogh" or under "V" for "van Gogh"?
+Another example is putting "Vincent van Gogh" in a list of people sorted by family name. Is Vincent under "G" for "Gogh" or under "V" for "van Gogh"?
 That depends on who you ask: Dutch people expect the former, Belgians the latter. Software needs to adapt, otherwise at least one of these two groups will be confused.
 Using the culture-specific format for dates is another example: "10/01" mean very different dates to someone from the USA and to someone from the rest of the world.
 
