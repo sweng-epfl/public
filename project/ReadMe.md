@@ -69,10 +69,12 @@ All criteria, below, are equally weighted within each grade.
 The staff will use their professional opinion to decide which grade best applies for each case.
 These criteria are provided as guidelines to help set expectations, not to argue about semantics.
 
+All students are expected to behave professionally, including respecting their teammates and coaches.
+The staff may alter grades for repeated or particularly severe breaches of professionalism.
+
 
 | **Individual** | **Excellent** | **Good** | **OK** | **Poor** | **Very Poor** |
 |----------------|---------------|----------|--------|----------|---------------|
-| **Professionalism** | Proactive and professional communication with the team and coaches | Communication with the team and coaches when needed, in a professional manner | The team and coaches are kept informed, but not always early enough or in a professional manner | Misunderstandings with the team and coaches, subpar communication skills | Little to no communication with the team and coaches |
 | **Planning** | Contributing a large improvement, directly related to what was planned, with time for review and merging | Contributing a reasonable improvement, mostly related to what was planned, with time for review and merging | Contributing an improvement that is incremental or not a priority according to what was planned, or without enough time to be reviewed and merged | No meaningful improvements in time | No work done, not even draft pull requests |
 | **Code** | Maintainable, robust, and documented code at the module level | Maintainable, robust, and documented code at the function level | The code is resilient to basic errors, but not easy to maintain | The code only works in the “happy path” | No code merged, or code doesn’t work at all |
 | **Tests** | Tests for all or almost all cases | Tests for most cases | Tests for success cases and some basic errors | Few tests, even for success cases | No tests at all |

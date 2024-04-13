@@ -48,7 +48,7 @@ The remaining lectures can be done in any order, here is a suggested one:
 - [Teamwork](lectures/Teamwork/)
 - [Security](lectures/Security/)
 
-We also provide a [lecture on mobile platforms](lectures/Mobile) to introduce the concepts seen in the project (see below).
+Slides can be found [in a separate repo](https://github.com/sweng-epfl/public-slides) to avoid the need to download large files when cloning this repo.
 
 
 ## Exams
@@ -63,17 +63,21 @@ Lecturers should read the [exams documentation](documentation/Exams.md).
 We additionally provide the basics for a [project-based course](project/) for students to apply what they have learned in this course,
 by building an Android app in teams using a Scrum-like method.
 
+We also provide a [lecture on mobile platforms](lectures/Mobile) to introduce the concepts seen in the project.
 
-## Teaching philosophy
+
+## Meta
 
 This course uses modern evidence-based teaching methods, with a particular focus on interactivity during lectures through exercises and
 clear structuring of lectures including well-defined objectives and assessment criteria.
 There is a large body of research on teaching and learning, and this course attempts to use evidence-based techniques to improve
 learning compared to the traditional "sit in a lecture hall and listen for a couple hours" format.
 
-Students should read the [guide to succeed](documentation/Succeeding.md).
-
-Lecturers should read the [logistics documentation](documentation/Logistics.md).
+Documentation:
+- For students, [the guide to succeed](documentation/Succeeding.md).
+- For lecturers, [the logistics documentation](documentation/Logistics.md).
+- For staff, [the staff instructions](documentation/Staff.md).
+- For project coaches, [the coaching instructions](documentation/Coaching.md).
 
 
 ## Contributing
@@ -83,6 +87,5 @@ Want to help?
 You can:
 - Propose improvements to the existing lectures, such as correcting typos and ambiguities, finding interesting examples, or proposing different explanations
 - Propose improvements to the existing exercises, such as correcting typos and ambiguities, or proposing alternative solutions
-- Translate some exercises to a different programming language, especially if that language exhibits interesting differences
-  compared to the existing languages for the exercises
+- Translate some exercises to a different programming language, especially if that language exhibits interesting differences compared to the existing languages for the exercises
 - Propose an entirely new lecture, see [the lectures documentation](documentation/Lectures.md)
