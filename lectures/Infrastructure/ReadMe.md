@@ -556,7 +556,7 @@ However, not everyone uses the same IDE, which means they may have different def
 
 The main issue with using operations in an IDE to check properties about the code is that humans make mistakes.
 On a large enough projects, human mistakes happen all the time. For instance, it's unreasonable to expect hundreds of developers to never forget even once to check that the code compiles and runs.
-Checking for basic mistakes also a poor use of people's time. Reviewing code should be about the logic of the code, not whether every line is syntactically valid, that's the compiler's job.
+Checking for basic mistakes is also a poor use of people's time. Reviewing code should be about the logic of the code, not whether every line is syntactically valid, that's the compiler's job.
 
 We would instead like to _automate_ the steps we need to check code.
 This is done using a _build system_, such as CMake for C++, MSBuild for C#, or Gradle for Java.
