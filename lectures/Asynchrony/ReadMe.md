@@ -303,7 +303,7 @@ We provide a [solution example](exercises/solutions/lecture/src/main/java/Basics
 ### Sync over async
 
 Doing the exercise above, you've noticed `App.java` uses `join()` to block until a future finishes and either return the result or throw the error represented by the future.
-There are other such "sync over async" operations, such as `isDone()` and `isCompletedExceptionallly()` to check a future's status.
+There are other such "sync over async" operations, such as `isDone()` and `isCompletedExceptionally()` to check a future's status.
 
 "Sync over async" operations are useful specifically to use asynchronous operations in a context that must be synchronous,
 typically because you are working with a framework that expects a synchronous operation.
