@@ -34,7 +34,7 @@ Grading a project-based course is fundamentally harder than an exam-based course
 It can be difficult to tell whether a student worked enough,
 since even good students can unexpectedly struggle due to external causes such as buggy SDKs or poorly documented APIs.
 Thus, coaches should be observant and grading should take this into account, e.g.,
-failing a student because they had the courage to try out some new package which ended up taking an unusually long time would be bad).
+failing a student because they had the courage to try out some new package which ended up taking an unusually long time would be bad.
 This does not mean we give a good grade to everyone, or that we give the benefit of the doubt all the time.
 
 Coaches should use the "worst sprint grade is dropped" policy to put a positive spin in case a sprint goes really bad, i.e., "as long as you do better next time, you won't be penalized".
