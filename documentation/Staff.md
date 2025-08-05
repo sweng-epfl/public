@@ -31,13 +31,13 @@ Examples of unacceptable behavior include:
 - Encouraging any unacceptable behavior, including playing "devil's advocate". 
 
 Examples of unacceptable comments include:
-- "Oh, that’s easy, you should just [XYZ].";
+- "Oh, that’s easy, you should just [XYZ].".
   What is easy for you, or seems quick or trivial, is not necessarily so for students learning about concepts for the first time.
-- "You use [Windows/Mac/...]? Eww!";
+- "You use [Windows/Mac/...]? Eww!".
   Not everyone shares your preferences and your experiences, you can suggest different tools or workflows without being judgemental.
-- "Maybe you should consider dropping this class.";
-  Assume that all students have the potential to succeed, and if you genuinely believe you cannot help a student, talk to lecturer.
-- "Oh yeah, that’s super hard.";
+- "Maybe you should consider dropping this class.".
+  Assume that all students have the potential to succeed, and if you genuinely believe you cannot help a student, speak to a lecturer.
+- "Oh yeah, that’s super hard.".
   Do not scare students, you should instead build their confidence by asking them questions to help them understand.
 
 Do not contradict lecturers or official course instructions.
