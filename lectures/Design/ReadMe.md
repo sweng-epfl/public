@@ -296,7 +296,7 @@ See the [solution file](exercises/solutions/lecture/Calc.java) for an example, w
 ```mermaid
 graph TD
     A[main]
-    B[getInputl]
+    B[getInput]
     C[parseInput]
     D[compute]
     E[execute]
