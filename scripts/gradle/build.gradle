@@ -1,23 +1,24 @@
-task update {
-    doLast {
-        file("../../").eachDirRecurse { dir ->
-            def d = dir.toString()
-            if (file(d + "/build.gradle").exists() && !dir.equals(file("./"))) {
-                println("Updating: " + d)
-                copy {
-                    from(".")
-                    into(d)
-                    include("gradle/**")
-                    include("gradlew")
-                    include("gradlew.bat")
-                    include("build.gradle.template")
-                    rename("build.gradle.template", "build.gradle")
-                }
-                exec {
-                    workingDir(d)
-                    commandLine("git", "update-index", "--chmod=+x", "--add", "gradlew")
-                }
+// Accessing project properties must be done outside of the task body
+def thisFile = project.buildscript.sourceFile
+
+task update(type: Exec) {
+    def executables = []
+    fileTree(dir: "../../", include: "**/build.gradle").each { b ->
+        if (!thisFile.equals(b) && !b.text.contains("com.android")) {
+            def d = b.getParent()
+            println("Updating: " + d)
+            executables.addAll(new File(d, "gradlew").getAbsolutePath())
+            copy {
+                from(".")
+                into(d)
+                include("gradle/**")
+                include("gradlew")
+                include("gradlew.bat")
+                include("build.gradle.template")
+                rename("build.gradle.template", "build.gradle")
             }
         }
     }
+    executable "git"
+    args (["update-index", "--chmod=+x", "--add"] + executables)
 }
